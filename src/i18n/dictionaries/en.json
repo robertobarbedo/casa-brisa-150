@@ -140,6 +140,7 @@
   },
   "mapa": {
     "titulo": "Location",
+    "abrir": "Open in Google Maps",
     "aviso": "The exact address is shared once your booking is confirmed."
   },
   "regras": {
@@ -160,10 +161,6 @@
   "faq": {
     "titulo": "Frequently asked questions",
     "itens": [
-      {
-        "p": "Why book direct instead of Airbnb?",
-        "r": "Booking direct means no platform service fees, and you talk to the owners directly."
-      },
       {
         "p": "How does payment work?",
         "r": "You pay a 30% deposit to secure your dates and the balance up to 7 days before check-in."

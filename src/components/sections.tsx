@@ -6,6 +6,7 @@ import {
   Clock,
   CookingPot,
   DoorOpen,
+  ExternalLink,
   Flame,
   MapPin,
   PawPrint,
@@ -207,6 +208,9 @@ export function Regiao({ dict, casa }: Base) {
   const centroLon = casa.mapa.longitude - 0.0004;
   const d = 0.0022; // enquadramento fechado na quadra
   const bbox = [centroLon - d, centroLat - d, centroLon + d, centroLat + d].join(",");
+  // Abre o mesmo enquadramento no Google Maps: centro deslocado e sem pino,
+  // para não entregar o endereço exato.
+  const linkMaps = `https://www.google.com/maps/@${centroLat},${centroLon},16z`;
 
   return (
     <section aria-labelledby="regiao" className="mx-auto max-w-5xl pt-10">
@@ -238,6 +242,15 @@ export function Regiao({ dict, casa }: Base) {
             className="absolute top-1/2 left-1/2 aspect-square w-[19%] -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-terracota/70 bg-terracota/20 md:w-[10%]"
           />
         </div>
+        <a
+          href={linkMaps}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-terracota-forte underline underline-offset-4"
+        >
+          <ExternalLink aria-hidden className="size-4" />
+          {dict.mapa.abrir}
+        </a>
         <p className="mt-2 text-xs text-taupe/80">{dict.mapa.aviso}</p>
       </div>
     </section>

@@ -140,6 +140,7 @@
   },
   "mapa": {
     "titulo": "Ubicación",
+    "abrir": "Abrir en Google Maps",
     "aviso": "La dirección exacta se envía después de confirmar la reserva."
   },
   "regras": {
@@ -160,10 +161,6 @@
   "faq": {
     "titulo": "Preguntas frecuentes",
     "itens": [
-      {
-        "p": "¿Por qué reservar directo y no por Airbnb?",
-        "r": "Reservando directo no pagás la tarifa de servicio de las plataformas y hablás directamente con los dueños."
-      },
       {
         "p": "¿Cómo es el pago?",
         "r": "Pagás una seña del 30% para asegurar las fechas y el resto hasta 7 días antes del check-in."
