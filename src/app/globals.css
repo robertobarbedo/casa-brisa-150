@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+/* Casa Brisa — tokens do Design Mood (branco, areia, terracota, azul) */
+@theme {
+  --color-branco: #fbf9f6;
+  --color-areia: #efe8dd;
+  --color-areia-escura: #e3d8c8;
+  --color-terracota: #c98a76;
+  --color-terracota-forte: #a5604b;
+  --color-terracota-suave: #f3e1d9;
+  --color-azul: #b9cdd6;
+  --color-azul-suave: #e3edf1;
+  --color-taupe: #6f5e4f;
+  --color-taupe-escuro: #4f4236;
+  --color-folha: #6b8f71;
+  --color-folha-forte: #4d7455;
+
+  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-brisa: 2rem;
+  --shadow-suave: 0 10px 30px -12px rgb(111 94 79 / 0.25);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: var(--color-branco);
+  color: var(--color-taupe);
+}
+
+/* Canto assimétrico das fotos do moodboard */
+@utility canto-brisa {
+  border-radius: 0.75rem 0.75rem var(--radius-brisa) 0.75rem;
+}
+
+/* Esconde a barra de rolagem nos carrosséis horizontais */
+@utility sem-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

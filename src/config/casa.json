@@ -1,0 +1,76 @@
+{
+  "nome": "Casa Brisa",
+  "capacidade": {
+    "hospedes": 6,
+    "quartos": 3,
+    "suites": 1,
+    "banheiros": 2
+  },
+  "distanciaPraiaMetros": 150,
+  "petFriendly": true,
+  "carregadorEletrico": true,
+  "precos": {
+    "diaria": 800,
+    "limpeza": 250,
+    "minimoNoites": 2,
+    "descontoPercentual": 10
+  },
+  "contato": {
+    "whatsapp": "5548920013055",
+    "emails": [
+      "casabrisa150@gmail.com",
+      "robertobarbedo@gmail.com"
+    ]
+  },
+  "mapa": {
+    "latitude": -27.44886228,
+    "longitude": -48.53256671,
+    "zoom": 14
+  },
+  "fotos": [
+    {
+      "id": "principal",
+      "arquivo": ""
+    },
+    {
+      "id": "fachada",
+      "arquivo": ""
+    },
+    {
+      "id": "sala",
+      "arquivo": ""
+    },
+    {
+      "id": "cozinha",
+      "arquivo": ""
+    },
+    {
+      "id": "suite",
+      "arquivo": ""
+    },
+    {
+      "id": "quarto2",
+      "arquivo": ""
+    },
+    {
+      "id": "quarto3",
+      "arquivo": ""
+    },
+    {
+      "id": "banheiro",
+      "arquivo": ""
+    },
+    {
+      "id": "jardim",
+      "arquivo": ""
+    },
+    {
+      "id": "churrasqueira",
+      "arquivo": ""
+    },
+    {
+      "id": "carregador",
+      "arquivo": ""
+    }
+  ]
+}

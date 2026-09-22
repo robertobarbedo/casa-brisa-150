@@ -1,0 +1,208 @@
+{
+  "meta": {
+    "title": "Casa Brisa · Casa de alquiler en Praia da Daniela, Florianópolis",
+    "description": "Casa de 3 dormitorios a 150 m de la Praia da Daniela, en Florianópolis. Pet friendly, parrilla, jardín y cargador para auto eléctrico. Reservá directo con los dueños."
+  },
+  "nav": {
+    "casa": "La casa",
+    "regiao": "La zona",
+    "regras": "Reglas",
+    "faq": "Preguntas",
+    "idioma": "Idioma"
+  },
+  "hero": {
+    "local": "Praia da Daniela · Florianópolis",
+    "titulo": "Tu refugio a 150 pasos del mar",
+    "subtitulo": "Una casa luminosa y acogedora, con jardín, sombra de árboles y el mar calmo de Daniela a un paso.",
+    "selos": {
+      "praia": "150 m de la playa",
+      "eletrico": "Cargador eléctrico gratis",
+      "pet": "Pet friendly"
+    }
+  },
+  "destaques": {
+    "hospedes": "{n} huéspedes",
+    "quartos": "{n} dormitorios",
+    "suite": "{n} suite",
+    "banheiros": "{n} baños"
+  },
+  "fotos": {
+    "principal": "Foto Principal",
+    "fachada": "Fachada",
+    "sala": "Living",
+    "cozinha": "Cocina",
+    "suite": "Suite",
+    "quarto2": "Dormitorio 2",
+    "quarto3": "Dormitorio 3",
+    "banheiro": "Baño",
+    "jardim": "Jardín",
+    "churrasqueira": "Parrilla",
+    "carregador": "Cargador Eléctrico"
+  },
+  "galeria": {
+    "titulo": "Conocé la casa",
+    "dica": "Deslizá para ver más"
+  },
+  "sobre": {
+    "titulo": "Hecha para desacelerar",
+    "texto": [
+      "Casa Brisa fue pensada para días simples: playa por la mañana, almuerzo sin apuro y asado a la sombra de los árboles al final de la tarde.",
+      "Tiene tres dormitorios, uno en suite, dos baños, living integrado y cocina completa."
+    ]
+  },
+  "ambientes": {
+    "titulo": "Los espacios",
+    "itens": [
+      {
+        "id": "suite",
+        "titulo": "Suite",
+        "texto": "Dormitorio matrimonial con baño privado."
+      },
+      {
+        "id": "quarto2",
+        "titulo": "Dormitorios",
+        "texto": "Dos dormitorios más, cómodos para familia y amigos."
+      },
+      {
+        "id": "cozinha",
+        "titulo": "Cocina equipada",
+        "texto": "Todo lo que necesitás para cocinar como en casa."
+      },
+      {
+        "id": "sala",
+        "titulo": "Living",
+        "texto": "Espacio de encuentro para los días de descanso."
+      },
+      {
+        "id": "jardim",
+        "titulo": "Jardín",
+        "texto": "Árboles al fondo, sombra y lugar para las mascotas."
+      },
+      {
+        "id": "churrasqueira",
+        "titulo": "Parrilla",
+        "texto": "Al fondo, ideal para reunir a todos."
+      }
+    ]
+  },
+  "comodidades": {
+    "titulo": "Lo que ofrece la casa",
+    "itens": {
+      "wifi": "Wi-Fi",
+      "cozinha": "Cocina equipada",
+      "churrasqueira": "Parrilla",
+      "jardim": "Jardín con árboles",
+      "pet": "Se aceptan mascotas",
+      "eletrico": "Cargador para auto eléctrico",
+      "estacionamento": "Estacionamiento",
+      "praia": "150 m de la playa"
+    }
+  },
+  "eletrico": {
+    "titulo": "¿Venís en auto eléctrico?",
+    "texto": "La casa tiene un tomacorriente exclusivo para cargar tu auto eléctrico, sin costo adicional. La casa ofrece solo el tomacorriente, así que traé tu cargador portátil."
+  },
+  "regiao": {
+    "titulo": "La zona",
+    "intro": "Daniela es una de las playas más tranquilas de Florianópolis, con mar calmo y poco profundo, ideal para familias.",
+    "itens": [
+      {
+        "titulo": "Praia da Daniela",
+        "texto": "Mar calmo y bajo, ideal para chicos y stand-up paddle."
+      },
+      {
+        "titulo": "Pontal da Daniela",
+        "texto": "Uno de los atardeceres más lindos de la isla."
+      },
+      {
+        "titulo": "Jurerê Internacional",
+        "texto": "Restaurantes y beach clubs a pocos minutos en auto."
+      },
+      {
+        "titulo": "Fortaleza de Ponta Grossa",
+        "texto": "Fortaleza histórica con vista al mar."
+      },
+      {
+        "titulo": "Aeropuerto",
+        "texto": "Unos 45 minutos en auto."
+      }
+    ]
+  },
+  "mapa": {
+    "titulo": "Ubicación",
+    "aviso": "La dirección exacta se envía después de confirmar la reserva."
+  },
+  "regras": {
+    "titulo": "Bueno saber",
+    "checkin": "Check-in",
+    "checkinHora": "desde las 15 h",
+    "checkout": "Check-out",
+    "checkoutHora": "hasta las 11 h",
+    "itens": [
+      "Máximo 6 huéspedes",
+      "Las mascotas son bienvenidas",
+      "Mínimo 2 noches",
+      "Ambiente familiar: no se permiten fiestas ni eventos",
+      "Prohibido fumar dentro de la casa",
+      "Silencio después de las 22 h"
+    ]
+  },
+  "faq": {
+    "titulo": "Preguntas frecuentes",
+    "itens": [
+      {
+        "p": "¿Por qué reservar directo y no por Airbnb?",
+        "r": "Reservando directo no pagás la tarifa de servicio de las plataformas y hablás directamente con los dueños."
+      },
+      {
+        "p": "¿Cómo es el pago?",
+        "r": "Pagás una seña del 30% para asegurar las fechas y el resto hasta 7 días antes del check-in."
+      },
+      {
+        "p": "¿Puedo llevar a mi mascota?",
+        "r": "¡Sí! La casa es pet friendly y tiene jardín al fondo."
+      },
+      {
+        "p": "¿Hay ropa de cama y toallas?",
+        "r": "Sí, la casa se entrega con ropa de cama y toallas."
+      },
+      {
+        "p": "¿El cargador para auto eléctrico se paga?",
+        "r": "No, el uso del tomacorriente para auto eléctrico es gratis para los huéspedes."
+      }
+    ]
+  },
+  "reserva": {
+    "aPartirDe": "desde",
+    "porNoite": "noche",
+    "escolherDatas": "Elegir fechas",
+    "minimo": "Mínimo {n} noches",
+    "limpeza": "Tarifa de limpieza",
+    "titulo": "Elegí tus fechas",
+    "checkIn": "Entrada",
+    "checkOut": "Salida",
+    "toqueEntrada": "Tocá el día de entrada",
+    "toqueSaida": "Ahora tocá el día de salida",
+    "limpar": "Borrar fechas",
+    "hospedes": "Huéspedes",
+    "noites": "{n} noches",
+    "total": "Total",
+    "minimoAviso": "En esas fechas la estadía mínima es de {n} noches.",
+    "enviarEmail": "Enviar por e-mail",
+    "enviarWhatsapp": "Enviar por WhatsApp",
+    "semContato": "Contacto aún no configurado.",
+    "comoFunciona": "Enviás la solicitud, confirmamos la disponibilidad y coordinamos el pago. Sin comisiones de plataformas.",
+    "assuntoEmail": "Reserva Casa Brisa · {checkIn} a {checkOut}",
+    "mensagemPedido": "¡Hola! Me gustaría reservar Casa Brisa.\n\nEntrada: {checkIn}\nSalida: {checkOut}\nNoches: {noites}\nHuéspedes: {hospedes}\nTotal estimado: {total}\n\nMi nombre: \nComentarios: ",
+    "desconto": "Descuento por reserva directa ({n}%)",
+    "selo": "{n}% de descuento reservando directo"
+  },
+  "whatsapp": {
+    "aria": "Hablar por WhatsApp",
+    "mensagem": "¡Hola! Me interesa reservar Casa Brisa."
+  },
+  "rodape": {
+    "texto": "Casa de alquiler en Praia da Daniela, Florianópolis · SC · Brasil",
+    "direitos": "Todos los derechos reservados."
+  }
+}
