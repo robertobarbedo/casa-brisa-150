@@ -27,17 +27,17 @@
     "banheiros": "{n} baños"
   },
   "fotos": {
-    "principal": "Foto Principal",
-    "fachada": "Fachada",
+    "fachada": "Frente de la casa",
+    "varanda": "Galería",
     "sala": "Living",
     "cozinha": "Cocina",
-    "suite": "Suite",
-    "quarto2": "Dormitorio 2",
-    "quarto3": "Dormitorio 3",
-    "banheiro": "Baño",
-    "jardim": "Jardín",
-    "churrasqueira": "Parrilla",
-    "carregador": "Cargador Eléctrico"
+    "suite": "Suite principal",
+    "suiteBanheiro": "Baño de la suite",
+    "quartoCasal": "Dormitorio matrimonial",
+    "quartoSolteiros": "Dormitorio con dos camas",
+    "banheiro": "Baño social",
+    "quintal": "Patio del fondo",
+    "carregador": "Toma para auto eléctrico"
   },
   "galeria": {
     "titulo": "Conocé la casa",
@@ -56,32 +56,42 @@
       {
         "id": "suite",
         "titulo": "Suite",
-        "texto": "Dormitorio matrimonial con baño privado."
+        "texto": "Cama matrimonial con baño privado y aire acondicionado."
       },
       {
-        "id": "quarto2",
-        "titulo": "Dormitorios",
-        "texto": "Dos dormitorios más, cómodos para familia y amigos."
+        "id": "quartoCasal",
+        "titulo": "Dormitorio matrimonial",
+        "texto": "Segunda cama matrimonial, con aire acondicionado."
       },
       {
-        "id": "cozinha",
-        "titulo": "Cocina equipada",
-        "texto": "Todo lo que necesitás para cocinar como en casa."
+        "id": "quartoSolteiros",
+        "titulo": "Dormitorio con dos camas",
+        "texto": "Dos camas individuales y ventana al patio."
       },
       {
         "id": "sala",
         "titulo": "Living",
-        "texto": "Espacio de encuentro para los días de descanso."
+        "texto": "Sofá, TV y techo alto de madera, integrado a la cocina."
       },
       {
-        "id": "jardim",
-        "titulo": "Jardín",
-        "texto": "Árboles al fondo, sombra y lugar para las mascotas."
+        "id": "cozinha",
+        "titulo": "Cocina equipada",
+        "texto": "Isla, horno, anafe y mesa para seis personas."
       },
       {
-        "id": "churrasqueira",
-        "titulo": "Parrilla",
-        "texto": "Al fondo, ideal para reunir a todos."
+        "id": "banheiro",
+        "titulo": "Baños",
+        "texto": "Dos baños completos: el social y el de la suite."
+      },
+      {
+        "id": "varanda",
+        "titulo": "Galería",
+        "texto": "Hamaca, sillas y sombra en la entrada de la casa."
+      },
+      {
+        "id": "quintal",
+        "titulo": "Patio",
+        "texto": "Árboles, césped y pérgola al fondo, con lugar para las mascotas."
       }
     ]
   },
@@ -179,23 +189,25 @@
     "minimo": "Mínimo {n} noches",
     "limpeza": "Tarifa de limpieza",
     "titulo": "Elegí tus fechas",
+    "fechar": "Cerrar",
     "checkIn": "Entrada",
     "checkOut": "Salida",
     "toqueEntrada": "Tocá el día de entrada",
     "toqueSaida": "Ahora tocá el día de salida",
     "limpar": "Borrar fechas",
     "hospedes": "Huéspedes",
+    "hospedesInfo": "Máximo de {n} huéspedes. Para excepciones con niños, consultanos.",
+    "hospedesInfoAria": "Sobre la cantidad de huéspedes",
     "noites": "{n} noches",
     "total": "Total",
     "minimoAviso": "En esas fechas la estadía mínima es de {n} noches.",
-    "enviarEmail": "Enviar por e-mail",
-    "enviarWhatsapp": "Enviar por WhatsApp",
+    "enviarEmail": "Enviar pedido de reserva por e-mail",
+    "enviarWhatsapp": "Enviar pedido de reserva por WhatsApp",
     "semContato": "Contacto aún no configurado.",
-    "comoFunciona": "Enviás la solicitud, confirmamos la disponibilidad y coordinamos el pago. Sin comisiones de plataformas.",
     "assuntoEmail": "Reserva Casa Brisa · {checkIn} a {checkOut}",
     "mensagemPedido": "¡Hola! Me gustaría reservar Casa Brisa.\n\nEntrada: {checkIn}\nSalida: {checkOut}\nNoches: {noites}\nHuéspedes: {hospedes}\nTotal estimado: {total}\n\nMi nombre: \nComentarios: ",
     "desconto": "Descuento por reserva directa ({n}%)",
-    "selo": "{n}% de descuento reservando directo"
+    "selo": "{n}% de descuento por el sitio"
   },
   "whatsapp": {
     "aria": "Hablar por WhatsApp",

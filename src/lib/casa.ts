@@ -2,21 +2,22 @@ import "server-only";
 import { z } from "zod";
 import raw from "@/config/casa.json";
 
-const fotoIds = [
-  "principal",
+/** Ambientes da casa: cada um tem um rótulo por idioma em i18n/dictionaries. */
+const ambientes = [
   "fachada",
+  "varanda",
   "sala",
   "cozinha",
   "suite",
-  "quarto2",
-  "quarto3",
+  "suiteBanheiro",
+  "quartoCasal",
+  "quartoSolteiros",
   "banheiro",
-  "jardim",
-  "churrasqueira",
+  "quintal",
   "carregador",
 ] as const;
 
-export type FotoId = (typeof fotoIds)[number];
+export type Ambiente = (typeof ambientes)[number];
 
 const casaSchema = z.object({
   nome: z.string().min(1),
@@ -46,13 +47,17 @@ const casaSchema = z.object({
     longitude: z.number(),
     zoom: z.number().int(),
   }),
-  fotos: z.array(
-    z.object({
-      id: z.enum(fotoIds),
-      // Caminho em /public/fotos (vazio = placeholder)
-      arquivo: z.string(),
-    }),
-  ),
+  // Todas as fotos da casa, na ordem em que aparecem na galeria.
+  // A primeira também é a foto de capa do topo da página.
+  fotos: z
+    .array(
+      z.object({
+        // Caminho em /public, ex.: "/fotos/frente-1.jpg"
+        arquivo: z.string().min(1),
+        ambiente: z.enum(ambientes),
+      }),
+    )
+    .min(1),
 });
 
 export type Casa = z.infer<typeof casaSchema>;

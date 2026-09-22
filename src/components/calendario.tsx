@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { CalendarDays, Mail, Minus, Plus, RotateCcw } from "lucide-react";
+import { CalendarDays, Info, Mail, Minus, Plus, RotateCcw } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import { intlLocale } from "@/i18n/config";
 import type { Casa } from "@/lib/casa";
@@ -26,6 +26,7 @@ export function Calendario({ lang, dict, casa, ocupadas, tabela }: Props) {
   const [checkIn, setCheckIn] = useState<string | null>(null);
   const [checkOut, setCheckOut] = useState<string | null>(null);
   const [hospedes, setHospedes] = useState(2);
+  const [infoHospedes, setInfoHospedes] = useState(false);
 
   const ocupadasSet = useMemo(() => new Set(ocupadas), [ocupadas]);
   const hoje = iso(new Date());
@@ -204,7 +205,19 @@ export function Calendario({ lang, dict, casa, ocupadas, tabela }: Props) {
       {/* Hóspedes + resumo + envio */}
       <div className="sticky bottom-0 -mx-4 mt-6 border-t border-areia-escura bg-branco/95 px-4 pt-4 pb-[calc(1rem+env(safe-area-inset-bottom))] backdrop-blur-md">
         <div className="flex items-center justify-between">
-          <span className="font-semibold text-taupe-escuro">{dict.reserva.hospedes}</span>
+          <span className="flex items-center gap-1.5 font-semibold text-taupe-escuro">
+            {dict.reserva.hospedes}
+            <button
+              type="button"
+              onClick={() => setInfoHospedes((v) => !v)}
+              aria-expanded={infoHospedes}
+              aria-controls="info-hospedes"
+              aria-label={dict.reserva.hospedesInfoAria}
+              className="grid size-6 place-items-center rounded-full text-taupe/70 active:scale-95"
+            >
+              <Info aria-hidden className="size-4" />
+            </button>
+          </span>
           <div className="flex items-center gap-3">
             <button
               type="button"
@@ -227,6 +240,12 @@ export function Calendario({ lang, dict, casa, ocupadas, tabela }: Props) {
             </button>
           </div>
         </div>
+
+        {infoHospedes && (
+          <p id="info-hospedes" className="mt-2 rounded-2xl bg-areia px-3 py-2 text-xs leading-relaxed">
+            {fill(dict.reserva.hospedesInfo, { n: casa.capacidade.hospedes })}
+          </p>
+        )}
 
         {orcamento && (
           <dl className="mt-3 space-y-1 text-sm">
@@ -264,7 +283,7 @@ export function Calendario({ lang, dict, casa, ocupadas, tabela }: Props) {
               target="_blank"
               rel="noopener noreferrer"
               aria-disabled={!pronto}
-              className={`grid h-13 place-items-center rounded-full text-base font-bold transition ${
+              className={`grid min-h-13 place-items-center rounded-full px-4 py-2 text-center text-sm leading-tight font-bold transition sm:text-base ${
                 pronto
                   ? "bg-[#25D366] text-white active:scale-95"
                   : "pointer-events-none bg-areia text-taupe/50"
@@ -277,13 +296,13 @@ export function Calendario({ lang, dict, casa, ocupadas, tabela }: Props) {
             <a
               href={pronto ? linkEmail : undefined}
               aria-disabled={!pronto}
-              className={`flex h-13 items-center justify-center gap-2 rounded-full text-base font-bold transition ${
+              className={`flex min-h-13 items-center justify-center gap-2 rounded-full px-4 py-2 text-center text-sm leading-tight font-bold transition sm:text-base ${
                 pronto
                   ? "bg-terracota-forte text-branco active:scale-95"
                   : "pointer-events-none bg-areia text-taupe/50"
               }`}
             >
-              <Mail className="size-5" />
+              <Mail aria-hidden className="size-5 shrink-0" />
               {dict.reserva.enviarEmail}
             </a>
           )}
@@ -294,10 +313,6 @@ export function Calendario({ lang, dict, casa, ocupadas, tabela }: Props) {
             </p>
           )}
         </div>
-
-        <p className="mt-3 text-center text-xs leading-relaxed text-taupe/80">
-          {dict.reserva.comoFunciona}
-        </p>
       </div>
     </div>
   );

@@ -18,13 +18,15 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import type { Dictionary } from "@/i18n/get-dictionary";
-import type { Casa, FotoId } from "@/lib/casa";
+import type { Ambiente, Casa } from "@/lib/casa";
 import { fill } from "@/lib/format";
 import { Foto } from "./foto";
 
 type Base = { dict: Dictionary; casa: Casa };
 
-const fotoDe = (casa: Casa, id: FotoId) => casa.fotos.find((f) => f.id === id)?.arquivo;
+/** Primeira foto do ambiente, usada como miniatura na lista de espaços. */
+const fotoDe = (casa: Casa, ambiente: Ambiente) =>
+  casa.fotos.find((f) => f.ambiente === ambiente)?.arquivo;
 
 function Titulo({ children, id }: { children: React.ReactNode; id?: string }) {
   return (
@@ -45,6 +47,7 @@ function Selo({ icon: Icon, children, tom }: { icon: LucideIcon; children: React
 
 export function Hero({ dict, casa }: Base) {
   const { capacidade: c } = casa;
+  const capa = casa.fotos[0];
   const destaques: { icon: LucideIcon; texto: string }[] = [
     { icon: Users, texto: fill(dict.destaques.hospedes, { n: c.hospedes }) },
     { icon: BedDouble, texto: fill(dict.destaques.quartos, { n: c.quartos }) },
@@ -55,8 +58,8 @@ export function Hero({ dict, casa }: Base) {
   return (
     <section className="mx-auto max-w-5xl md:grid md:grid-cols-2 md:items-center md:gap-10 md:px-4 md:pt-8">
       <Foto
-        label={dict.fotos.principal}
-        arquivo={fotoDe(casa, "principal")}
+        label={dict.fotos[capa.ambiente]}
+        arquivo={capa.arquivo}
         priority
         sizes="(min-width: 768px) 50vw, 100vw"
         className="aspect-[5/4] w-full rounded-b-[var(--radius-brisa)] md:aspect-square md:canto-brisa md:rounded-br-[4rem]"
@@ -107,19 +110,18 @@ export function Galeria({ dict, casa }: Base) {
         <Titulo id="galeria">{dict.galeria.titulo}</Titulo>
         <span className="text-xs text-taupe/70 md:hidden">{dict.galeria.dica} →</span>
       </div>
-      <ul className="sem-scrollbar mt-4 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-px-4 px-4 pb-2">
-        {casa.fotos
-          .filter((f) => f.id !== "principal")
-          .map((f) => (
-            <li key={f.id} className="w-[78%] shrink-0 snap-start sm:w-[45%] md:w-[31%]">
-              <Foto
-                label={dict.fotos[f.id]}
-                arquivo={f.arquivo}
-                sizes="(min-width: 768px) 33vw, 80vw"
-                className="canto-brisa aspect-[4/3] w-full"
-              />
-            </li>
-          ))}
+      {/* Carrossel no celular, grade no desktop: são muitas fotos para uma fila só. */}
+      <ul className="sem-scrollbar mt-4 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-px-4 px-4 pb-2 md:grid md:grid-cols-3 md:overflow-visible md:pb-0">
+        {casa.fotos.map((f) => (
+          <li key={f.arquivo} className="w-[78%] shrink-0 snap-start sm:w-[45%] md:w-auto">
+            <Foto
+              label={dict.fotos[f.ambiente]}
+              arquivo={f.arquivo}
+              sizes="(min-width: 768px) 33vw, 80vw"
+              className="canto-brisa aspect-[4/3] w-full"
+            />
+          </li>
+        ))}
       </ul>
     </section>
   );
@@ -140,8 +142,8 @@ export function Sobre({ dict, casa }: Base) {
         {dict.ambientes.itens.map((a) => (
           <li key={a.id} className="flex items-center gap-3 rounded-2xl bg-areia/60 p-2 pr-4">
             <Foto
-              label={dict.fotos[a.id as FotoId]}
-              arquivo={fotoDe(casa, a.id as FotoId)}
+              label={dict.fotos[a.id as Ambiente]}
+              arquivo={fotoDe(casa, a.id as Ambiente)}
               sizes="96px"
               className="size-20 shrink-0 rounded-xl [&_span]:hidden [&_svg]:size-5"
             />

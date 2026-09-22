@@ -27,17 +27,17 @@
     "banheiros": "{n} bathrooms"
   },
   "fotos": {
-    "principal": "Main Photo",
-    "fachada": "Front",
-    "sala": "Living Room",
+    "fachada": "Front of the house",
+    "varanda": "Porch",
+    "sala": "Living room",
     "cozinha": "Kitchen",
-    "suite": "Master Suite",
-    "quarto2": "Bedroom 2",
-    "quarto3": "Bedroom 3",
-    "banheiro": "Bathroom",
-    "jardim": "Garden",
-    "churrasqueira": "Barbecue",
-    "carregador": "EV Charger"
+    "suite": "Master suite",
+    "suiteBanheiro": "En-suite bathroom",
+    "quartoCasal": "Double bedroom",
+    "quartoSolteiros": "Twin bedroom",
+    "banheiro": "Guest bathroom",
+    "quintal": "Backyard",
+    "carregador": "EV charging outlet"
   },
   "galeria": {
     "titulo": "Take a look inside",
@@ -56,32 +56,42 @@
       {
         "id": "suite",
         "titulo": "Master suite",
-        "texto": "Double bedroom with a private bathroom."
+        "texto": "Double bed with a private bathroom and air conditioning."
       },
       {
-        "id": "quarto2",
-        "titulo": "Bedrooms",
-        "texto": "Two more comfortable bedrooms for family and friends."
+        "id": "quartoCasal",
+        "titulo": "Double bedroom",
+        "texto": "A second double bed, with air conditioning."
       },
       {
-        "id": "cozinha",
-        "titulo": "Equipped kitchen",
-        "texto": "Everything you need to cook just like at home."
+        "id": "quartoSolteiros",
+        "titulo": "Twin bedroom",
+        "texto": "Two single beds and a window onto the backyard."
       },
       {
         "id": "sala",
         "titulo": "Living room",
-        "texto": "A cozy place to gather on lazy days."
+        "texto": "Sofa, TV and a high wooden ceiling, open to the kitchen."
       },
       {
-        "id": "jardim",
-        "titulo": "Garden",
-        "texto": "Trees in the back, shade and room for your pets."
+        "id": "cozinha",
+        "titulo": "Equipped kitchen",
+        "texto": "Island, oven, cooktop and a table for six."
       },
       {
-        "id": "churrasqueira",
-        "titulo": "Barbecue",
-        "texto": "In the backyard, perfect for getting everyone together."
+        "id": "banheiro",
+        "titulo": "Bathrooms",
+        "texto": "Two full bathrooms: the guest one and the en-suite."
+      },
+      {
+        "id": "varanda",
+        "titulo": "Porch",
+        "texto": "Hammock, chairs and shade right at the entrance."
+      },
+      {
+        "id": "quintal",
+        "titulo": "Backyard",
+        "texto": "Trees, grass and a pergola out back, with room for pets."
       }
     ]
   },
@@ -179,23 +189,25 @@
     "minimo": "{n}-night minimum",
     "limpeza": "Cleaning fee",
     "titulo": "Choose your dates",
+    "fechar": "Close",
     "checkIn": "Check-in",
     "checkOut": "Check-out",
     "toqueEntrada": "Tap your arrival day",
     "toqueSaida": "Now tap your departure day",
     "limpar": "Clear dates",
     "hospedes": "Guests",
+    "hospedesInfo": "Up to {n} guests. For exceptions with children, just ask us.",
+    "hospedesInfoAria": "About the number of guests",
     "noites": "{n} nights",
     "total": "Total",
     "minimoAviso": "For these dates the minimum stay is {n} nights.",
-    "enviarEmail": "Send by email",
-    "enviarWhatsapp": "Send on WhatsApp",
+    "enviarEmail": "Send booking request by email",
+    "enviarWhatsapp": "Send booking request on WhatsApp",
     "semContato": "Contact details not set yet.",
-    "comoFunciona": "You send the request, we confirm availability and arrange payment. No platform fees.",
     "assuntoEmail": "Casa Brisa booking · {checkIn} to {checkOut}",
     "mensagemPedido": "Hi! I'd like to book Casa Brisa.\n\nCheck-in: {checkIn}\nCheck-out: {checkOut}\nNights: {noites}\nGuests: {hospedes}\nEstimated total: {total}\n\nMy name: \nNotes: ",
     "desconto": "Direct booking discount ({n}%)",
-    "selo": "{n}% off when you book direct"
+    "selo": "{n}% off through this site"
   },
   "whatsapp": {
     "aria": "Chat on WhatsApp",

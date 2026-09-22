@@ -29,48 +29,76 @@
   },
   "fotos": [
     {
-      "id": "principal",
-      "arquivo": ""
+      "arquivo": "/fotos/frente-1.jpg",
+      "ambiente": "fachada"
     },
     {
-      "id": "fachada",
-      "arquivo": ""
+      "arquivo": "/fotos/frente-3.jpg",
+      "ambiente": "fachada"
     },
     {
-      "id": "sala",
-      "arquivo": ""
+      "arquivo": "/fotos/frente-2.jpg",
+      "ambiente": "varanda"
     },
     {
-      "id": "cozinha",
-      "arquivo": ""
+      "arquivo": "/fotos/sala-principal.jpg",
+      "ambiente": "sala"
     },
     {
-      "id": "suite",
-      "arquivo": ""
+      "arquivo": "/fotos/sala-1.png",
+      "ambiente": "sala"
     },
     {
-      "id": "quarto2",
-      "arquivo": ""
+      "arquivo": "/fotos/cozinha-1.jpg",
+      "ambiente": "cozinha"
     },
     {
-      "id": "quarto3",
-      "arquivo": ""
+      "arquivo": "/fotos/cozinha-2.png",
+      "ambiente": "cozinha"
     },
     {
-      "id": "banheiro",
-      "arquivo": ""
+      "arquivo": "/fotos/suite-principal-1.jpg",
+      "ambiente": "suite"
     },
     {
-      "id": "jardim",
-      "arquivo": ""
+      "arquivo": "/fotos/suite-principal-2.jpg",
+      "ambiente": "suite"
     },
     {
-      "id": "churrasqueira",
-      "arquivo": ""
+      "arquivo": "/fotos/suite-banheiro.jpg",
+      "ambiente": "suiteBanheiro"
     },
     {
-      "id": "carregador",
-      "arquivo": ""
+      "arquivo": "/fotos/quarto-casal.jpg",
+      "ambiente": "quartoCasal"
+    },
+    {
+      "arquivo": "/fotos/quarto-solteiros-1.jpg",
+      "ambiente": "quartoSolteiros"
+    },
+    {
+      "arquivo": "/fotos/quarto-solteiros-2.jpg",
+      "ambiente": "quartoSolteiros"
+    },
+    {
+      "arquivo": "/fotos/banheiro-social.jpg",
+      "ambiente": "banheiro"
+    },
+    {
+      "arquivo": "/fotos/fundos-1.jpg",
+      "ambiente": "quintal"
+    },
+    {
+      "arquivo": "/fotos/fundos-2.jpg",
+      "ambiente": "quintal"
+    },
+    {
+      "arquivo": "/fotos/fundos-3.jpg",
+      "ambiente": "quintal"
+    },
+    {
+      "arquivo": "/fotos/tomada-carregador.jpg",
+      "ambiente": "carregador"
     }
   ]
 }
