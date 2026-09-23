@@ -1,16 +1,14 @@
 import Link from "next/link";
 import { localeLabel, locales, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/get-dictionary";
+import { Logo } from "./logo";
 
 export function Header({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   return (
     <header className="sticky top-0 z-30 border-b border-areia-escura/60 bg-branco/85 pt-[env(safe-area-inset-top)] backdrop-blur-md">
       <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-4">
         <Link href={`/${lang}`} className="flex items-center gap-2">
-          {/* Símbolo provisório até o logo definitivo */}
-          <span aria-hidden className="grid size-8 place-items-center rounded-full bg-terracota text-sm font-bold text-branco">
-            B
-          </span>
+          <Logo className="size-8 shrink-0" />
           <span className="text-lg font-bold tracking-tight text-taupe-escuro">Casa Brisa</span>
         </Link>
 
