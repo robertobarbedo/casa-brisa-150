@@ -9,6 +9,20 @@
   "distanciaPraiaMetros": 150,
   "petFriendly": true,
   "carregadorEletrico": true,
+  "camas": [
+    {
+      "tipo": "Double",
+      "quantidade": 2
+    },
+    {
+      "tipo": "Single",
+      "quantidade": 2
+    }
+  ],
+  "regras": {
+    "checkIn": "15:00:00-03:00",
+    "checkOut": "11:00:00-03:00"
+  },
   "precos": {
     "diaria": 800,
     "limpeza": 250,
@@ -18,14 +32,23 @@
   "contato": {
     "whatsapp": "5548920013055",
     "emails": [
-      "casabrisa150@gmail.com",
-      "robertobarbedo@gmail.com"
+      "casabrisa150@gmail.com"
     ]
   },
   "mapa": {
     "latitude": -27.44886228,
     "longitude": -48.53256671,
     "zoom": 14
+  },
+  "endereco": {
+    "bairro": "Praia da Daniela",
+    "cidade": "Florianópolis",
+    "estado": "SC",
+    "pais": "BR"
+  },
+  "links": {
+    "googleMaps": "",
+    "airbnb": "https://airbnb.com/h/casa-brisa-daniela"
   },
   "fotos": [
     {

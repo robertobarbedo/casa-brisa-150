@@ -19,6 +19,9 @@ const ambientes = [
 
 export type Ambiente = (typeof ambientes)[number];
 
+/** Hora ISO 8601 com fuso, ex.: "15:00:00-03:00" (z.iso.time não aceita offset). */
+const horaComFuso = z.string().regex(/^\d{2}:\d{2}:\d{2}[+-]\d{2}:\d{2}$/);
+
 const casaSchema = z.object({
   nome: z.string().min(1),
   capacidade: z.object({
@@ -30,6 +33,20 @@ const casaSchema = z.object({
   distanciaPraiaMetros: z.number().int().positive(),
   petFriendly: z.boolean(),
   carregadorEletrico: z.boolean(),
+  // Configuração de camas, para o dado estruturado (schema.org BedDetails).
+  camas: z
+    .array(
+      z.object({
+        tipo: z.enum(["Double", "Single", "Sofa Bed"]),
+        quantidade: z.number().int().positive(),
+      }),
+    )
+    .min(1),
+  // Horários em ISO 8601 com fuso; o texto exibido vive nos dicionários.
+  regras: z.object({
+    checkIn: horaComFuso,
+    checkOut: horaComFuso,
+  }),
   precos: z.object({
     diaria: z.number().positive(),
     limpeza: z.number().nonnegative(),
@@ -46,6 +63,19 @@ const casaSchema = z.object({
     latitude: z.number(),
     longitude: z.number(),
     zoom: z.number().int(),
+  }),
+  // Sem rua: o endereço exato só vai para o hóspede depois da reserva confirmada.
+  endereco: z.object({
+    bairro: z.string().min(1),
+    cidade: z.string().min(1),
+    // Sigla do estado (SC) e do país (BR), como o schema.org espera.
+    estado: z.string().length(2),
+    pais: z.string().length(2),
+  }),
+  // Perfis da casa em outros serviços; vazio = fica de fora do dado estruturado.
+  links: z.object({
+    googleMaps: z.union([z.url(), z.literal("")]),
+    airbnb: z.union([z.url(), z.literal("")]),
   }),
   // Todas as fotos da casa, na ordem em que aparecem na galeria.
   // A primeira também é a foto de capa do topo da página.

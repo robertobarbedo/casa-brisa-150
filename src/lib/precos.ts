@@ -68,3 +68,16 @@ export function menorDiaria(casa: Casa, tabela: TabelaPrecos) {
   const precos = Object.values(tabela).map((t) => t.preco);
   return comDesconto(precos.length ? Math.min(...precos) : casa.precos.diaria, casa);
 }
+
+/** Faixa de diárias (já com desconto), usada no priceRange do dado estruturado. */
+export function faixaDiarias(casa: Casa, tabela: TabelaPrecos) {
+  const precos = Object.values(tabela).map((t) => t.preco);
+  if (!precos.length) {
+    const unico = comDesconto(casa.precos.diaria, casa);
+    return { min: unico, max: unico };
+  }
+  return {
+    min: comDesconto(Math.min(...precos), casa),
+    max: comDesconto(Math.max(...precos), casa),
+  };
+}

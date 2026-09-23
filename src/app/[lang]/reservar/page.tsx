@@ -16,7 +16,11 @@ export async function generateMetadata({
 }: PageProps<"/[lang]/reservar">): Promise<Metadata> {
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
-  return { alternates: alternativas(lang, "/reservar") };
+  return {
+    alternates: alternativas(lang, "/reservar"),
+    // Calendário sem conteúdo próprio: todo o sinal fica na home.
+    robots: { index: false, follow: true },
+  };
 }
 
 // Disponibilidade: iCal do Airbnb (revalidado a cada 15 min).

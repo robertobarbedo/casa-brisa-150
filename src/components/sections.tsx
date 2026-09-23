@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import type { Ambiente, Casa } from "@/lib/casa";
+import { comodidadesAtivas, type ComodidadeKey } from "@/lib/comodidades";
 import { fill } from "@/lib/format";
 import { Foto } from "./foto";
 
@@ -159,31 +160,32 @@ export function Sobre({ dict, casa }: Base) {
   );
 }
 
-export function Comodidades({ dict, casa }: Base) {
-  const i = dict.comodidades.itens;
-  const itens: { icon: LucideIcon; texto: string; ativo: boolean }[] = [
-    { icon: Waves, texto: i.praia, ativo: true },
-    { icon: Zap, texto: i.eletrico, ativo: casa.carregadorEletrico },
-    { icon: PawPrint, texto: i.pet, ativo: casa.petFriendly },
-    { icon: Wifi, texto: i.wifi, ativo: true },
-    { icon: CookingPot, texto: i.cozinha, ativo: true },
-    { icon: Flame, texto: i.churrasqueira, ativo: true },
-    { icon: Trees, texto: i.jardim, ativo: true },
-    { icon: Car, texto: i.estacionamento, ativo: true },
-  ];
+/** A ordem e o que está ativo vivem em lib/comodidades.ts; aqui só o ícone. */
+const iconeComodidade: Record<ComodidadeKey, LucideIcon> = {
+  praia: Waves,
+  eletrico: Zap,
+  pet: PawPrint,
+  wifi: Wifi,
+  cozinha: CookingPot,
+  churrasqueira: Flame,
+  jardim: Trees,
+  estacionamento: Car,
+};
 
+export function Comodidades({ dict, casa }: Base) {
   return (
     <section aria-labelledby="comodidades" className="mx-auto max-w-5xl px-4 pt-10">
       <Titulo id="comodidades">{dict.comodidades.titulo}</Titulo>
       <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-4 md:grid-cols-4">
-        {itens
-          .filter((c) => c.ativo)
-          .map(({ icon: Icon, texto }) => (
-            <li key={texto} className="flex items-center gap-3 text-sm font-semibold">
+        {comodidadesAtivas(casa).map(({ key }) => {
+          const Icon = iconeComodidade[key];
+          return (
+            <li key={key} className="flex items-center gap-3 text-sm font-semibold">
               <Icon aria-hidden className="size-5 shrink-0 text-terracota" strokeWidth={1.75} />
-              {texto}
+              {dict.comodidades.itens[key]}
             </li>
-          ))}
+          );
+        })}
       </ul>
 
       {casa.carregadorEletrico && (
