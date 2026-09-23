@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Nunito } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, locales } from "@/i18n/config";
+import { alternativas, siteUrl } from "@/config/site";
 import { getDictionary } from "@/i18n/get-dictionary";
 import "../globals.css";
 
@@ -26,11 +27,10 @@ export async function generateMetadata({
   if (!hasLocale(lang)) return {};
   const dict = await getDictionary(lang);
   return {
+    metadataBase: new URL(siteUrl),
     title: dict.meta.title,
     description: dict.meta.description,
-    alternates: {
-      languages: Object.fromEntries(locales.map((l) => [l, `/${l}`])),
-    },
+    alternates: alternativas(lang),
   };
 }
 
