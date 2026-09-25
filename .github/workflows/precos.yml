@@ -1,0 +1,37 @@
+name: Preços
+
+# O PriceLabs recalcula os preços uma vez por dia, por volta da 1h UTC.
+# Rodamos às 4h UTC (1h de Brasília) para pegar a tabela já atualizada.
+on:
+  schedule:
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Buscar preços no PriceLabs
+        env:
+          PRICELABS_API_KEY: ${{ secrets.PRICELABS_API_KEY }}
+        run: node scripts/atualizar-precos.mjs
+
+      - name: Commitar se algo mudou
+        run: |
+          if git diff --quiet public/prices.csv; then
+            echo "Nenhum preço mudou hoje; nada a publicar."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Preços: atualização automática do PriceLabs" public/prices.csv
+          git push

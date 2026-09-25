@@ -5,9 +5,12 @@ import { casa } from "@/lib/casa";
 import type { TabelaPrecos } from "@/lib/precos";
 
 /**
- * Lê public/prices.csv, exportado do PriceLabs.
+ * Lê public/prices.csv, vindo do PriceLabs.
  * Colunas usadas: Date, Final Price, Min Stay.
- * Basta substituir o arquivo por uma exportação nova e publicar.
+ *
+ * O arquivo é regravado todo dia por scripts/atualizar-precos.mjs, chamado pelo
+ * workflow "Preços". Uma exportação manual do painel do PriceLabs também serve:
+ * as colunas são procuradas pelo nome, então as outras doze são ignoradas.
  */
 export async function carregarTabelaPrecos(): Promise<TabelaPrecos> {
   const arquivo = path.join(process.cwd(), "public", "prices.csv");
