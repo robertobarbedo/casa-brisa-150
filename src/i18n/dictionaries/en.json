@@ -225,5 +225,213 @@
     "inicio": "Back to the house",
     "reservar": "See available dates",
     "whatsapp": "Or message us on WhatsApp"
+  },
+  "bemVindos": {
+    "meta": "Welcome · Casa Brisa",
+    "ola": "Welcome to Casa Brisa",
+    "sub": "Tips, phone numbers and what's happening outside, in one tap.",
+    "menu": "Menu",
+    "vejaTambem": "See also",
+    "abrirMapa": "Open in maps",
+    "ligar": "Call",
+    "copiar": "Copy",
+    "copiado": "Copied!",
+    "whatsapp": "Message your hosts",
+    "categorias": {
+      "emergencia": {
+        "titulo": "Emergency",
+        "sub": "Useful numbers and addresses"
+      },
+      "praia": {
+        "titulo": "Beach & tides",
+        "sub": "Getting there, tides, sunset"
+      },
+      "passeios": {
+        "titulo": "Things to do",
+        "sub": "Pontal and mangrove"
+      },
+      "comer": {
+        "titulo": "Where to eat",
+        "sub": "Our favourites"
+      },
+      "perto": {
+        "titulo": "Nearby",
+        "sub": "Market, bakery, pharmacy"
+      },
+      "casa": {
+        "titulo": "The house",
+        "sub": "How things work"
+      }
+    },
+    "numeros": {
+      "policia": "Police",
+      "samu": "Ambulance",
+      "bombeiros": "Fire brigade & lifeguards"
+    },
+    "itens": {
+      "anfitrioes": {
+        "titulo": "Your hosts",
+        "texto": "Anything at all, just message us on WhatsApp."
+      },
+      "upa": {
+        "titulo": "Hospital · UPA Norte",
+        "texto": "R. Francisco Faustino Martins, s/n, Vargem Grande"
+      },
+      "farmaciaVida": {
+        "titulo": "Pharmacy open until midnight",
+        "texto": "Farmácia Vida · Av. das Raias, 261, Jurerê"
+      },
+      "vet": {
+        "titulo": "24-hour vet",
+        "texto": "HVJ · +55 48 3284-2102"
+      },
+      "celesc": {
+        "titulo": "Power outage",
+        "texto": "Celesc · 0800 048 0196"
+      },
+      "endereco": {
+        "titulo": "House address",
+        "texto": "Rua dos Cravos, 150 — Praia da Daniela, Florianópolis · SC"
+      },
+      "caminho": {
+        "titulo": "Getting there",
+        "texto": "Leaving the house, turn left. The beach entrance is at the end of the street, 150 m away."
+      },
+      "pontal": {
+        "titulo": "Pontal da Daniela",
+        "texto": "The sandy tip at the end of Daniela beach. At its best at low tide and at sunset."
+      },
+      "mangue": {
+        "titulo": "Mangrove",
+        "texto": "At the end of Rua das Hortências, heading away from the beach. At low tide you can walk right into it — it's safe. Even lovelier at sunset."
+      },
+      "caravaggio": {
+        "titulo": "Il Caravaggio",
+        "texto": "Italian"
+      },
+      "may": {
+        "titulo": "May Santo Antônio",
+        "texto": "Thai"
+      },
+      "mercado": {
+        "titulo": "Supermarket",
+        "texto": "DO-RE-MI or VT · 2-min walk"
+      },
+      "padaria": {
+        "titulo": "Bakery",
+        "texto": "Panificadora Doce Pão · 10-min walk"
+      },
+      "farmacia": {
+        "titulo": "Pharmacy",
+        "texto": "Farmácia Vida · 5-min drive"
+      },
+      "caixa": {
+        "titulo": "ATM",
+        "texto": "Supermercado Imperatriz · 10-min drive"
+      },
+      "posto": {
+        "titulo": "Petrol station",
+        "texto": "Posto Daqui, Jurerê Internacional · 5-min drive"
+      },
+      "carregadorPublico": {
+        "titulo": "EV charger",
+        "texto": "Jurerê Sports Center · 5-min drive. There's also a free 220 V outlet at the house."
+      },
+      "cozinha": {
+        "titulo": "Kitchen",
+        "texto": "Coffee, salt, oil and spices: help yourself."
+      },
+      "lavar": {
+        "titulo": "Washing machine",
+        "texto": "Out back, next to the laundry sink."
+      },
+      "tv": {
+        "titulo": "TV",
+        "texto": "Sign in with your own streaming accounts."
+      },
+      "churrasqueira": {
+        "titulo": "Barbecue",
+        "texto": "Charcoal not included — the market is a 2-min walk."
+      },
+      "carregador": {
+        "titulo": "Electric car",
+        "texto": "220 V / 20 A outlet, free to use. Just plug in your cable."
+      },
+      "registro": {
+        "titulo": "Water shut-off valve",
+        "texto": "Out back, beside the pergola, at the base of the water tank."
+      }
+    },
+    "mare": {
+      "titulo": "Today's tide",
+      "alta": "High",
+      "baixa": "Low",
+      "agora": "now",
+      "nascer": "Sunrise",
+      "porDoSol": "Sunset",
+      "indisponivel": "The tide forecast is unavailable right now.",
+      "fonte": "Open-Meteo forecast. May vary by a few minutes."
+    }
+  },
+  "agora": {
+    "rotulo": "Right now",
+    "proxima": "Next tip",
+    "ceu": {
+      "sol": "sunny",
+      "nublado": "cloudy",
+      "chuva": "rain"
+    },
+    "mensagens": {
+      "bemVindo": [
+        "So glad you're here. Everything to help with your stay is right below."
+      ],
+      "bomDia": [
+        "Good morning! Fresh bread at Doce Pão, a 10-minute walk.",
+        "Good morning! The market is a 2-minute walk if you need anything for breakfast."
+      ],
+      "tarde": [
+        "Calm sea 150 steps away. Leaving the house, turn left."
+      ],
+      "mareBaixa": [
+        "Low tide at {hora}: the Pontal is at its most beautiful.",
+        "Low tide at {hora}: a good time to walk to the Pontal or visit the mangrove."
+      ],
+      "porDoSol": [
+        "Sunset is at {hora}. The Pontal is the best spot to watch it."
+      ],
+      "porDoSolMangue": [
+        "Sunset at low tide: a perfect day to visit the mangrove at the end of Rua das Hortências. You can walk right into it — it's safe."
+      ],
+      "porDoSolJa": [
+        "{min} minutes until sunset. There's still time!"
+      ],
+      "ceuLimpo": [
+        "Clear skies today. Sunset at {hora} should be a beauty."
+      ],
+      "uvAlto": [
+        "Strong sun today. The beach is nicest before 10 am or after 4 pm."
+      ],
+      "calor": [
+        "{temp}° outside. The porch hammock is in the shade."
+      ],
+      "chovendo": [
+        "Rainy day? Perfect for a long, lazy lunch. See our favourites."
+      ],
+      "chuvaMaisTarde": [
+        "Rain from {hora}. Enjoy the beach before then."
+      ],
+      "fome": [
+        "Hungry? Here are our favourite restaurants."
+      ],
+      "amanha": [
+        "Tomorrow: {ceu} and {max}°."
+      ],
+      "amanhaComMare": [
+        "Tomorrow: {ceu} and {max}°. Low tide at {hora}."
+      ],
+      "boaNoite": [
+        "Good night! Need anything? We're on WhatsApp."
+      ]
+    }
   }
 }

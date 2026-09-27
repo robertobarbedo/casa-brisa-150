@@ -1,0 +1,63 @@
+import {
+  Banknote,
+  Car,
+  Compass,
+  CookingPot,
+  Croissant,
+  Droplet,
+  Flame,
+  Footprints,
+  Fuel,
+  House,
+  Hospital,
+  LifeBuoy,
+  MapPin,
+  MessageCircle,
+  PawPrint,
+  Pill,
+  ShoppingCart,
+  Sunset,
+  TreePalm,
+  Tv,
+  UtensilsCrossed,
+  WashingMachine,
+  Waves,
+  Zap,
+  type LucideIcon,
+} from "lucide-react";
+import type { CategoriaId } from "@/lib/bem-vindos/categorias";
+
+/** Ícone e cores de cada categoria do /bem-vindos. */
+export const visualCategoria: Record<CategoriaId, { icone: LucideIcon; tom: string }> = {
+  emergencia: { icone: LifeBuoy, tom: "bg-alerta-suave text-alerta" },
+  praia: { icone: Waves, tom: "bg-azul-suave text-azul-forte" },
+  passeios: { icone: Compass, tom: "bg-folha/15 text-folha-forte" },
+  comer: { icone: UtensilsCrossed, tom: "bg-terracota-suave text-terracota-forte" },
+  perto: { icone: MapPin, tom: "bg-areia text-taupe-escuro" },
+  casa: { icone: House, tom: "bg-areia-escura/60 text-taupe-escuro" },
+};
+
+/** Ícones dos itens, pelo nome usado em config/bem-vindos.json. */
+export const iconesItem: Record<string, LucideIcon> = {
+  whatsapp: MessageCircle,
+  hospital: Hospital,
+  farmacia: Pill,
+  pata: PawPrint,
+  luz: Zap,
+  casa: House,
+  seta: Footprints,
+  "por-do-sol": Sunset,
+  arvore: TreePalm,
+  prato: UtensilsCrossed,
+  carrinho: ShoppingCart,
+  pao: Croissant,
+  dinheiro: Banknote,
+  combustivel: Fuel,
+  raio: Zap,
+  panela: CookingPot,
+  maquina: WashingMachine,
+  tv: Tv,
+  fogo: Flame,
+  gota: Droplet,
+  carro: Car,
+};

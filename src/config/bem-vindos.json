@@ -1,0 +1,45 @@
+{
+  "numeros": [
+    { "id": "policia", "tel": "190" },
+    { "id": "samu", "tel": "192" },
+    { "id": "bombeiros", "tel": "193" }
+  ],
+  "itens": {
+    "emergencia": [
+      { "id": "anfitrioes", "icone": "whatsapp", "acao": { "tipo": "whatsapp" } },
+      { "id": "upa", "icone": "hospital", "acao": { "tipo": "mapa", "busca": "UPA Norte, Vargem Grande, Florianópolis" } },
+      { "id": "farmaciaVida", "icone": "farmacia", "acao": { "tipo": "mapa", "busca": "Farmácia Vida, Av. das Raias 261, Jurerê, Florianópolis" } },
+      { "id": "vet", "icone": "pata", "acao": { "tipo": "tel", "numero": "+554832842102" } },
+      { "id": "celesc", "icone": "luz", "acao": { "tipo": "tel", "numero": "08000480196" } },
+      { "id": "endereco", "icone": "casa", "acao": { "tipo": "copiar" } }
+    ],
+    "praia": [
+      { "id": "caminho", "icone": "seta", "acao": { "tipo": "mapa", "busca": "Praia da Daniela, Florianópolis" } }
+    ],
+    "passeios": [
+      { "id": "pontal", "icone": "por-do-sol", "acao": { "tipo": "mapa", "busca": "Pontal da Daniela, Florianópolis" } },
+      { "id": "mangue", "icone": "arvore", "acao": { "tipo": "mapa", "busca": "Rua das Hortências, Praia da Daniela, Florianópolis" } }
+    ],
+    "comer": [
+      { "id": "caravaggio", "icone": "prato", "acao": { "tipo": "mapa", "busca": "Il Caravaggio, Florianópolis" } },
+      { "id": "may", "icone": "prato", "acao": { "tipo": "mapa", "busca": "May Santo Antônio de Lisboa, Florianópolis" } }
+    ],
+    "perto": [
+      { "id": "mercado", "icone": "carrinho", "acao": { "tipo": "mapa", "busca": "Supermercado, Praia da Daniela, Florianópolis" } },
+      { "id": "padaria", "icone": "pao", "acao": { "tipo": "mapa", "busca": "Panificadora Doce Pão, Florianópolis" } },
+      { "id": "farmacia", "icone": "farmacia", "acao": { "tipo": "mapa", "busca": "Farmácia Vida, Av. das Raias 261, Jurerê, Florianópolis" } },
+      { "id": "caixa", "icone": "dinheiro", "acao": { "tipo": "mapa", "busca": "Supermercado Imperatriz, Jurerê, Florianópolis" } },
+      { "id": "posto", "icone": "combustivel", "acao": { "tipo": "mapa", "busca": "Posto Daqui, Jurerê Internacional, Florianópolis" } },
+      { "id": "carregadorPublico", "icone": "raio", "acao": { "tipo": "mapa", "busca": "Jurerê Sports Center, Florianópolis" } }
+    ],
+    "casa": [
+      { "id": "anfitrioes", "icone": "whatsapp", "acao": { "tipo": "whatsapp" } },
+      { "id": "cozinha", "icone": "panela" },
+      { "id": "lavar", "icone": "maquina" },
+      { "id": "tv", "icone": "tv" },
+      { "id": "churrasqueira", "icone": "fogo" },
+      { "id": "carregador", "icone": "raio" },
+      { "id": "registro", "icone": "gota" }
+    ]
+  }
+}

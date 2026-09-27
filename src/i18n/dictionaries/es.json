@@ -225,5 +225,213 @@
     "inicio": "Volver a la casa",
     "reservar": "Ver fechas disponibles",
     "whatsapp": "O escríbenos por WhatsApp"
+  },
+  "bemVindos": {
+    "meta": "Bienvenidos · Casa Brisa",
+    "ola": "Bienvenidos a Casa Brisa",
+    "sub": "Consejos, teléfonos y lo que pasa afuera, en un toque.",
+    "menu": "Menú",
+    "vejaTambem": "Vean también",
+    "abrirMapa": "Abrir en el mapa",
+    "ligar": "Llamar",
+    "copiar": "Copiar",
+    "copiado": "¡Copiado!",
+    "whatsapp": "Hablar con los anfitriones",
+    "categorias": {
+      "emergencia": {
+        "titulo": "Emergencias",
+        "sub": "Teléfonos y direcciones útiles"
+      },
+      "praia": {
+        "titulo": "Playa y marea",
+        "sub": "Camino, marea y atardecer"
+      },
+      "passeios": {
+        "titulo": "Qué hacer",
+        "sub": "Pontal y manglar"
+      },
+      "comer": {
+        "titulo": "Dónde comer",
+        "sub": "Nuestros favoritos"
+      },
+      "perto": {
+        "titulo": "Cerca de acá",
+        "sub": "Súper, panadería, farmacia"
+      },
+      "casa": {
+        "titulo": "La casa",
+        "sub": "Cómo funcionan las cosas"
+      }
+    },
+    "numeros": {
+      "policia": "Policía",
+      "samu": "Ambulancia",
+      "bombeiros": "Bomberos y guardavidas"
+    },
+    "itens": {
+      "anfitrioes": {
+        "titulo": "Anfitriones",
+        "texto": "Cualquier cosa, escríbannos por WhatsApp."
+      },
+      "upa": {
+        "titulo": "Hospital · UPA Norte",
+        "texto": "R. Francisco Faustino Martins, s/n, Vargem Grande"
+      },
+      "farmaciaVida": {
+        "titulo": "Farmacia hasta medianoche",
+        "texto": "Farmácia Vida · Av. das Raias, 261, Jurerê"
+      },
+      "vet": {
+        "titulo": "Veterinaria 24 h",
+        "texto": "HVJ · +55 48 3284-2102"
+      },
+      "celesc": {
+        "titulo": "Corte de luz",
+        "texto": "Celesc · 0800 048 0196"
+      },
+      "endereco": {
+        "titulo": "Dirección de la casa",
+        "texto": "Rua dos Cravos, 150 — Praia da Daniela, Florianópolis · SC"
+      },
+      "caminho": {
+        "titulo": "Cómo llegar",
+        "texto": "Al salir de casa, doblen a la izquierda. La bajada a la playa está al final de la calle, a 150 m."
+      },
+      "pontal": {
+        "titulo": "Pontal da Daniela",
+        "texto": "La punta de arena al final de la Daniela. Es más lindo con marea baja y al atardecer."
+      },
+      "mangue": {
+        "titulo": "Manglar",
+        "texto": "Al final de la Rua das Hortências, en sentido contrario a la playa. Con marea baja se puede entrar y caminar por él, es seguro. Al atardecer es todavía más lindo."
+      },
+      "caravaggio": {
+        "titulo": "Il Caravaggio",
+        "texto": "Italiano"
+      },
+      "may": {
+        "titulo": "May Santo Antônio",
+        "texto": "Tailandés"
+      },
+      "mercado": {
+        "titulo": "Supermercado",
+        "texto": "DO-RE-MI o VT · 2 min caminando"
+      },
+      "padaria": {
+        "titulo": "Panadería",
+        "texto": "Panificadora Doce Pão · 10 min caminando"
+      },
+      "farmacia": {
+        "titulo": "Farmacia",
+        "texto": "Farmácia Vida · 5 min en auto"
+      },
+      "caixa": {
+        "titulo": "Cajero automático",
+        "texto": "Supermercado Imperatriz · 10 min en auto"
+      },
+      "posto": {
+        "titulo": "Estación de servicio",
+        "texto": "Posto Daqui, Jurerê Internacional · 5 min en auto"
+      },
+      "carregadorPublico": {
+        "titulo": "Cargador para auto eléctrico",
+        "texto": "Jurerê Sports Center · 5 min en auto. En la casa hay una toma de 220 V gratis."
+      },
+      "cozinha": {
+        "titulo": "Cocina",
+        "texto": "Café, sal, aceite y condimentos: a disposición."
+      },
+      "lavar": {
+        "titulo": "Lavarropas",
+        "texto": "En el fondo, al lado del lavadero."
+      },
+      "tv": {
+        "titulo": "TV",
+        "texto": "Usen sus propias cuentas de streaming."
+      },
+      "churrasqueira": {
+        "titulo": "Parrilla",
+        "texto": "Carbón no incluido. El súper está a 2 min caminando."
+      },
+      "carregador": {
+        "titulo": "Auto eléctrico",
+        "texto": "Toma 220 V / 20 A, uso gratuito. Solo enchufen su cable."
+      },
+      "registro": {
+        "titulo": "Llave de paso del agua",
+        "texto": "En el fondo, al lado de la pérgola, en la base del tanque de agua."
+      }
+    },
+    "mare": {
+      "titulo": "Marea de hoy",
+      "alta": "Alta",
+      "baixa": "Baja",
+      "agora": "ahora",
+      "nascer": "Amanecer",
+      "porDoSol": "Atardecer",
+      "indisponivel": "El pronóstico de la marea no está disponible ahora.",
+      "fonte": "Pronóstico Open-Meteo. Puede variar algunos minutos."
+    }
+  },
+  "agora": {
+    "rotulo": "Ahora",
+    "proxima": "Siguiente consejo",
+    "ceu": {
+      "sol": "sol",
+      "nublado": "nublado",
+      "chuva": "lluvia"
+    },
+    "mensagens": {
+      "bemVindo": [
+        "Qué bueno tenerlos acá. Todo lo que ayuda en la estadía está aquí abajo."
+      ],
+      "bomDia": [
+        "¡Buen día! Pan calentito en Doce Pão, a 10 min caminando.",
+        "¡Buen día! El súper está a 2 minutos caminando, por si falta algo para el desayuno."
+      ],
+      "tarde": [
+        "Mar calmo a 150 pasos. Al salir de casa, doblen a la izquierda."
+      ],
+      "mareBaixa": [
+        "Marea baja a las {hora}: el Pontal está en su mejor momento.",
+        "Marea baja a las {hora}: buen momento para caminar hasta el Pontal o visitar el manglar."
+      ],
+      "porDoSol": [
+        "El sol se pone a las {hora}. El Pontal es el mejor lugar para verlo."
+      ],
+      "porDoSolMangue": [
+        "Atardecer con marea baja: día perfecto para visitar el manglar, al final de la Rua das Hortências. Se puede entrar y caminar por él, es seguro."
+      ],
+      "porDoSolJa": [
+        "Faltan {min} minutos para el atardecer. ¡Todavía llegan!"
+      ],
+      "ceuLimpo": [
+        "Cielo despejado hoy. Promete un lindo atardecer a las {hora}."
+      ],
+      "uvAlto": [
+        "Sol fuerte hoy. La playa se disfruta más antes de las 10 o después de las 16."
+      ],
+      "calor": [
+        "{temp}° afuera. La hamaca de la galería está a la sombra."
+      ],
+      "chovendo": [
+        "¿Día de lluvia? Buen momento para un almuerzo sin apuro. Miren nuestros favoritos."
+      ],
+      "chuvaMaisTarde": [
+        "Lluvia desde las {hora}. Aprovechen la playa antes."
+      ],
+      "fome": [
+        "¿Hambre? Acá están nuestros restaurantes favoritos."
+      ],
+      "amanha": [
+        "Mañana: {ceu} y {max}°."
+      ],
+      "amanhaComMare": [
+        "Mañana: {ceu} y {max}°. Marea baja a las {hora}."
+      ],
+      "boaNoite": [
+        "¡Buenas noches! ¿Necesitan algo? Estamos en WhatsApp."
+      ]
+    }
   }
 }

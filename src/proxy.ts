@@ -16,6 +16,13 @@ export function proxy(request: NextRequest) {
   );
   if (pathnameHasLocale) return;
 
+  // QR code dos cartazes: primeiro o hóspede escolhe o idioma (app/bem-vindos).
+  // Se já escolheu antes, vai direto.
+  if (pathname === "/bem-vindos") {
+    const saved = request.cookies.get("locale")?.value;
+    if (!saved || !hasLocale(saved)) return;
+  }
+
   request.nextUrl.pathname = `/${getLocale(request)}${pathname}`;
   return NextResponse.redirect(request.nextUrl);
 }

@@ -14,6 +14,10 @@
   --color-taupe-escuro: #4f4236;
   --color-folha: #6b8f71;
   --color-folha-forte: #4d7455;
+  --color-azul-forte: #4a7486;
+  --color-alerta: #b4432f;
+  --color-alerta-suave: #f7ddd6;
+  --color-noite: #26333f;
 
   --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
 
@@ -44,8 +48,33 @@ body {
   }
 }
 
+/* Conteúdo que chega na tela (páginas do /bem-vindos, troca de dica) */
+@keyframes entrar {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+@utility entrar {
+  animation: entrar 280ms ease-out both;
+}
+
+/* Ícone da categoria "voa" do cartão do menu até o topo da página */
+::view-transition-group(.morph) {
+  animation-duration: 380ms;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .entrar {
+    animation: none;
+  }
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
   }
 }
