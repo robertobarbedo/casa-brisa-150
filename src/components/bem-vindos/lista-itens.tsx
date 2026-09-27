@@ -1,7 +1,8 @@
-import { ExternalLink, MessageCircle, Phone } from "lucide-react";
+import { ExternalLink, MessageCircle, Phone, TriangleAlert } from "lucide-react";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { linkMapa, type Item } from "@/lib/bem-vindos/categorias";
 import { BotaoCopiar } from "./botao-copiar";
+import { LinkComAlerta } from "./link-com-alerta";
 import { iconesItem } from "./visual";
 
 type Props = { itens: Item[]; dict: Dictionary; whatsapp: string };
@@ -16,6 +17,8 @@ export function ListaItens({ itens, dict, whatsapp }: Props) {
         const textos = t.itens[item.id as keyof typeof t.itens];
         const Icone = iconesItem[item.icone];
         const acao = item.acao;
+        const alerta =
+          acao?.tipo === "mapa" && acao.alerta ? t.alertas[acao.alerta as keyof typeof t.alertas] : undefined;
 
         const conteudo = (
           <>
@@ -25,6 +28,12 @@ export function ListaItens({ itens, dict, whatsapp }: Props) {
             <span className="min-w-0 flex-1">
               <span className="block font-bold text-taupe-escuro">{textos.titulo}</span>
               <span className="block text-sm text-pretty">{textos.texto}</span>
+              {alerta && (
+                <span className="mt-1 flex items-center gap-1 text-sm font-bold text-alerta">
+                  <TriangleAlert aria-hidden className="size-4 shrink-0" />
+                  {alerta.aviso}
+                </span>
+              )}
             </span>
           </>
         );
@@ -48,6 +57,22 @@ export function ListaItens({ itens, dict, whatsapp }: Props) {
               ? { href: `https://wa.me/${whatsapp}`, icone: MessageCircle, rotulo: t.whatsapp, externo: true }
               : { href: linkMapa(acao.busca), icone: ExternalLink, rotulo: t.abrirMapa, externo: true };
         const Acao = link.icone;
+
+        if (alerta) {
+          return (
+            <li key={item.id}>
+              <LinkComAlerta
+                href={link.href}
+                ariaLabel={`${textos.titulo}: ${link.rotulo}`}
+                className={`${cartao} transition active:scale-[0.98]`}
+                alerta={alerta}
+              >
+                {conteudo}
+                <Acao aria-hidden className="size-5 shrink-0 text-terracota-forte" />
+              </LinkComAlerta>
+            </li>
+          );
+        }
 
         return (
           <li key={item.id}>

@@ -237,6 +237,15 @@
     "copiar": "Copiar",
     "copiado": "¡Copiado!",
     "whatsapp": "Hablar con los anfitriones",
+    "alertas": {
+      "pontal": {
+        "titulo": "Nunca entren al mar en el Pontal",
+        "texto": "El mar en el Pontal da Daniela es muy peligroso, aunque el agua parezca tranquila. Disfruten la vista y el atardecer desde la arena, pero no entren al agua bajo ninguna circunstancia.",
+        "aviso": "Mar peligroso: nunca entren al agua aquí.",
+        "abrir": "Entendido, abrir el mapa",
+        "voltar": "Volver"
+      }
+    },
     "categorias": {
       "emergencia": {
         "titulo": "Direcciones y teléfonos útiles",

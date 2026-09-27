@@ -237,6 +237,15 @@
     "copiar": "Copy",
     "copiado": "Copied!",
     "whatsapp": "Message your hosts",
+    "alertas": {
+      "pontal": {
+        "titulo": "Never go into the sea at the Pontal",
+        "texto": "The sea at Pontal da Daniela is very dangerous, even when the water looks calm. Enjoy the view and the sunset from the sand, but do not go into the water under any circumstances.",
+        "aviso": "Dangerous sea: never go into the water here.",
+        "abrir": "Got it, open the map",
+        "voltar": "Go back"
+      }
+    },
     "categorias": {
       "emergencia": {
         "titulo": "Useful addresses & phone numbers",

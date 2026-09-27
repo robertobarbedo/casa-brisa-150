@@ -18,7 +18,7 @@
     ],
     "tempo": [],
     "passeios": [
-      { "id": "pontal", "icone": "por-do-sol", "acao": { "tipo": "mapa", "busca": "Pontal da Daniela, Florianópolis" } },
+      { "id": "pontal", "icone": "por-do-sol", "acao": { "tipo": "mapa", "busca": "Pontal da Daniela, Florianópolis", "alerta": "pontal" } },
       { "id": "mangue", "icone": "arvore", "acao": { "tipo": "mapa", "busca": "Rua das Hortências, Praia da Daniela, Florianópolis" } }
     ],
     "comer": [

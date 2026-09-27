@@ -9,7 +9,7 @@ export const ehCategoria = (valor: string): valor is CategoriaId =>
 
 export type Acao =
   | { tipo: "tel"; numero: string }
-  | { tipo: "mapa"; busca: string }
+  | { tipo: "mapa"; busca: string; alerta?: string }
   | { tipo: "whatsapp" }
   | { tipo: "copiar" };
 
