@@ -216,5 +216,14 @@
   "rodape": {
     "texto": "Vacation home at Praia da Daniela, Florianópolis · Brazil",
     "direitos": "All rights reserved."
+  },
+  "naoEncontrada": {
+    "meta": "Page not found · Casa Brisa",
+    "selo": "Error 404",
+    "titulo": "This page went for a swim",
+    "texto": "The address you were looking for doesn’t exist or has moved. But the house is still here, 150 steps from the sea.",
+    "inicio": "Back to the house",
+    "reservar": "See available dates",
+    "whatsapp": "Or message us on WhatsApp"
   }
 }

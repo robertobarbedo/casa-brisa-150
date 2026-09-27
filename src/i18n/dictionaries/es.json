@@ -216,5 +216,14 @@
   "rodape": {
     "texto": "Casa de alquiler en Praia da Daniela, Florianópolis · SC · Brasil",
     "direitos": "Todos los derechos reservados."
+  },
+  "naoEncontrada": {
+    "meta": "Página no encontrada · Casa Brisa",
+    "selo": "Error 404",
+    "titulo": "Esta página se fue a dar un chapuzón",
+    "texto": "La dirección que buscaste no existe o cambió de lugar. Pero la casa sigue aquí, a 150 pasos del mar.",
+    "inicio": "Volver a la casa",
+    "reservar": "Ver fechas disponibles",
+    "whatsapp": "O escríbenos por WhatsApp"
   }
 }

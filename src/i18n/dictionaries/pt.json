@@ -216,5 +216,14 @@
   "rodape": {
     "texto": "Casa de temporada na Praia da Daniela, Florianópolis · SC",
     "direitos": "Todos os direitos reservados."
+  },
+  "naoEncontrada": {
+    "meta": "Página não encontrada · Casa Brisa",
+    "selo": "Erro 404",
+    "titulo": "Essa página foi dar um mergulho",
+    "texto": "O endereço que você procurou não existe ou mudou de lugar. Mas a casa continua aqui, a 150 passos do mar.",
+    "inicio": "Voltar para a casa",
+    "reservar": "Ver datas disponíveis",
+    "whatsapp": "Ou fale com a gente pelo WhatsApp"
   }
 }
