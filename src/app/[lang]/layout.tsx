@@ -9,7 +9,7 @@ import "../globals.css";
 
 const nunito = Nunito({
   variable: "--font-nunito",
-  subsets: ["latin"],
+  subsets: ["latin", "cyrillic"],
 });
 
 export const viewport: Viewport = {

@@ -11,7 +11,7 @@ export default function Escolha() {
       </div>
       <h1 className="text-center text-3xl leading-tight font-bold tracking-tight text-taupe-escuro">
         Bem-vindos
-        <span className="block text-xl font-semibold text-taupe/80">Bienvenidos · Welcome</span>
+        <span className="block text-xl font-semibold text-taupe/80">Bienvenidos · Welcome · <span className="whitespace-nowrap">Добро пожаловать</span></span>
       </h1>
       <EscolherIdioma />
     </main>

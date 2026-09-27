@@ -9,6 +9,7 @@ const opcoes: Record<Locale, { nome: string; ola: string }> = {
   pt: { nome: "Português", ola: "Olá!" },
   es: { nome: "Español", ola: "¡Hola!" },
   en: { nome: "English", ola: "Hello!" },
+  ru: { nome: "Русский", ola: "Здравствуйте!" },
 };
 
 const nada = () => () => {};

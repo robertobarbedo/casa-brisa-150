@@ -11,7 +11,7 @@ import { HORA, inicioDoDia } from "./tempo-local";
  *
  * Para criar uma mensagem nova:
  *   1. acrescente a regra aqui;
- *   2. acrescente agora.mensagens.<id> em pt.json, es.json e en.json.
+ *   2. acrescente agora.mensagens.<id> em pt.json, es.json, en.json e ru.json.
  *
  * Tom: recado de anfitrião, só o que é bom para o hóspede. Nada de regras
  * da casa (lixo, janelas, silêncio, check-out): isso fica nos cartazes.
