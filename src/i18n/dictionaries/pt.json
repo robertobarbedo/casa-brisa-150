@@ -239,12 +239,16 @@
     "whatsapp": "Falar com os anfitriões",
     "categorias": {
       "emergencia": {
-        "titulo": "Emergência",
-        "sub": "Telefones e endereços úteis"
+        "titulo": "Endereços e telefones úteis",
+        "sub": "Emergência"
       },
       "praia": {
         "titulo": "Praia & maré",
         "sub": "Caminho, maré e pôr do sol"
+      },
+      "tempo": {
+        "titulo": "Previsão do tempo",
+        "sub": "Hoje e próximos dias"
       },
       "passeios": {
         "titulo": "O que fazer",
@@ -364,13 +368,28 @@
     },
     "mare": {
       "titulo": "Maré de hoje",
-      "alta": "Alta",
-      "baixa": "Baixa",
+      "dicaBaixa": "Maré baixa: praia mais larga. Boa hora para o Pontal, para caminhar no mangue e para achar lugar na areia.",
+      "dicaAlta": "Maré alta: a faixa de areia fica curta. Nos dias mais cheios, pode ser difícil achar lugar.",
+      "alta": "Maré alta",
+      "baixa": "Maré baixa",
       "agora": "agora",
       "nascer": "Nascer do sol",
       "porDoSol": "Pôr do sol",
       "indisponivel": "A previsão da maré está indisponível agora.",
       "fonte": "Previsão Open-Meteo. Pode variar alguns minutos."
+    },
+    "tempo": {
+      "agora": "Agora",
+      "proximasHoras": "Próximas horas",
+      "proximosDias": "Próximos dias",
+      "hoje": "Hoje",
+      "amanha": "Amanhã",
+      "chuva": "Chuva",
+      "vento": "Vento",
+      "uv": "UV",
+      "uvAlto": "Sol forte: protetor e sombra entre 10h e 16h.",
+      "indisponivel": "A previsão do tempo está indisponível agora.",
+      "fonte": "Previsão Open-Meteo, atualizada a cada 30 minutos."
     }
   },
   "agora": {
@@ -394,7 +413,11 @@
       ],
       "mareBaixa": [
         "Maré baixa às {hora}: o Pontal fica no seu melhor.",
-        "Maré baixa às {hora}: boa hora para caminhar até o Pontal ou visitar o mangue."
+        "Maré baixa às {hora}: boa hora para caminhar até o Pontal ou visitar o mangue.",
+        "Maré baixa às {hora}: praia larga, fácil de achar um bom lugar na areia."
+      ],
+      "mareAlta": [
+        "Maré alta às {hora}: a faixa de areia fica curta. Dia cheio? Vale chegar antes para garantir seu lugar."
       ],
       "porDoSol": [
         "O sol se põe às {hora}. O Pontal é o melhor lugar para ver."

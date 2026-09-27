@@ -3,6 +3,7 @@
 import { useSyncExternalStore } from "react";
 import { ChevronRight } from "lucide-react";
 import { locales, type Locale } from "@/i18n/config";
+import { lembrarIdioma } from "@/lib/bem-vindos/idioma";
 
 const opcoes: Record<Locale, { nome: string; ola: string }> = {
   pt: { nome: "Português", ola: "Olá!" },
@@ -13,11 +14,6 @@ const opcoes: Record<Locale, { nome: string; ola: string }> = {
 const nada = () => () => {};
 /** Idioma do celular, só para destacar a opção provável (a escolha é sempre do hóspede). */
 const idiomaDoCelular = () => navigator.language.slice(0, 2).toLowerCase();
-
-/** Guarda a escolha: da próxima vez, o QR code já abre no idioma certo (ver proxy.ts). */
-function lembrar(l: Locale) {
-  document.cookie = `locale=${l}; path=/; max-age=31536000; samesite=lax`;
-}
 
 export function EscolherIdioma() {
   const sugerido = useSyncExternalStore(nada, idiomaDoCelular, () => null);
@@ -31,7 +27,7 @@ export function EscolherIdioma() {
             <a
               href={`/${l}/bem-vindos`}
               hrefLang={l}
-              onClick={() => lembrar(l)}
+              onClick={() => lembrarIdioma(l)}
               className={`flex h-16 items-center justify-between rounded-3xl px-5 transition active:scale-[0.97] ${
                 destaque
                   ? "bg-terracota-forte text-branco shadow-suave"

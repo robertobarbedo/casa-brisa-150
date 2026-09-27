@@ -239,12 +239,16 @@
     "whatsapp": "Hablar con los anfitriones",
     "categorias": {
       "emergencia": {
-        "titulo": "Emergencias",
-        "sub": "Teléfonos y direcciones útiles"
+        "titulo": "Direcciones y teléfonos útiles",
+        "sub": "Emergencias"
       },
       "praia": {
         "titulo": "Playa y marea",
         "sub": "Camino, marea y atardecer"
+      },
+      "tempo": {
+        "titulo": "Pronóstico del tiempo",
+        "sub": "Hoy y próximos días"
       },
       "passeios": {
         "titulo": "Qué hacer",
@@ -364,13 +368,28 @@
     },
     "mare": {
       "titulo": "Marea de hoy",
-      "alta": "Alta",
-      "baixa": "Baja",
+      "dicaBaixa": "Marea baja: playa más ancha. Buen momento para el Pontal, para caminar por el manglar y para encontrar lugar en la arena.",
+      "dicaAlta": "Marea alta: la franja de arena se achica. En los días más llenos puede ser difícil encontrar lugar.",
+      "alta": "Marea alta",
+      "baixa": "Marea baja",
       "agora": "ahora",
       "nascer": "Amanecer",
       "porDoSol": "Atardecer",
       "indisponivel": "El pronóstico de la marea no está disponible ahora.",
       "fonte": "Pronóstico Open-Meteo. Puede variar algunos minutos."
+    },
+    "tempo": {
+      "agora": "Ahora",
+      "proximasHoras": "Próximas horas",
+      "proximosDias": "Próximos días",
+      "hoje": "Hoy",
+      "amanha": "Mañana",
+      "chuva": "Lluvia",
+      "vento": "Viento",
+      "uv": "UV",
+      "uvAlto": "Sol fuerte: protector y sombra entre las 10 y las 16.",
+      "indisponivel": "El pronóstico del tiempo no está disponible ahora.",
+      "fonte": "Pronóstico Open-Meteo, actualizado cada 30 minutos."
     }
   },
   "agora": {
@@ -394,7 +413,11 @@
       ],
       "mareBaixa": [
         "Marea baja a las {hora}: el Pontal está en su mejor momento.",
-        "Marea baja a las {hora}: buen momento para caminar hasta el Pontal o visitar el manglar."
+        "Marea baja a las {hora}: buen momento para caminar hasta el Pontal o visitar el manglar.",
+        "Marea baja a las {hora}: playa ancha, fácil encontrar un buen lugar en la arena."
+      ],
+      "mareAlta": [
+        "Marea alta a las {hora}: la franja de arena se achica. ¿Día lleno? Conviene llegar antes para asegurar su lugar."
       ],
       "porDoSol": [
         "El sol se pone a las {hora}. El Pontal es el mejor lugar para verlo."

@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, ChevronRight, Cloud, CloudRain, Moon, Sun, Sunset, Waves, type LucideIcon } from "lucide-react";
+import { ArrowRight, ChevronRight, Cloud, CloudRain, Moon, Sun, SunMedium, Sunset, Waves, type LucideIcon } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import { montarContexto } from "@/lib/agora/contexto";
 import { escolherMensagens, type TextosAgora } from "@/lib/agora/motor";
@@ -54,13 +54,17 @@ export function FaixaAgora({ lang, previsao, local, whatsapp, textos, mare }: Pr
   const { fundo, icone: Icone, chip } = tema[ctx.periodo];
   const hrefDe = (d: Destino) => (d === "whatsapp" ? `https://wa.me/${whatsapp}` : `/${lang}/bem-vindos/${d}`);
 
-  const chips: { icone: LucideIcon; texto: string }[] = [];
+  const chips: { icone: LucideIcon; texto: string; forte?: boolean }[] = [];
   if (ctx.proximaMare) {
     const rotulo = ctx.proximaMare.tipo === "alta" ? mare.alta : mare.baixa;
     chips.push({ icone: Waves, texto: `${rotulo} ${formatarHora(ctx.proximaMare.t, lang)}` });
   }
   if (ctx.minAtePorDoSol > 0) chips.push({ icone: Sunset, texto: formatarHora(ctx.porDoSol, lang) });
   if (ctx.tempo) chips.push({ icone: iconeCeu[ctx.tempo.ceu], texto: `${ctx.tempo.temp}°` });
+  // UV só de dia; a partir de 8 (muito alto) o chip ganha cor de alerta.
+  if (ctx.tempo && ctx.tempo.uvAgora >= 1) {
+    chips.push({ icone: SunMedium, texto: `UV ${ctx.tempo.uvAgora}`, forte: ctx.tempo.uvAgora >= 8 });
+  }
 
   const texto = (
     <span key={atual.id} className="entrar block text-xl leading-snug font-bold text-balance">
@@ -73,10 +77,23 @@ export function FaixaAgora({ lang, previsao, local, whatsapp, textos, mare }: Pr
     <section aria-live="polite" className={`relative overflow-hidden rounded-3xl p-5 shadow-suave ${fundo}`}>
       <Icone aria-hidden className="absolute -top-4 -right-4 size-28 opacity-15" strokeWidth={1.25} />
 
-      <p className="flex items-center gap-2 text-xs font-bold tracking-wide uppercase opacity-80">
-        <span className="size-2 animate-pulse rounded-full bg-current" />
-        {textos.rotulo} · {formatarHora(ctx.agora, lang)}
-      </p>
+      <div className="relative flex items-center justify-between gap-2">
+        <p className="flex items-center gap-2 text-xs font-bold tracking-wide uppercase opacity-80">
+          <span className="size-2 animate-pulse rounded-full bg-current" />
+          {textos.rotulo} · {formatarHora(ctx.agora, lang)}
+        </p>
+        {mensagens.length > 1 && (
+          <button
+            type="button"
+            onClick={() => setIndice((i) => (i + 1) % mensagens.length)}
+            aria-label={textos.proxima}
+            className={`-my-1.5 inline-flex h-8 shrink-0 items-center gap-1 rounded-full pr-2 pl-3 text-xs font-bold transition active:scale-95 ${chip}`}
+          >
+            {(indice % mensagens.length) + 1}/{mensagens.length}
+            <ChevronRight aria-hidden className="size-4" />
+          </button>
+        )}
+      </div>
 
       <div className="mt-2 min-h-[3.75rem]">
         {atual.destino ? (
@@ -94,28 +111,17 @@ export function FaixaAgora({ lang, previsao, local, whatsapp, textos, mare }: Pr
         )}
       </div>
 
-      <div className="mt-4 flex items-center justify-between gap-2">
-        <ul className="flex flex-wrap gap-1.5 text-xs font-bold">
-          {chips.map(({ icone: I, texto }) => (
-            <li key={texto} className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 ${chip}`}>
-              <I aria-hidden className="size-3.5" />
-              {texto}
-            </li>
-          ))}
-        </ul>
-
-        {mensagens.length > 1 && (
-          <button
-            type="button"
-            onClick={() => setIndice((i) => (i + 1) % mensagens.length)}
-            aria-label={textos.proxima}
-            className={`inline-flex h-9 shrink-0 items-center gap-1 rounded-full pr-2 pl-3 text-xs font-bold transition active:scale-95 ${chip}`}
+      <ul className="mt-4 flex flex-wrap gap-1.5 text-xs font-bold">
+        {chips.map(({ icone: I, texto, forte }) => (
+          <li
+            key={texto}
+            className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 ${forte ? "bg-sol-suave text-sol" : chip}`}
           >
-            {(indice % mensagens.length) + 1}/{mensagens.length}
-            <ChevronRight aria-hidden className="size-4" />
-          </button>
-        )}
-      </div>
+            <I aria-hidden className="size-3.5" />
+            {texto}
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

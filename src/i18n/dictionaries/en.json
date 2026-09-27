@@ -239,12 +239,16 @@
     "whatsapp": "Message your hosts",
     "categorias": {
       "emergencia": {
-        "titulo": "Emergency",
-        "sub": "Useful numbers and addresses"
+        "titulo": "Useful addresses & phone numbers",
+        "sub": "Emergency"
       },
       "praia": {
         "titulo": "Beach & tides",
         "sub": "Getting there, tides, sunset"
+      },
+      "tempo": {
+        "titulo": "Weather forecast",
+        "sub": "Today and the next few days"
       },
       "passeios": {
         "titulo": "Things to do",
@@ -364,13 +368,28 @@
     },
     "mare": {
       "titulo": "Today's tide",
-      "alta": "High",
-      "baixa": "Low",
+      "dicaBaixa": "Low tide: a wider beach. A good time for the Pontal, for walking in the mangrove and for finding a spot on the sand.",
+      "dicaAlta": "High tide: the strip of sand gets narrow. On busy days it can be hard to find a spot.",
+      "alta": "High tide",
+      "baixa": "Low tide",
       "agora": "now",
       "nascer": "Sunrise",
       "porDoSol": "Sunset",
       "indisponivel": "The tide forecast is unavailable right now.",
       "fonte": "Open-Meteo forecast. May vary by a few minutes."
+    },
+    "tempo": {
+      "agora": "Now",
+      "proximasHoras": "Next hours",
+      "proximosDias": "Next few days",
+      "hoje": "Today",
+      "amanha": "Tomorrow",
+      "chuva": "Rain",
+      "vento": "Wind",
+      "uv": "UV",
+      "uvAlto": "Strong sun: sunscreen and shade between 10 am and 4 pm.",
+      "indisponivel": "The weather forecast is unavailable right now.",
+      "fonte": "Open-Meteo forecast, updated every 30 minutes."
     }
   },
   "agora": {
@@ -394,7 +413,11 @@
       ],
       "mareBaixa": [
         "Low tide at {hora}: the Pontal is at its most beautiful.",
-        "Low tide at {hora}: a good time to walk to the Pontal or visit the mangrove."
+        "Low tide at {hora}: a good time to walk to the Pontal or visit the mangrove.",
+        "Low tide at {hora}: a wide beach, easy to find a good spot on the sand."
+      ],
+      "mareAlta": [
+        "High tide at {hora}: the strip of sand gets narrow. Busy day? Get there early to grab a spot."
       ],
       "porDoSol": [
         "Sunset is at {hora}. The Pontal is the best spot to watch it."

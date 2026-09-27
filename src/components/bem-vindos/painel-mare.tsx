@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
-import { Sunrise, Sunset } from "lucide-react";
+import { ArrowDownToLine, ArrowUpToLine, Sunrise, Sunset } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { eventosDeMare } from "@/lib/agora/contexto";
@@ -50,10 +50,20 @@ export function PainelMare({ lang, mare, local, textos }: Props) {
   return (
     <section className="rounded-3xl bg-azul-suave/70 p-4">
       <h2 className="font-bold text-taupe-escuro">{textos.titulo}</h2>
+      <ul className="mt-2 flex flex-col gap-1.5 text-sm text-pretty">
+        <li className="flex gap-2">
+          <ArrowDownToLine aria-hidden className="mt-0.5 size-4 shrink-0 text-azul-forte" />
+          {textos.dicaBaixa}
+        </li>
+        <li className="flex gap-2">
+          <ArrowUpToLine aria-hidden className="mt-0.5 size-4 shrink-0 text-azul-forte" />
+          {textos.dicaAlta}
+        </li>
+      </ul>
 
       {pontos.length > 1 ? (
         <>
-          <svg viewBox={`0 0 ${L} ${A}`} className="mt-3 w-full overflow-visible" role="img" aria-label={textos.titulo}>
+          <svg viewBox={`0 0 ${L} ${A}`} className="mt-6 w-full overflow-visible" role="img" aria-label={textos.titulo}>
             {/* Faixa da noite antes do nascer e depois do pôr do sol */}
             <rect x={0} y={0} width={Math.max(0, x(sol.nascer))} height={A} className="fill-noite/5" />
             <rect x={x(sol.porDoSol)} y={0} width={Math.max(0, L - x(sol.porDoSol))} height={A} className="fill-noite/5" />

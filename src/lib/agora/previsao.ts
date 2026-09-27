@@ -32,11 +32,11 @@ async function buscarTempo({ latitude, longitude }: Local): Promise<Previsao["te
       new URLSearchParams({
         latitude: String(latitude),
         longitude: String(longitude),
-        current: "temperature_2m,weather_code,precipitation",
-        hourly: "precipitation_probability,cloud_cover",
-        daily: "weather_code,temperature_2m_max,uv_index_max",
+        current: "temperature_2m,weather_code,precipitation,wind_speed_10m,wind_direction_10m",
+        hourly: "temperature_2m,weather_code,precipitation_probability,cloud_cover,uv_index",
+        daily: "weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,uv_index_max",
         timezone: "America/Sao_Paulo",
-        forecast_days: "3",
+        forecast_days: "4",
       }),
   );
   if (!j?.current || !j.hourly || !j.daily) return null;
@@ -47,16 +47,23 @@ async function buscarTempo({ latitude, longitude }: Local): Promise<Previsao["te
       temp: j.current.temperature_2m,
       codigo: j.current.weather_code,
       chuva: j.current.precipitation,
+      vento: j.current.wind_speed_10m,
+      ventoDirecao: j.current.wind_direction_10m,
     },
     horas: (j.hourly.time as string[]).map((t, i) => ({
       t: paraMs(t, off),
+      temp: j.hourly.temperature_2m[i],
+      codigo: j.hourly.weather_code[i],
       chuvaProb: j.hourly.precipitation_probability[i] ?? 0,
       nuvens: j.hourly.cloud_cover[i] ?? 0,
+      uv: j.hourly.uv_index[i] ?? 0,
     })),
     dias: (j.daily.time as string[]).map((d, i) => ({
       t: paraMs(`${d}T00:00`, off),
       codigo: j.daily.weather_code[i],
       max: j.daily.temperature_2m_max[i],
+      min: j.daily.temperature_2m_min[i],
+      chuvaProb: j.daily.precipitation_probability_max[i] ?? 0,
       uvMax: j.daily.uv_index_max[i] ?? 0,
     })),
   };

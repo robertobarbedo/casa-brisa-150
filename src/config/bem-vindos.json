@@ -16,6 +16,7 @@
     "praia": [
       { "id": "caminho", "icone": "seta", "acao": { "tipo": "mapa", "busca": "Praia da Daniela, Florianópolis" } }
     ],
+    "tempo": [],
     "passeios": [
       { "id": "pontal", "icone": "por-do-sol", "acao": { "tipo": "mapa", "busca": "Pontal da Daniela, Florianópolis" } },
       { "id": "mangue", "icone": "arvore", "acao": { "tipo": "mapa", "busca": "Rua das Hortências, Praia da Daniela, Florianópolis" } }

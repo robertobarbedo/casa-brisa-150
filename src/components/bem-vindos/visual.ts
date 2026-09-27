@@ -1,6 +1,7 @@
 import {
   Banknote,
   Car,
+  CloudSun,
   Compass,
   CookingPot,
   Croissant,
@@ -31,6 +32,7 @@ import type { CategoriaId } from "@/lib/bem-vindos/categorias";
 export const visualCategoria: Record<CategoriaId, { icone: LucideIcon; tom: string }> = {
   emergencia: { icone: LifeBuoy, tom: "bg-alerta-suave text-alerta" },
   praia: { icone: Waves, tom: "bg-azul-suave text-azul-forte" },
+  tempo: { icone: CloudSun, tom: "bg-sol-suave text-sol" },
   passeios: { icone: Compass, tom: "bg-folha/15 text-folha-forte" },
   comer: { icone: UtensilsCrossed, tom: "bg-terracota-suave text-terracota-forte" },
   perto: { icone: MapPin, tom: "bg-areia text-taupe-escuro" },
@@ -61,3 +63,4 @@ export const iconesItem: Record<string, LucideIcon> = {
   gota: Droplet,
   carro: Car,
 };
+

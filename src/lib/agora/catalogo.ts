@@ -1,5 +1,5 @@
 import type { Contexto, Regra } from "./tipos";
-import { mareBaixaPerto } from "./contexto";
+import { mareBaixaPerto, marePerto } from "./contexto";
 import { HORA, inicioDoDia } from "./tempo-local";
 
 /**
@@ -58,7 +58,7 @@ export const catalogo: Regra[] = [
     quando: (c) =>
       !!c.tempo && !c.tempo.chovendo && c.tempo.chuvaEm !== null && c.minutoDoDia >= h(7) && c.minutoDoDia < h(17),
     valores: (c) => ({ hora: { hora: c.tempo!.chuvaEm! } }),
-    destino: "praia",
+    destino: "tempo",
   },
 
   // ── Maré ────────────────────────────────────────────────────
@@ -72,6 +72,20 @@ export const catalogo: Regra[] = [
     },
     valores: (c) => ({ hora: { hora: mareBaixaPerto(c, c.agora + 1.25 * HORA, 1.75 * HORA)!.t } }),
     destino: "passeios",
+  },
+
+  {
+    // Na maré alta a faixa de areia encolhe: em dia cheio, falta lugar.
+    id: "mareAlta",
+    prioridade: 65,
+    quando: (c) =>
+      c.diaDeMovimento &&
+      c.minutoDoDia >= h(8) &&
+      c.minutoDoDia < h(16) &&
+      !c.tempo?.chovendo &&
+      !!proximaAlta(c),
+    valores: (c) => ({ hora: { hora: proximaAlta(c)!.t } }),
+    destino: "praia",
   },
 
   // ── Dicas do dia ────────────────────────────────────────────
@@ -119,7 +133,7 @@ export const catalogo: Regra[] = [
     prioridade: 45,
     quando: (c) => !!c.tempo?.amanha && c.minutoDoDia >= h(20.5) && !baixaDeAmanha(c),
     valores: (c) => ({ ceu: { ceu: c.tempo!.amanha!.ceu }, max: c.tempo!.amanha!.max }),
-    destino: "praia",
+    destino: "tempo",
   },
   {
     id: "fome",
@@ -153,6 +167,9 @@ export const catalogo: Regra[] = [
     quando: () => true,
   },
 ];
+
+/** Maré alta nas próximas 3 h ("chegar antes" só faz sentido antes dela). */
+const proximaAlta = (c: Contexto) => marePerto(c, "alta", c.agora + 1.5 * HORA, 1.5 * HORA);
 
 /** Primeira maré baixa de amanhã entre 6h e 18h. */
 function baixaDeAmanha(c: Contexto) {

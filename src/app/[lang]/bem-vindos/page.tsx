@@ -7,8 +7,8 @@ import { getDictionary, type Dictionary } from "@/i18n/get-dictionary";
 import { casa } from "@/lib/casa";
 import { buscarPrevisao } from "@/lib/agora/previsao";
 import { categorias, type CategoriaId } from "@/lib/bem-vindos/categorias";
-import { Header } from "@/components/header";
 import { FaixaAgora } from "@/components/bem-vindos/faixa-agora";
+import { SeletorIdioma } from "@/components/bem-vindos/seletor-idioma";
 import { visualCategoria } from "@/components/bem-vindos/visual";
 
 type CartaoProps = { id: CategoriaId; lang: Locale; t: Dictionary["bemVindos"]; largo?: boolean };
@@ -50,9 +50,11 @@ export default async function BemVindos({ params }: PageProps<"/[lang]/bem-vindo
 
   return (
     <>
-      <Header lang={lang} dict={dict} caminho="/bem-vindos" inicio="/bem-vindos" />
-      <main className="mx-auto max-w-md scroll-mt-[calc(3.5rem+env(safe-area-inset-top))] px-4 pt-5 pb-[calc(2rem+env(safe-area-inset-bottom))]">
-        <h1 className="text-2xl font-bold tracking-tight text-taupe-escuro">{t.ola}</h1>
+      <main className="mx-auto max-w-md px-4 pt-[calc(1.25rem+env(safe-area-inset-top))] pb-[calc(2rem+env(safe-area-inset-bottom))]">
+        <div className="flex items-start justify-between gap-3">
+          <h1 className="text-2xl font-bold tracking-tight text-balance text-taupe-escuro">{t.ola}</h1>
+          <SeletorIdioma lang={lang} aria={dict.nav.idioma} />
+        </div>
         <p className="mt-1 text-sm">{t.sub}</p>
 
         <div className="mt-5">

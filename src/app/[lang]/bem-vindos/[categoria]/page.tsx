@@ -7,9 +7,9 @@ import { getDictionary } from "@/i18n/get-dictionary";
 import { casa } from "@/lib/casa";
 import { buscarPrevisao } from "@/lib/agora/previsao";
 import { categorias, ehCategoria, itensDe, numerosEmergencia } from "@/lib/bem-vindos/categorias";
-import { Header } from "@/components/header";
 import { ListaItens } from "@/components/bem-vindos/lista-itens";
 import { PainelMare } from "@/components/bem-vindos/painel-mare";
+import { PainelTempo } from "@/components/bem-vindos/painel-tempo";
 import { visualCategoria } from "@/components/bem-vindos/visual";
 
 export function generateStaticParams() {
@@ -22,7 +22,7 @@ export default async function Categoria({ params }: PageProps<"/[lang]/bem-vindo
 
   const [dict, previsao] = await Promise.all([
     getDictionary(lang),
-    categoria === "praia" ? buscarPrevisao(casa.mapa) : null,
+    categoria === "praia" || categoria === "tempo" ? buscarPrevisao(casa.mapa) : null,
   ]);
   const t = dict.bemVindos;
   const { icone: Icone, tom } = visualCategoria[categoria];
@@ -30,8 +30,7 @@ export default async function Categoria({ params }: PageProps<"/[lang]/bem-vindo
 
   return (
     <>
-      <Header lang={lang} dict={dict} caminho={`/bem-vindos/${categoria}`} inicio="/bem-vindos" />
-      <main className="mx-auto max-w-md scroll-mt-[calc(3.5rem+env(safe-area-inset-top))] px-4 pt-5 pb-[calc(6rem+env(safe-area-inset-bottom))]">
+      <main className="mx-auto max-w-md px-4 pt-[calc(1.5rem+env(safe-area-inset-top))] pb-[calc(6rem+env(safe-area-inset-bottom))]">
         <div className="flex items-center gap-3">
           <ViewTransition name={`categoria-${categoria}`} share="morph" default="none">
             <span className={`grid size-14 shrink-0 place-items-center rounded-2xl ${tom}`}>
@@ -61,6 +60,10 @@ export default async function Categoria({ params }: PageProps<"/[lang]/bem-vindo
                 </a>
               ))}
             </div>
+          )}
+
+          {categoria === "tempo" && previsao && (
+            <PainelTempo lang={lang} tempo={previsao.tempo} textos={t.tempo} ceu={dict.agora.ceu} />
           )}
 
           {categoria === "praia" && previsao && (

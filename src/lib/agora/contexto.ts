@@ -51,6 +51,10 @@ export function montarContexto(
   const { nascer, porDoSol } = solDoDia(diaUtc, local.latitude, local.longitude);
   const minAtePorDoSol = Math.round((porDoSol - agora) / MINUTO);
   const minuto = minutoDoDia(agora);
+  // A meia-noite local é 03:00 UTC: a data UTC desse instante é a data local.
+  const data = new Date(hoje);
+  const fimDeSemana = data.getUTCDay() === 0 || data.getUTCDay() === 6;
+  const verao = [11, 0, 1].includes(data.getUTCMonth());
 
   const mares = previsao.mare ? eventosDeMare(previsao.mare) : [];
 
@@ -68,6 +72,7 @@ export function montarContexto(
       ceu: ceuDoCodigo(p.atual.codigo),
       chovendo: p.atual.chuva > 0.2 || ceuDoCodigo(p.atual.codigo) === "chuva",
       uvMax: hojeDia?.uvMax ?? 0,
+      uvAgora: p.horas.length ? Math.round(horaMaisPerto(agora).uv) : 0,
       nuvensPorDoSol: p.horas.length ? horaMaisPerto(porDoSol).nuvens : null,
       chuvaEm: chuvaFutura?.t ?? null,
       amanha: amanhaDia ? { ceu: ceuDoCodigo(amanhaDia.codigo), max: Math.round(amanhaDia.max) } : null,
@@ -79,6 +84,7 @@ export function montarContexto(
     minutoDoDia: minuto,
     diaDoAno: Math.floor(hoje / (24 * HORA)),
     periodo: periodoDo(minuto, minAtePorDoSol),
+    diaDeMovimento: fimDeSemana || verao,
     nascer,
     porDoSol,
     minAtePorDoSol,
@@ -88,6 +94,9 @@ export function montarContexto(
   };
 }
 
+/** Maré (alta ou baixa) dentro de ±janela de um instante. */
+export const marePerto = (ctx: Contexto, tipo: EventoMare["tipo"], t: number, janela: number) =>
+  ctx.mares.find((m) => m.tipo === tipo && Math.abs(m.t - t) <= janela) ?? null;
+
 /** Maré baixa dentro de ±janela de um instante (ex.: perto do pôr do sol). */
-export const mareBaixaPerto = (ctx: Contexto, t: number, janela: number) =>
-  ctx.mares.find((m) => m.tipo === "baixa" && Math.abs(m.t - t) <= janela) ?? null;
+export const mareBaixaPerto = (ctx: Contexto, t: number, janela: number) => marePerto(ctx, "baixa", t, janela);

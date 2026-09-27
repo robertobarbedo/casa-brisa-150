@@ -19,9 +19,9 @@ import type { CategoriaId } from "@/lib/bem-vindos/categorias";
 /** Dados de tempo e maré, serializáveis (vão do servidor para o cliente). */
 export type Previsao = {
   tempo: {
-    atual: { temp: number; codigo: number; chuva: number };
-    horas: { t: number; chuvaProb: number; nuvens: number }[];
-    dias: { t: number; codigo: number; max: number; uvMax: number }[];
+    atual: { temp: number; codigo: number; chuva: number; vento: number; ventoDirecao: number };
+    horas: { t: number; temp: number; codigo: number; chuvaProb: number; nuvens: number; uv: number }[];
+    dias: { t: number; codigo: number; max: number; min: number; chuvaProb: number; uvMax: number }[];
   } | null;
   /** Nível do mar hora a hora (m), para achar marés altas e baixas. */
   mare: { t: number; nivel: number }[] | null;
@@ -41,6 +41,8 @@ export type Contexto = {
   /** Dia do ano, usado para variar o texto de um dia para o outro. */
   diaDoAno: number;
   periodo: Periodo;
+  /** Fim de semana ou alta temporada (dez–fev): praia mais cheia. Feriados não entram. */
+  diaDeMovimento: boolean;
   nascer: number;
   porDoSol: number;
   /** Negativo depois que o sol já se pôs. */
@@ -52,6 +54,8 @@ export type Contexto = {
     ceu: Ceu;
     chovendo: boolean;
     uvMax: number;
+    /** Índice UV da hora atual (0 à noite). */
+    uvAgora: number;
     /** Nuvens (%) na hora do pôr do sol. */
     nuvensPorDoSol: number | null;
     /** Primeira hora com chuva provável nas próximas 6 h. */

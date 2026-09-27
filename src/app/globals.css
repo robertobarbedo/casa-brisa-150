@@ -18,6 +18,8 @@
   --color-alerta: #b4432f;
   --color-alerta-suave: #f7ddd6;
   --color-noite: #26333f;
+  --color-sol: #9a6512;
+  --color-sol-suave: #fbeecd;
 
   --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
 
