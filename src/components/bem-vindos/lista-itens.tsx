@@ -1,4 +1,4 @@
-import { ExternalLink, MessageCircle, Phone, TriangleAlert } from "lucide-react";
+import { ExternalLink, MessageCircle, Phone } from "lucide-react";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { linkMapa, type Item } from "@/lib/bem-vindos/categorias";
 import { BotaoCopiar } from "./botao-copiar";
@@ -29,10 +29,7 @@ export function ListaItens({ itens, dict, whatsapp }: Props) {
               <span className="block font-bold text-taupe-escuro">{textos.titulo}</span>
               <span className="block text-sm text-pretty">{textos.texto}</span>
               {alerta && (
-                <span className="mt-1 flex items-center gap-1 text-sm font-bold text-alerta">
-                  <TriangleAlert aria-hidden className="size-4 shrink-0" />
-                  {alerta.aviso}
-                </span>
+                <span className="mt-1 block text-sm font-bold text-alerta">{alerta.aviso}</span>
               )}
             </span>
           </>

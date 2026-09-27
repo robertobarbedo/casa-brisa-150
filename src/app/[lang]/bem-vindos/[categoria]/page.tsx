@@ -50,11 +50,11 @@ export default async function Categoria({ params }: PageProps<"/[lang]/bem-vindo
                 <a
                   key={n.id}
                   href={`tel:${n.tel}`}
-                  className="flex flex-col items-center rounded-3xl bg-alerta px-2 py-3 text-center text-branco shadow-suave transition active:scale-95"
+                  className="flex flex-col items-center rounded-3xl bg-branco px-2 py-3 text-center text-alerta ring-1 ring-alerta/40 transition active:scale-95"
                 >
                   <Phone aria-hidden className="size-4 opacity-80" />
                   <span className="text-2xl font-bold">{n.tel}</span>
-                  <span className="text-[11px] leading-tight font-bold opacity-90">
+                  <span className="text-[11px] leading-tight font-bold text-taupe">
                     {t.numeros[n.id as keyof typeof t.numeros]}
                   </span>
                 </a>
