@@ -1,7 +1,7 @@
 import dados from "@/config/bem-vindos.json";
 
 /** Ordem do menu do /bem-vindos. Emergência sempre primeiro. */
-export const categorias = ["emergencia", "praia", "tempo", "passeios", "comer", "perto", "casa"] as const;
+export const categorias = ["emergencia", "tempo", "praia", "passeios", "comer", "perto", "casa"] as const;
 export type CategoriaId = (typeof categorias)[number];
 
 export const ehCategoria = (valor: string): valor is CategoriaId =>
