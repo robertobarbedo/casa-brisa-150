@@ -1,7 +1,7 @@
-# Cartaz do Hóspede · Casa Brisa — DRAFT v2
+# Cartaz do Hóspede · Casa Brisa — DRAFT v3
 
-Agora pensado como **cartaz de parede**, para quem já está dentro da casa.
-Nada de boas-vindas longas, chegada, chave ou venda — quem lê isso já entrou.
+Cartaz de parede, para quem já está dentro da casa. Nada de boas-vindas
+longas, chegada, chave ou venda — quem lê isso já entrou.
 
 **Formato sugerido:** duas folhas A3 (ou A4 se a parede for pequena),
 plastificadas ou em moldura fina.
@@ -14,7 +14,7 @@ plastificadas ou em moldura fina.
 sentido; o texto só confirma. Se uma linha não couber em ~9 palavras, ela é
 longa demais para parede — vai para a versão online.
 
-Tudo entre «aspas angulares» precisa ser preenchido antes de imprimir.
+Tudo entre «aspas angulares» ainda precisa ser resolvido antes de imprimir.
 
 ---
 ---
@@ -40,9 +40,6 @@ Tudo entre «aspas angulares» precisa ser preenchido antes de imprimir.
 >
 > **Check-out até as 11h** · hasta las 11 h · by 11 am
 
-Se der, um QR code do Wi-Fi ao lado da senha — ninguém digita senha de
-roteador sem errar.
-
 ## Como funciona
 
 **❄️ Ar-condicionado**
@@ -50,20 +47,15 @@ Portas e janelas fechadas. Desligue ao sair.
 *Puertas y ventanas cerradas. Apagar al salir.*
 *Doors and windows closed. Switch off when you leave.*
 
-**🚿 Água quente**
-«Gás / boiler». Demora «X» segundos para esquentar.
-*«Gas / termotanque». Tarda «X» segundos.*
-*«Gas / boiler». Takes about «X» seconds.*
-
 **🍳 Cozinha**
-Café, sal, azeite e temperos em «___» — use à vontade.
-*Café, sal, aceite y condimentos en «___» — a disposición.*
-*Coffee, salt, oil and spices in «___» — help yourself.*
+Café, sal, azeite e temperos — use à vontade.
+*Café, sal, aceite y condimentos — a disposición.*
+*Coffee, salt, oil and spices — help yourself.*
 
 **👕 Máquina de lavar**
-«Local». Sabão em «___». Programa curto: «botão ___».
-*«Lugar». Jabón en «___». Programa corto: «botón ___».*
-*«Location». Detergent in «___». Short cycle: «button ___».*
+Nos fundos, ao lado do tanque.
+*En el fondo, al lado del lavadero.*
+*Out back, next to the laundry sink.*
 
 **📺 TV**
 Entre nas suas contas — e saia delas antes do check-out.
@@ -76,33 +68,28 @@ Carvão não incluso. Deixe as brasas apagarem sozinhas.
 *Charcoal not included. Let the embers burn out on their own.*
 
 **🔌 Carro elétrico**
-Tomada «220 V / «X» A» em «___». Uso gratuito, é só ligar o seu cabo.
-*Toma «220 V / «X» A» en «___». Uso gratuito, enchufen su cable.*
-*«220 V / «X» A» outlet at «___». Free to use — just plug in your cable.*
+Tomada 220 V / 20 A. Uso gratuito, é só ligar o seu cabo.
+*Toma 220 V / 20 A. Uso gratuito, enchufen su cable.*
+*220 V / 20 A outlet. Free to use — just plug in your cable.*
 
-Sem cabo? Carregador público mais perto: «nome · «X» min».
-*¿Sin cable? Cargador público más cercano: «nombre · «X» min».*
-*No cable? Nearest public charger: «name · «X» min».*
-
-**⚡ Faltou luz num cômodo?**
-Quadro de disjuntores em «___».
-*Tablero de térmicas en «___».*
-*Fuse box in «___».*
+Sem cabo? Carregador público mais perto: Jurerê Sports Center · 5 min 🚗
+*¿Sin cable? Cargador público más cercano: Jurerê Sports Center · 5 min 🚗*
+*No cable? Nearest public charger: Jurerê Sports Center · 5 min 🚗*
 
 **🚰 Registro de água**
-Fica em «___».
-*Llave de paso en «___».*
-*Water shut-off valve in «___».*
+Nos fundos, ao lado do pergolado, na base da caixa d'água.
+*En el fondo, al lado de la pérgola, en la base del tanque de agua.*
+*Out back, beside the pergola, at the base of the water tank.*
 
 ## Lixo
 
-**🗑️ Lixo comum** — «dias». Na lixeira da frente, só na véspera à noite.
-*Basura común — «días». En el tacho del frente, la noche anterior.*
-*General waste — «days». In the bin out front, the night before.*
+**🗑️ Lixo comum** — todos os dias. Deixe na calçada só à noite.
+*Basura común — todos los días. En la vereda, solo de noche.*
+*General waste — every day. Out on the kerb at night only.*
 
-**♻️ Reciclável** — «dias». Lixeira «cor», em «___».
-*Reciclables — «días». Tacho «color», en «___».*
-*Recycling — «days». «Colour» bin, in «___».*
+**♻️ Reciclável** — segundas-feiras. Lixeira azul, nos fundos.
+*Reciclables — los lunes. Tacho azul, en el fondo.*
+*Recycling — Mondays. Blue bin, out back.*
 
 ---
 ---
@@ -122,17 +109,13 @@ Fica em «___».
 >
 > | | |
 > |---|---|
-> | Hospital | «nome · endereço» |
-> | Farmácia 24 h | «nome · endereço» |
-> | Veterinário 24 h | «nome · telefone» |
-> | Vizinho / caseiro | «nome · telefone» |
-> | Extintor | «local» |
-> | Falta de luz (Celesc) | «confirmar número» |
+> | **Hospital** | UPA Norte — R. Francisco Faustino Martins, s/n, Vargem Grande, Florianópolis · SC |
+> | **Farmácia até meia-noite** *Farmacia hasta medianoche · Pharmacy until midnight* | Farmácia Vida — Av. das Raias, 261, sala 2, Jurerê, Florianópolis · SC |
+> | **Veterinário 24 h** *Veterinaria · Vet* | HVJ — +55 48 3284-2102 |
+> | **Falta de luz** *Corte de luz · Power outage* | Celesc — 0800 048 0196 |
 
-O endereço da casa, por extenso, tem que estar neste cartaz — em emergência,
-ninguém lembra o número da rua de uma casa alugada:
-
-> **Estamos em: «rua, número — Praia da Daniela, Florianópolis · SC»**
+> **Estamos em: Rua dos Cravos, 150 — Praia da Daniela, Florianópolis · SC**
+> *Estamos en · We are at*
 
 ## Casa de família
 
@@ -144,16 +127,17 @@ ninguém lembra o número da rua de uma casa alugada:
 **🚭 Não fume dentro de casa** — no quintal, tudo bem
 *No fumar adentro — en el fondo, sí · No smoking indoors — outside is fine*
 
-**🌙 Silêncio depois das 22h** — os vizinhos moram aqui o ano todo
-*Silencio después de las 22 h · Quiet after 10 pm*
+**🌙 Silêncio depois das 22h** — sem exceção
+*Silencio después de las 22 h — sin excepción*
+*Quiet after 10 pm — no exceptions*
 
-**🐾 Pets são bem-vindos** — só não na cama nem no sofá
-*Mascotas bienvenidas — no en camas ni sillones*
-*Pets welcome — just not on beds or sofas*
+**🐾 Pets são bem-vindos** — «falta a regra: cama e sofá?»
+*Mascotas bienvenidas*
+*Pets welcome*
 
-**🏖️ Areia fica na praia** — ducha de pés em «___»
-*La arena se queda en la playa — ducha en «___»*
-*Sand stays at the beach — foot shower at «___»*
+**🚿 Ducha para os pés na entrada** — sempre feche o registro laranja.
+*Ducha para los pies en la entrada — cierren siempre la llave naranja.*
+*Foot shower by the entrance — always close the orange tap.*
 
 ## Para a praia (150 m)
 
@@ -176,29 +160,26 @@ que todo hóspede pergunta no primeiro dia.
   *Ventanas cerradas · Windows closed*
 - ☐ **Sair das contas da TV**
   *Cerrar sesión en la TV · Sign out of the TV*
-- ☐ **Toalhas usadas «no cesto»**
-  *Toallas usadas «en el cesto» · Used towels «in the basket»*
-- ☐ **Chave «no cofre»**
-  *Llave «en la caja» · Key «in the lockbox»*
-
-**Não precisa lavar roupa de cama nem arrumar as camas.**
-*No hace falta lavar sábanas ni tender las camas.*
-*No need to wash the linen or make the beds.*
+- ☐ **Chave na porta, por dentro, e a porta aberta**
+  *Llave en la puerta, por dentro, y la puerta abierta*
+  *Key in the door, on the inside, and the door left open*
 
 ## Perto daqui
 
+*Cerca de acá · Nearby* — 🚶 a pé · caminando · walk · 🚗 de carro · en auto · by car
+
 | | |
 |---|---|
-| 🛒 Mercado | «nome» · «X» min a pé |
-| 🥖 Padaria | «nome» · «X» min |
-| 💊 Farmácia | «nome» · «X» min |
-| 🏧 Caixa eletrônico | «local» |
-| ⛽ Posto | «nome» · «X» min |
-| 🍽️ Nossos favoritos | «2 restaurantes, com o prato que vale pedir» |
+| 🛒 Mercado · Supermercado · Supermarket | DO-RE-MI ou VT · 2 min 🚶 |
+| 🥖 Padaria · Panadería · Bakery | Panificadora Doce Pão · 10 min 🚶 |
+| 💊 Farmácia · Farmacia · Pharmacy | Farmácia Vida · 5 min 🚗 |
+| 🏧 Caixa · Cajero · ATM | Supermercado Imperatriz · 10 min 🚗 |
+| ⛽ Posto · Nafta · Petrol | Posto Daqui, Jurerê Internacional · 5 min 🚗 |
+| 🍽️ Nossos favoritos · Nuestros favoritos · Our favourites | Il Caravaggio (italiano) · May Santo Antônio (tailandês) |
 
 ## Rodapé
 
-> **QR code → casabrisa150.com/«manual»**
+> **QR code → casabrisa150.com/bem-vindos**
 > Dicas da região, maré, passeios e esta lista atualizada.
 > *Consejos, mareas y paseos · Local tips, tides and day trips*
 
@@ -206,8 +187,6 @@ que todo hóspede pergunta no primeiro dia.
 ---
 
 ## O que ficou de fora (de propósito)
-
-Estava no draft anterior e não faz sentido numa parede:
 
 - Boas-vindas, chegada, check-in, chave, estacionamento — já aconteceu.
 - Qualquer "traga", "leve" ou "não esqueça" — é conselho de mala feita. Na
@@ -220,19 +199,20 @@ Estava no draft anterior e não faz sentido numa parede:
 - Maré, guarda-vidas e aluguel de stand-up — vai para a página online. O
   caminho até a praia ficou, porque é a pergunta do primeiro dia.
 
-## O que falta decidir
+## O que falta resolver
 
-1. **Dados a preencher** — água quente, quadro de luz, registro de água,
-   extintor, dias da coleta, endereço completo, comércio da Daniela,
-   hospital, caseiro/vizinho, amperagem da tomada do carro e o carregador
-   público mais perto. *(Wi-Fi e caminho da praia já preenchidos.)*
-2. **A3 ou A4?** A3 cabe tudo com folga e lê-se de longe. A4 exige cortar
+1. **A regra dos pets sumiu.** Antes era "só não na cama nem no sofá". Ficou
+   só o travessão. Quer a regra de volta, ou o item fica apenas "Pets são
+   bem-vindos"?
+2. **Extintor** não está em nenhum dos dois cartazes. Se a casa tem um, ele
+   merece uma linha no bloco de emergências.
+3. **A3 ou A4?** A3 cabe tudo com folga e lê-se de longe. A4 exige cortar
    "Perto daqui" do cartaz 2 (vira um imã de geladeira separado).
-3. **Ícones** — posso desenhar em SVG na mesma linguagem da logo (traço
-   simples, terracota), para o cartaz parecer parte da casa e não um aviso
-   de condomínio.
-4. **Terceiro cartaz pequeno?** Um A5 só com Wi-Fi para o quarto de casal e
+4. **Ícones** — posso desenhar em SVG na mesma linguagem da logo (traço
+   simples, terracota), no lugar dos emojis, para o cartaz parecer parte da
+   casa e não um aviso de condomínio.
+5. **Terceiro cartaz pequeno?** Um A5 só com Wi-Fi para o quarto de casal e
    para a suíte é barato e evita a caminhada até a cozinha.
-5. **Página online** — se você quiser o QR code, faço `/pt/manual`,
-   `/es/manual` e `/en/manual` no site; aí o cartaz fica curto e o resto
-   (maré, passeios, restaurantes) muda sem reimpressão.
+6. **A página do QR code** — `/bem-vindos` ainda não existe no site. Posso
+   criá-la nos três idiomas com maré, passeios e restaurantes, que é o
+   conteúdo que muda com o tempo e não deve ser reimpresso.

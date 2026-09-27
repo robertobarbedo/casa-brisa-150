@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Casa Brisa · Cartazes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+/* Paleta e tipografia iguais às do site (src/app/globals.css). */
+:root{
+  --branco:#fbf9f6; --areia:#efe8dd; --areia-escura:#e3d8c8;
+  --terracota:#c98a76; --terracota-forte:#a5604b; --terracota-suave:#f3e1d9;
+  --azul:#b9cdd6; --azul-suave:#e3edf1;
+  --taupe:#6f5e4f; --taupe-escuro:#4f4236;
+  --folha:#6b8f71;
+}
+
+@page{ size:A3 portrait; margin:0; }
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+
+html,body{
+  background:#d9d2c8;
+  font-family:"Nunito", ui-sans-serif, system-ui, sans-serif;
+  color:var(--taupe-escuro);
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+}
+
+.folha{
+  width:297mm; height:420mm; padding:15mm 14mm;
+  background:var(--branco);
+  display:flex; flex-direction:column; gap:5mm;
+  margin:0 auto 10mm; overflow:hidden;
+}
+@media print{
+  .folha{ margin:0; break-after:page; }
+  .folha:last-child{ break-after:auto; }
+}
+
+/* ---------- cabeçalho ---------- */
+.marca{ display:flex; align-items:center; gap:5.5mm; }
+.marca .disco{ width:22mm; height:22mm; flex:none; }
+.marca h1{ font-size:35pt; font-weight:700; letter-spacing:-.02em; color:var(--taupe-escuro); line-height:1; }
+.marca .sub{ font-size:10.5pt; color:var(--taupe); font-weight:600; }
+.marca .fita{ margin-left:auto; text-align:right; font-size:11pt; color:var(--taupe); }
+.marca .fita b{ display:block; font-size:14pt; color:var(--terracota-forte); }
+
+/* ---------- blocos ---------- */
+.wifi{
+  background:var(--terracota-suave);
+  border-radius:8mm 8mm 18mm 8mm;
+  padding:6mm 10mm; display:flex; align-items:center; gap:10mm;
+}
+/* Uma coluna só: rótulo em cima, valor embaixo, tudo na mesma margem
+   esquerda. Nada de calha entre rótulo e valor para sair torta. */
+.wifi dl{ display:block; }
+.wifi .rotulo{ font-size:13pt; font-weight:700; color:var(--terracota-forte); letter-spacing:.18em; text-transform:uppercase; }
+.wifi dt{ font-size:11pt; font-weight:700; color:var(--taupe); margin-top:4.5mm; }
+.wifi dd{ font-size:30pt; font-weight:800; color:var(--taupe-escuro); line-height:1.1; margin-top:.5mm; }
+/* Correção óptica pedida: o "C" maiúsculo de "Casa Brisa" tem a lateral mais
+   cheia que o "c" de "casabrisa150.com", e na medida exata parecia recuado.
+   1px à esquerda alinha o que o olho vê, não o que a régua mede. */
+.wifi dd.rede{ margin-left:-1px; }
+.wifi .qr{ margin-left:auto; flex:none; text-align:center; }
+
+.emerg{
+  background:var(--terracota-forte); color:var(--branco);
+  border-radius:8mm 8mm 18mm 8mm; padding:7mm 10mm;
+}
+/* Um número por serviço, cada um com o seu ícone e o seu nome logo abaixo.
+   Em "190 · 192 · 193" numa linha e os nomes noutra, a correspondência era
+   posicional — é o tipo de coisa que ninguém decifra em pânico. */
+.emerg .tres{ display:grid; grid-template-columns:repeat(3,1fr); gap:8mm; }
+.emerg .servico{ text-align:center; padding:1mm 3mm; }
+.emerg .servico + .servico{ border-left:.4mm solid rgba(251,249,246,.3); }
+.emerg .servico b{ display:block; font-size:36pt; font-weight:800; line-height:1.05; letter-spacing:.01em; }
+.emerg .servico span{ display:block; font-size:12.5pt; font-weight:700; line-height:1.2; }
+.emerg .servico i{ display:block; font-size:9.5pt; font-weight:400; opacity:.85; font-style:italic; line-height:1.3; }
+.emerg table{ width:100%; border-collapse:collapse; margin-top:5mm; font-size:10.5pt; }
+.emerg td{ padding:1.8mm 0; border-top:.4mm solid rgba(251,249,246,.28); vertical-align:top; }
+.emerg td:first-child{ width:52mm; font-weight:700; padding-right:5mm; }
+.emerg td i{ display:block; font-weight:400; opacity:.8; font-size:8.5pt; }
+.emerg .zap{ margin-top:4mm; font-size:13pt; font-weight:800; display:flex; align-items:center; gap:3mm; }
+
+.endereco{
+  background:var(--azul-suave); border-radius:4mm;
+  padding:4.5mm 7mm; font-size:14pt; font-weight:800; color:var(--taupe-escuro);
+  display:flex; align-items:center; gap:4mm;
+}
+.endereco i{ font-size:9pt; font-weight:400; color:var(--taupe); font-style:italic; }
+.endereco svg{ width:11mm; height:11mm; flex:none; color:var(--terracota-forte); }
+
+h2{
+  font-size:13.5pt; font-weight:800; color:var(--terracota-forte);
+  text-transform:uppercase; letter-spacing:.16em;
+  display:flex; align-items:center; gap:4mm; margin-bottom:-1mm;
+}
+h2::after{ content:""; flex:1; height:.5mm; background:var(--areia-escura); border-radius:1mm; }
+
+.grade{ display:grid; grid-template-columns:1fr 1fr; gap:6mm 9mm; }
+.item{ display:flex; gap:4mm; align-items:flex-start; break-inside:avoid; }
+.item .ic{ flex:none; width:12.5mm; height:12.5mm; border-radius:3mm; background:var(--areia); display:grid; place-items:center; }
+.item .ic svg{ width:8mm; height:8mm; }
+.item p{ font-size:13pt; font-weight:700; line-height:1.25; }
+.item i{ display:block; font-size:10.5pt; font-weight:400; color:var(--taupe); font-style:italic; line-height:1.3; }
+.item .nota{ margin-top:1.5mm; font-size:10.5pt; font-weight:600; color:var(--taupe); }
+.item .nota i{ font-weight:400; }
+
+.lixo{ background:var(--areia); border-radius:5mm; padding:5mm 7mm; display:grid; grid-template-columns:1fr 1fr; gap:6mm; }
+
+/* seta da praia */
+.praia{
+  background:var(--azul-suave); border-radius:5mm; padding:6mm 8mm;
+  display:flex; align-items:center; gap:7mm;
+}
+.praia .seta{ flex:none; width:26mm; height:26mm; }
+.praia p{ font-size:17pt; font-weight:800; line-height:1.2; }
+.praia i{ display:block; font-size:10pt; font-weight:400; color:var(--taupe); font-style:italic; line-height:1.35; margin-top:1mm; }
+
+/* checklist */
+.check{ display:grid; grid-template-columns:1fr 1fr; gap:3.5mm 9mm; }
+.check li{ list-style:none; display:flex; gap:3.5mm; align-items:flex-start; }
+.check .caixa{ flex:none; width:6mm; height:6mm; border:.7mm solid var(--terracota); border-radius:1.5mm; margin-top:.8mm; }
+.check p{ font-size:12.5pt; font-weight:700; line-height:1.25; }
+.check i{ display:block; font-size:10pt; font-weight:400; color:var(--taupe); font-style:italic; }
+
+/* perto daqui */
+.perto{ width:100%; border-collapse:collapse; font-size:11.5pt; }
+.perto td{ padding:1.4mm 0; border-top:.4mm solid var(--areia-escura); vertical-align:middle; }
+.perto tr:first-child td{ border-top:none; }
+.perto .rot{ display:flex; align-items:center; gap:3.5mm; font-weight:700; width:78mm; }
+.perto .rot svg{ width:6mm; height:6mm; flex:none; }
+.perto .rot i{ display:block; font-size:8.5pt; font-weight:400; color:var(--taupe); font-style:italic; }
+.perto .val{ font-weight:600; color:var(--taupe-escuro); }
+.perto .val i{ display:block; font-size:8.5pt; font-weight:400; color:var(--taupe); font-style:italic; }
+.perto .modo{ display:inline-flex; align-items:center; gap:1.5mm; color:var(--taupe); font-weight:700; white-space:nowrap; }
+.perto .modo svg{ width:5mm; height:5mm; }
+
+.rodape{
+  margin-top:auto; border-top:.5mm solid var(--areia-escura); padding-top:4mm;
+  display:flex; align-items:center; gap:6mm;
+}
+.rodape .qr{ flex:none; }
+.rodape p{ font-size:11pt; font-weight:700; }
+.rodape i{ display:block; font-size:9pt; font-weight:400; color:var(--taupe); font-style:italic; }
+.rodape .site{ margin-left:auto; text-align:right; font-size:10pt; color:var(--terracota-forte); font-weight:800; }
+.rodape .qr-site{ margin-left:auto; display:flex; align-items:center; gap:4mm; }
+.rodape .qr-site .site{ margin-left:0; line-height:1.3; }
+
+.qr-box{ width:32mm; background:#fff; border-radius:3mm; padding:2.5mm; }
+.qr-img{ display:block; width:100%; height:auto; shape-rendering:crispEdges; }
+
+
+.legenda-modo{ font-size:9pt; color:var(--taupe); display:flex; gap:5mm; align-items:center; }
+.legenda-modo span{ display:inline-flex; align-items:center; gap:1.5mm; }
+.legenda-modo svg{ width:4.5mm; height:4.5mm; }
+</style>
+</head>
+<body>
+
+<!-- Ícones: Phosphor Icons 2.1.1, peso regular (MIT, phosphoricons.com).
+     Embutidos como sprite para o PDF não depender de CDN nem de npm. -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="ar" viewBox="0 0 256 256" fill="currentColor"><path d="M223.77,150.09a8,8,0,0,1-5.86,9.68l-24.64,6,6.46,24.11a8,8,0,0,1-5.66,9.8A8.25,8.25,0,0,1,192,200a8,8,0,0,1-7.72-5.93l-7.72-28.8L136,141.86v46.83l21.66,21.65a8,8,0,0,1-11.32,11.32L128,203.31l-18.34,18.35a8,8,0,0,1-11.32-11.32L120,188.69V141.86L79.45,165.27l-7.72,28.8A8,8,0,0,1,64,200a8.25,8.25,0,0,1-2.08-.27,8,8,0,0,1-5.66-9.8l6.46-24.11-24.64-6a8,8,0,0,1,3.82-15.54l29.45,7.23L112,128,71.36,104.54l-29.45,7.23A7.85,7.85,0,0,1,40,112a8,8,0,0,1-1.91-15.77l24.64-6L56.27,66.07a8,8,0,0,1,15.46-4.14l7.72,28.8L120,114.14V67.31L98.34,45.66a8,8,0,0,1,11.32-11.32L128,52.69l18.34-18.35a8,8,0,0,1,11.32,11.32L136,67.31v46.83l40.55-23.41,7.72-28.8a8,8,0,0,1,15.46,4.14l-6.46,24.11,24.64,6A8,8,0,0,1,216,112a7.85,7.85,0,0,1-1.91-.23l-29.45-7.23L144,128l40.64,23.46,29.45-7.23A8,8,0,0,1,223.77,150.09Z"/></symbol>
+  <symbol id="cozinha" viewBox="0 0 256 256" fill="currentColor"><path d="M88,48V16a8,8,0,0,1,16,0V48a8,8,0,0,1-16,0Zm40,8a8,8,0,0,0,8-8V16a8,8,0,0,0-16,0V48A8,8,0,0,0,128,56Zm32,0a8,8,0,0,0,8-8V16a8,8,0,0,0-16,0V48A8,8,0,0,0,160,56Zm92.8,46.4L224,124v60a32,32,0,0,1-32,32H64a32,32,0,0,1-32-32V124L3.2,102.4a8,8,0,0,1,9.6-12.8L32,104V80a8,8,0,0,1,8-8H216a8,8,0,0,1,8,8v24l19.2-14.4a8,8,0,0,1,9.6,12.8ZM208,88H48v96a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16Z"/></symbol>
+  <symbol id="lavar" viewBox="0 0 256 256" fill="currentColor"><path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208V208ZM128,64a64,64,0,1,0,64,64A64.07,64.07,0,0,0,128,64Zm0,112a48,48,0,1,1,48-48A48.05,48.05,0,0,1,128,176ZM200,68a12,12,0,1,1-12-12A12,12,0,0,1,200,68Zm-74.34,49.66-16,16a8,8,0,0,1-11.32-11.32l16-16a8,8,0,0,1,11.32,11.32Zm32-3.32a8,8,0,0,1,0,11.32l-32,32a8,8,0,0,1-11.32-11.32l32-32A8,8,0,0,1,157.66,114.34Z"/></symbol>
+  <symbol id="tv" viewBox="0 0 256 256" fill="currentColor"><path d="M216,64H147.31l34.35-34.34a8,8,0,1,0-11.32-11.32L128,60.69,85.66,18.34A8,8,0,0,0,74.34,29.66L108.69,64H40A16,16,0,0,0,24,80V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V80A16,16,0,0,0,216,64Zm0,136H40V80H216V200Z"/></symbol>
+  <symbol id="churrasco" viewBox="0 0 256 256" fill="currentColor"><path d="M183.89,153.34a57.6,57.6,0,0,1-46.56,46.55A8.75,8.75,0,0,1,136,200a8,8,0,0,1-1.32-15.89c16.57-2.79,30.63-16.85,33.44-33.45a8,8,0,0,1,15.78,2.68ZM216,144a88,88,0,0,1-176,0c0-27.92,11-56.47,32.66-84.85a8,8,0,0,1,11.93-.89l24.12,23.41,22-60.41a8,8,0,0,1,12.63-3.41C165.21,36,216,84.55,216,144Zm-16,0c0-46.09-35.79-85.92-58.21-106.33L119.52,98.74a8,8,0,0,1-13.09,3L80.06,76.16C64.09,99.21,56,122,56,144a72,72,0,0,0,144,0Z"/></symbol>
+  <symbol id="eletrico" viewBox="0 0 256 256" fill="currentColor"><path d="M224,56H176V16a8,8,0,0,0-16,0V56H96V16a8,8,0,0,0-16,0V56H32.55C26.28,56,24,60.78,24,64a8,8,0,0,0,8,8H48v88a40,40,0,0,0,40,40h32v40a8,8,0,0,0,16,0V200h32a40,40,0,0,0,40-40V72h16a8,8,0,0,0,0-16ZM168,184H88a24,24,0,0,1-24-24V72H192v88A24,24,0,0,1,168,184Zm-17.42-60.56a8,8,0,0,1,.91,7.37l-12,32a8,8,0,0,1-15-5.62l8-21.19H112a8,8,0,0,1-7.49-10.81l12-32a8,8,0,1,1,15,5.62l-8,21.19H144A8,8,0,0,1,150.58,123.44Z"/></symbol>
+  <symbol id="agua" viewBox="0 0 256 256" fill="currentColor"><path d="M174,47.75a254.19,254.19,0,0,0-41.45-38.3,8,8,0,0,0-9.18,0A254.19,254.19,0,0,0,82,47.75C54.51,79.32,40,112.6,40,144a88,88,0,0,0,176,0C216,112.6,201.49,79.32,174,47.75ZM187.83,184H68.17a72,72,0,0,1-8-16H195.87A72,72,0,0,1,187.83,184ZM200,144a70.57,70.57,0,0,1-.46,8H56.46a70.57,70.57,0,0,1-.46-8q0-4,.36-8H199.64Q200,140,200,144ZM128,26c14.16,11.1,56.86,47.74,68.84,94H59.16C71.14,73.76,113.84,37.12,128,26ZM82.81,200h90.38a71.82,71.82,0,0,1-90.38,0Z"/></symbol>
+  <symbol id="lixo" viewBox="0 0 256 256" fill="currentColor"><path d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"/></symbol>
+  <symbol id="reciclar" viewBox="0 0 256 256" fill="currentColor"><path d="M96,208a8,8,0,0,1-8,8H40a24,24,0,0,1-20.77-36l34.29-59.25L39.47,124.5A8,8,0,1,1,35.33,109l32.77-8.77a8,8,0,0,1,9.8,5.66l8.79,32.77A8,8,0,0,1,81,148.5a8.37,8.37,0,0,1-2.08.27,8,8,0,0,1-7.72-5.93l-3.8-14.15L33.11,188A8,8,0,0,0,40,200H88A8,8,0,0,1,96,208Zm140.73-28-23.14-40a8,8,0,0,0-13.84,8l23.14,40A8,8,0,0,1,216,200H147.31l10.34-10.34a8,8,0,0,0-11.31-11.32l-24,24a8,8,0,0,0,0,11.32l24,24a8,8,0,0,0,11.31-11.32L147.31,216H216a24,24,0,0,0,20.77-36ZM128,32a7.85,7.85,0,0,1,6.92,4l34.29,59.25-14.08-3.78A8,8,0,0,0,151,106.92l32.78,8.79a8.23,8.23,0,0,0,2.07.27,8,8,0,0,0,7.72-5.93l8.79-32.79a8,8,0,1,0-15.45-4.14l-3.8,14.17L148.77,28a24,24,0,0,0-41.54,0L84.07,68a8,8,0,0,0,13.85,8l23.16-40A7.85,7.85,0,0,1,128,32Z"/></symbol>
+  <symbol id="pin" viewBox="0 0 256 256" fill="currentColor"><path d="M128,16a88.1,88.1,0,0,0-88,88c0,75.3,80,132.17,83.41,134.55a8,8,0,0,0,9.18,0C136,236.17,216,179.3,216,104A88.1,88.1,0,0,0,128,16Zm0,56a32,32,0,1,1-32,32A32,32,0,0,1,128,72Z"/></symbol>
+  <symbol id="hospedes" viewBox="0 0 256 256" fill="currentColor"><path d="M244.8,150.4a8,8,0,0,1-11.2-1.6A51.6,51.6,0,0,0,192,128a8,8,0,0,1-7.37-4.89,8,8,0,0,1,0-6.22A8,8,0,0,1,192,112a24,24,0,1,0-23.24-30,8,8,0,1,1-15.5-4A40,40,0,1,1,219,117.51a67.94,67.94,0,0,1,27.43,21.68A8,8,0,0,1,244.8,150.4ZM190.92,212a8,8,0,1,1-13.84,8,57,57,0,0,0-98.16,0,8,8,0,1,1-13.84-8,72.06,72.06,0,0,1,33.74-29.92,48,48,0,1,1,58.36,0A72.06,72.06,0,0,1,190.92,212ZM128,176a32,32,0,1,0-32-32A32,32,0,0,0,128,176ZM72,120a8,8,0,0,0-8-8A24,24,0,1,1,87.24,82a8,8,0,1,0,15.5-4A40,40,0,1,0,37,117.51,67.94,67.94,0,0,0,9.6,139.19a8,8,0,1,0,12.8,9.61A51.6,51.6,0,0,1,64,128,8,8,0,0,0,72,120Z"/></symbol>
+  <symbol id="festa" viewBox="0 0 256 256" fill="currentColor"><g transform="translate(40 40) scale(0.69)"><path d="M111.49,52.63a15.8,15.8,0,0,0-26,5.77L33,202.78A15.83,15.83,0,0,0,47.76,224a16,16,0,0,0,5.46-1l144.37-52.5a15.8,15.8,0,0,0,5.78-26Zm-8.33,135.21-35-35,13.16-36.21,58.05,58.05Zm-55,20,14-38.41,24.45,24.45ZM156,168.64,87.36,100l13-35.87,91.43,91.43ZM160,72a37.8,37.8,0,0,1,3.84-15.58C169.14,45.83,179.14,40,192,40c6.7,0,11-2.29,13.65-7.21A22,22,0,0,0,208,23.94,8,8,0,0,1,224,24c0,12.86-8.52,32-32,32-6.7,0-11,2.29-13.65,7.21A22,22,0,0,0,176,72.06,8,8,0,0,1,160,72ZM136,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm101.66,82.34a8,8,0,1,1-11.32,11.31l-16-16a8,8,0,0,1,11.32-11.32Zm4.87-42.75-24,8a8,8,0,0,1-5.06-15.18l24-8a8,8,0,0,1,5.06,15.18Z"/></g><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm88,104a87.56,87.56,0,0,1-20.41,56.28L71.72,60.4A88,88,0,0,1,216,128ZM40,128A87.56,87.56,0,0,1,60.41,71.72L184.28,195.6A88,88,0,0,1,40,128Z"/></symbol>
+  <symbol id="fumar" viewBox="0 0 256 256" fill="currentColor"><path d="M201,60.08c8-14.23,7.42-21.71,6.36-24.91a7.79,7.79,0,0,0-2.64-3.86,8,8,0,1,1,6.5-14.62,22.57,22.57,0,0,1,11.32,13.44c3.36,10.14.81,22.85-7.6,37.79-8,14.23-7.42,21.72-6.36,24.92a7.79,7.79,0,0,0,2.64,3.85,8,8,0,1,1-6.5,14.62,22.53,22.53,0,0,1-11.32-13.44C190.07,87.73,192.62,75,201,60.08Zm-47.6,37.79a22.53,22.53,0,0,0,11.32,13.44,8,8,0,1,0,6.5-14.62,7.79,7.79,0,0,1-2.64-3.85c-1.06-3.2-1.64-10.69,6.36-24.92,8.41-14.94,11-27.65,7.6-37.79a22.57,22.57,0,0,0-11.32-13.44,8,8,0,1,0-6.5,14.62,7.79,7.79,0,0,1,2.64,3.86c1.06,3.2,1.64,10.68-6.36,24.91C152.62,75,150.07,87.73,153.43,97.87Zm60.49,112.75a8,8,0,1,1-11.84,10.76L175.37,192H32a16,16,0,0,1-16-16V144a16,16,0,0,1,16-16h85.19L42.08,45.38A8,8,0,1,1,53.92,34.62ZM32,176H80V144H32Zm128.82,0-29.09-32H96v32ZM224,128H178.52a8,8,0,1,0,0,16H224v32h-1.84a8,8,0,1,0,0,16H224a16,16,0,0,0,16-16V144A16,16,0,0,0,224,128Z"/></symbol>
+  <symbol id="silencio" viewBox="0 0 256 256" fill="currentColor"><path d="M192,152V104a8,8,0,0,1,16,0v48a8,8,0,0,1-16,0Zm40-72a8,8,0,0,0-8,8v80a8,8,0,0,0,16,0V88A8,8,0,0,0,232,80ZM221.92,210.62a8,8,0,1,1-11.84,10.76L168,175.09V224a8,8,0,0,1-12.91,6.31L85.25,176H40a16,16,0,0,1-16-16V96A16,16,0,0,1,40,80H81.55L50.08,45.38A8,8,0,0,1,61.92,34.62ZM152,157.49,96.1,96H40v64H88a7.94,7.94,0,0,1,4.91,1.69L152,207.64ZM125.06,69.31l26.94-21v58.47a8,8,0,0,0,16,0V32a8,8,0,0,0-12.91-6.31l-39.85,31a8,8,0,0,0,9.82,12.63Z"/></symbol>
+  <symbol id="pet" viewBox="0 0 256 256" fill="currentColor"><path d="M212,80a28,28,0,1,0,28,28A28,28,0,0,0,212,80Zm0,40a12,12,0,1,1,12-12A12,12,0,0,1,212,120ZM72,108a28,28,0,1,0-28,28A28,28,0,0,0,72,108ZM44,120a12,12,0,1,1,12-12A12,12,0,0,1,44,120ZM92,88A28,28,0,1,0,64,60,28,28,0,0,0,92,88Zm0-40A12,12,0,1,1,80,60,12,12,0,0,1,92,48Zm72,40a28,28,0,1,0-28-28A28,28,0,0,0,164,88Zm0-40a12,12,0,1,1-12,12A12,12,0,0,1,164,48Zm23.12,100.86a35.3,35.3,0,0,1-16.87-21.14,44,44,0,0,0-84.5,0A35.25,35.25,0,0,1,69,148.82,40,40,0,0,0,88,224a39.48,39.48,0,0,0,15.52-3.13,64.09,64.09,0,0,1,48.87,0,40,40,0,0,0,34.73-72ZM168,208a24,24,0,0,1-9.45-1.93,80.14,80.14,0,0,0-61.19,0,24,24,0,0,1-20.71-43.26,51.22,51.22,0,0,0,24.46-30.67,28,28,0,0,1,53.78,0,51.27,51.27,0,0,0,24.53,30.71A24,24,0,0,1,168,208Z"/></symbol>
+  <symbol id="ducha" viewBox="0 0 256 256" fill="currentColor"><path d="M64,236a12,12,0,1,1-12-12A12,12,0,0,1,64,236Zm20-44a12,12,0,1,0,12,12A12,12,0,0,0,84,192Zm-64,0a12,12,0,1,0,12,12A12,12,0,0,0,20,192Zm32-32a12,12,0,1,0,12,12A12,12,0,0,0,52,160ZM256,40a8,8,0,0,1-8,8H219.31L191.46,75.86,169.8,202.65a16,16,0,0,1-27.09,8.66l-98-98a16,16,0,0,1,8.69-27.1L180.14,64.54l30.2-30.2A8,8,0,0,1,216,32h32A8,8,0,0,1,256,40ZM174.21,81.79,56,102l98,98Z"/></symbol>
+  <symbol id="mercado" viewBox="0 0 256 256" fill="currentColor"><path d="M104,216a16,16,0,1,1-16-16A16,16,0,0,1,104,216Zm88-16a16,16,0,1,0,16,16A16,16,0,0,0,192,200ZM239.71,74.14l-25.64,92.28A24.06,24.06,0,0,1,191,184H92.16A24.06,24.06,0,0,1,69,166.42L33.92,40H16a8,8,0,0,1,0-16H40a8,8,0,0,1,7.71,5.86L57.19,64H232a8,8,0,0,1,7.71,10.14ZM221.47,80H61.64l22.81,82.14A8,8,0,0,0,92.16,168H191a8,8,0,0,0,7.71-5.86Z"/></symbol>
+  <symbol id="padaria" viewBox="0 0 256 256" fill="currentColor"><path d="M240,80a40,40,0,0,0-40-40H48a40,40,0,0,0-16,76.65V200a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V116.65A40.06,40.06,0,0,0,240,80ZM48,120a8,8,0,0,0,0-16,24,24,0,0,1,0-48h96a24,24,0,0,1,0,48,8,8,0,0,0,0,16v80H48Zm152-16a8,8,0,0,0,0,16v80H160V116.65A40,40,0,0,0,176,56h24a24,24,0,0,1,0,48Z"/></symbol>
+  <symbol id="farmacia" viewBox="0 0 256 256" fill="currentColor"><path d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,200H40V72H216V200Zm-56-64a8,8,0,0,1-8,8H136v16a8,8,0,0,1-16,0V144H104a8,8,0,0,1,0-16h16V112a8,8,0,0,1,16,0v16h16A8,8,0,0,1,160,136Z"/></symbol>
+  <symbol id="caixa" viewBox="0 0 256 256" fill="currentColor"><path d="M128,88a40,40,0,1,0,40,40A40,40,0,0,0,128,88Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,152ZM240,56H16a8,8,0,0,0-8,8V192a8,8,0,0,0,8,8H240a8,8,0,0,0,8-8V64A8,8,0,0,0,240,56ZM193.65,184H62.35A56.78,56.78,0,0,0,24,145.65v-35.3A56.78,56.78,0,0,0,62.35,72h131.3A56.78,56.78,0,0,0,232,110.35v35.3A56.78,56.78,0,0,0,193.65,184ZM232,93.37A40.81,40.81,0,0,1,210.63,72H232ZM45.37,72A40.81,40.81,0,0,1,24,93.37V72ZM24,162.63A40.81,40.81,0,0,1,45.37,184H24ZM210.63,184A40.81,40.81,0,0,1,232,162.63V184Z"/></symbol>
+  <symbol id="posto" viewBox="0 0 256 256" fill="currentColor"><path d="M241,69.66,221.66,50.34a8,8,0,0,0-11.32,11.32L229.66,81A8,8,0,0,1,232,86.63V168a8,8,0,0,1-16,0V128a24,24,0,0,0-24-24H176V56a24,24,0,0,0-24-24H72A24,24,0,0,0,48,56V208H32a8,8,0,0,0,0,16H192a8,8,0,0,0,0-16H176V120h16a8,8,0,0,1,8,8v40a24,24,0,0,0,48,0V86.63A23.85,23.85,0,0,0,241,69.66ZM64,208V56a8,8,0,0,1,8-8h80a8,8,0,0,1,8,8V208Zm80-96a8,8,0,0,1-8,8H88a8,8,0,0,1,0-16h48A8,8,0,0,1,144,112Z"/></symbol>
+  <symbol id="restaurante" viewBox="0 0 256 256" fill="currentColor"><path d="M72,88V40a8,8,0,0,1,16,0V88a8,8,0,0,1-16,0ZM216,40V224a8,8,0,0,1-16,0V176H152a8,8,0,0,1-8-8,268.75,268.75,0,0,1,7.22-56.88c9.78-40.49,28.32-67.63,53.63-78.47A8,8,0,0,1,216,40ZM200,53.9c-32.17,24.57-38.47,84.42-39.7,106.1H200ZM119.89,38.69a8,8,0,1,0-15.78,2.63L112,88.63a32,32,0,0,1-64,0l7.88-47.31a8,8,0,1,0-15.78-2.63l-8,48A8.17,8.17,0,0,0,32,88a48.07,48.07,0,0,0,40,47.32V224a8,8,0,0,0,16,0V135.32A48.07,48.07,0,0,0,128,88a8.17,8.17,0,0,0-.11-1.31Z"/></symbol>
+  <symbol id="zap" viewBox="0 0 256 256" fill="currentColor"><path d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.61-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></symbol>
+  <symbol id="pe" viewBox="0 0 256 256" fill="currentColor"><path d="M152,80a32,32,0,1,0-32-32A32,32,0,0,0,152,80Zm0-48a16,16,0,1,1-16,16A16,16,0,0,1,152,32Zm64,112a8,8,0,0,1-8,8c-35.31,0-52.95-17.81-67.12-32.12-2.74-2.77-5.36-5.4-8-7.84l-13.43,30.88,37.2,26.57A8,8,0,0,1,160,176v56a8,8,0,0,1-16,0V180.12l-31.07-22.2L79.34,235.19A8,8,0,0,1,72,240a7.84,7.84,0,0,1-3.19-.67,8,8,0,0,1-4.15-10.52l54.08-124.37c-9.31-1.65-20.92,1.2-34.7,8.58a163.88,163.88,0,0,0-30.57,21.77,8,8,0,0,1-10.95-11.66c2.5-2.35,61.69-57.23,98.72-25.08,3.83,3.32,7.48,7,11,10.57C166.19,122.7,179.36,136,208,136A8,8,0,0,1,216,144Z"/></symbol>
+  <symbol id="carro" viewBox="0 0 256 256" fill="currentColor"><path d="M240,104H229.2L201.42,41.5A16,16,0,0,0,186.8,32H69.2a16,16,0,0,0-14.62,9.5L26.8,104H16a8,8,0,0,0,0,16h8v80a16,16,0,0,0,16,16H64a16,16,0,0,0,16-16V184h96v16a16,16,0,0,0,16,16h24a16,16,0,0,0,16-16V120h8a8,8,0,0,0,0-16ZM69.2,48H186.8l24.89,56H44.31ZM216,200H192V176a8,8,0,0,0-8-8H72a8,8,0,0,0-8,8v24H40V120H216Z"/></symbol>
+  <symbol id="seta" viewBox="0 0 256 256" fill="currentColor"><path d="M228,128a12,12,0,0,1-12,12H69l51.52,51.51a12,12,0,0,1-17,17l-72-72a12,12,0,0,1,0-17l72-72a12,12,0,0,1,17,17L69,116H216A12,12,0,0,1,228,128Z"/></symbol>
+</svg>
+
+<!-- =================== CARTAZ 1 =================== -->
+<section class="folha">
+
+  <header class="marca">
+    <img class="disco" src="../../public/logo-disco.svg" alt="Casa Brisa">
+    <div>
+      <h1>Casa Brisa</h1>
+      <p class="sub">Praia da Daniela · Florianópolis</p>
+    </div>
+    <div class="fita">
+      Check-out · check-out · check-out
+      <b>até as 11h · 11 h · 11 am</b>
+    </div>
+  </header>
+
+  <div class="wifi">
+    <div>
+      <dl>
+        <p class="rotulo">Wi-Fi</p>
+        <dt>Rede · Red · Network</dt>
+        <dd class="rede">Casa Brisa</dd>
+        <dt>Senha · Contraseña · Password</dt>
+        <dd>casabrisa150.com</dd>
+      </dl>
+    </div>
+    <div class="qr">
+      <div class="qr-box"><svg class="qr-img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" preserveAspectRatio="xMinYMin meet"><path fill="#4f4236" d="M0,0l1,0 0,1 -1,0 0,-1z M1,0l1,0 0,1 -1,0 0,-1z M2,0l1,0 0,1 -1,0 0,-1z M3,0l1,0 0,1 -1,0 0,-1z M4,0l1,0 0,1 -1,0 0,-1z M5,0l1,0 0,1 -1,0 0,-1z M6,0l1,0 0,1 -1,0 0,-1z M10,0l1,0 0,1 -1,0 0,-1z M11,0l1,0 0,1 -1,0 0,-1z M12,0l1,0 0,1 -1,0 0,-1z M13,0l1,0 0,1 -1,0 0,-1z M16,0l1,0 0,1 -1,0 0,-1z M17,0l1,0 0,1 -1,0 0,-1z M19,0l1,0 0,1 -1,0 0,-1z M20,0l1,0 0,1 -1,0 0,-1z M26,0l1,0 0,1 -1,0 0,-1z M27,0l1,0 0,1 -1,0 0,-1z M28,0l1,0 0,1 -1,0 0,-1z M29,0l1,0 0,1 -1,0 0,-1z M30,0l1,0 0,1 -1,0 0,-1z M31,0l1,0 0,1 -1,0 0,-1z M32,0l1,0 0,1 -1,0 0,-1z M0,1l1,0 0,1 -1,0 0,-1z M6,1l1,0 0,1 -1,0 0,-1z M11,1l1,0 0,1 -1,0 0,-1z M13,1l1,0 0,1 -1,0 0,-1z M14,1l1,0 0,1 -1,0 0,-1z M15,1l1,0 0,1 -1,0 0,-1z M16,1l1,0 0,1 -1,0 0,-1z M17,1l1,0 0,1 -1,0 0,-1z M20,1l1,0 0,1 -1,0 0,-1z M22,1l1,0 0,1 -1,0 0,-1z M24,1l1,0 0,1 -1,0 0,-1z M26,1l1,0 0,1 -1,0 0,-1z M32,1l1,0 0,1 -1,0 0,-1z M0,2l1,0 0,1 -1,0 0,-1z M2,2l1,0 0,1 -1,0 0,-1z M3,2l1,0 0,1 -1,0 0,-1z M4,2l1,0 0,1 -1,0 0,-1z M6,2l1,0 0,1 -1,0 0,-1z M8,2l1,0 0,1 -1,0 0,-1z M10,2l1,0 0,1 -1,0 0,-1z M11,2l1,0 0,1 -1,0 0,-1z M12,2l1,0 0,1 -1,0 0,-1z M13,2l1,0 0,1 -1,0 0,-1z M17,2l1,0 0,1 -1,0 0,-1z M18,2l1,0 0,1 -1,0 0,-1z M23,2l1,0 0,1 -1,0 0,-1z M24,2l1,0 0,1 -1,0 0,-1z M26,2l1,0 0,1 -1,0 0,-1z M28,2l1,0 0,1 -1,0 0,-1z M29,2l1,0 0,1 -1,0 0,-1z M30,2l1,0 0,1 -1,0 0,-1z M32,2l1,0 0,1 -1,0 0,-1z M0,3l1,0 0,1 -1,0 0,-1z M2,3l1,0 0,1 -1,0 0,-1z M3,3l1,0 0,1 -1,0 0,-1z M4,3l1,0 0,1 -1,0 0,-1z M6,3l1,0 0,1 -1,0 0,-1z M8,3l1,0 0,1 -1,0 0,-1z M9,3l1,0 0,1 -1,0 0,-1z M14,3l1,0 0,1 -1,0 0,-1z M15,3l1,0 0,1 -1,0 0,-1z M16,3l1,0 0,1 -1,0 0,-1z M19,3l1,0 0,1 -1,0 0,-1z M20,3l1,0 0,1 -1,0 0,-1z M21,3l1,0 0,1 -1,0 0,-1z M22,3l1,0 0,1 -1,0 0,-1z M23,3l1,0 0,1 -1,0 0,-1z M24,3l1,0 0,1 -1,0 0,-1z M26,3l1,0 0,1 -1,0 0,-1z M28,3l1,0 0,1 -1,0 0,-1z M29,3l1,0 0,1 -1,0 0,-1z M30,3l1,0 0,1 -1,0 0,-1z M32,3l1,0 0,1 -1,0 0,-1z M0,4l1,0 0,1 -1,0 0,-1z M2,4l1,0 0,1 -1,0 0,-1z M3,4l1,0 0,1 -1,0 0,-1z M4,4l1,0 0,1 -1,0 0,-1z M6,4l1,0 0,1 -1,0 0,-1z M8,4l1,0 0,1 -1,0 0,-1z M9,4l1,0 0,1 -1,0 0,-1z M15,4l1,0 0,1 -1,0 0,-1z M18,4l1,0 0,1 -1,0 0,-1z M21,4l1,0 0,1 -1,0 0,-1z M24,4l1,0 0,1 -1,0 0,-1z M26,4l1,0 0,1 -1,0 0,-1z M28,4l1,0 0,1 -1,0 0,-1z M29,4l1,0 0,1 -1,0 0,-1z M30,4l1,0 0,1 -1,0 0,-1z M32,4l1,0 0,1 -1,0 0,-1z M0,5l1,0 0,1 -1,0 0,-1z M6,5l1,0 0,1 -1,0 0,-1z M8,5l1,0 0,1 -1,0 0,-1z M9,5l1,0 0,1 -1,0 0,-1z M11,5l1,0 0,1 -1,0 0,-1z M12,5l1,0 0,1 -1,0 0,-1z M15,5l1,0 0,1 -1,0 0,-1z M16,5l1,0 0,1 -1,0 0,-1z M17,5l1,0 0,1 -1,0 0,-1z M18,5l1,0 0,1 -1,0 0,-1z M20,5l1,0 0,1 -1,0 0,-1z M26,5l1,0 0,1 -1,0 0,-1z M32,5l1,0 0,1 -1,0 0,-1z M0,6l1,0 0,1 -1,0 0,-1z M1,6l1,0 0,1 -1,0 0,-1z M2,6l1,0 0,1 -1,0 0,-1z M3,6l1,0 0,1 -1,0 0,-1z M4,6l1,0 0,1 -1,0 0,-1z M5,6l1,0 0,1 -1,0 0,-1z M6,6l1,0 0,1 -1,0 0,-1z M8,6l1,0 0,1 -1,0 0,-1z M10,6l1,0 0,1 -1,0 0,-1z M12,6l1,0 0,1 -1,0 0,-1z M14,6l1,0 0,1 -1,0 0,-1z M16,6l1,0 0,1 -1,0 0,-1z M18,6l1,0 0,1 -1,0 0,-1z M20,6l1,0 0,1 -1,0 0,-1z M22,6l1,0 0,1 -1,0 0,-1z M24,6l1,0 0,1 -1,0 0,-1z M26,6l1,0 0,1 -1,0 0,-1z M27,6l1,0 0,1 -1,0 0,-1z M28,6l1,0 0,1 -1,0 0,-1z M29,6l1,0 0,1 -1,0 0,-1z M30,6l1,0 0,1 -1,0 0,-1z M31,6l1,0 0,1 -1,0 0,-1z M32,6l1,0 0,1 -1,0 0,-1z M8,7l1,0 0,1 -1,0 0,-1z M11,7l1,0 0,1 -1,0 0,-1z M14,7l1,0 0,1 -1,0 0,-1z M15,7l1,0 0,1 -1,0 0,-1z M21,7l1,0 0,1 -1,0 0,-1z M22,7l1,0 0,1 -1,0 0,-1z M23,7l1,0 0,1 -1,0 0,-1z M24,7l1,0 0,1 -1,0 0,-1z M0,8l1,0 0,1 -1,0 0,-1z M2,8l1,0 0,1 -1,0 0,-1z M3,8l1,0 0,1 -1,0 0,-1z M4,8l1,0 0,1 -1,0 0,-1z M5,8l1,0 0,1 -1,0 0,-1z M6,8l1,0 0,1 -1,0 0,-1z M10,8l1,0 0,1 -1,0 0,-1z M13,8l1,0 0,1 -1,0 0,-1z M14,8l1,0 0,1 -1,0 0,-1z M15,8l1,0 0,1 -1,0 0,-1z M16,8l1,0 0,1 -1,0 0,-1z M17,8l1,0 0,1 -1,0 0,-1z M22,8l1,0 0,1 -1,0 0,-1z M23,8l1,0 0,1 -1,0 0,-1z M26,8l1,0 0,1 -1,0 0,-1z M27,8l1,0 0,1 -1,0 0,-1z M28,8l1,0 0,1 -1,0 0,-1z M29,8l1,0 0,1 -1,0 0,-1z M30,8l1,0 0,1 -1,0 0,-1z M0,9l1,0 0,1 -1,0 0,-1z M2,9l1,0 0,1 -1,0 0,-1z M4,9l1,0 0,1 -1,0 0,-1z M8,9l1,0 0,1 -1,0 0,-1z M9,9l1,0 0,1 -1,0 0,-1z M10,9l1,0 0,1 -1,0 0,-1z M11,9l1,0 0,1 -1,0 0,-1z M12,9l1,0 0,1 -1,0 0,-1z M16,9l1,0 0,1 -1,0 0,-1z M18,9l1,0 0,1 -1,0 0,-1z M19,9l1,0 0,1 -1,0 0,-1z M20,9l1,0 0,1 -1,0 0,-1z M21,9l1,0 0,1 -1,0 0,-1z M23,9l1,0 0,1 -1,0 0,-1z M24,9l1,0 0,1 -1,0 0,-1z M25,9l1,0 0,1 -1,0 0,-1z M31,9l1,0 0,1 -1,0 0,-1z M32,9l1,0 0,1 -1,0 0,-1z M1,10l1,0 0,1 -1,0 0,-1z M3,10l1,0 0,1 -1,0 0,-1z M6,10l1,0 0,1 -1,0 0,-1z M7,10l1,0 0,1 -1,0 0,-1z M8,10l1,0 0,1 -1,0 0,-1z M9,10l1,0 0,1 -1,0 0,-1z M15,10l1,0 0,1 -1,0 0,-1z M16,10l1,0 0,1 -1,0 0,-1z M18,10l1,0 0,1 -1,0 0,-1z M21,10l1,0 0,1 -1,0 0,-1z M25,10l1,0 0,1 -1,0 0,-1z M26,10l1,0 0,1 -1,0 0,-1z M27,10l1,0 0,1 -1,0 0,-1z M28,10l1,0 0,1 -1,0 0,-1z M29,10l1,0 0,1 -1,0 0,-1z M30,10l1,0 0,1 -1,0 0,-1z M31,10l1,0 0,1 -1,0 0,-1z M2,11l1,0 0,1 -1,0 0,-1z M3,11l1,0 0,1 -1,0 0,-1z M4,11l1,0 0,1 -1,0 0,-1z M8,11l1,0 0,1 -1,0 0,-1z M11,11l1,0 0,1 -1,0 0,-1z M12,11l1,0 0,1 -1,0 0,-1z M14,11l1,0 0,1 -1,0 0,-1z M15,11l1,0 0,1 -1,0 0,-1z M19,11l1,0 0,1 -1,0 0,-1z M21,11l1,0 0,1 -1,0 0,-1z M22,11l1,0 0,1 -1,0 0,-1z M23,11l1,0 0,1 -1,0 0,-1z M24,11l1,0 0,1 -1,0 0,-1z M26,11l1,0 0,1 -1,0 0,-1z M27,11l1,0 0,1 -1,0 0,-1z M28,11l1,0 0,1 -1,0 0,-1z M29,11l1,0 0,1 -1,0 0,-1z M30,11l1,0 0,1 -1,0 0,-1z M31,11l1,0 0,1 -1,0 0,-1z M0,12l1,0 0,1 -1,0 0,-1z M1,12l1,0 0,1 -1,0 0,-1z M3,12l1,0 0,1 -1,0 0,-1z M6,12l1,0 0,1 -1,0 0,-1z M8,12l1,0 0,1 -1,0 0,-1z M10,12l1,0 0,1 -1,0 0,-1z M11,12l1,0 0,1 -1,0 0,-1z M15,12l1,0 0,1 -1,0 0,-1z M18,12l1,0 0,1 -1,0 0,-1z M21,12l1,0 0,1 -1,0 0,-1z M25,12l1,0 0,1 -1,0 0,-1z M27,12l1,0 0,1 -1,0 0,-1z M28,12l1,0 0,1 -1,0 0,-1z M30,12l1,0 0,1 -1,0 0,-1z M32,12l1,0 0,1 -1,0 0,-1z M0,13l1,0 0,1 -1,0 0,-1z M5,13l1,0 0,1 -1,0 0,-1z M8,13l1,0 0,1 -1,0 0,-1z M9,13l1,0 0,1 -1,0 0,-1z M10,13l1,0 0,1 -1,0 0,-1z M11,13l1,0 0,1 -1,0 0,-1z M14,13l1,0 0,1 -1,0 0,-1z M15,13l1,0 0,1 -1,0 0,-1z M16,13l1,0 0,1 -1,0 0,-1z M20,13l1,0 0,1 -1,0 0,-1z M21,13l1,0 0,1 -1,0 0,-1z M22,13l1,0 0,1 -1,0 0,-1z M23,13l1,0 0,1 -1,0 0,-1z M24,13l1,0 0,1 -1,0 0,-1z M26,13l1,0 0,1 -1,0 0,-1z M27,13l1,0 0,1 -1,0 0,-1z M30,13l1,0 0,1 -1,0 0,-1z M1,14l1,0 0,1 -1,0 0,-1z M3,14l1,0 0,1 -1,0 0,-1z M6,14l1,0 0,1 -1,0 0,-1z M7,14l1,0 0,1 -1,0 0,-1z M11,14l1,0 0,1 -1,0 0,-1z M14,14l1,0 0,1 -1,0 0,-1z M18,14l1,0 0,1 -1,0 0,-1z M19,14l1,0 0,1 -1,0 0,-1z M21,14l1,0 0,1 -1,0 0,-1z M25,14l1,0 0,1 -1,0 0,-1z M27,14l1,0 0,1 -1,0 0,-1z M29,14l1,0 0,1 -1,0 0,-1z M31,14l1,0 0,1 -1,0 0,-1z M0,15l1,0 0,1 -1,0 0,-1z M1,15l1,0 0,1 -1,0 0,-1z M3,15l1,0 0,1 -1,0 0,-1z M5,15l1,0 0,1 -1,0 0,-1z M7,15l1,0 0,1 -1,0 0,-1z M9,15l1,0 0,1 -1,0 0,-1z M11,15l1,0 0,1 -1,0 0,-1z M12,15l1,0 0,1 -1,0 0,-1z M14,15l1,0 0,1 -1,0 0,-1z M16,15l1,0 0,1 -1,0 0,-1z M19,15l1,0 0,1 -1,0 0,-1z M20,15l1,0 0,1 -1,0 0,-1z M21,15l1,0 0,1 -1,0 0,-1z M22,15l1,0 0,1 -1,0 0,-1z M23,15l1,0 0,1 -1,0 0,-1z M24,15l1,0 0,1 -1,0 0,-1z M25,15l1,0 0,1 -1,0 0,-1z M26,15l1,0 0,1 -1,0 0,-1z M27,15l1,0 0,1 -1,0 0,-1z M29,15l1,0 0,1 -1,0 0,-1z M30,15l1,0 0,1 -1,0 0,-1z M31,15l1,0 0,1 -1,0 0,-1z M32,15l1,0 0,1 -1,0 0,-1z M0,16l1,0 0,1 -1,0 0,-1z M1,16l1,0 0,1 -1,0 0,-1z M2,16l1,0 0,1 -1,0 0,-1z M6,16l1,0 0,1 -1,0 0,-1z M7,16l1,0 0,1 -1,0 0,-1z M8,16l1,0 0,1 -1,0 0,-1z M9,16l1,0 0,1 -1,0 0,-1z M10,16l1,0 0,1 -1,0 0,-1z M12,16l1,0 0,1 -1,0 0,-1z M13,16l1,0 0,1 -1,0 0,-1z M14,16l1,0 0,1 -1,0 0,-1z M17,16l1,0 0,1 -1,0 0,-1z M18,16l1,0 0,1 -1,0 0,-1z M19,16l1,0 0,1 -1,0 0,-1z M20,16l1,0 0,1 -1,0 0,-1z M22,16l1,0 0,1 -1,0 0,-1z M23,16l1,0 0,1 -1,0 0,-1z M25,16l1,0 0,1 -1,0 0,-1z M28,16l1,0 0,1 -1,0 0,-1z M31,16l1,0 0,1 -1,0 0,-1z M1,17l1,0 0,1 -1,0 0,-1z M2,17l1,0 0,1 -1,0 0,-1z M4,17l1,0 0,1 -1,0 0,-1z M5,17l1,0 0,1 -1,0 0,-1z M10,17l1,0 0,1 -1,0 0,-1z M11,17l1,0 0,1 -1,0 0,-1z M14,17l1,0 0,1 -1,0 0,-1z M16,17l1,0 0,1 -1,0 0,-1z M17,17l1,0 0,1 -1,0 0,-1z M19,17l1,0 0,1 -1,0 0,-1z M20,17l1,0 0,1 -1,0 0,-1z M22,17l1,0 0,1 -1,0 0,-1z M25,17l1,0 0,1 -1,0 0,-1z M27,17l1,0 0,1 -1,0 0,-1z M29,17l1,0 0,1 -1,0 0,-1z M30,17l1,0 0,1 -1,0 0,-1z M32,17l1,0 0,1 -1,0 0,-1z M2,18l1,0 0,1 -1,0 0,-1z M3,18l1,0 0,1 -1,0 0,-1z M4,18l1,0 0,1 -1,0 0,-1z M5,18l1,0 0,1 -1,0 0,-1z M6,18l1,0 0,1 -1,0 0,-1z M8,18l1,0 0,1 -1,0 0,-1z M9,18l1,0 0,1 -1,0 0,-1z M10,18l1,0 0,1 -1,0 0,-1z M12,18l1,0 0,1 -1,0 0,-1z M14,18l1,0 0,1 -1,0 0,-1z M15,18l1,0 0,1 -1,0 0,-1z M16,18l1,0 0,1 -1,0 0,-1z M17,18l1,0 0,1 -1,0 0,-1z M22,18l1,0 0,1 -1,0 0,-1z M27,18l1,0 0,1 -1,0 0,-1z M31,18l1,0 0,1 -1,0 0,-1z M1,19l1,0 0,1 -1,0 0,-1z M3,19l1,0 0,1 -1,0 0,-1z M5,19l1,0 0,1 -1,0 0,-1z M7,19l1,0 0,1 -1,0 0,-1z M9,19l1,0 0,1 -1,0 0,-1z M11,19l1,0 0,1 -1,0 0,-1z M13,19l1,0 0,1 -1,0 0,-1z M14,19l1,0 0,1 -1,0 0,-1z M17,19l1,0 0,1 -1,0 0,-1z M18,19l1,0 0,1 -1,0 0,-1z M19,19l1,0 0,1 -1,0 0,-1z M23,19l1,0 0,1 -1,0 0,-1z M24,19l1,0 0,1 -1,0 0,-1z M25,19l1,0 0,1 -1,0 0,-1z M26,19l1,0 0,1 -1,0 0,-1z M29,19l1,0 0,1 -1,0 0,-1z M30,19l1,0 0,1 -1,0 0,-1z M32,19l1,0 0,1 -1,0 0,-1z M0,20l1,0 0,1 -1,0 0,-1z M4,20l1,0 0,1 -1,0 0,-1z M6,20l1,0 0,1 -1,0 0,-1z M7,20l1,0 0,1 -1,0 0,-1z M8,20l1,0 0,1 -1,0 0,-1z M9,20l1,0 0,1 -1,0 0,-1z M14,20l1,0 0,1 -1,0 0,-1z M15,20l1,0 0,1 -1,0 0,-1z M16,20l1,0 0,1 -1,0 0,-1z M20,20l1,0 0,1 -1,0 0,-1z M21,20l1,0 0,1 -1,0 0,-1z M22,20l1,0 0,1 -1,0 0,-1z M23,20l1,0 0,1 -1,0 0,-1z M25,20l1,0 0,1 -1,0 0,-1z M28,20l1,0 0,1 -1,0 0,-1z M30,20l1,0 0,1 -1,0 0,-1z M0,21l1,0 0,1 -1,0 0,-1z M1,21l1,0 0,1 -1,0 0,-1z M3,21l1,0 0,1 -1,0 0,-1z M4,21l1,0 0,1 -1,0 0,-1z M5,21l1,0 0,1 -1,0 0,-1z M7,21l1,0 0,1 -1,0 0,-1z M8,21l1,0 0,1 -1,0 0,-1z M10,21l1,0 0,1 -1,0 0,-1z M12,21l1,0 0,1 -1,0 0,-1z M14,21l1,0 0,1 -1,0 0,-1z M15,21l1,0 0,1 -1,0 0,-1z M17,21l1,0 0,1 -1,0 0,-1z M18,21l1,0 0,1 -1,0 0,-1z M21,21l1,0 0,1 -1,0 0,-1z M23,21l1,0 0,1 -1,0 0,-1z M24,21l1,0 0,1 -1,0 0,-1z M26,21l1,0 0,1 -1,0 0,-1z M27,21l1,0 0,1 -1,0 0,-1z M30,21l1,0 0,1 -1,0 0,-1z M31,21l1,0 0,1 -1,0 0,-1z M0,22l1,0 0,1 -1,0 0,-1z M3,22l1,0 0,1 -1,0 0,-1z M4,22l1,0 0,1 -1,0 0,-1z M5,22l1,0 0,1 -1,0 0,-1z M6,22l1,0 0,1 -1,0 0,-1z M8,22l1,0 0,1 -1,0 0,-1z M9,22l1,0 0,1 -1,0 0,-1z M10,22l1,0 0,1 -1,0 0,-1z M11,22l1,0 0,1 -1,0 0,-1z M12,22l1,0 0,1 -1,0 0,-1z M14,22l1,0 0,1 -1,0 0,-1z M15,22l1,0 0,1 -1,0 0,-1z M16,22l1,0 0,1 -1,0 0,-1z M17,22l1,0 0,1 -1,0 0,-1z M18,22l1,0 0,1 -1,0 0,-1z M20,22l1,0 0,1 -1,0 0,-1z M29,22l1,0 0,1 -1,0 0,-1z M30,22l1,0 0,1 -1,0 0,-1z M31,22l1,0 0,1 -1,0 0,-1z M0,23l1,0 0,1 -1,0 0,-1z M2,23l1,0 0,1 -1,0 0,-1z M5,23l1,0 0,1 -1,0 0,-1z M10,23l1,0 0,1 -1,0 0,-1z M12,23l1,0 0,1 -1,0 0,-1z M13,23l1,0 0,1 -1,0 0,-1z M14,23l1,0 0,1 -1,0 0,-1z M15,23l1,0 0,1 -1,0 0,-1z M21,23l1,0 0,1 -1,0 0,-1z M22,23l1,0 0,1 -1,0 0,-1z M30,23l1,0 0,1 -1,0 0,-1z M0,24l1,0 0,1 -1,0 0,-1z M4,24l1,0 0,1 -1,0 0,-1z M5,24l1,0 0,1 -1,0 0,-1z M6,24l1,0 0,1 -1,0 0,-1z M8,24l1,0 0,1 -1,0 0,-1z M10,24l1,0 0,1 -1,0 0,-1z M13,24l1,0 0,1 -1,0 0,-1z M14,24l1,0 0,1 -1,0 0,-1z M15,24l1,0 0,1 -1,0 0,-1z M22,24l1,0 0,1 -1,0 0,-1z M23,24l1,0 0,1 -1,0 0,-1z M24,24l1,0 0,1 -1,0 0,-1z M25,24l1,0 0,1 -1,0 0,-1z M26,24l1,0 0,1 -1,0 0,-1z M27,24l1,0 0,1 -1,0 0,-1z M28,24l1,0 0,1 -1,0 0,-1z M29,24l1,0 0,1 -1,0 0,-1z M31,24l1,0 0,1 -1,0 0,-1z M32,24l1,0 0,1 -1,0 0,-1z M8,25l1,0 0,1 -1,0 0,-1z M9,25l1,0 0,1 -1,0 0,-1z M11,25l1,0 0,1 -1,0 0,-1z M13,25l1,0 0,1 -1,0 0,-1z M16,25l1,0 0,1 -1,0 0,-1z M20,25l1,0 0,1 -1,0 0,-1z M21,25l1,0 0,1 -1,0 0,-1z M23,25l1,0 0,1 -1,0 0,-1z M24,25l1,0 0,1 -1,0 0,-1z M28,25l1,0 0,1 -1,0 0,-1z M31,25l1,0 0,1 -1,0 0,-1z M32,25l1,0 0,1 -1,0 0,-1z M0,26l1,0 0,1 -1,0 0,-1z M1,26l1,0 0,1 -1,0 0,-1z M2,26l1,0 0,1 -1,0 0,-1z M3,26l1,0 0,1 -1,0 0,-1z M4,26l1,0 0,1 -1,0 0,-1z M5,26l1,0 0,1 -1,0 0,-1z M6,26l1,0 0,1 -1,0 0,-1z M9,26l1,0 0,1 -1,0 0,-1z M13,26l1,0 0,1 -1,0 0,-1z M14,26l1,0 0,1 -1,0 0,-1z M15,26l1,0 0,1 -1,0 0,-1z M18,26l1,0 0,1 -1,0 0,-1z M21,26l1,0 0,1 -1,0 0,-1z M23,26l1,0 0,1 -1,0 0,-1z M24,26l1,0 0,1 -1,0 0,-1z M26,26l1,0 0,1 -1,0 0,-1z M28,26l1,0 0,1 -1,0 0,-1z M29,26l1,0 0,1 -1,0 0,-1z M30,26l1,0 0,1 -1,0 0,-1z M31,26l1,0 0,1 -1,0 0,-1z M0,27l1,0 0,1 -1,0 0,-1z M6,27l1,0 0,1 -1,0 0,-1z M8,27l1,0 0,1 -1,0 0,-1z M9,27l1,0 0,1 -1,0 0,-1z M10,27l1,0 0,1 -1,0 0,-1z M11,27l1,0 0,1 -1,0 0,-1z M12,27l1,0 0,1 -1,0 0,-1z M14,27l1,0 0,1 -1,0 0,-1z M21,27l1,0 0,1 -1,0 0,-1z M22,27l1,0 0,1 -1,0 0,-1z M24,27l1,0 0,1 -1,0 0,-1z M28,27l1,0 0,1 -1,0 0,-1z M30,27l1,0 0,1 -1,0 0,-1z M32,27l1,0 0,1 -1,0 0,-1z M0,28l1,0 0,1 -1,0 0,-1z M2,28l1,0 0,1 -1,0 0,-1z M3,28l1,0 0,1 -1,0 0,-1z M4,28l1,0 0,1 -1,0 0,-1z M6,28l1,0 0,1 -1,0 0,-1z M8,28l1,0 0,1 -1,0 0,-1z M14,28l1,0 0,1 -1,0 0,-1z M18,28l1,0 0,1 -1,0 0,-1z M21,28l1,0 0,1 -1,0 0,-1z M24,28l1,0 0,1 -1,0 0,-1z M25,28l1,0 0,1 -1,0 0,-1z M26,28l1,0 0,1 -1,0 0,-1z M27,28l1,0 0,1 -1,0 0,-1z M28,28l1,0 0,1 -1,0 0,-1z M29,28l1,0 0,1 -1,0 0,-1z M0,29l1,0 0,1 -1,0 0,-1z M2,29l1,0 0,1 -1,0 0,-1z M3,29l1,0 0,1 -1,0 0,-1z M4,29l1,0 0,1 -1,0 0,-1z M6,29l1,0 0,1 -1,0 0,-1z M8,29l1,0 0,1 -1,0 0,-1z M10,29l1,0 0,1 -1,0 0,-1z M13,29l1,0 0,1 -1,0 0,-1z M15,29l1,0 0,1 -1,0 0,-1z M16,29l1,0 0,1 -1,0 0,-1z M20,29l1,0 0,1 -1,0 0,-1z M21,29l1,0 0,1 -1,0 0,-1z M22,29l1,0 0,1 -1,0 0,-1z M23,29l1,0 0,1 -1,0 0,-1z M24,29l1,0 0,1 -1,0 0,-1z M25,29l1,0 0,1 -1,0 0,-1z M30,29l1,0 0,1 -1,0 0,-1z M32,29l1,0 0,1 -1,0 0,-1z M0,30l1,0 0,1 -1,0 0,-1z M2,30l1,0 0,1 -1,0 0,-1z M3,30l1,0 0,1 -1,0 0,-1z M4,30l1,0 0,1 -1,0 0,-1z M6,30l1,0 0,1 -1,0 0,-1z M8,30l1,0 0,1 -1,0 0,-1z M9,30l1,0 0,1 -1,0 0,-1z M10,30l1,0 0,1 -1,0 0,-1z M11,30l1,0 0,1 -1,0 0,-1z M18,30l1,0 0,1 -1,0 0,-1z M19,30l1,0 0,1 -1,0 0,-1z M21,30l1,0 0,1 -1,0 0,-1z M24,30l1,0 0,1 -1,0 0,-1z M29,30l1,0 0,1 -1,0 0,-1z M30,30l1,0 0,1 -1,0 0,-1z M0,31l1,0 0,1 -1,0 0,-1z M6,31l1,0 0,1 -1,0 0,-1z M9,31l1,0 0,1 -1,0 0,-1z M10,31l1,0 0,1 -1,0 0,-1z M12,31l1,0 0,1 -1,0 0,-1z M14,31l1,0 0,1 -1,0 0,-1z M16,31l1,0 0,1 -1,0 0,-1z M18,31l1,0 0,1 -1,0 0,-1z M19,31l1,0 0,1 -1,0 0,-1z M20,31l1,0 0,1 -1,0 0,-1z M21,31l1,0 0,1 -1,0 0,-1z M22,31l1,0 0,1 -1,0 0,-1z M25,31l1,0 0,1 -1,0 0,-1z M26,31l1,0 0,1 -1,0 0,-1z M27,31l1,0 0,1 -1,0 0,-1z M28,31l1,0 0,1 -1,0 0,-1z M30,31l1,0 0,1 -1,0 0,-1z M0,32l1,0 0,1 -1,0 0,-1z M1,32l1,0 0,1 -1,0 0,-1z M2,32l1,0 0,1 -1,0 0,-1z M3,32l1,0 0,1 -1,0 0,-1z M4,32l1,0 0,1 -1,0 0,-1z M5,32l1,0 0,1 -1,0 0,-1z M6,32l1,0 0,1 -1,0 0,-1z M8,32l1,0 0,1 -1,0 0,-1z M10,32l1,0 0,1 -1,0 0,-1z M11,32l1,0 0,1 -1,0 0,-1z M12,32l1,0 0,1 -1,0 0,-1z M14,32l1,0 0,1 -1,0 0,-1z M16,32l1,0 0,1 -1,0 0,-1z M17,32l1,0 0,1 -1,0 0,-1z M18,32l1,0 0,1 -1,0 0,-1z M19,32l1,0 0,1 -1,0 0,-1z M23,32l1,0 0,1 -1,0 0,-1z M24,32l1,0 0,1 -1,0 0,-1z M25,32l1,0 0,1 -1,0 0,-1z M26,32l1,0 0,1 -1,0 0,-1z M27,32l1,0 0,1 -1,0 0,-1z M28,32l1,0 0,1 -1,0 0,-1z M29,32l1,0 0,1 -1,0 0,-1z M31,32l1,0 0,1 -1,0 0,-1z " stroke="transparent" fill="black"></path></svg></div>
+    </div>
+  </div>
+
+  <h2>Como funciona · Cómo funciona · How it works</h2>
+
+  <div class="grade">
+    <div class="item">
+      <span class="ic" style="color:var(--terracota-forte)"><svg><use href="#ar"/></svg></span>
+      <p>Ar-condicionado: portas e janelas fechadas. Desligue ao sair.
+        <i>Aire: puertas y ventanas cerradas. Apagar al salir.</i>
+        <i>AC: doors and windows closed. Switch off when you leave.</i>
+      </p>
+    </div>
+
+    <div class="item">
+      <span class="ic" style="color:var(--terracota-forte)"><svg><use href="#cozinha"/></svg></span>
+      <p>Café, sal, azeite e temperos — use à vontade.
+        <i>Café, sal, aceite y condimentos — a disposición.</i>
+        <i>Coffee, salt, oil and spices — help yourself.</i>
+      </p>
+    </div>
+
+    <div class="item">
+      <span class="ic" style="color:var(--terracota-forte)"><svg><use href="#lavar"/></svg></span>
+      <p>Máquina de lavar: nos fundos, ao lado do tanque.
+        <i>Lavarropas: en el fondo, al lado del lavadero.</i>
+        <i>Washing machine: out back, next to the laundry sink.</i>
+      </p>
+    </div>
+
+    <div class="item">
+      <span class="ic" style="color:var(--terracota-forte)"><svg><use href="#tv"/></svg></span>
+      <p>TV: entre nas suas contas — e saia delas antes do check-out.
+        <i>TV: usen sus cuentas — y cierren sesión antes del check-out.</i>
+        <i>TV: use your own accounts — sign out before check-out.</i>
+      </p>
+    </div>
+
+    <div class="item">
+      <span class="ic" style="color:var(--terracota-forte)"><svg><use href="#churrasco"/></svg></span>
+      <p>Churrasqueira: carvão não incluso. Deixe as brasas apagarem sozinhas.
+        <i>Parrilla: carbón no incluido. Dejen que las brasas se apaguen solas.</i>
+        <i>Grill: charcoal not included. Let the embers burn out on their own.</i>
+      </p>
+    </div>
+
+    <div class="item">
+      <span class="ic" style="color:var(--terracota-forte)"><svg><use href="#agua"/></svg></span>
+      <p>Registro de água: nos fundos, ao lado do pergolado, na base da caixa d'água.
+        <i>Llave de paso: en el fondo, junto a la pérgola, en la base del tanque.</i>
+        <i>Water shut-off: out back, beside the pergola, at the base of the tank.</i>
+      </p>
+    </div>
+
+    <div class="item" style="grid-column:1 / -1">
+      <span class="ic" style="color:var(--terracota-forte)"><svg><use href="#eletrico"/></svg></span>
+      <p>Carro elétrico: tomada 220 V / 20 A. Uso gratuito, é só ligar o seu cabo.
+        <i>Auto eléctrico: toma 220 V / 20 A. Uso gratuito, enchufen su cable.</i>
+        <i>EV: 220 V / 20 A outlet. Free to use — just plug in your cable.</i>
+        <span class="nota">Sem cabo? Carregador público mais perto: Jurerê Sports Center · 5 min de carro.
+          <i>¿Sin cable? Cargador público más cercano · No cable? Nearest public charger.</i>
+        </span>
+      </p>
+    </div>
+  </div>
+
+  <h2>Lixo · Basura · Rubbish</h2>
+
+  <div class="lixo">
+    <div class="item">
+      <span class="ic" style="color:var(--terracota-forte);background:var(--branco)"><svg><use href="#lixo"/></svg></span>
+      <p>Comum: a coleta passa todos os dias. Deixe na calçada só à noite.
+        <i>Común: la recolección pasa todos los días. En la vereda, solo de noche.</i>
+        <i>General: collected every day. Out on the kerb at night only.</i>
+      </p>
+    </div>
+    <div class="item">
+      <span class="ic" style="color:var(--folha);background:var(--branco)"><svg><use href="#reciclar"/></svg></span>
+      <p>Reciclável: a coleta passa às segundas. Lixeira azul, nos fundos.
+        <i>Reciclables: la recolección pasa los lunes. Tacho azul, en el fondo.</i>
+        <i>Recycling: collected on Mondays. Blue bin, out back.</i>
+      </p>
+    </div>
+  </div>
+
+  <h2>Perto daqui · Cerca de acá · Nearby</h2>
+
+  <table class="perto">
+    <tr>
+      <td><span class="rot" style="color:var(--terracota-forte)"><svg><use href="#mercado"/></svg>
+        <span style="color:var(--taupe-escuro)">Mini mercado<i>Minimercado · Corner shop</i></span></span></td>
+      <td class="val">VT — mesma rua, saindo da casa à direita
+        <i>Misma calle, saliendo a la derecha · Same street, turn right when you leave</i></td>
+      <td class="val"><span class="modo"><svg style="color:var(--terracota-forte)"><use href="#pe"/></svg>2 min</span></td>
+    </tr>
+    <tr>
+      <td><span class="rot" style="color:var(--terracota-forte)"><svg><use href="#mercado"/></svg>
+        <span style="color:var(--taupe-escuro)">Mercado grande<i>Supermercado · Full supermarket</i></span></span></td>
+      <td class="val">Imperatriz, Jurerê — o maior mais perto
+        <i>El más grande y cercano · The nearest big one</i></td>
+      <td class="val"><span class="modo"><svg style="color:var(--terracota-forte)"><use href="#carro"/></svg>10 min</span></td>
+    </tr>
+    <tr>
+      <td><span class="rot" style="color:var(--terracota-forte)"><svg><use href="#padaria"/></svg>
+        <span style="color:var(--taupe-escuro)">Padaria<i>Panadería · Bakery</i></span></span></td>
+      <td class="val">Panificadora Doce Pão</td>
+      <td class="val"><span class="modo"><svg style="color:var(--terracota-forte)"><use href="#pe"/></svg>10 min</span></td>
+    </tr>
+    <tr>
+      <td><span class="rot" style="color:var(--terracota-forte)"><svg><use href="#farmacia"/></svg>
+        <span style="color:var(--taupe-escuro)">Farmácia<i>Farmacia · Pharmacy</i></span></span></td>
+      <td class="val">Farmácia Vida</td>
+      <td class="val"><span class="modo"><svg style="color:var(--terracota-forte)"><use href="#carro"/></svg>5 min</span></td>
+    </tr>
+    <tr>
+      <td><span class="rot" style="color:var(--terracota-forte)"><svg><use href="#caixa"/></svg>
+        <span style="color:var(--taupe-escuro)">Caixa eletrônico<i>Cajero · ATM</i></span></span></td>
+      <td class="val">Dentro do Imperatriz, Jurerê
+        <i>En el Imperatriz · Inside Imperatriz</i></td>
+      <td class="val"><span class="modo"><svg style="color:var(--terracota-forte)"><use href="#carro"/></svg>10 min</span></td>
+    </tr>
+    <tr>
+      <td><span class="rot" style="color:var(--terracota-forte)"><svg><use href="#posto"/></svg>
+        <span style="color:var(--taupe-escuro)">Posto<i>Nafta · Petrol</i></span></span></td>
+      <td class="val">Posto Daqui, Jurerê Internacional</td>
+      <td class="val"><span class="modo"><svg style="color:var(--terracota-forte)"><use href="#carro"/></svg>5 min</span></td>
+    </tr>
+    <tr>
+      <td><span class="rot" style="color:var(--terracota-forte)"><svg><use href="#restaurante"/></svg>
+        <span style="color:var(--taupe-escuro)">Nossos favoritos<i>Nuestros favoritos · Our favourites</i></span></span></td>
+      <td class="val" colspan="2">Il Caravaggio (italiano) · May Santo Antônio (tailandês)</td>
+    </tr>
+  </table>
+
+  <div class="rodape">
+    <span style="color:var(--terracota-forte)"><svg style="width:9mm;height:9mm"><use href="#zap"/></svg></span>
+    <p>Precisa de algo? WhatsApp +55 48 92001-3055
+      <i>¿Necesitan algo? · Need anything?</i>
+    </p>
+    <div class="qr-site">
+      <div class="qr-box" style="width:24mm"><svg class="qr-img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" preserveAspectRatio="xMinYMin meet"><path fill="#4f4236" d="M0,0l1,0 0,1 -1,0 0,-1z M1,0l1,0 0,1 -1,0 0,-1z M2,0l1,0 0,1 -1,0 0,-1z M3,0l1,0 0,1 -1,0 0,-1z M4,0l1,0 0,1 -1,0 0,-1z M5,0l1,0 0,1 -1,0 0,-1z M6,0l1,0 0,1 -1,0 0,-1z M9,0l1,0 0,1 -1,0 0,-1z M11,0l1,0 0,1 -1,0 0,-1z M12,0l1,0 0,1 -1,0 0,-1z M13,0l1,0 0,1 -1,0 0,-1z M14,0l1,0 0,1 -1,0 0,-1z M15,0l1,0 0,1 -1,0 0,-1z M18,0l1,0 0,1 -1,0 0,-1z M22,0l1,0 0,1 -1,0 0,-1z M23,0l1,0 0,1 -1,0 0,-1z M24,0l1,0 0,1 -1,0 0,-1z M25,0l1,0 0,1 -1,0 0,-1z M26,0l1,0 0,1 -1,0 0,-1z M27,0l1,0 0,1 -1,0 0,-1z M28,0l1,0 0,1 -1,0 0,-1z M0,1l1,0 0,1 -1,0 0,-1z M6,1l1,0 0,1 -1,0 0,-1z M8,1l1,0 0,1 -1,0 0,-1z M9,1l1,0 0,1 -1,0 0,-1z M10,1l1,0 0,1 -1,0 0,-1z M11,1l1,0 0,1 -1,0 0,-1z M15,1l1,0 0,1 -1,0 0,-1z M17,1l1,0 0,1 -1,0 0,-1z M20,1l1,0 0,1 -1,0 0,-1z M22,1l1,0 0,1 -1,0 0,-1z M28,1l1,0 0,1 -1,0 0,-1z M0,2l1,0 0,1 -1,0 0,-1z M2,2l1,0 0,1 -1,0 0,-1z M3,2l1,0 0,1 -1,0 0,-1z M4,2l1,0 0,1 -1,0 0,-1z M6,2l1,0 0,1 -1,0 0,-1z M8,2l1,0 0,1 -1,0 0,-1z M9,2l1,0 0,1 -1,0 0,-1z M11,2l1,0 0,1 -1,0 0,-1z M12,2l1,0 0,1 -1,0 0,-1z M14,2l1,0 0,1 -1,0 0,-1z M16,2l1,0 0,1 -1,0 0,-1z M19,2l1,0 0,1 -1,0 0,-1z M22,2l1,0 0,1 -1,0 0,-1z M24,2l1,0 0,1 -1,0 0,-1z M25,2l1,0 0,1 -1,0 0,-1z M26,2l1,0 0,1 -1,0 0,-1z M28,2l1,0 0,1 -1,0 0,-1z M0,3l1,0 0,1 -1,0 0,-1z M2,3l1,0 0,1 -1,0 0,-1z M3,3l1,0 0,1 -1,0 0,-1z M4,3l1,0 0,1 -1,0 0,-1z M6,3l1,0 0,1 -1,0 0,-1z M8,3l1,0 0,1 -1,0 0,-1z M9,3l1,0 0,1 -1,0 0,-1z M10,3l1,0 0,1 -1,0 0,-1z M14,3l1,0 0,1 -1,0 0,-1z M15,3l1,0 0,1 -1,0 0,-1z M16,3l1,0 0,1 -1,0 0,-1z M17,3l1,0 0,1 -1,0 0,-1z M20,3l1,0 0,1 -1,0 0,-1z M22,3l1,0 0,1 -1,0 0,-1z M24,3l1,0 0,1 -1,0 0,-1z M25,3l1,0 0,1 -1,0 0,-1z M26,3l1,0 0,1 -1,0 0,-1z M28,3l1,0 0,1 -1,0 0,-1z M0,4l1,0 0,1 -1,0 0,-1z M2,4l1,0 0,1 -1,0 0,-1z M3,4l1,0 0,1 -1,0 0,-1z M4,4l1,0 0,1 -1,0 0,-1z M6,4l1,0 0,1 -1,0 0,-1z M9,4l1,0 0,1 -1,0 0,-1z M10,4l1,0 0,1 -1,0 0,-1z M12,4l1,0 0,1 -1,0 0,-1z M13,4l1,0 0,1 -1,0 0,-1z M14,4l1,0 0,1 -1,0 0,-1z M15,4l1,0 0,1 -1,0 0,-1z M17,4l1,0 0,1 -1,0 0,-1z M18,4l1,0 0,1 -1,0 0,-1z M19,4l1,0 0,1 -1,0 0,-1z M20,4l1,0 0,1 -1,0 0,-1z M22,4l1,0 0,1 -1,0 0,-1z M24,4l1,0 0,1 -1,0 0,-1z M25,4l1,0 0,1 -1,0 0,-1z M26,4l1,0 0,1 -1,0 0,-1z M28,4l1,0 0,1 -1,0 0,-1z M0,5l1,0 0,1 -1,0 0,-1z M6,5l1,0 0,1 -1,0 0,-1z M11,5l1,0 0,1 -1,0 0,-1z M13,5l1,0 0,1 -1,0 0,-1z M14,5l1,0 0,1 -1,0 0,-1z M16,5l1,0 0,1 -1,0 0,-1z M22,5l1,0 0,1 -1,0 0,-1z M28,5l1,0 0,1 -1,0 0,-1z M0,6l1,0 0,1 -1,0 0,-1z M1,6l1,0 0,1 -1,0 0,-1z M2,6l1,0 0,1 -1,0 0,-1z M3,6l1,0 0,1 -1,0 0,-1z M4,6l1,0 0,1 -1,0 0,-1z M5,6l1,0 0,1 -1,0 0,-1z M6,6l1,0 0,1 -1,0 0,-1z M8,6l1,0 0,1 -1,0 0,-1z M10,6l1,0 0,1 -1,0 0,-1z M12,6l1,0 0,1 -1,0 0,-1z M14,6l1,0 0,1 -1,0 0,-1z M16,6l1,0 0,1 -1,0 0,-1z M18,6l1,0 0,1 -1,0 0,-1z M20,6l1,0 0,1 -1,0 0,-1z M22,6l1,0 0,1 -1,0 0,-1z M23,6l1,0 0,1 -1,0 0,-1z M24,6l1,0 0,1 -1,0 0,-1z M25,6l1,0 0,1 -1,0 0,-1z M26,6l1,0 0,1 -1,0 0,-1z M27,6l1,0 0,1 -1,0 0,-1z M28,6l1,0 0,1 -1,0 0,-1z M8,7l1,0 0,1 -1,0 0,-1z M9,7l1,0 0,1 -1,0 0,-1z M10,7l1,0 0,1 -1,0 0,-1z M11,7l1,0 0,1 -1,0 0,-1z M13,7l1,0 0,1 -1,0 0,-1z M15,7l1,0 0,1 -1,0 0,-1z M19,7l1,0 0,1 -1,0 0,-1z M20,7l1,0 0,1 -1,0 0,-1z M0,8l1,0 0,1 -1,0 0,-1z M6,8l1,0 0,1 -1,0 0,-1z M8,8l1,0 0,1 -1,0 0,-1z M9,8l1,0 0,1 -1,0 0,-1z M10,8l1,0 0,1 -1,0 0,-1z M11,8l1,0 0,1 -1,0 0,-1z M14,8l1,0 0,1 -1,0 0,-1z M15,8l1,0 0,1 -1,0 0,-1z M16,8l1,0 0,1 -1,0 0,-1z M17,8l1,0 0,1 -1,0 0,-1z M18,8l1,0 0,1 -1,0 0,-1z M19,8l1,0 0,1 -1,0 0,-1z M21,8l1,0 0,1 -1,0 0,-1z M22,8l1,0 0,1 -1,0 0,-1z M25,8l1,0 0,1 -1,0 0,-1z M26,8l1,0 0,1 -1,0 0,-1z M27,8l1,0 0,1 -1,0 0,-1z M3,9l1,0 0,1 -1,0 0,-1z M4,9l1,0 0,1 -1,0 0,-1z M5,9l1,0 0,1 -1,0 0,-1z M7,9l1,0 0,1 -1,0 0,-1z M8,9l1,0 0,1 -1,0 0,-1z M9,9l1,0 0,1 -1,0 0,-1z M10,9l1,0 0,1 -1,0 0,-1z M14,9l1,0 0,1 -1,0 0,-1z M15,9l1,0 0,1 -1,0 0,-1z M17,9l1,0 0,1 -1,0 0,-1z M18,9l1,0 0,1 -1,0 0,-1z M19,9l1,0 0,1 -1,0 0,-1z M20,9l1,0 0,1 -1,0 0,-1z M23,9l1,0 0,1 -1,0 0,-1z M24,9l1,0 0,1 -1,0 0,-1z M26,9l1,0 0,1 -1,0 0,-1z M27,9l1,0 0,1 -1,0 0,-1z M1,10l1,0 0,1 -1,0 0,-1z M2,10l1,0 0,1 -1,0 0,-1z M6,10l1,0 0,1 -1,0 0,-1z M10,10l1,0 0,1 -1,0 0,-1z M15,10l1,0 0,1 -1,0 0,-1z M16,10l1,0 0,1 -1,0 0,-1z M17,10l1,0 0,1 -1,0 0,-1z M21,10l1,0 0,1 -1,0 0,-1z M23,10l1,0 0,1 -1,0 0,-1z M24,10l1,0 0,1 -1,0 0,-1z M0,11l1,0 0,1 -1,0 0,-1z M3,11l1,0 0,1 -1,0 0,-1z M5,11l1,0 0,1 -1,0 0,-1z M8,11l1,0 0,1 -1,0 0,-1z M9,11l1,0 0,1 -1,0 0,-1z M11,11l1,0 0,1 -1,0 0,-1z M12,11l1,0 0,1 -1,0 0,-1z M14,11l1,0 0,1 -1,0 0,-1z M15,11l1,0 0,1 -1,0 0,-1z M16,11l1,0 0,1 -1,0 0,-1z M22,11l1,0 0,1 -1,0 0,-1z M24,11l1,0 0,1 -1,0 0,-1z M25,11l1,0 0,1 -1,0 0,-1z M0,12l1,0 0,1 -1,0 0,-1z M4,12l1,0 0,1 -1,0 0,-1z M5,12l1,0 0,1 -1,0 0,-1z M6,12l1,0 0,1 -1,0 0,-1z M7,12l1,0 0,1 -1,0 0,-1z M8,12l1,0 0,1 -1,0 0,-1z M11,12l1,0 0,1 -1,0 0,-1z M12,12l1,0 0,1 -1,0 0,-1z M13,12l1,0 0,1 -1,0 0,-1z M14,12l1,0 0,1 -1,0 0,-1z M16,12l1,0 0,1 -1,0 0,-1z M19,12l1,0 0,1 -1,0 0,-1z M22,12l1,0 0,1 -1,0 0,-1z M23,12l1,0 0,1 -1,0 0,-1z M28,12l1,0 0,1 -1,0 0,-1z M1,13l1,0 0,1 -1,0 0,-1z M2,13l1,0 0,1 -1,0 0,-1z M5,13l1,0 0,1 -1,0 0,-1z M7,13l1,0 0,1 -1,0 0,-1z M9,13l1,0 0,1 -1,0 0,-1z M13,13l1,0 0,1 -1,0 0,-1z M14,13l1,0 0,1 -1,0 0,-1z M15,13l1,0 0,1 -1,0 0,-1z M16,13l1,0 0,1 -1,0 0,-1z M18,13l1,0 0,1 -1,0 0,-1z M19,13l1,0 0,1 -1,0 0,-1z M21,13l1,0 0,1 -1,0 0,-1z M22,13l1,0 0,1 -1,0 0,-1z M23,13l1,0 0,1 -1,0 0,-1z M24,13l1,0 0,1 -1,0 0,-1z M27,13l1,0 0,1 -1,0 0,-1z M28,13l1,0 0,1 -1,0 0,-1z M2,14l1,0 0,1 -1,0 0,-1z M3,14l1,0 0,1 -1,0 0,-1z M4,14l1,0 0,1 -1,0 0,-1z M5,14l1,0 0,1 -1,0 0,-1z M6,14l1,0 0,1 -1,0 0,-1z M7,14l1,0 0,1 -1,0 0,-1z M9,14l1,0 0,1 -1,0 0,-1z M11,14l1,0 0,1 -1,0 0,-1z M13,14l1,0 0,1 -1,0 0,-1z M14,14l1,0 0,1 -1,0 0,-1z M15,14l1,0 0,1 -1,0 0,-1z M17,14l1,0 0,1 -1,0 0,-1z M18,14l1,0 0,1 -1,0 0,-1z M20,14l1,0 0,1 -1,0 0,-1z M21,14l1,0 0,1 -1,0 0,-1z M23,14l1,0 0,1 -1,0 0,-1z M25,14l1,0 0,1 -1,0 0,-1z M26,14l1,0 0,1 -1,0 0,-1z M0,15l1,0 0,1 -1,0 0,-1z M1,15l1,0 0,1 -1,0 0,-1z M3,15l1,0 0,1 -1,0 0,-1z M4,15l1,0 0,1 -1,0 0,-1z M7,15l1,0 0,1 -1,0 0,-1z M8,15l1,0 0,1 -1,0 0,-1z M9,15l1,0 0,1 -1,0 0,-1z M10,15l1,0 0,1 -1,0 0,-1z M12,15l1,0 0,1 -1,0 0,-1z M13,15l1,0 0,1 -1,0 0,-1z M14,15l1,0 0,1 -1,0 0,-1z M18,15l1,0 0,1 -1,0 0,-1z M24,15l1,0 0,1 -1,0 0,-1z M26,15l1,0 0,1 -1,0 0,-1z M28,15l1,0 0,1 -1,0 0,-1z M1,16l1,0 0,1 -1,0 0,-1z M2,16l1,0 0,1 -1,0 0,-1z M3,16l1,0 0,1 -1,0 0,-1z M5,16l1,0 0,1 -1,0 0,-1z M6,16l1,0 0,1 -1,0 0,-1z M9,16l1,0 0,1 -1,0 0,-1z M10,16l1,0 0,1 -1,0 0,-1z M12,16l1,0 0,1 -1,0 0,-1z M14,16l1,0 0,1 -1,0 0,-1z M15,16l1,0 0,1 -1,0 0,-1z M17,16l1,0 0,1 -1,0 0,-1z M20,16l1,0 0,1 -1,0 0,-1z M23,16l1,0 0,1 -1,0 0,-1z M25,16l1,0 0,1 -1,0 0,-1z M26,16l1,0 0,1 -1,0 0,-1z M0,17l1,0 0,1 -1,0 0,-1z M2,17l1,0 0,1 -1,0 0,-1z M3,17l1,0 0,1 -1,0 0,-1z M5,17l1,0 0,1 -1,0 0,-1z M7,17l1,0 0,1 -1,0 0,-1z M8,17l1,0 0,1 -1,0 0,-1z M9,17l1,0 0,1 -1,0 0,-1z M15,17l1,0 0,1 -1,0 0,-1z M16,17l1,0 0,1 -1,0 0,-1z M18,17l1,0 0,1 -1,0 0,-1z M19,17l1,0 0,1 -1,0 0,-1z M22,17l1,0 0,1 -1,0 0,-1z M23,17l1,0 0,1 -1,0 0,-1z M24,17l1,0 0,1 -1,0 0,-1z M26,17l1,0 0,1 -1,0 0,-1z M27,17l1,0 0,1 -1,0 0,-1z M28,17l1,0 0,1 -1,0 0,-1z M0,18l1,0 0,1 -1,0 0,-1z M1,18l1,0 0,1 -1,0 0,-1z M2,18l1,0 0,1 -1,0 0,-1z M3,18l1,0 0,1 -1,0 0,-1z M4,18l1,0 0,1 -1,0 0,-1z M6,18l1,0 0,1 -1,0 0,-1z M9,18l1,0 0,1 -1,0 0,-1z M10,18l1,0 0,1 -1,0 0,-1z M11,18l1,0 0,1 -1,0 0,-1z M13,18l1,0 0,1 -1,0 0,-1z M14,18l1,0 0,1 -1,0 0,-1z M15,18l1,0 0,1 -1,0 0,-1z M16,18l1,0 0,1 -1,0 0,-1z M17,18l1,0 0,1 -1,0 0,-1z M19,18l1,0 0,1 -1,0 0,-1z M21,18l1,0 0,1 -1,0 0,-1z M24,18l1,0 0,1 -1,0 0,-1z M25,18l1,0 0,1 -1,0 0,-1z M28,18l1,0 0,1 -1,0 0,-1z M0,19l1,0 0,1 -1,0 0,-1z M2,19l1,0 0,1 -1,0 0,-1z M3,19l1,0 0,1 -1,0 0,-1z M14,19l1,0 0,1 -1,0 0,-1z M15,19l1,0 0,1 -1,0 0,-1z M16,19l1,0 0,1 -1,0 0,-1z M21,19l1,0 0,1 -1,0 0,-1z M24,19l1,0 0,1 -1,0 0,-1z M0,20l1,0 0,1 -1,0 0,-1z M4,20l1,0 0,1 -1,0 0,-1z M5,20l1,0 0,1 -1,0 0,-1z M6,20l1,0 0,1 -1,0 0,-1z M7,20l1,0 0,1 -1,0 0,-1z M8,20l1,0 0,1 -1,0 0,-1z M10,20l1,0 0,1 -1,0 0,-1z M11,20l1,0 0,1 -1,0 0,-1z M12,20l1,0 0,1 -1,0 0,-1z M17,20l1,0 0,1 -1,0 0,-1z M20,20l1,0 0,1 -1,0 0,-1z M21,20l1,0 0,1 -1,0 0,-1z M22,20l1,0 0,1 -1,0 0,-1z M23,20l1,0 0,1 -1,0 0,-1z M24,20l1,0 0,1 -1,0 0,-1z M26,20l1,0 0,1 -1,0 0,-1z M27,20l1,0 0,1 -1,0 0,-1z M28,20l1,0 0,1 -1,0 0,-1z M8,21l1,0 0,1 -1,0 0,-1z M10,21l1,0 0,1 -1,0 0,-1z M11,21l1,0 0,1 -1,0 0,-1z M13,21l1,0 0,1 -1,0 0,-1z M15,21l1,0 0,1 -1,0 0,-1z M17,21l1,0 0,1 -1,0 0,-1z M18,21l1,0 0,1 -1,0 0,-1z M19,21l1,0 0,1 -1,0 0,-1z M20,21l1,0 0,1 -1,0 0,-1z M24,21l1,0 0,1 -1,0 0,-1z M25,21l1,0 0,1 -1,0 0,-1z M0,22l1,0 0,1 -1,0 0,-1z M1,22l1,0 0,1 -1,0 0,-1z M2,22l1,0 0,1 -1,0 0,-1z M3,22l1,0 0,1 -1,0 0,-1z M4,22l1,0 0,1 -1,0 0,-1z M5,22l1,0 0,1 -1,0 0,-1z M6,22l1,0 0,1 -1,0 0,-1z M12,22l1,0 0,1 -1,0 0,-1z M13,22l1,0 0,1 -1,0 0,-1z M14,22l1,0 0,1 -1,0 0,-1z M15,22l1,0 0,1 -1,0 0,-1z M16,22l1,0 0,1 -1,0 0,-1z M19,22l1,0 0,1 -1,0 0,-1z M20,22l1,0 0,1 -1,0 0,-1z M22,22l1,0 0,1 -1,0 0,-1z M24,22l1,0 0,1 -1,0 0,-1z M25,22l1,0 0,1 -1,0 0,-1z M26,22l1,0 0,1 -1,0 0,-1z M0,23l1,0 0,1 -1,0 0,-1z M6,23l1,0 0,1 -1,0 0,-1z M9,23l1,0 0,1 -1,0 0,-1z M10,23l1,0 0,1 -1,0 0,-1z M11,23l1,0 0,1 -1,0 0,-1z M13,23l1,0 0,1 -1,0 0,-1z M20,23l1,0 0,1 -1,0 0,-1z M24,23l1,0 0,1 -1,0 0,-1z M27,23l1,0 0,1 -1,0 0,-1z M28,23l1,0 0,1 -1,0 0,-1z M0,24l1,0 0,1 -1,0 0,-1z M2,24l1,0 0,1 -1,0 0,-1z M3,24l1,0 0,1 -1,0 0,-1z M4,24l1,0 0,1 -1,0 0,-1z M6,24l1,0 0,1 -1,0 0,-1z M9,24l1,0 0,1 -1,0 0,-1z M10,24l1,0 0,1 -1,0 0,-1z M12,24l1,0 0,1 -1,0 0,-1z M13,24l1,0 0,1 -1,0 0,-1z M16,24l1,0 0,1 -1,0 0,-1z M18,24l1,0 0,1 -1,0 0,-1z M19,24l1,0 0,1 -1,0 0,-1z M20,24l1,0 0,1 -1,0 0,-1z M21,24l1,0 0,1 -1,0 0,-1z M22,24l1,0 0,1 -1,0 0,-1z M23,24l1,0 0,1 -1,0 0,-1z M24,24l1,0 0,1 -1,0 0,-1z M25,24l1,0 0,1 -1,0 0,-1z M27,24l1,0 0,1 -1,0 0,-1z M28,24l1,0 0,1 -1,0 0,-1z M0,25l1,0 0,1 -1,0 0,-1z M2,25l1,0 0,1 -1,0 0,-1z M3,25l1,0 0,1 -1,0 0,-1z M4,25l1,0 0,1 -1,0 0,-1z M6,25l1,0 0,1 -1,0 0,-1z M10,25l1,0 0,1 -1,0 0,-1z M11,25l1,0 0,1 -1,0 0,-1z M12,25l1,0 0,1 -1,0 0,-1z M13,25l1,0 0,1 -1,0 0,-1z M15,25l1,0 0,1 -1,0 0,-1z M16,25l1,0 0,1 -1,0 0,-1z M17,25l1,0 0,1 -1,0 0,-1z M18,25l1,0 0,1 -1,0 0,-1z M19,25l1,0 0,1 -1,0 0,-1z M21,25l1,0 0,1 -1,0 0,-1z M25,25l1,0 0,1 -1,0 0,-1z M26,25l1,0 0,1 -1,0 0,-1z M28,25l1,0 0,1 -1,0 0,-1z M0,26l1,0 0,1 -1,0 0,-1z M2,26l1,0 0,1 -1,0 0,-1z M3,26l1,0 0,1 -1,0 0,-1z M4,26l1,0 0,1 -1,0 0,-1z M6,26l1,0 0,1 -1,0 0,-1z M13,26l1,0 0,1 -1,0 0,-1z M14,26l1,0 0,1 -1,0 0,-1z M15,26l1,0 0,1 -1,0 0,-1z M22,26l1,0 0,1 -1,0 0,-1z M23,26l1,0 0,1 -1,0 0,-1z M24,26l1,0 0,1 -1,0 0,-1z M25,26l1,0 0,1 -1,0 0,-1z M26,26l1,0 0,1 -1,0 0,-1z M27,26l1,0 0,1 -1,0 0,-1z M0,27l1,0 0,1 -1,0 0,-1z M6,27l1,0 0,1 -1,0 0,-1z M9,27l1,0 0,1 -1,0 0,-1z M12,27l1,0 0,1 -1,0 0,-1z M15,27l1,0 0,1 -1,0 0,-1z M22,27l1,0 0,1 -1,0 0,-1z M23,27l1,0 0,1 -1,0 0,-1z M25,27l1,0 0,1 -1,0 0,-1z M26,27l1,0 0,1 -1,0 0,-1z M28,27l1,0 0,1 -1,0 0,-1z M0,28l1,0 0,1 -1,0 0,-1z M1,28l1,0 0,1 -1,0 0,-1z M2,28l1,0 0,1 -1,0 0,-1z M3,28l1,0 0,1 -1,0 0,-1z M4,28l1,0 0,1 -1,0 0,-1z M5,28l1,0 0,1 -1,0 0,-1z M6,28l1,0 0,1 -1,0 0,-1z M8,28l1,0 0,1 -1,0 0,-1z M9,28l1,0 0,1 -1,0 0,-1z M12,28l1,0 0,1 -1,0 0,-1z M13,28l1,0 0,1 -1,0 0,-1z M14,28l1,0 0,1 -1,0 0,-1z M15,28l1,0 0,1 -1,0 0,-1z M16,28l1,0 0,1 -1,0 0,-1z M17,28l1,0 0,1 -1,0 0,-1z M19,28l1,0 0,1 -1,0 0,-1z M22,28l1,0 0,1 -1,0 0,-1z M24,28l1,0 0,1 -1,0 0,-1z M26,28l1,0 0,1 -1,0 0,-1z " stroke="transparent" fill="black"></path></svg></div>
+      <span class="site">casabrisa150.com<br>/bem-vindos</span>
+    </div>
+  </div>
+
+</section>
+
+<!-- =================== CARTAZ 2 =================== -->
+<section class="folha">
+
+  <header class="marca">
+    <img class="disco" src="../../public/logo-disco.svg" alt="Casa Brisa">
+    <div>
+      <h1>Casa Brisa</h1>
+      <p class="sub">Emergências · Regras · Saída</p>
+    </div>
+  </header>
+
+  <div class="endereco">
+    <svg><use href="#pin"/></svg>
+    <span>Estamos em: Rua dos Cravos, 150 — Praia da Daniela, Florianópolis · SC</span>
+    <i>Estamos en · We are at</i>
+  </div>
+
+  <div class="emerg">
+    <div class="tres">
+      <div class="servico">
+        <b>190</b>
+        <span>Polícia</span>
+        <i>Policía · Police</i>
+      </div>
+      <div class="servico">
+        <b>192</b>
+        <span>Ambulância</span>
+        <i>Ambulancia · Ambulance</i>
+      </div>
+      <div class="servico">
+        <b>193</b>
+        <span>Bombeiros e guarda-vidas</span>
+        <i>Bomberos y guardavidas · Fire brigade and lifeguards</i>
+      </div>
+    </div>
+
+    <table>
+      <tr>
+        <td>Hospital</td>
+        <td>UPA Norte — R. Francisco Faustino Martins, s/n · Vargem Grande, Florianópolis</td>
+      </tr>
+      <tr>
+        <td>Farmácia até meia-noite<i>Farmacia hasta medianoche · Pharmacy until midnight</i></td>
+        <td>Farmácia Vida — Av. das Raias, 261, sala 2 · Jurerê, Florianópolis</td>
+      </tr>
+      <tr>
+        <td>Veterinário 24 h<i>Veterinaria · Vet</i></td>
+        <td>HVJ — +55 48 3284-2102</td>
+      </tr>
+      <tr>
+        <td>Falta de luz<i>Corte de luz · Power outage</i></td>
+        <td>Celesc — 0800 048 0196</td>
+      </tr>
+    </table>
+
+    <p class="zap"><svg style="width:7mm;height:7mm"><use href="#zap"/></svg>
+      Anfitriões · Anfitriones · Hosts — +55 48 92001-3055</p>
+  </div>
+
+  <h2>Bom saber · Bueno saber · Good to know</h2>
+
+  <div class="grade">
+    <div class="item">
+      <span class="ic" style="color:var(--terracota-forte)"><svg><use href="#hospedes"/></svg></span>
+      <p>Até 6 hóspedes<i>Hasta 6 huéspedes · Up to 6 guests</i></p>
+    </div>
+    <div class="item">
+      <span class="ic" style="color:var(--terracota-forte)"><svg><use href="#festa"/></svg></span>
+      <p>Sem festas ou eventos<i>Sin fiestas ni eventos · No parties or events</i></p>
+    </div>
+    <div class="item">
+      <span class="ic" style="color:var(--terracota-forte)"><svg><use href="#fumar"/></svg></span>
+      <p>Não fume dentro de casa — no quintal, tudo bem
+        <i>No fumar adentro — en el fondo, sí · No smoking indoors — outside is fine</i>
+      </p>
+    </div>
+    <div class="item">
+      <span class="ic" style="color:var(--terracota-forte)"><svg><use href="#silencio"/></svg></span>
+      <p>Silêncio depois das 22h — sem exceção
+        <i>Silencio después de las 22 h — sin excepción</i>
+        <i>Quiet after 10 pm — no exceptions</i>
+      </p>
+    </div>
+    <div class="item">
+      <span class="ic" style="color:var(--terracota-forte)"><svg><use href="#pet"/></svg></span>
+      <p>Pets são bem-vindos<i>Mascotas bienvenidas · Pets welcome</i></p>
+    </div>
+    <div class="item">
+      <span class="ic" style="color:var(--terracota-forte)"><svg><use href="#ducha"/></svg></span>
+      <p>Ducha para os pés na entrada — sempre feche o registro laranja.
+        <i>Ducha para los pies — cierren siempre la llave naranja.</i>
+        <i>Foot shower by the entrance — always close the orange tap.</i>
+      </p>
+    </div>
+  </div>
+
+  <div class="praia">
+    <svg class="seta" viewBox="0 0 256 256" style="color:var(--terracota-forte)"><use href="#seta"/></svg>
+    <p>Para a praia (150 m): ao sair de casa, vire à ESQUERDA. A entrada está no fim da rua.
+      <i>A la playa: al salir, doblen a la IZQUIERDA. La bajada está al final de la calle.</i>
+      <i>To the beach: leaving the house, turn LEFT. The entrance is at the end of the street.</i>
+    </p>
+  </div>
+
+  <h2>Antes de sair, até as 11h · Antes de irse · Before you go</h2>
+
+  <ul class="check">
+    <li><span class="caixa"></span><p>Louça lavada, lixo na lixeira da frente
+      <i>Vajilla lavada, basura en el tacho · Dishes washed, rubbish in the bin</i></p></li>
+    <li><span class="caixa"></span><p>Ar, luzes e cooktop desligados
+      <i>Aire, luces y anafe apagados · AC, lights and cooktop off</i></p></li>
+    <li><span class="caixa"></span><p>Janelas fechadas
+      <i>Ventanas cerradas · Windows closed</i></p></li>
+    <li><span class="caixa"></span><p>Sair das contas da TV
+      <i>Cerrar sesión en la TV · Sign out of the TV</i></p></li>
+    <li style="grid-column:1 / -1"><span class="caixa"></span><p>Chave na porta, por dentro, e a porta aberta
+      <i>Llave en la puerta, por dentro, y la puerta abierta · Key in the door, on the inside, door left open</i></p></li>
+  </ul>
+
+
+  <div class="rodape">
+    <div class="qr"><div class="qr-box" style="width:28mm"><svg class="qr-img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" preserveAspectRatio="xMinYMin meet"><path fill="#4f4236" d="M0,0l1,0 0,1 -1,0 0,-1z M1,0l1,0 0,1 -1,0 0,-1z M2,0l1,0 0,1 -1,0 0,-1z M3,0l1,0 0,1 -1,0 0,-1z M4,0l1,0 0,1 -1,0 0,-1z M5,0l1,0 0,1 -1,0 0,-1z M6,0l1,0 0,1 -1,0 0,-1z M9,0l1,0 0,1 -1,0 0,-1z M11,0l1,0 0,1 -1,0 0,-1z M12,0l1,0 0,1 -1,0 0,-1z M13,0l1,0 0,1 -1,0 0,-1z M14,0l1,0 0,1 -1,0 0,-1z M15,0l1,0 0,1 -1,0 0,-1z M18,0l1,0 0,1 -1,0 0,-1z M22,0l1,0 0,1 -1,0 0,-1z M23,0l1,0 0,1 -1,0 0,-1z M24,0l1,0 0,1 -1,0 0,-1z M25,0l1,0 0,1 -1,0 0,-1z M26,0l1,0 0,1 -1,0 0,-1z M27,0l1,0 0,1 -1,0 0,-1z M28,0l1,0 0,1 -1,0 0,-1z M0,1l1,0 0,1 -1,0 0,-1z M6,1l1,0 0,1 -1,0 0,-1z M8,1l1,0 0,1 -1,0 0,-1z M9,1l1,0 0,1 -1,0 0,-1z M10,1l1,0 0,1 -1,0 0,-1z M11,1l1,0 0,1 -1,0 0,-1z M15,1l1,0 0,1 -1,0 0,-1z M17,1l1,0 0,1 -1,0 0,-1z M20,1l1,0 0,1 -1,0 0,-1z M22,1l1,0 0,1 -1,0 0,-1z M28,1l1,0 0,1 -1,0 0,-1z M0,2l1,0 0,1 -1,0 0,-1z M2,2l1,0 0,1 -1,0 0,-1z M3,2l1,0 0,1 -1,0 0,-1z M4,2l1,0 0,1 -1,0 0,-1z M6,2l1,0 0,1 -1,0 0,-1z M8,2l1,0 0,1 -1,0 0,-1z M9,2l1,0 0,1 -1,0 0,-1z M11,2l1,0 0,1 -1,0 0,-1z M12,2l1,0 0,1 -1,0 0,-1z M14,2l1,0 0,1 -1,0 0,-1z M16,2l1,0 0,1 -1,0 0,-1z M19,2l1,0 0,1 -1,0 0,-1z M22,2l1,0 0,1 -1,0 0,-1z M24,2l1,0 0,1 -1,0 0,-1z M25,2l1,0 0,1 -1,0 0,-1z M26,2l1,0 0,1 -1,0 0,-1z M28,2l1,0 0,1 -1,0 0,-1z M0,3l1,0 0,1 -1,0 0,-1z M2,3l1,0 0,1 -1,0 0,-1z M3,3l1,0 0,1 -1,0 0,-1z M4,3l1,0 0,1 -1,0 0,-1z M6,3l1,0 0,1 -1,0 0,-1z M8,3l1,0 0,1 -1,0 0,-1z M9,3l1,0 0,1 -1,0 0,-1z M10,3l1,0 0,1 -1,0 0,-1z M14,3l1,0 0,1 -1,0 0,-1z M15,3l1,0 0,1 -1,0 0,-1z M16,3l1,0 0,1 -1,0 0,-1z M17,3l1,0 0,1 -1,0 0,-1z M20,3l1,0 0,1 -1,0 0,-1z M22,3l1,0 0,1 -1,0 0,-1z M24,3l1,0 0,1 -1,0 0,-1z M25,3l1,0 0,1 -1,0 0,-1z M26,3l1,0 0,1 -1,0 0,-1z M28,3l1,0 0,1 -1,0 0,-1z M0,4l1,0 0,1 -1,0 0,-1z M2,4l1,0 0,1 -1,0 0,-1z M3,4l1,0 0,1 -1,0 0,-1z M4,4l1,0 0,1 -1,0 0,-1z M6,4l1,0 0,1 -1,0 0,-1z M9,4l1,0 0,1 -1,0 0,-1z M10,4l1,0 0,1 -1,0 0,-1z M12,4l1,0 0,1 -1,0 0,-1z M13,4l1,0 0,1 -1,0 0,-1z M14,4l1,0 0,1 -1,0 0,-1z M15,4l1,0 0,1 -1,0 0,-1z M17,4l1,0 0,1 -1,0 0,-1z M18,4l1,0 0,1 -1,0 0,-1z M19,4l1,0 0,1 -1,0 0,-1z M20,4l1,0 0,1 -1,0 0,-1z M22,4l1,0 0,1 -1,0 0,-1z M24,4l1,0 0,1 -1,0 0,-1z M25,4l1,0 0,1 -1,0 0,-1z M26,4l1,0 0,1 -1,0 0,-1z M28,4l1,0 0,1 -1,0 0,-1z M0,5l1,0 0,1 -1,0 0,-1z M6,5l1,0 0,1 -1,0 0,-1z M11,5l1,0 0,1 -1,0 0,-1z M13,5l1,0 0,1 -1,0 0,-1z M14,5l1,0 0,1 -1,0 0,-1z M16,5l1,0 0,1 -1,0 0,-1z M22,5l1,0 0,1 -1,0 0,-1z M28,5l1,0 0,1 -1,0 0,-1z M0,6l1,0 0,1 -1,0 0,-1z M1,6l1,0 0,1 -1,0 0,-1z M2,6l1,0 0,1 -1,0 0,-1z M3,6l1,0 0,1 -1,0 0,-1z M4,6l1,0 0,1 -1,0 0,-1z M5,6l1,0 0,1 -1,0 0,-1z M6,6l1,0 0,1 -1,0 0,-1z M8,6l1,0 0,1 -1,0 0,-1z M10,6l1,0 0,1 -1,0 0,-1z M12,6l1,0 0,1 -1,0 0,-1z M14,6l1,0 0,1 -1,0 0,-1z M16,6l1,0 0,1 -1,0 0,-1z M18,6l1,0 0,1 -1,0 0,-1z M20,6l1,0 0,1 -1,0 0,-1z M22,6l1,0 0,1 -1,0 0,-1z M23,6l1,0 0,1 -1,0 0,-1z M24,6l1,0 0,1 -1,0 0,-1z M25,6l1,0 0,1 -1,0 0,-1z M26,6l1,0 0,1 -1,0 0,-1z M27,6l1,0 0,1 -1,0 0,-1z M28,6l1,0 0,1 -1,0 0,-1z M8,7l1,0 0,1 -1,0 0,-1z M9,7l1,0 0,1 -1,0 0,-1z M10,7l1,0 0,1 -1,0 0,-1z M11,7l1,0 0,1 -1,0 0,-1z M13,7l1,0 0,1 -1,0 0,-1z M15,7l1,0 0,1 -1,0 0,-1z M19,7l1,0 0,1 -1,0 0,-1z M20,7l1,0 0,1 -1,0 0,-1z M0,8l1,0 0,1 -1,0 0,-1z M6,8l1,0 0,1 -1,0 0,-1z M8,8l1,0 0,1 -1,0 0,-1z M9,8l1,0 0,1 -1,0 0,-1z M10,8l1,0 0,1 -1,0 0,-1z M11,8l1,0 0,1 -1,0 0,-1z M14,8l1,0 0,1 -1,0 0,-1z M15,8l1,0 0,1 -1,0 0,-1z M16,8l1,0 0,1 -1,0 0,-1z M17,8l1,0 0,1 -1,0 0,-1z M18,8l1,0 0,1 -1,0 0,-1z M19,8l1,0 0,1 -1,0 0,-1z M21,8l1,0 0,1 -1,0 0,-1z M22,8l1,0 0,1 -1,0 0,-1z M25,8l1,0 0,1 -1,0 0,-1z M26,8l1,0 0,1 -1,0 0,-1z M27,8l1,0 0,1 -1,0 0,-1z M3,9l1,0 0,1 -1,0 0,-1z M4,9l1,0 0,1 -1,0 0,-1z M5,9l1,0 0,1 -1,0 0,-1z M7,9l1,0 0,1 -1,0 0,-1z M8,9l1,0 0,1 -1,0 0,-1z M9,9l1,0 0,1 -1,0 0,-1z M10,9l1,0 0,1 -1,0 0,-1z M14,9l1,0 0,1 -1,0 0,-1z M15,9l1,0 0,1 -1,0 0,-1z M17,9l1,0 0,1 -1,0 0,-1z M18,9l1,0 0,1 -1,0 0,-1z M19,9l1,0 0,1 -1,0 0,-1z M20,9l1,0 0,1 -1,0 0,-1z M23,9l1,0 0,1 -1,0 0,-1z M24,9l1,0 0,1 -1,0 0,-1z M26,9l1,0 0,1 -1,0 0,-1z M27,9l1,0 0,1 -1,0 0,-1z M1,10l1,0 0,1 -1,0 0,-1z M2,10l1,0 0,1 -1,0 0,-1z M6,10l1,0 0,1 -1,0 0,-1z M10,10l1,0 0,1 -1,0 0,-1z M15,10l1,0 0,1 -1,0 0,-1z M16,10l1,0 0,1 -1,0 0,-1z M17,10l1,0 0,1 -1,0 0,-1z M21,10l1,0 0,1 -1,0 0,-1z M23,10l1,0 0,1 -1,0 0,-1z M24,10l1,0 0,1 -1,0 0,-1z M0,11l1,0 0,1 -1,0 0,-1z M3,11l1,0 0,1 -1,0 0,-1z M5,11l1,0 0,1 -1,0 0,-1z M8,11l1,0 0,1 -1,0 0,-1z M9,11l1,0 0,1 -1,0 0,-1z M11,11l1,0 0,1 -1,0 0,-1z M12,11l1,0 0,1 -1,0 0,-1z M14,11l1,0 0,1 -1,0 0,-1z M15,11l1,0 0,1 -1,0 0,-1z M16,11l1,0 0,1 -1,0 0,-1z M22,11l1,0 0,1 -1,0 0,-1z M24,11l1,0 0,1 -1,0 0,-1z M25,11l1,0 0,1 -1,0 0,-1z M0,12l1,0 0,1 -1,0 0,-1z M4,12l1,0 0,1 -1,0 0,-1z M5,12l1,0 0,1 -1,0 0,-1z M6,12l1,0 0,1 -1,0 0,-1z M7,12l1,0 0,1 -1,0 0,-1z M8,12l1,0 0,1 -1,0 0,-1z M11,12l1,0 0,1 -1,0 0,-1z M12,12l1,0 0,1 -1,0 0,-1z M13,12l1,0 0,1 -1,0 0,-1z M14,12l1,0 0,1 -1,0 0,-1z M16,12l1,0 0,1 -1,0 0,-1z M19,12l1,0 0,1 -1,0 0,-1z M22,12l1,0 0,1 -1,0 0,-1z M23,12l1,0 0,1 -1,0 0,-1z M28,12l1,0 0,1 -1,0 0,-1z M1,13l1,0 0,1 -1,0 0,-1z M2,13l1,0 0,1 -1,0 0,-1z M5,13l1,0 0,1 -1,0 0,-1z M7,13l1,0 0,1 -1,0 0,-1z M9,13l1,0 0,1 -1,0 0,-1z M13,13l1,0 0,1 -1,0 0,-1z M14,13l1,0 0,1 -1,0 0,-1z M15,13l1,0 0,1 -1,0 0,-1z M16,13l1,0 0,1 -1,0 0,-1z M18,13l1,0 0,1 -1,0 0,-1z M19,13l1,0 0,1 -1,0 0,-1z M21,13l1,0 0,1 -1,0 0,-1z M22,13l1,0 0,1 -1,0 0,-1z M23,13l1,0 0,1 -1,0 0,-1z M24,13l1,0 0,1 -1,0 0,-1z M27,13l1,0 0,1 -1,0 0,-1z M28,13l1,0 0,1 -1,0 0,-1z M2,14l1,0 0,1 -1,0 0,-1z M3,14l1,0 0,1 -1,0 0,-1z M4,14l1,0 0,1 -1,0 0,-1z M5,14l1,0 0,1 -1,0 0,-1z M6,14l1,0 0,1 -1,0 0,-1z M7,14l1,0 0,1 -1,0 0,-1z M9,14l1,0 0,1 -1,0 0,-1z M11,14l1,0 0,1 -1,0 0,-1z M13,14l1,0 0,1 -1,0 0,-1z M14,14l1,0 0,1 -1,0 0,-1z M15,14l1,0 0,1 -1,0 0,-1z M17,14l1,0 0,1 -1,0 0,-1z M18,14l1,0 0,1 -1,0 0,-1z M20,14l1,0 0,1 -1,0 0,-1z M21,14l1,0 0,1 -1,0 0,-1z M23,14l1,0 0,1 -1,0 0,-1z M25,14l1,0 0,1 -1,0 0,-1z M26,14l1,0 0,1 -1,0 0,-1z M0,15l1,0 0,1 -1,0 0,-1z M1,15l1,0 0,1 -1,0 0,-1z M3,15l1,0 0,1 -1,0 0,-1z M4,15l1,0 0,1 -1,0 0,-1z M7,15l1,0 0,1 -1,0 0,-1z M8,15l1,0 0,1 -1,0 0,-1z M9,15l1,0 0,1 -1,0 0,-1z M10,15l1,0 0,1 -1,0 0,-1z M12,15l1,0 0,1 -1,0 0,-1z M13,15l1,0 0,1 -1,0 0,-1z M14,15l1,0 0,1 -1,0 0,-1z M18,15l1,0 0,1 -1,0 0,-1z M24,15l1,0 0,1 -1,0 0,-1z M26,15l1,0 0,1 -1,0 0,-1z M28,15l1,0 0,1 -1,0 0,-1z M1,16l1,0 0,1 -1,0 0,-1z M2,16l1,0 0,1 -1,0 0,-1z M3,16l1,0 0,1 -1,0 0,-1z M5,16l1,0 0,1 -1,0 0,-1z M6,16l1,0 0,1 -1,0 0,-1z M9,16l1,0 0,1 -1,0 0,-1z M10,16l1,0 0,1 -1,0 0,-1z M12,16l1,0 0,1 -1,0 0,-1z M14,16l1,0 0,1 -1,0 0,-1z M15,16l1,0 0,1 -1,0 0,-1z M17,16l1,0 0,1 -1,0 0,-1z M20,16l1,0 0,1 -1,0 0,-1z M23,16l1,0 0,1 -1,0 0,-1z M25,16l1,0 0,1 -1,0 0,-1z M26,16l1,0 0,1 -1,0 0,-1z M0,17l1,0 0,1 -1,0 0,-1z M2,17l1,0 0,1 -1,0 0,-1z M3,17l1,0 0,1 -1,0 0,-1z M5,17l1,0 0,1 -1,0 0,-1z M7,17l1,0 0,1 -1,0 0,-1z M8,17l1,0 0,1 -1,0 0,-1z M9,17l1,0 0,1 -1,0 0,-1z M15,17l1,0 0,1 -1,0 0,-1z M16,17l1,0 0,1 -1,0 0,-1z M18,17l1,0 0,1 -1,0 0,-1z M19,17l1,0 0,1 -1,0 0,-1z M22,17l1,0 0,1 -1,0 0,-1z M23,17l1,0 0,1 -1,0 0,-1z M24,17l1,0 0,1 -1,0 0,-1z M26,17l1,0 0,1 -1,0 0,-1z M27,17l1,0 0,1 -1,0 0,-1z M28,17l1,0 0,1 -1,0 0,-1z M0,18l1,0 0,1 -1,0 0,-1z M1,18l1,0 0,1 -1,0 0,-1z M2,18l1,0 0,1 -1,0 0,-1z M3,18l1,0 0,1 -1,0 0,-1z M4,18l1,0 0,1 -1,0 0,-1z M6,18l1,0 0,1 -1,0 0,-1z M9,18l1,0 0,1 -1,0 0,-1z M10,18l1,0 0,1 -1,0 0,-1z M11,18l1,0 0,1 -1,0 0,-1z M13,18l1,0 0,1 -1,0 0,-1z M14,18l1,0 0,1 -1,0 0,-1z M15,18l1,0 0,1 -1,0 0,-1z M16,18l1,0 0,1 -1,0 0,-1z M17,18l1,0 0,1 -1,0 0,-1z M19,18l1,0 0,1 -1,0 0,-1z M21,18l1,0 0,1 -1,0 0,-1z M24,18l1,0 0,1 -1,0 0,-1z M25,18l1,0 0,1 -1,0 0,-1z M28,18l1,0 0,1 -1,0 0,-1z M0,19l1,0 0,1 -1,0 0,-1z M2,19l1,0 0,1 -1,0 0,-1z M3,19l1,0 0,1 -1,0 0,-1z M14,19l1,0 0,1 -1,0 0,-1z M15,19l1,0 0,1 -1,0 0,-1z M16,19l1,0 0,1 -1,0 0,-1z M21,19l1,0 0,1 -1,0 0,-1z M24,19l1,0 0,1 -1,0 0,-1z M0,20l1,0 0,1 -1,0 0,-1z M4,20l1,0 0,1 -1,0 0,-1z M5,20l1,0 0,1 -1,0 0,-1z M6,20l1,0 0,1 -1,0 0,-1z M7,20l1,0 0,1 -1,0 0,-1z M8,20l1,0 0,1 -1,0 0,-1z M10,20l1,0 0,1 -1,0 0,-1z M11,20l1,0 0,1 -1,0 0,-1z M12,20l1,0 0,1 -1,0 0,-1z M17,20l1,0 0,1 -1,0 0,-1z M20,20l1,0 0,1 -1,0 0,-1z M21,20l1,0 0,1 -1,0 0,-1z M22,20l1,0 0,1 -1,0 0,-1z M23,20l1,0 0,1 -1,0 0,-1z M24,20l1,0 0,1 -1,0 0,-1z M26,20l1,0 0,1 -1,0 0,-1z M27,20l1,0 0,1 -1,0 0,-1z M28,20l1,0 0,1 -1,0 0,-1z M8,21l1,0 0,1 -1,0 0,-1z M10,21l1,0 0,1 -1,0 0,-1z M11,21l1,0 0,1 -1,0 0,-1z M13,21l1,0 0,1 -1,0 0,-1z M15,21l1,0 0,1 -1,0 0,-1z M17,21l1,0 0,1 -1,0 0,-1z M18,21l1,0 0,1 -1,0 0,-1z M19,21l1,0 0,1 -1,0 0,-1z M20,21l1,0 0,1 -1,0 0,-1z M24,21l1,0 0,1 -1,0 0,-1z M25,21l1,0 0,1 -1,0 0,-1z M0,22l1,0 0,1 -1,0 0,-1z M1,22l1,0 0,1 -1,0 0,-1z M2,22l1,0 0,1 -1,0 0,-1z M3,22l1,0 0,1 -1,0 0,-1z M4,22l1,0 0,1 -1,0 0,-1z M5,22l1,0 0,1 -1,0 0,-1z M6,22l1,0 0,1 -1,0 0,-1z M12,22l1,0 0,1 -1,0 0,-1z M13,22l1,0 0,1 -1,0 0,-1z M14,22l1,0 0,1 -1,0 0,-1z M15,22l1,0 0,1 -1,0 0,-1z M16,22l1,0 0,1 -1,0 0,-1z M19,22l1,0 0,1 -1,0 0,-1z M20,22l1,0 0,1 -1,0 0,-1z M22,22l1,0 0,1 -1,0 0,-1z M24,22l1,0 0,1 -1,0 0,-1z M25,22l1,0 0,1 -1,0 0,-1z M26,22l1,0 0,1 -1,0 0,-1z M0,23l1,0 0,1 -1,0 0,-1z M6,23l1,0 0,1 -1,0 0,-1z M9,23l1,0 0,1 -1,0 0,-1z M10,23l1,0 0,1 -1,0 0,-1z M11,23l1,0 0,1 -1,0 0,-1z M13,23l1,0 0,1 -1,0 0,-1z M20,23l1,0 0,1 -1,0 0,-1z M24,23l1,0 0,1 -1,0 0,-1z M27,23l1,0 0,1 -1,0 0,-1z M28,23l1,0 0,1 -1,0 0,-1z M0,24l1,0 0,1 -1,0 0,-1z M2,24l1,0 0,1 -1,0 0,-1z M3,24l1,0 0,1 -1,0 0,-1z M4,24l1,0 0,1 -1,0 0,-1z M6,24l1,0 0,1 -1,0 0,-1z M9,24l1,0 0,1 -1,0 0,-1z M10,24l1,0 0,1 -1,0 0,-1z M12,24l1,0 0,1 -1,0 0,-1z M13,24l1,0 0,1 -1,0 0,-1z M16,24l1,0 0,1 -1,0 0,-1z M18,24l1,0 0,1 -1,0 0,-1z M19,24l1,0 0,1 -1,0 0,-1z M20,24l1,0 0,1 -1,0 0,-1z M21,24l1,0 0,1 -1,0 0,-1z M22,24l1,0 0,1 -1,0 0,-1z M23,24l1,0 0,1 -1,0 0,-1z M24,24l1,0 0,1 -1,0 0,-1z M25,24l1,0 0,1 -1,0 0,-1z M27,24l1,0 0,1 -1,0 0,-1z M28,24l1,0 0,1 -1,0 0,-1z M0,25l1,0 0,1 -1,0 0,-1z M2,25l1,0 0,1 -1,0 0,-1z M3,25l1,0 0,1 -1,0 0,-1z M4,25l1,0 0,1 -1,0 0,-1z M6,25l1,0 0,1 -1,0 0,-1z M10,25l1,0 0,1 -1,0 0,-1z M11,25l1,0 0,1 -1,0 0,-1z M12,25l1,0 0,1 -1,0 0,-1z M13,25l1,0 0,1 -1,0 0,-1z M15,25l1,0 0,1 -1,0 0,-1z M16,25l1,0 0,1 -1,0 0,-1z M17,25l1,0 0,1 -1,0 0,-1z M18,25l1,0 0,1 -1,0 0,-1z M19,25l1,0 0,1 -1,0 0,-1z M21,25l1,0 0,1 -1,0 0,-1z M25,25l1,0 0,1 -1,0 0,-1z M26,25l1,0 0,1 -1,0 0,-1z M28,25l1,0 0,1 -1,0 0,-1z M0,26l1,0 0,1 -1,0 0,-1z M2,26l1,0 0,1 -1,0 0,-1z M3,26l1,0 0,1 -1,0 0,-1z M4,26l1,0 0,1 -1,0 0,-1z M6,26l1,0 0,1 -1,0 0,-1z M13,26l1,0 0,1 -1,0 0,-1z M14,26l1,0 0,1 -1,0 0,-1z M15,26l1,0 0,1 -1,0 0,-1z M22,26l1,0 0,1 -1,0 0,-1z M23,26l1,0 0,1 -1,0 0,-1z M24,26l1,0 0,1 -1,0 0,-1z M25,26l1,0 0,1 -1,0 0,-1z M26,26l1,0 0,1 -1,0 0,-1z M27,26l1,0 0,1 -1,0 0,-1z M0,27l1,0 0,1 -1,0 0,-1z M6,27l1,0 0,1 -1,0 0,-1z M9,27l1,0 0,1 -1,0 0,-1z M12,27l1,0 0,1 -1,0 0,-1z M15,27l1,0 0,1 -1,0 0,-1z M22,27l1,0 0,1 -1,0 0,-1z M23,27l1,0 0,1 -1,0 0,-1z M25,27l1,0 0,1 -1,0 0,-1z M26,27l1,0 0,1 -1,0 0,-1z M28,27l1,0 0,1 -1,0 0,-1z M0,28l1,0 0,1 -1,0 0,-1z M1,28l1,0 0,1 -1,0 0,-1z M2,28l1,0 0,1 -1,0 0,-1z M3,28l1,0 0,1 -1,0 0,-1z M4,28l1,0 0,1 -1,0 0,-1z M5,28l1,0 0,1 -1,0 0,-1z M6,28l1,0 0,1 -1,0 0,-1z M8,28l1,0 0,1 -1,0 0,-1z M9,28l1,0 0,1 -1,0 0,-1z M12,28l1,0 0,1 -1,0 0,-1z M13,28l1,0 0,1 -1,0 0,-1z M14,28l1,0 0,1 -1,0 0,-1z M15,28l1,0 0,1 -1,0 0,-1z M16,28l1,0 0,1 -1,0 0,-1z M17,28l1,0 0,1 -1,0 0,-1z M19,28l1,0 0,1 -1,0 0,-1z M22,28l1,0 0,1 -1,0 0,-1z M24,28l1,0 0,1 -1,0 0,-1z M26,28l1,0 0,1 -1,0 0,-1z " stroke="transparent" fill="black"></path></svg></div></div>
+    <p>Dicas da região, maré, passeios e esta lista sempre atualizada.
+      <i>Consejos, mareas y paseos · Local tips, tides and day trips</i>
+    </p>
+    <span class="site">casabrisa150.com<br>/bem-vindos</span>
+  </div>
+
+</section>
+
+</body>
+</html>
