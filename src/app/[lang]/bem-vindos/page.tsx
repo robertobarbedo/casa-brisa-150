@@ -83,7 +83,7 @@ export default async function BemVindos({ params }: PageProps<"/[lang]/bem-vindo
             href={`https://wa.me/${casa.contato.whatsapp}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 flex h-12 items-center justify-center gap-2 rounded-full bg-[#25D366] font-bold text-white shadow-suave transition active:scale-95"
+            className="mt-6 flex h-12 items-center justify-center gap-2 rounded-full bg-folha/15 font-bold text-folha-forte transition active:scale-95"
           >
             <MessageCircle aria-hidden className="size-5" />
             {t.whatsapp}
