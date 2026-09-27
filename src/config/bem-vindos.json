@@ -19,7 +19,7 @@
     "tempo": [],
     "passeios": [
       { "id": "pontal", "icone": "por-do-sol", "acao": { "tipo": "mapa", "busca": "Pontal da Daniela, Florianópolis", "alerta": "pontal" } },
-      { "id": "mangue", "icone": "arvore", "acao": { "tipo": "mapa", "busca": "Rua das Hortências, Praia da Daniela, Florianópolis" } }
+      { "id": "mangue", "icone": "arvore", "acao": { "tipo": "mapa", "busca": "-27.4528849,-48.5331529" } }
     ],
     "comer": [
       { "id": "caravaggio", "icone": "prato", "acao": { "tipo": "mapa", "busca": "Il Caravaggio, Florianópolis" } },
