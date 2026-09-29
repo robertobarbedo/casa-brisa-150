@@ -229,7 +229,6 @@
   "bemVindos": {
     "meta": "Bem-vindos · Casa Brisa",
     "ola": "Bem-vindos à Casa Brisa",
-    "sub": "Dicas, telefones e o que acontece lá fora, num toque.",
     "menu": "Menu",
     "vejaTambem": "Veja também",
     "abrirMapa": "Abrir no mapa",
@@ -242,6 +241,13 @@
         "titulo": "Nunca entrem no mar no Pontal",
         "texto": "O mar no Pontal da Daniela é muito perigoso, mesmo quando a água parece calma. Aproveitem a vista e o pôr do sol pela areia, mas não entrem na água em nenhuma hipótese.",
         "aviso": "Mar perigoso: nunca entrem na água aqui.",
+        "abrir": "Entendi, abrir o mapa",
+        "voltar": "Voltar"
+      },
+      "jacares": {
+        "titulo": "Cuidado com os jacarés",
+        "texto": "Os jacarés da Daniela são selvagens. Costumam ser tranquilos, mas podem atacar se se sentirem ameaçados. Observem de longe, não se aproximem nem tentem tocar e nunca deem comida: alimentar faz com que percam o medo das pessoas. Cuidado redobrado com crianças e cachorros.",
+        "aviso": "Observem de longe e nunca alimentem.",
         "abrir": "Entendi, abrir o mapa",
         "voltar": "Voltar"
       }
@@ -260,8 +266,8 @@
         "sub": "Hoje e próximos dias"
       },
       "passeios": {
-        "titulo": "O que fazer",
-        "sub": "Pontal e mangue"
+        "titulo": "O que fazer na Daniela",
+        "sub": "Pontal, trilha, kite, canoa e mais"
       },
       "comer": {
         "titulo": "Onde comer",
@@ -318,6 +324,26 @@
         "titulo": "Mangue",
         "texto": "No fim da Rua das Hortências, no sentido contrário à praia. Na maré baixa dá para entrar e caminhar por ele, é seguro. No pôr do sol fica ainda mais bonito."
       },
+      "trilhaForte": {
+        "titulo": "Trilha da Praia do Forte",
+        "texto": "Leva até a Praia do Forte, com restaurantes e a Fortaleza de São José da Ponta Grossa. Cerca de 50 min de caminhada a partir da casa."
+      },
+      "kite": {
+        "titulo": "Escola de kitesurf",
+        "texto": "Mané Kite School: aulas de kitesurf e wingfoil, do primeiro contato ao avançado. Agende em manekite.com.br."
+      },
+      "canoa": {
+        "titulo": "Canoa havaiana",
+        "texto": "Koru Va'a: remada de canoa havaiana no mar calmo da Daniela."
+      },
+      "caiaque": {
+        "titulo": "Aluguel de caiaques",
+        "texto": "Costuma ter aluguel de caiaques perto da saída nº 1 da Praia da Daniela, no lado leste."
+      },
+      "jacares": {
+        "titulo": "Jacarés",
+        "texto": "É comum ver jacarés na rua ou na beira dos canais em alguns pontos do bairro. O mapa mostra onde."
+      },
       "caravaggio": {
         "titulo": "Il Caravaggio",
         "texto": "Italiano"
@@ -326,9 +352,13 @@
         "titulo": "May Santo Antônio",
         "texto": "Tailandês"
       },
-      "mercado": {
-        "titulo": "Mercado",
-        "texto": "DO-RE-MI ou VT · 2 min a pé"
+      "miniMercado": {
+        "titulo": "Mini mercado",
+        "texto": "VT · saindo da casa à direita, na próxima quadra"
+      },
+      "mercadoGrande": {
+        "titulo": "Mercado grande",
+        "texto": "Imperatriz, Jurerê · o maior mais perto · 10 min de carro"
       },
       "padaria": {
         "titulo": "Padaria",

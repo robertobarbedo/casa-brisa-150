@@ -2,14 +2,14 @@
 
 import { useSyncExternalStore } from "react";
 import { ChevronRight } from "lucide-react";
-import { locales, type Locale } from "@/i18n/config";
+import { localeNome, locales, type Locale } from "@/i18n/config";
 import { lembrarIdioma } from "@/lib/bem-vindos/idioma";
 
-const opcoes: Record<Locale, { nome: string; ola: string }> = {
-  pt: { nome: "Português", ola: "Olá!" },
-  es: { nome: "Español", ola: "¡Hola!" },
-  en: { nome: "English", ola: "Hello!" },
-  ru: { nome: "Русский", ola: "Здравствуйте!" },
+const ola: Record<Locale, string> = {
+  pt: "Olá!",
+  es: "¡Hola!",
+  en: "Hello!",
+  ru: "Здравствуйте!",
 };
 
 const nada = () => () => {};
@@ -36,8 +36,8 @@ export function EscolherIdioma() {
               }`}
             >
               <span>
-                <span className="block text-lg font-bold">{opcoes[l].nome}</span>
-                <span className={`block text-sm ${destaque ? "opacity-85" : "text-taupe/80"}`}>{opcoes[l].ola}</span>
+                <span className="block text-lg font-bold">{localeNome[l]}</span>
+                <span className={`block text-sm ${destaque ? "opacity-85" : "text-taupe/80"}`}>{ola[l]}</span>
               </span>
               <ChevronRight aria-hidden className="size-5" />
             </a>

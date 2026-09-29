@@ -229,7 +229,6 @@
   "bemVindos": {
     "meta": "Bienvenidos · Casa Brisa",
     "ola": "Bienvenidos a Casa Brisa",
-    "sub": "Consejos, teléfonos y lo que pasa afuera, en un toque.",
     "menu": "Menú",
     "vejaTambem": "Vean también",
     "abrirMapa": "Abrir en el mapa",
@@ -242,6 +241,13 @@
         "titulo": "Nunca entren al mar en el Pontal",
         "texto": "El mar en el Pontal da Daniela es muy peligroso, aunque el agua parezca tranquila. Disfruten la vista y el atardecer desde la arena, pero no entren al agua bajo ninguna circunstancia.",
         "aviso": "Mar peligroso: nunca entren al agua aquí.",
+        "abrir": "Entendido, abrir el mapa",
+        "voltar": "Volver"
+      },
+      "jacares": {
+        "titulo": "Cuidado con los yacarés",
+        "texto": "Los yacarés de Daniela son animales salvajes. Suelen ser tranquilos, pero pueden atacar si se sienten amenazados. Obsérvenlos de lejos, no se acerquen ni intenten tocarlos y nunca les den de comer: alimentarlos hace que pierdan el miedo a las personas. Cuidado especial con niños y perros.",
+        "aviso": "Obsérvenlos de lejos y nunca les den de comer.",
         "abrir": "Entendido, abrir el mapa",
         "voltar": "Volver"
       }
@@ -260,8 +266,8 @@
         "sub": "Hoy y próximos días"
       },
       "passeios": {
-        "titulo": "Qué hacer",
-        "sub": "Pontal y manglar"
+        "titulo": "Qué hacer en Daniela",
+        "sub": "Pontal, sendero, kite, canoa y más"
       },
       "comer": {
         "titulo": "Dónde comer",
@@ -318,6 +324,26 @@
         "titulo": "Manglar",
         "texto": "Al final de la Rua das Hortências, en sentido contrario a la playa. Con marea baja se puede entrar y caminar por él, es seguro. Al atardecer es todavía más lindo."
       },
+      "trilhaForte": {
+        "titulo": "Sendero a la Praia do Forte",
+        "texto": "Lleva hasta la Praia do Forte, con restaurantes y la Fortaleza de São José da Ponta Grossa. Unos 50 min caminando desde la casa."
+      },
+      "kite": {
+        "titulo": "Escuela de kitesurf",
+        "texto": "Mané Kite School: clases de kitesurf y wingfoil, desde cero hasta nivel avanzado. Reservá en manekite.com.br."
+      },
+      "canoa": {
+        "titulo": "Canoa hawaiana",
+        "texto": "Koru Va'a: remada en canoa hawaiana en el mar calmo de Daniela."
+      },
+      "caiaque": {
+        "titulo": "Alquiler de kayaks",
+        "texto": "Suele haber alquiler de kayaks cerca de la salida n.º 1 de la Praia da Daniela, del lado este."
+      },
+      "jacares": {
+        "titulo": "Yacarés",
+        "texto": "En algunos puntos del barrio es común ver yacarés en la calle o a orillas de los canales. El mapa muestra dónde."
+      },
       "caravaggio": {
         "titulo": "Il Caravaggio",
         "texto": "Italiano"
@@ -326,9 +352,13 @@
         "titulo": "May Santo Antônio",
         "texto": "Tailandés"
       },
-      "mercado": {
+      "miniMercado": {
+        "titulo": "Minimercado",
+        "texto": "VT · saliendo de la casa a la derecha, en la próxima cuadra"
+      },
+      "mercadoGrande": {
         "titulo": "Supermercado",
-        "texto": "DO-RE-MI o VT · 2 min caminando"
+        "texto": "Imperatriz, Jurerê · el más grande y cercano · 10 min en auto"
       },
       "padaria": {
         "titulo": "Panadería",

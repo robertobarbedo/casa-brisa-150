@@ -229,7 +229,6 @@
   "bemVindos": {
     "meta": "Welcome · Casa Brisa",
     "ola": "Welcome to Casa Brisa",
-    "sub": "Tips, phone numbers and what's happening outside, in one tap.",
     "menu": "Menu",
     "vejaTambem": "See also",
     "abrirMapa": "Open in maps",
@@ -242,6 +241,13 @@
         "titulo": "Never go into the sea at the Pontal",
         "texto": "The sea at Pontal da Daniela is very dangerous, even when the water looks calm. Enjoy the view and the sunset from the sand, but do not go into the water under any circumstances.",
         "aviso": "Dangerous sea: never go into the water here.",
+        "abrir": "Got it, open the map",
+        "voltar": "Go back"
+      },
+      "jacares": {
+        "titulo": "Be careful around the caimans",
+        "texto": "Daniela's caimans are wild animals. They are usually calm, but can attack if they feel threatened. Watch from a distance, don't approach or try to touch them, and never feed them: feeding makes them lose their fear of people. Take extra care with children and dogs.",
+        "aviso": "Watch from a distance and never feed them.",
         "abrir": "Got it, open the map",
         "voltar": "Go back"
       }
@@ -260,8 +266,8 @@
         "sub": "Today and the next few days"
       },
       "passeios": {
-        "titulo": "Things to do",
-        "sub": "Pontal and mangrove"
+        "titulo": "Things to do in Daniela",
+        "sub": "Pontal, trail, kite, canoe and more"
       },
       "comer": {
         "titulo": "Where to eat",
@@ -318,6 +324,26 @@
         "titulo": "Mangrove",
         "texto": "At the end of Rua das Hortências, heading away from the beach. At low tide you can walk right into it — it's safe. Even lovelier at sunset."
       },
+      "trilhaForte": {
+        "titulo": "Trail to Praia do Forte",
+        "texto": "Leads to Praia do Forte, with restaurants and the Fortaleza de São José da Ponta Grossa. About a 50-min walk from the house."
+      },
+      "kite": {
+        "titulo": "Kitesurf school",
+        "texto": "Mané Kite School: kitesurf and wingfoil lessons, from first-timers to advanced. Book at manekite.com.br."
+      },
+      "canoa": {
+        "titulo": "Outrigger canoe",
+        "texto": "Koru Va'a: outrigger canoe paddling on Daniela's calm sea."
+      },
+      "caiaque": {
+        "titulo": "Kayak rental",
+        "texto": "There is usually kayak rental near beach access no. 1 of Praia da Daniela, on the east side."
+      },
+      "jacares": {
+        "titulo": "Caimans",
+        "texto": "In a few spots around the neighborhood you can often see caimans on the street or along the canals. The map shows where."
+      },
       "caravaggio": {
         "titulo": "Il Caravaggio",
         "texto": "Italian"
@@ -326,9 +352,13 @@
         "titulo": "May Santo Antônio",
         "texto": "Thai"
       },
-      "mercado": {
-        "titulo": "Supermarket",
-        "texto": "DO-RE-MI or VT · 2-min walk"
+      "miniMercado": {
+        "titulo": "Corner shop",
+        "texto": "VT · turn right when you leave, on the next block"
+      },
+      "mercadoGrande": {
+        "titulo": "Full supermarket",
+        "texto": "Imperatriz, Jurerê · the nearest big one · 10-min drive"
       },
       "padaria": {
         "titulo": "Bakery",

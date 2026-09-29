@@ -55,7 +55,6 @@ export default async function BemVindos({ params }: PageProps<"/[lang]/bem-vindo
           <h1 className="text-2xl font-bold tracking-tight text-balance text-taupe-escuro">{t.ola}</h1>
           <SeletorIdioma lang={lang} aria={dict.nav.idioma} />
         </div>
-        <p className="mt-1 text-sm">{t.sub}</p>
 
         <div className="mt-5">
           <FaixaAgora

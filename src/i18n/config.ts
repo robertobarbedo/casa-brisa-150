@@ -19,3 +19,11 @@ export const localeLabel: Record<Locale, string> = {
   en: "EN",
   ru: "RU",
 };
+
+/** Nome de cada idioma nele mesmo (menus de troca de idioma). */
+export const localeNome: Record<Locale, string> = {
+  pt: "Português",
+  es: "Español",
+  en: "English",
+  ru: "Русский",
+};

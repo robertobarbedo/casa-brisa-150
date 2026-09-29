@@ -14,19 +14,25 @@
       { "id": "endereco", "icone": "casa", "acao": { "tipo": "copiar" } }
     ],
     "praia": [
-      { "id": "caminho", "icone": "seta", "acao": { "tipo": "mapa", "busca": "Praia da Daniela, Florianópolis" } }
+      { "id": "caminho", "icone": "seta", "acao": { "tipo": "mapa", "busca": "https://maps.app.goo.gl/TyN9jNCZfVKSVGVw9" } }
     ],
     "tempo": [],
     "passeios": [
       { "id": "pontal", "icone": "por-do-sol", "acao": { "tipo": "mapa", "busca": "Pontal da Daniela, Florianópolis", "alerta": "pontal" } },
-      { "id": "mangue", "icone": "arvore", "acao": { "tipo": "mapa", "busca": "-27.4528849,-48.5331529" } }
+      { "id": "mangue", "icone": "arvore", "acao": { "tipo": "mapa", "busca": "-27.4528849,-48.5331529" } },
+      { "id": "jacares", "icone": "binoculo", "acao": { "tipo": "mapa", "busca": "https://www.google.com/maps/d/viewer?mid=1FL84wBPv_CO8uFuynW5Jav-j9vQEyP8", "alerta": "jacares" } },
+      { "id": "canoa", "icone": "barco", "acao": { "tipo": "mapa", "busca": "https://maps.app.goo.gl/YcroRVEgnWrAVHTi8" } },
+      { "id": "caiaque", "icone": "barco" },
+      { "id": "kite", "icone": "vento", "acao": { "tipo": "mapa", "busca": "https://maps.app.goo.gl/oyfLw9PMvGGeFHKM8" } },
+      { "id": "trilhaForte", "icone": "trilha", "acao": { "tipo": "mapa", "busca": "https://maps.app.goo.gl/C419gMhzjZwSKRzk6" } }
     ],
     "comer": [
       { "id": "caravaggio", "icone": "prato", "acao": { "tipo": "mapa", "busca": "Il Caravaggio, Florianópolis" } },
       { "id": "may", "icone": "prato", "acao": { "tipo": "mapa", "busca": "May Santo Antônio de Lisboa, Florianópolis" } }
     ],
     "perto": [
-      { "id": "mercado", "icone": "carrinho", "acao": { "tipo": "mapa", "busca": "Supermercado, Praia da Daniela, Florianópolis" } },
+      { "id": "miniMercado", "icone": "carrinho", "acao": { "tipo": "mapa", "busca": "Mercado VT, Praia da Daniela, Florianópolis" } },
+      { "id": "mercadoGrande", "icone": "carrinho", "acao": { "tipo": "mapa", "busca": "Supermercado Imperatriz, Jurerê, Florianópolis" } },
       { "id": "padaria", "icone": "pao", "acao": { "tipo": "mapa", "busca": "Panificadora Doce Pão, Florianópolis" } },
       { "id": "farmacia", "icone": "farmacia", "acao": { "tipo": "mapa", "busca": "Farmácia Vida, Av. das Raias 261, Jurerê, Florianópolis" } },
       { "id": "caixa", "icone": "dinheiro", "acao": { "tipo": "mapa", "busca": "Supermercado Imperatriz, Jurerê, Florianópolis" } },
