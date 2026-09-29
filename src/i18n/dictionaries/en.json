@@ -394,7 +394,7 @@
       },
       "churrasqueira": {
         "titulo": "Barbecue",
-        "texto": "Charcoal not included — the market is a 2-min walk."
+        "texto": "Charcoal not included — the market is on the next block."
       },
       "carregador": {
         "titulo": "Electric car",
@@ -445,7 +445,7 @@
       ],
       "bomDia": [
         "Good morning! Fresh bread at Doce Pão, a 10-minute walk.",
-        "Good morning! The market is a 2-minute walk if you need anything for breakfast."
+        "Good morning! The market is just around the corner if you need anything for breakfast."
       ],
       "tarde": [
         "Calm sea 150 steps away. Leaving the house, turn left."

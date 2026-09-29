@@ -394,7 +394,7 @@
       },
       "churrasqueira": {
         "titulo": "Churrasqueira",
-        "texto": "Carvão não incluso. O mercado fica a 2 min a pé."
+        "texto": "Carvão não incluso. O mercado fica na próxima quadra."
       },
       "carregador": {
         "titulo": "Carro elétrico",
@@ -445,7 +445,7 @@
       ],
       "bomDia": [
         "Bom dia! Pão quentinho na Doce Pão, a 10 min a pé.",
-        "Bom dia! O mercado fica a 2 minutos a pé, caso falte algo para o café."
+        "Bom dia! O mercado fica logo ali, caso falte algo para o café."
       ],
       "tarde": [
         "Mar calmo a 150 passos. Ao sair de casa, vire à esquerda."

@@ -170,7 +170,7 @@ que todo hóspede pergunta no primeiro dia.
 
 | | |
 |---|---|
-| 🛒 Mercado · Supermercado · Supermarket | DO-RE-MI ou VT · 2 min 🚶 |
+| 🛒 Mercado · Supermercado · Supermarket | VT · na próxima quadra 🚶 |
 | 🥖 Padaria · Panadería · Bakery | Panificadora Doce Pão · 10 min 🚶 |
 | 💊 Farmácia · Farmacia · Pharmacy | Farmácia Vida · 5 min 🚗 |
 | 🏧 Caixa · Cajero · ATM | Supermercado Imperatriz · 10 min 🚗 |

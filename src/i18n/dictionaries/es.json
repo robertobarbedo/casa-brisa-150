@@ -394,7 +394,7 @@
       },
       "churrasqueira": {
         "titulo": "Parrilla",
-        "texto": "Carbón no incluido. El súper está a 2 min caminando."
+        "texto": "Carbón no incluido. El súper está en la próxima cuadra."
       },
       "carregador": {
         "titulo": "Auto eléctrico",
@@ -445,7 +445,7 @@
       ],
       "bomDia": [
         "¡Buen día! Pan calentito en Doce Pão, a 10 min caminando.",
-        "¡Buen día! El súper está a 2 minutos caminando, por si falta algo para el desayuno."
+        "¡Buen día! El súper está a la vuelta, por si falta algo para el desayuno."
       ],
       "tarde": [
         "Mar calmo a 150 pasos. Al salir de casa, doblen a la izquierda."
