@@ -231,6 +231,10 @@
     "ola": "Welcome to Casa Brisa",
     "menu": "Menu",
     "vejaTambem": "See also",
+    "grupos": {
+      "daniela": "In Daniela",
+      "ilha": "Our favourites on the island"
+    },
     "abrirMapa": "Open in maps",
     "ligar": "Call",
     "copiar": "Copy",
@@ -271,7 +275,7 @@
       },
       "comer": {
         "titulo": "Where to eat",
-        "sub": "Our favourites"
+        "sub": "In Daniela and around the island"
       },
       "perto": {
         "titulo": "Nearby",
@@ -343,6 +347,14 @@
       "jacares": {
         "titulo": "Caimans",
         "texto": "In a few spots around the neighborhood you can often see caimans on the street or along the canals. The map shows where."
+      },
+      "doremi": {
+        "titulo": "Do Re Mi",
+        "texto": "Beach restaurant: pay-by-weight buffet, fish, à la carte and sharing plates"
+      },
+      "brasaBrisa": {
+        "titulo": "Brasa e Brisa",
+        "texto": "Set lunch plates, à la carte and snacks"
       },
       "caravaggio": {
         "titulo": "Il Caravaggio",

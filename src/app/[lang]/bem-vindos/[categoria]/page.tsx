@@ -6,7 +6,7 @@ import { hasLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { casa } from "@/lib/casa";
 import { buscarPrevisao } from "@/lib/agora/previsao";
-import { categorias, ehCategoria, itensDe, numerosEmergencia } from "@/lib/bem-vindos/categorias";
+import { categorias, ehCategoria, grupos, itensDe, numerosEmergencia } from "@/lib/bem-vindos/categorias";
 import { ListaItens } from "@/components/bem-vindos/lista-itens";
 import { PainelMare } from "@/components/bem-vindos/painel-mare";
 import { PainelTempo } from "@/components/bem-vindos/painel-tempo";
@@ -27,6 +27,7 @@ export default async function Categoria({ params }: PageProps<"/[lang]/bem-vindo
   const t = dict.bemVindos;
   const { icone: Icone, tom } = visualCategoria[categoria];
   const outras = categorias.filter((c) => c !== categoria);
+  const itens = itensDe(categoria);
 
   return (
     <>
@@ -70,7 +71,20 @@ export default async function Categoria({ params }: PageProps<"/[lang]/bem-vindo
             <PainelMare lang={lang} mare={previsao.mare} local={casa.mapa} textos={t.mare} />
           )}
 
-          <ListaItens itens={itensDe(categoria)} dict={dict} whatsapp={casa.contato.whatsapp} />
+          {itens.some((i) => i.grupo) ? (
+            grupos.map((grupo) => {
+              const doGrupo = itens.filter((i) => i.grupo === grupo);
+              if (!doGrupo.length) return null;
+              return (
+                <section key={grupo} className="flex flex-col gap-2.5">
+                  <h2 className="px-1 text-sm font-bold text-taupe-escuro">{t.grupos[grupo]}</h2>
+                  <ListaItens itens={doGrupo} dict={dict} whatsapp={casa.contato.whatsapp} />
+                </section>
+              );
+            })
+          ) : (
+            <ListaItens itens={itens} dict={dict} whatsapp={casa.contato.whatsapp} />
+          )}
 
           <section className="mt-4">
             <h2 className="text-sm font-bold text-taupe-escuro">{t.vejaTambem}</h2>

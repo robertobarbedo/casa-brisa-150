@@ -231,6 +231,10 @@
     "ola": "Bem-vindos à Casa Brisa",
     "menu": "Menu",
     "vejaTambem": "Veja também",
+    "grupos": {
+      "daniela": "Na Daniela",
+      "ilha": "Nossos favoritos na ilha"
+    },
     "abrirMapa": "Abrir no mapa",
     "ligar": "Ligar",
     "copiar": "Copiar",
@@ -271,7 +275,7 @@
       },
       "comer": {
         "titulo": "Onde comer",
-        "sub": "Nossos favoritos"
+        "sub": "Na Daniela e pela ilha"
       },
       "perto": {
         "titulo": "Perto daqui",
@@ -343,6 +347,14 @@
       "jacares": {
         "titulo": "Jacarés",
         "texto": "É comum ver jacarés na rua ou na beira dos canais em alguns pontos do bairro. O mapa mostra onde."
+      },
+      "doremi": {
+        "titulo": "Do Re Mi",
+        "texto": "Restaurante de praia: por quilo, peixes, à la carte e porções"
+      },
+      "brasaBrisa": {
+        "titulo": "Brasa e Brisa",
+        "texto": "Prato feito, à la carte e lanches"
       },
       "caravaggio": {
         "titulo": "Il Caravaggio",

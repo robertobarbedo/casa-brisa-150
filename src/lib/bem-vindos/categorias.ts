@@ -13,7 +13,11 @@ export type Acao =
   | { tipo: "whatsapp" }
   | { tipo: "copiar" };
 
-export type Item = { id: string; icone: string; acao?: Acao };
+/** Subdivisão opcional dentro de uma categoria (ex.: "Onde comer"), na ordem em que aparece. */
+export const grupos = ["daniela", "ilha"] as const;
+export type GrupoId = (typeof grupos)[number];
+
+export type Item = { id: string; icone: string; grupo?: GrupoId; acao?: Acao };
 
 export const itensDe = (categoria: CategoriaId) => dados.itens[categoria] as Item[];
 export const numerosEmergencia = dados.numeros;
