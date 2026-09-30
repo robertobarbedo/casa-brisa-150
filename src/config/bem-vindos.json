@@ -32,7 +32,8 @@
       { "id": "caravaggio", "icone": "prato", "grupo": "ilha", "custo": 3, "acao": { "tipo": "mapa", "busca": "Il Caravaggio, Florianópolis" } },
       { "id": "may", "icone": "prato", "grupo": "ilha", "custo": 3, "acao": { "tipo": "mapa", "busca": "May Santo Antônio de Lisboa, Florianópolis" } },
       { "id": "vistaNipo", "icone": "prato", "grupo": "ilha", "custo": 3, "acao": { "tipo": "mapa", "busca": "https://maps.app.goo.gl/Nc6NngSmMJBcMvPe9" } },
-      { "id": "aoZeca", "icone": "prato", "grupo": "ilha", "custo": 3, "acao": { "tipo": "mapa", "busca": "https://maps.app.goo.gl/1yvFaq1x5vG9RjJfA" } }
+      { "id": "aoZeca", "icone": "prato", "grupo": "ilha", "custo": 3, "acao": { "tipo": "mapa", "busca": "https://maps.app.goo.gl/1yvFaq1x5vG9RjJfA" } },
+      { "id": "baba", "icone": "prato", "grupo": "ilha", "custo": 2, "acao": { "tipo": "mapa", "busca": "https://maps.app.goo.gl/R7gzohEo3FRwsF6Z7" } }
     ],
     "perto": [
       { "id": "miniMercado", "icone": "carrinho", "acao": { "tipo": "mapa", "busca": "Mercado VT, Praia da Daniela, Florianópolis" } },

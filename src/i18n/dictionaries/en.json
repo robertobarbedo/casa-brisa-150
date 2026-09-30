@@ -372,6 +372,10 @@
         "titulo": "Ao Zeca",
         "texto": "Classic cuisine"
       },
+      "baba": {
+        "titulo": "Baba",
+        "texto": "Indian"
+      },
       "miniMercado": {
         "titulo": "Corner shop",
         "texto": "VT · turn right when you leave, on the next block"

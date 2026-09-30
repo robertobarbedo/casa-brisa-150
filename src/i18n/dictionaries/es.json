@@ -372,6 +372,10 @@
         "titulo": "Ao Zeca",
         "texto": "Cocina clásica"
       },
+      "baba": {
+        "titulo": "Baba",
+        "texto": "Indio"
+      },
       "miniMercado": {
         "titulo": "Minimercado",
         "texto": "VT · saliendo de la casa a la derecha, en la próxima cuadra"
