@@ -47,9 +47,16 @@ export const catalogo: Regra[] = [
 
   // ── Tempo ───────────────────────────────────────────────────
   {
+    // Até o meio da tarde o convite é para o almoço; depois, para o jantar.
     id: "chovendo",
     prioridade: 80,
-    quando: (c) => !!c.tempo?.chovendo && c.minutoDoDia >= h(7) && c.minutoDoDia < h(21),
+    quando: (c) => !!c.tempo?.chovendo && c.minutoDoDia >= h(7) && c.minutoDoDia < h(15),
+    destino: "comer",
+  },
+  {
+    id: "chovendoNoite",
+    prioridade: 80,
+    quando: (c) => !!c.tempo?.chovendo && c.minutoDoDia >= h(15) && c.minutoDoDia < h(21),
     destino: "comer",
   },
   {

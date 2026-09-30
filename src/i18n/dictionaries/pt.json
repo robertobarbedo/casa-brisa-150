@@ -503,6 +503,9 @@
       "chovendo": [
         "Dia de chuva? Boa hora para um almoço sem pressa. Veja nossos favoritos."
       ],
+      "chovendoNoite": [
+        "Chuva lá fora? Boa desculpa para um jantar sem pressa. Veja nossos favoritos."
+      ],
       "chuvaMaisTarde": [
         "Chuva a partir das {hora}. Aproveite a praia antes."
       ],

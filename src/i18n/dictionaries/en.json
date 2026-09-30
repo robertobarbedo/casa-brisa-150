@@ -503,6 +503,9 @@
       "chovendo": [
         "Rainy day? Perfect for a long, lazy lunch. See our favourites."
       ],
+      "chovendoNoite": [
+        "Rainy out? A good excuse for a long, lazy dinner. See our favourites."
+      ],
       "chuvaMaisTarde": [
         "Rain from {hora}. Enjoy the beach before then."
       ],
