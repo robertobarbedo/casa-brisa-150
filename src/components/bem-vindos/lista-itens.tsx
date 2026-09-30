@@ -26,7 +26,14 @@ export function ListaItens({ itens, dict, whatsapp }: Props) {
               {Icone && <Icone aria-hidden className="size-5" />}
             </span>
             <span className="min-w-0 flex-1">
-              <span className="block font-bold text-taupe-escuro">{textos.titulo}</span>
+              <span className="block font-bold text-taupe-escuro">
+                {textos.titulo}
+                {item.custo && (
+                  <span className="relative -top-px ml-1.5 align-middle text-xs font-normal tracking-wider text-taupe/60">
+                    {"$".repeat(item.custo)}
+                  </span>
+                )}
+              </span>
               <span className="block text-sm text-pretty">{textos.texto}</span>
               {alerta && (
                 <span className="mt-1 block text-sm font-bold text-alerta">{alerta.aviso}</span>

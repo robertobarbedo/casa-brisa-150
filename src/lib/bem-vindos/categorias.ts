@@ -17,7 +17,8 @@ export type Acao =
 export const grupos = ["daniela", "ilha"] as const;
 export type GrupoId = (typeof grupos)[number];
 
-export type Item = { id: string; icone: string; grupo?: GrupoId; acao?: Acao };
+/** `custo`: faixa de preço de 1 a 4, mostrada como "$" a "$$$$" ao lado do nome. */
+export type Item = { id: string; icone: string; grupo?: GrupoId; custo?: number; acao?: Acao };
 
 export const itensDe = (categoria: CategoriaId) => dados.itens[categoria] as Item[];
 export const numerosEmergencia = dados.numeros;

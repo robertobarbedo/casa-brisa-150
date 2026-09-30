@@ -364,6 +364,14 @@
         "titulo": "May Santo Antônio",
         "texto": "Thai"
       },
+      "vistaNipo": {
+        "titulo": "Vista Nipô",
+        "texto": "Japanese"
+      },
+      "aoZeca": {
+        "titulo": "Ao Zeca",
+        "texto": "Classic cuisine"
+      },
       "miniMercado": {
         "titulo": "Corner shop",
         "texto": "VT · turn right when you leave, on the next block"

@@ -364,6 +364,14 @@
         "titulo": "May Santo Antônio",
         "texto": "Тайская кухня"
       },
+      "vistaNipo": {
+        "titulo": "Vista Nipô",
+        "texto": "Японская кухня"
+      },
+      "aoZeca": {
+        "titulo": "Ao Zeca",
+        "texto": "Классическая кухня"
+      },
       "miniMercado": {
         "titulo": "Мини-маркет",
         "texto": "VT · от дома направо, в следующем квартале"
