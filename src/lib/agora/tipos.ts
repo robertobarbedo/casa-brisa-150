@@ -82,6 +82,8 @@ export type Regra = {
   quando: (ctx: Contexto) => boolean;
   valores?: (ctx: Contexto) => Valores;
   destino?: Destino;
+  /** Regras do mesmo grupo nunca aparecem juntas: só a de maior prioridade. */
+  grupo?: "mare";
 };
 
 /** Mensagem pronta para exibir. */

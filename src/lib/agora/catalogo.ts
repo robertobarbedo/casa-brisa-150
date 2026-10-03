@@ -32,6 +32,7 @@ export const catalogo: Regra[] = [
   },
   {
     id: "porDoSolMangue",
+    grupo: "mare",
     prioridade: 90,
     quando: (c) =>
       c.minAtePorDoSol > 20 && c.minAtePorDoSol <= 90 && !!mareBaixaPerto(c, c.porDoSol, 1.5 * HORA),
@@ -47,10 +48,10 @@ export const catalogo: Regra[] = [
 
   // ── Tempo ───────────────────────────────────────────────────
   {
-    // Até o meio da tarde o convite é para o almoço; depois, para o jantar.
+    // Sugestão de almoço só das 10h30 às 14h; das 15h às 21h, jantar.
     id: "chovendo",
     prioridade: 80,
-    quando: (c) => !!c.tempo?.chovendo && c.minutoDoDia >= h(7) && c.minutoDoDia < h(15),
+    quando: (c) => !!c.tempo?.chovendo && c.minutoDoDia >= h(10.5) && c.minutoDoDia < h(14),
     destino: "comer",
   },
   {
@@ -71,6 +72,7 @@ export const catalogo: Regra[] = [
   // ── Maré ────────────────────────────────────────────────────
   {
     id: "mareBaixa",
+    grupo: "mare",
     prioridade: 70,
     quando: (c) => {
       if (c.minutoDoDia < h(6) || c.minAtePorDoSol <= 90) return false;
@@ -84,6 +86,7 @@ export const catalogo: Regra[] = [
   {
     // Na maré alta a faixa de areia encolhe: em dia cheio, falta lugar.
     id: "mareAlta",
+    grupo: "mare",
     prioridade: 65,
     quando: (c) =>
       c.diaDeMovimento &&
@@ -126,6 +129,7 @@ export const catalogo: Regra[] = [
   // ── Noite ("amanhã" só até a meia-noite, depois vira "hoje") ───
   {
     id: "amanhaComMare",
+    grupo: "mare",
     prioridade: 46,
     quando: (c) => !!c.tempo?.amanha && c.minutoDoDia >= h(20.5) && !!baixaDeAmanha(c),
     valores: (c) => ({

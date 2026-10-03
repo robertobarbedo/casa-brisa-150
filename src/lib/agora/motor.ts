@@ -26,7 +26,8 @@ function formatar(valor: Valor, lang: Locale, textos: TextosAgora): string {
 /**
  * Todas as mensagens que valem agora, da mais para a menos importante.
  * Regras sem texto no idioma são ignoradas (dá para lançar uma
- * mensagem aos poucos, um idioma de cada vez).
+ * mensagem aos poucos, um idioma de cada vez). De cada grupo (ex.: maré),
+ * só entra a de maior prioridade.
  */
 export function escolherMensagens(
   ctx: Contexto,
@@ -37,6 +38,7 @@ export function escolherMensagens(
   return regras
     .filter((r) => textos.mensagens[r.id]?.length && r.quando(ctx))
     .sort((a, b) => b.prioridade - a.prioridade)
+    .filter((r, i, lista) => !r.grupo || lista.findIndex((o) => o.grupo === r.grupo) === i)
     .map((r) => {
       const valores = Object.fromEntries(
         Object.entries(r.valores?.(ctx) ?? {}).map(([k, v]) => [k, formatar(v, lang, textos)]),
