@@ -427,6 +427,10 @@
       "registro": {
         "titulo": "Llave de paso del agua",
         "texto": "En el fondo, al lado de la pérgola, en la base del tanque de agua."
+      },
+      "quadroLuz": {
+        "titulo": "Tablero eléctrico",
+        "texto": "En la cocina, al lado de la heladera. Si algo deja de funcionar, fijate si saltó algún disyuntor y volvé a subirlo."
       }
     },
     "mare": {

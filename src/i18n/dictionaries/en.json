@@ -427,6 +427,10 @@
       "registro": {
         "titulo": "Water shut-off valve",
         "texto": "Out back, beside the pergola, at the base of the water tank."
+      },
+      "quadroLuz": {
+        "titulo": "Breaker panel",
+        "texto": "In the kitchen, next to the fridge. If something stops working, check whether a breaker has tripped and flip it back up."
       }
     },
     "mare": {

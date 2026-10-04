@@ -427,6 +427,10 @@
       "registro": {
         "titulo": "Registro de água",
         "texto": "Nos fundos, ao lado do pergolado, na base da caixa d'água."
+      },
+      "quadroLuz": {
+        "titulo": "Quadro de luz",
+        "texto": "Na cozinha, ao lado da geladeira. Se algo parar de funcionar, veja se algum disjuntor desarmou e suba de volta."
       }
     },
     "mare": {

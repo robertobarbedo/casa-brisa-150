@@ -51,7 +51,8 @@
       { "id": "tv", "icone": "tv" },
       { "id": "churrasqueira", "icone": "fogo" },
       { "id": "carregador", "icone": "raio" },
-      { "id": "registro", "icone": "gota" }
+      { "id": "registro", "icone": "gota" },
+      { "id": "quadroLuz", "icone": "luz" }
     ]
   }
 }
