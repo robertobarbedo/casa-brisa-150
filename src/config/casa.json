@@ -26,6 +26,8 @@
   "precos": {
     "diaria": 800,
     "limpeza": 250,
+    "hospedesInclusos": 4,
+    "hospedeExtra": 75,
     "minimoNoites": 2,
     "descontoPercentual": 10
   },

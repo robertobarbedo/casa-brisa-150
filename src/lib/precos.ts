@@ -7,10 +7,16 @@ export type TabelaPrecos = Record<string, { preco: number; minimo: number }>;
 
 export type Orcamento = {
   noites: number;
-  /** Soma das diárias sem desconto */
+  /** Soma das diárias base sem desconto */
+  subtotalDiarias: number;
+  /** Hóspedes além dos inclusos na diária */
+  hospedesExtras: number;
+  /** Taxa de hóspede extra de todas as noites, sem desconto */
+  taxaHospedes: number;
+  /** Diárias + taxa de hóspede extra, sem desconto */
   subtotal: number;
   desconto: number;
-  /** Diárias já com o desconto aplicado */
+  /** Diárias e taxa de hóspede extra já com o desconto aplicado */
   diarias: number;
   limpeza: number;
   total: number;
@@ -42,9 +48,14 @@ export function calcularOrcamento(
   tabela: TabelaPrecos,
   checkIn: string,
   checkOut: string,
+  hospedes: number,
 ): Orcamento {
   const noites = listarNoites(checkIn, checkOut);
-  const subtotal = noites.reduce((soma, noite) => soma + precoDaNoite(casa, tabela, noite), 0);
+  const subtotalDiarias = noites.reduce((soma, noite) => soma + precoDaNoite(casa, tabela, noite), 0);
+  // Como no Airbnb: a taxa por hóspede extra entra na diária, então o desconto vale para ela também.
+  const hospedesExtras = Math.max(0, hospedes - casa.precos.hospedesInclusos);
+  const taxaHospedes = hospedesExtras * casa.precos.hospedeExtra * noites.length;
+  const subtotal = subtotalDiarias + taxaHospedes;
   const diarias = comDesconto(subtotal, casa);
   const limpeza = casa.precos.limpeza;
 
@@ -53,6 +64,9 @@ export function calcularOrcamento(
 
   return {
     noites: noites.length,
+    subtotalDiarias,
+    hospedesExtras,
+    taxaHospedes,
     subtotal,
     desconto: subtotal - diarias,
     diarias,

@@ -50,6 +50,9 @@ const casaSchema = z.object({
   precos: z.object({
     diaria: z.number().positive(),
     limpeza: z.number().nonnegative(),
+    // A diária cobre até hospedesInclusos; cada hóspede além disso paga hospedeExtra por noite.
+    hospedesInclusos: z.number().int().positive(),
+    hospedeExtra: z.number().nonnegative(),
     minimoNoites: z.number().int().positive(),
     descontoPercentual: z.number().min(0).max(100),
   }),

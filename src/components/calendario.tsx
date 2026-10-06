@@ -81,7 +81,7 @@ export function Calendario({ lang, dict, casa, ocupadas, tabela }: Props) {
     setCheckOut(null);
   };
 
-  const orcamento = checkIn && checkOut ? calcularOrcamento(casa, tabela, checkIn, checkOut) : null;
+  const orcamento = checkIn && checkOut ? calcularOrcamento(casa, tabela, checkIn, checkOut, hospedes) : null;
   const noitesInsuficientes = !!orcamento && orcamento.noites < orcamento.minimoNoites;
   const pronto = !!orcamento && !noitesInsuficientes;
 
@@ -243,7 +243,11 @@ export function Calendario({ lang, dict, casa, ocupadas, tabela }: Props) {
 
         {infoHospedes && (
           <p id="info-hospedes" className="mt-2 rounded-2xl bg-areia px-3 py-2 text-xs leading-relaxed">
-            {fill(dict.reserva.hospedesInfo, { n: casa.capacidade.hospedes })}
+            {fill(dict.reserva.hospedesInfo, {
+              n: casa.capacidade.hospedes,
+              inclusos: casa.precos.hospedesInclusos,
+              valor: formatBRL(casa.precos.hospedeExtra, lang),
+            })}
           </p>
         )}
 
@@ -251,8 +255,19 @@ export function Calendario({ lang, dict, casa, ocupadas, tabela }: Props) {
           <dl className="mt-3 space-y-1 text-sm">
             <div className="flex justify-between">
               <dt>{fill(dict.reserva.noites, { n: orcamento.noites })}</dt>
-              <dd>{formatBRL(orcamento.subtotal, lang)}</dd>
+              <dd>{formatBRL(orcamento.subtotalDiarias, lang)}</dd>
             </div>
+            {orcamento.taxaHospedes > 0 && (
+              <div className="flex justify-between">
+                <dt>
+                  {fill(dict.reserva.hospedesExtras, {
+                    n: orcamento.hospedesExtras,
+                    valor: formatBRL(casa.precos.hospedeExtra, lang),
+                  })}
+                </dt>
+                <dd>{formatBRL(orcamento.taxaHospedes, lang)}</dd>
+              </div>
+            )}
             {orcamento.desconto > 0 && (
               <div className="flex justify-between font-semibold text-folha">
                 <dt>{fill(dict.reserva.desconto, { n: casa.precos.descontoPercentual })}</dt>
