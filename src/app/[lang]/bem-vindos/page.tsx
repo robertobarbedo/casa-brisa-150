@@ -52,7 +52,7 @@ export default async function BemVindos({ params }: PageProps<"/[lang]/bem-vindo
     <>
       <main className="mx-auto max-w-md px-4 pt-[calc(1.25rem+env(safe-area-inset-top))] pb-[calc(2rem+env(safe-area-inset-bottom))]">
         <div className="flex items-start justify-between gap-3">
-          <h1 className="text-2xl font-bold tracking-tight text-balance text-taupe-escuro">{t.ola}</h1>
+          <h1 className="text-xl font-bold tracking-tight text-balance text-taupe-escuro">{t.ola}</h1>
           <SeletorIdioma lang={lang} aria={dict.nav.idioma} />
         </div>
 
