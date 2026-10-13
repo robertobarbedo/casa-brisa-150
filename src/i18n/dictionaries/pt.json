@@ -432,6 +432,10 @@
       "quadroLuz": {
         "titulo": "Quadro de luz",
         "texto": "Na cozinha, ao lado da geladeira. Se algo parar de funcionar, veja se algum disjuntor desarmou e suba de volta."
+      },
+      "detectores": {
+        "titulo": "Detectores de fumaça e CO",
+        "texto": "Na sala e no corredor. Se dispararem por engano, pressione a tampa com o cabo de uma vassoura: ela é o botão de silenciar. Se o alarme for real (fogo, fumaça sem motivo ou alguém com tontura ou dor de cabeça), saiam da casa e liguem 193."
       }
     },
     "mare": {

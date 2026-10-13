@@ -1,4 +1,5 @@
 import {
+  AlarmSmoke,
   Banknote,
   Binoculars,
   Car,
@@ -70,5 +71,6 @@ export const iconesItem: Record<string, LucideIcon> = {
   fogo: Flame,
   gota: Droplet,
   carro: Car,
+  alarme: AlarmSmoke,
 };
 

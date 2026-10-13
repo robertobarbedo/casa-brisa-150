@@ -52,7 +52,8 @@
       { "id": "churrasqueira", "icone": "fogo" },
       { "id": "carregador", "icone": "raio" },
       { "id": "registro", "icone": "gota" },
-      { "id": "quadroLuz", "icone": "luz" }
+      { "id": "quadroLuz", "icone": "luz" },
+      { "id": "detectores", "icone": "alarme" }
     ]
   }
 }

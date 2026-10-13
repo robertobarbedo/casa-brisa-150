@@ -432,6 +432,10 @@
       "quadroLuz": {
         "titulo": "Breaker panel",
         "texto": "In the kitchen, next to the fridge. If something stops working, check whether a breaker has tripped and flip it back up."
+      },
+      "detectores": {
+        "titulo": "Smoke & CO detectors",
+        "texto": "In the living room and the hallway. If they go off by mistake, press the cover with a broom handle: it's the silence button. If the alarm is real (fire, smoke with no clear cause, or someone feeling dizzy or getting a headache), leave the house and call 193."
       }
     },
     "mare": {

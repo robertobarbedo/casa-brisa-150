@@ -432,6 +432,10 @@
       "quadroLuz": {
         "titulo": "Tablero eléctrico",
         "texto": "En la cocina, al lado de la heladera. Si algo deja de funcionar, fijate si saltó algún disyuntor y volvé a subirlo."
+      },
+      "detectores": {
+        "titulo": "Detectores de humo y CO",
+        "texto": "En el living y en el pasillo. Si se disparan por error, presioná la tapa con el palo de una escoba: es el botón para silenciarlos. Si la alarma es real (fuego, humo sin motivo o alguien con mareo o dolor de cabeza), salgan de la casa y llamen al 193."
       }
     },
     "mare": {
