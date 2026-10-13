@@ -45,15 +45,15 @@
       { "id": "carregadorPublico", "icone": "raio", "acao": { "tipo": "mapa", "busca": "Jurerê Sports Center, Florianópolis" } }
     ],
     "casa": [
-      { "id": "anfitrioes", "icone": "whatsapp", "acao": { "tipo": "whatsapp" } },
       { "id": "cozinha", "icone": "panela" },
-      { "id": "lavar", "icone": "maquina" },
       { "id": "tv", "icone": "tv" },
       { "id": "churrasqueira", "icone": "fogo" },
+      { "id": "lavar", "icone": "maquina" },
       { "id": "carregador", "icone": "raio" },
-      { "id": "registro", "icone": "gota" },
+      { "id": "detectores", "icone": "alarme" },
       { "id": "quadroLuz", "icone": "luz" },
-      { "id": "detectores", "icone": "alarme" }
+      { "id": "registro", "icone": "gota" },
+      { "id": "anfitrioes", "icone": "whatsapp", "acao": { "tipo": "whatsapp" } }
     ]
   }
 }
