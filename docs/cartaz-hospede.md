@@ -156,8 +156,8 @@ que todo hóspede pergunta no primeiro dia.
 
 - ☐ **Lembre-se de sair das contas da TV**
   *Cerrar sesión en la TV · Sign out of the TV*
-- ☐ **Louça limpa e lixo na lixeira dos fundos, agradecemos!**
-  *Vajilla limpia y basura en el tacho del fondo · Clean dishes, rubbish in the bins out back*
+- ☐ **Agradecemos se puder deixar a louça limpa e o lixo na lixeira dos fundos**
+  *Les agradecemos si pueden dejar la vajilla limpia y la basura en los tachos del fondo · We'd appreciate it if you could leave the dishes clean and the rubbish in the bins out back*
 - ☐ **Chave na porta, por dentro, e a porta destrancada**
   *Llave en la puerta, por dentro, y la puerta sin llave*
   *Key in the door, on the inside, door unlocked*
