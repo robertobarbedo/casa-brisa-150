@@ -420,7 +420,7 @@
       },
       "tomadas": {
         "titulo": "Enchufes de 220 V",
-        "texto": "Todos los enchufes de la casa son de 220 V. Antes de enchufar secador, planchita u otro aparato, fijate si es bivolt."
+        "texto": "Todos los enchufes de la casa son de 220 V. Revisen sus aparatos antes de enchufarlos."
       },
       "cozinha": {
         "titulo": "Cocina",
@@ -428,7 +428,7 @@
       },
       "lavar": {
         "titulo": "Lavarropas",
-        "texto": "En el fondo, al lado del lavadero."
+        "texto": "En el fondo, del lado de afuera del área de la parrilla."
       },
       "tv": {
         "titulo": "TV",

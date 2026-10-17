@@ -420,7 +420,7 @@
       },
       "tomadas": {
         "titulo": "220 V outlets",
-        "texto": "Every outlet in the house is 220 V. Before plugging in a hair dryer, straightener or other device, check that it's dual voltage."
+        "texto": "Every outlet in the house is 220 V. Check your devices before plugging them in."
       },
       "cozinha": {
         "titulo": "Kitchen",
@@ -428,7 +428,7 @@
       },
       "lavar": {
         "titulo": "Washing machine",
-        "texto": "Out back, next to the laundry sink."
+        "texto": "Out back, on the outside of the barbecue area."
       },
       "tv": {
         "titulo": "TV",

@@ -42,6 +42,11 @@ Tudo entre «aspas angulares» ainda precisa ser resolvido antes de imprimir.
 
 ## Como funciona
 
+**⚡ Tomadas 220 V**
+Todas as tomadas são 220 V. Verifique seus aparelhos antes de ligar.
+*Enchufes de 220 V. Revisen sus aparatos antes de usarlos.*
+*All outlets are 220 V. Check your devices first.*
+
 **❄️ Ar-condicionado**
 Portas e janelas fechadas. Desligue ao sair.
 *Puertas y ventanas cerradas. Apagar al salir.*
@@ -53,27 +58,23 @@ Café, sal, azeite e temperos — use à vontade.
 *Coffee, salt, oil and spices — help yourself.*
 
 **👕 Máquina de lavar**
-Nos fundos, ao lado do tanque.
-*En el fondo, al lado del lavadero.*
-*Out back, next to the laundry sink.*
+Nos fundos, do lado de fora da área da churrasqueira.
+*En el fondo, del lado de afuera del área de la parrilla.*
+*Out back, on the outside of the barbecue area.*
 
 **📺 TV**
-Entre nas suas contas — e saia delas antes do check-out.
-*Usen sus cuentas — y cierren sesión antes del check-out.*
-*Use your own accounts — sign out before check-out.*
+Acesse suas contas de streaming.
+*Accedan a sus cuentas de streaming.*
+*Sign in to your streaming accounts.*
 
 **🔥 Churrasqueira**
 Carvão não incluso. Deixe as brasas apagarem sozinhas.
 *Carbón no incluido. Dejen que las brasas se apaguen solas.*
 *Charcoal not included. Let the embers burn out on their own.*
 
-**⚡ Tomadas 220 V**
-Todas as tomadas são 220 V. Antes de ligar secador ou chapinha, veja se é bivolt.
-*Todos los enchufes son de 220 V. Antes de enchufar secador o planchita, fíjense si es bivolt.*
-*All outlets are 220 V. Check your hair dryer or straightener is dual voltage first.*
-
-Carro elétrico: tomada 20 A, uso gratuito, é só ligar o seu cabo.
-*Auto eléctrico: toma de 20 A, gratis · EV: 20 A outlet, free to use.*
+**🔌 Carro elétrico**
+Tomada 20 A, grátis. É só ligar o seu cabo.
+*Toma de 20 A, gratis · 20 A outlet, free to use.*
 *¿Sin cable? Cargador público más cercano: Jurerê Sports Center · 5 min 🚗*
 *No cable? Nearest public charger: Jurerê Sports Center · 5 min 🚗*
 
@@ -172,7 +173,7 @@ que todo hóspede pergunta no primeiro dia.
 | 💊 Farmácia · Farmacia · Pharmacy | Farmácia Vida · 5 min 🚗 |
 | 🏧 Caixa · Cajero · ATM | Supermercado Imperatriz · 10 min 🚗 |
 | ⛽ Posto · Nafta · Petrol | Posto Daqui, Jurerê Internacional · 5 min 🚗 |
-| 🍽️ Nossos favoritos · Nuestros favoritos · Our favourites | Il Caravaggio (italiano) · May Santo Antônio (tailandês) |
+| 🍽️ Nossos favoritos · Nuestros favoritos · Our favourites | Veja no QR code, no rodapé · Véanlos en el código QR · See the QR code below |
 
 ## Rodapé
 

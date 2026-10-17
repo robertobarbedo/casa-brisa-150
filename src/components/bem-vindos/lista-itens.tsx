@@ -22,7 +22,11 @@ export function ListaItens({ itens, dict, whatsapp }: Props) {
 
         const conteudo = (
           <>
-            <span className="grid size-11 shrink-0 place-items-center rounded-2xl bg-areia text-taupe-escuro">
+            <span
+              className={`grid size-11 shrink-0 place-items-center rounded-2xl ${
+                item.destaque ? "bg-branco text-terracota-forte" : "bg-areia text-taupe-escuro"
+              }`}
+            >
               {Icone && <Icone aria-hidden className="size-5" />}
             </span>
             <span className="min-w-0 flex-1">
@@ -41,7 +45,9 @@ export function ListaItens({ itens, dict, whatsapp }: Props) {
             </span>
           </>
         );
-        const cartao = "flex items-center gap-3 rounded-3xl bg-branco p-3 ring-1 ring-areia-escura/70";
+        const cartao = `flex items-center gap-3 rounded-3xl p-3 ring-1 ${
+          item.destaque ? "bg-terracota-suave ring-terracota/40" : "bg-branco ring-areia-escura/70"
+        }`;
 
         if (!acao) return <li key={item.id} className={cartao}>{conteudo}</li>;
 
