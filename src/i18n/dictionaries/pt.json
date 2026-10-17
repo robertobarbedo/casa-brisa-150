@@ -241,6 +241,17 @@
     "copiar": "Copiar",
     "copiado": "Copiado!",
     "whatsapp": "Falar com os anfitriões",
+    "checkout": {
+      "titulo": "Até logo!",
+      "tituloNome": "Até logo, {nome}!",
+      "hora": "Check-out hoje {hora}",
+      "itens": {
+        "tv": "Lembre-se de sair das suas contas na TV",
+        "louca": "Agradecemos se puder deixar a louça limpa e o lixo na lixeira dos fundos",
+        "chave": "Deixe a chave na porta, por dentro, e a porta destrancada"
+      },
+      "obrigado": "Obrigado pela estadia! Qualquer coisa, fale com a gente no WhatsApp."
+    },
     "alertas": {
       "pontal": {
         "titulo": "Nunca entrem no mar no Pontal",

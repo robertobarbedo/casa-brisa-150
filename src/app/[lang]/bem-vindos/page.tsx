@@ -7,9 +7,14 @@ import { getDictionary, type Dictionary } from "@/i18n/get-dictionary";
 import { casa } from "@/lib/casa";
 import { buscarPrevisao } from "@/lib/agora/previsao";
 import { categorias, type CategoriaId } from "@/lib/bem-vindos/categorias";
+import { checkoutSempreVisivel, saidasProximas } from "@/lib/bem-vindos/ocupacao";
+import { CartaoCheckout } from "@/components/bem-vindos/cartao-checkout";
 import { FaixaAgora } from "@/components/bem-vindos/faixa-agora";
 import { SeletorIdioma } from "@/components/bem-vindos/seletor-idioma";
 import { visualCategoria } from "@/components/bem-vindos/visual";
+
+// Regera a página ao menos a cada 30 min, para a janela de saídas (ontem a amanhã) não envelhecer.
+export const revalidate = 1800;
 
 type CartaoProps = { id: CategoriaId; lang: Locale; t: Dictionary["bemVindos"]; largo?: boolean };
 
@@ -66,6 +71,15 @@ export default async function BemVindos({ params }: PageProps<"/[lang]/bem-vindo
             mare={{ alta: t.mare.alta, baixa: t.mare.baixa }}
           />
         </div>
+
+        <CartaoCheckout
+          saidas={saidasProximas()}
+          sempreVisivel={checkoutSempreVisivel}
+          horario={dict.regras.checkoutHora}
+          whatsapp={casa.contato.whatsapp}
+          botao={t.whatsapp}
+          textos={t.checkout}
+        />
 
         <nav className="mt-6 flex flex-col gap-3">
           <Cartao id={emergencia} lang={lang} t={t} largo />

@@ -152,17 +152,13 @@ que todo hóspede pergunta no primeiro dia.
 
 *Antes de irse (hasta las 11 h) · Before you go (by 11 am)*
 
-- ☐ **Louça lavada, lixo na lixeira da frente**
-  *Vajilla lavada, basura en el tacho · Dishes washed, rubbish in the bin*
-- ☐ **Ar, luzes e cooktop desligados**
-  *Aire, luces y anafe apagados · AC, lights and cooktop off*
-- ☐ **Janelas fechadas**
-  *Ventanas cerradas · Windows closed*
-- ☐ **Sair das contas da TV**
+- ☐ **Lembre-se de sair das contas da TV**
   *Cerrar sesión en la TV · Sign out of the TV*
-- ☐ **Chave na porta, por dentro, e a porta aberta**
-  *Llave en la puerta, por dentro, y la puerta abierta*
-  *Key in the door, on the inside, and the door left open*
+- ☐ **Louça limpa e lixo na lixeira dos fundos, agradecemos!**
+  *Vajilla limpia y basura en el tacho del fondo · Clean dishes, rubbish in the bins out back*
+- ☐ **Chave na porta, por dentro, e a porta destrancada**
+  *Llave en la puerta, por dentro, y la puerta sin llave*
+  *Key in the door, on the inside, door unlocked*
 
 ## Perto daqui
 
