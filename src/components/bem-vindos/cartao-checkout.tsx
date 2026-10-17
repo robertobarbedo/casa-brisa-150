@@ -60,7 +60,7 @@ export function TopoBemVindos({ titulo, tituloCheckout, idioma, ...checkout }: T
   return (
     <>
       <div className="flex items-start justify-between gap-3">
-        <h1 className="text-xl font-bold tracking-tight text-balance text-taupe-escuro">
+        <h1 className="text-2xl font-bold tracking-tight text-balance text-taupe-escuro">
           {hoje ? tituloCheckout : titulo}
         </h1>
         <Link
@@ -85,7 +85,7 @@ function CartaoCheckout({ nome, horario, whatsapp, botao, textos }: CheckoutProp
           <LogOut aria-hidden className="size-6" />
         </span>
         <div>
-          <h2 className="text-xl leading-snug font-bold text-balance text-taupe-escuro">
+          <h2 className="font-bold text-taupe-escuro">
             {nome ? fill(textos.tituloNome, { nome }) : textos.titulo}
           </h2>
           <p className="text-sm">{fill(textos.hora, { hora: horario })}</p>
