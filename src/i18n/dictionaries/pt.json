@@ -195,17 +195,16 @@
     "fechar": "Fechar",
     "checkIn": "Entrada",
     "checkOut": "Saída",
-    "toqueEntrada": "Toque no dia da entrada",
-    "toqueSaida": "Agora toque no dia da saída",
+    "toqueDia": "Toque no dia",
     "limpar": "Limpar datas",
     "hospedes": "Hóspedes",
     "hospedesInfo": "A diária inclui até {inclusos} hóspedes; cada hóspede a mais paga {valor} por noite. Máximo de {n} hóspedes. Para exceções com crianças, consulte a gente.",
     "hospedesInfoAria": "Sobre o número de hóspedes",
     "noites": "{n} noites",
-    "hospedesExtras": "Hóspede extra ({n} × {valor}/noite)",
     "total": "Total",
     "minimoAviso": "Nessas datas a estadia mínima é de {n} noites.",
     "enviarEmail": "Enviar pedido de reserva por e-mail",
+    "ouEmail": "ou enviar por e-mail",
     "enviarWhatsapp": "Enviar pedido de reserva pelo WhatsApp",
     "semContato": "Contato ainda não configurado.",
     "assuntoEmail": "Reserva Casa Brisa · {checkIn} a {checkOut}",
@@ -244,6 +243,17 @@
     "copiar": "Copiar",
     "copiado": "Copiado!",
     "whatsapp": "Falar com os anfitriões",
+    "checkout": {
+      "titulo": "Obrigado pela sua visita!",
+      "tituloNome": "Obrigado pela sua visita, {nome}!",
+      "hora": "Check-out hoje {hora}",
+      "itens": {
+        "tv": "Lembre-se de sair das suas contas na TV",
+        "louca": "Agradecemos se puder deixar a louça limpa e o lixo na lixeira dos fundos",
+        "chave": "Deixe a chave na porta, por dentro, e a porta destrancada"
+      },
+      "contato": "Qualquer coisa, fale com a gente no WhatsApp."
+    },
     "alertas": {
       "pontal": {
         "titulo": "Nunca entrem no mar no Pontal",
@@ -330,7 +340,7 @@
       },
       "mangue": {
         "titulo": "Mangue",
-        "texto": "No fim da Rua das Hortências, no sentido contrário à praia. Na maré baixa dá para entrar e caminhar por ele, é seguro. No pôr do sol fica ainda mais bonito."
+        "texto": "No fim da Rua das Hortências, no sentido contrário à praia. Vá no fim da tarde, com maré baixa: dá para entrar e caminhar por ele, é seguro."
       },
       "trilhaForte": {
         "titulo": "Trilha da Praia do Forte",
@@ -439,11 +449,15 @@
       "quadroLuz": {
         "titulo": "Quadro de luz",
         "texto": "Na cozinha, ao lado da geladeira. Se algo parar de funcionar, veja se algum disjuntor desarmou e suba de volta."
+      },
+      "detectores": {
+        "titulo": "Detectores de fumaça e CO",
+        "texto": "Na sala e no corredor. Se dispararem por engano, pressione a tampa com o cabo de uma vassoura: ela é o botão de silenciar. Na dúvida, saiam da casa e liguem 193."
       }
     },
     "mare": {
       "titulo": "Maré de hoje",
-      "dicaBaixa": "Maré baixa: praia mais larga. Boa hora para o Pontal, para caminhar no mangue e para achar lugar na areia.",
+      "dicaBaixa": "Maré baixa: praia mais larga. Boa hora para caminhar até o Pontal e para achar lugar na areia.",
       "dicaAlta": "Maré alta: a faixa de areia fica curta. Nos dias mais cheios, pode ser difícil achar lugar.",
       "alta": "Maré alta",
       "baixa": "Maré baixa",
@@ -491,7 +505,7 @@
       ],
       "mareBaixa": [
         "Maré baixa às {hora}: o Pontal fica no seu melhor.",
-        "Maré baixa às {hora}: boa hora para caminhar até o Pontal ou visitar o mangue.",
+        "Maré baixa às {hora}: boa hora para caminhar até o Pontal.",
         "Maré baixa às {hora}: praia larga, fácil de achar um bom lugar na areia."
       ],
       "mareAlta": [

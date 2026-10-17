@@ -48,12 +48,14 @@
       { "id": "anfitrioes", "icone": "whatsapp", "acao": { "tipo": "whatsapp" } },
       { "id": "tomadas", "icone": "tomada" },
       { "id": "cozinha", "icone": "panela" },
-      { "id": "lavar", "icone": "maquina" },
       { "id": "tv", "icone": "tv" },
       { "id": "churrasqueira", "icone": "fogo" },
+      { "id": "lavar", "icone": "maquina" },
       { "id": "carregador", "icone": "raio" },
+      { "id": "detectores", "icone": "alarme" },
+      { "id": "quadroLuz", "icone": "luz" },
       { "id": "registro", "icone": "gota" },
-      { "id": "quadroLuz", "icone": "luz" }
+      { "id": "anfitrioes", "icone": "whatsapp", "acao": { "tipo": "whatsapp" } }
     ]
   }
 }

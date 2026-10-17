@@ -24,3 +24,6 @@ export function formatarHora(t: number, lang: Locale) {
     timeZone: FUSO,
   }).format(t);
 }
+
+/** "2026-10-17": a data do calendário no horário da casa. */
+export const dataLocal = (t: number) => new Date(t + OFFSET).toISOString().slice(0, 10);

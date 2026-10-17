@@ -8,9 +8,13 @@ import { casa } from "@/lib/casa";
 import { buscarPrevisao } from "@/lib/agora/previsao";
 import { buscarChegadas } from "@/lib/disponibilidade";
 import { categorias, type CategoriaId } from "@/lib/bem-vindos/categorias";
+import { checkoutSempreVisivel, saidasProximas } from "@/lib/bem-vindos/ocupacao";
+import { TopoBemVindos } from "@/components/bem-vindos/cartao-checkout";
 import { FaixaAgora } from "@/components/bem-vindos/faixa-agora";
-import { SeletorIdioma } from "@/components/bem-vindos/seletor-idioma";
 import { visualCategoria } from "@/components/bem-vindos/visual";
+
+// Regera a página ao menos a cada 30 min, para a janela de saídas (ontem a amanhã) não envelhecer.
+export const revalidate = 1800;
 
 type CartaoProps = { id: CategoriaId; lang: Locale; t: Dictionary["bemVindos"]; largo?: boolean };
 
@@ -56,10 +60,17 @@ export default async function BemVindos({ params }: PageProps<"/[lang]/bem-vindo
   return (
     <>
       <main className="mx-auto max-w-md px-4 pt-[calc(1.25rem+env(safe-area-inset-top))] pb-[calc(2rem+env(safe-area-inset-bottom))]">
-        <div className="flex items-start justify-between gap-3">
-          <h1 className="text-2xl font-bold tracking-tight text-balance text-taupe-escuro">{t.ola}</h1>
-          <SeletorIdioma lang={lang} aria={dict.nav.idioma} />
-        </div>
+        <TopoBemVindos
+          titulo={t.ola}
+          tituloCheckout={casa.nome}
+          idioma={dict.nav.idioma}
+          saidas={saidasProximas()}
+          sempreVisivel={checkoutSempreVisivel}
+          horario={dict.regras.checkoutHora}
+          whatsapp={casa.contato.whatsapp}
+          botao={t.whatsapp}
+          textos={t.checkout}
+        />
 
         <div className="mt-5">
           <FaixaAgora

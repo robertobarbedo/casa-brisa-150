@@ -195,17 +195,16 @@
     "fechar": "Close",
     "checkIn": "Check-in",
     "checkOut": "Check-out",
-    "toqueEntrada": "Tap your arrival day",
-    "toqueSaida": "Now tap your departure day",
+    "toqueDia": "Tap a day",
     "limpar": "Clear dates",
     "hospedes": "Guests",
     "hospedesInfo": "The nightly rate covers up to {inclusos} guests; each additional guest is {valor} per night. Up to {n} guests. For exceptions with children, just ask us.",
     "hospedesInfoAria": "About the number of guests",
     "noites": "{n} nights",
-    "hospedesExtras": "Extra guests ({n} × {valor}/night)",
     "total": "Total",
     "minimoAviso": "For these dates the minimum stay is {n} nights.",
     "enviarEmail": "Send booking request by email",
+    "ouEmail": "or send by email",
     "enviarWhatsapp": "Send booking request on WhatsApp",
     "semContato": "Contact details not set yet.",
     "assuntoEmail": "Casa Brisa booking · {checkIn} to {checkOut}",
@@ -244,6 +243,17 @@
     "copiar": "Copy",
     "copiado": "Copied!",
     "whatsapp": "Message your hosts",
+    "checkout": {
+      "titulo": "Thank you for staying with us!",
+      "tituloNome": "Thank you for staying with us, {nome}!",
+      "hora": "Check-out today {hora}",
+      "itens": {
+        "tv": "Remember to sign out of your accounts on the TV",
+        "louca": "We'd appreciate it if you could leave the dishes clean and the rubbish in the bins out back",
+        "chave": "Leave the key in the door, on the inside, with the door unlocked"
+      },
+      "contato": "If you need anything, message us on WhatsApp."
+    },
     "alertas": {
       "pontal": {
         "titulo": "Never go into the sea at the Pontal",
@@ -330,7 +340,7 @@
       },
       "mangue": {
         "titulo": "Mangrove",
-        "texto": "At the end of Rua das Hortências, heading away from the beach. At low tide you can walk right into it — it's safe. Even lovelier at sunset."
+        "texto": "At the end of Rua das Hortências, heading away from the beach. Go in the late afternoon at low tide: you can walk right into it — it's safe."
       },
       "trilhaForte": {
         "titulo": "Trail to Praia do Forte",
@@ -439,11 +449,15 @@
       "quadroLuz": {
         "titulo": "Breaker panel",
         "texto": "In the kitchen, next to the fridge. If something stops working, check whether a breaker has tripped and flip it back up."
+      },
+      "detectores": {
+        "titulo": "Smoke & CO detectors",
+        "texto": "In the living room and the hallway. If they go off by mistake, press the cover with a broom handle: it's the silence button. If in doubt, leave the house and call 193."
       }
     },
     "mare": {
       "titulo": "Today's tide",
-      "dicaBaixa": "Low tide: a wider beach. A good time for the Pontal, for walking in the mangrove and for finding a spot on the sand.",
+      "dicaBaixa": "Low tide: a wider beach. A good time to walk to the Pontal and to find a spot on the sand.",
       "dicaAlta": "High tide: the strip of sand gets narrow. On busy days it can be hard to find a spot.",
       "alta": "High tide",
       "baixa": "Low tide",
@@ -491,7 +505,7 @@
       ],
       "mareBaixa": [
         "Low tide at {hora}: the Pontal is at its most beautiful.",
-        "Low tide at {hora}: a good time to walk to the Pontal or visit the mangrove.",
+        "Low tide at {hora}: a good time to walk to the Pontal.",
         "Low tide at {hora}: a wide beach, easy to find a good spot on the sand."
       ],
       "mareAlta": [
