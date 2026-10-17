@@ -130,9 +130,13 @@ export function Calendario({ lang, dict, casa, ocupadas, tabela }: Props) {
                 <p className="text-[11px] font-semibold tracking-wide uppercase text-taupe/80">
                   {dict.reserva[campo]}
                 </p>
-                <p className="font-bold text-taupe-escuro">
-                  {valor ? dataCurta(valor) : "—"}
-                </p>
+                {valor ? (
+                  <p className="font-bold text-taupe-escuro">{dataCurta(valor)}</p>
+                ) : (
+                  <p className={ativo ? "text-taupe-escuro" : "text-taupe/50"}>
+                    {ativo ? dict.reserva.toqueDia : "—"}
+                  </p>
+                )}
               </div>
             );
           })}
@@ -147,10 +151,7 @@ export function Calendario({ lang, dict, casa, ocupadas, tabela }: Props) {
             </button>
           )}
         </div>
-        <p className="mt-2 text-xs text-taupe/80">
-          {!checkIn || checkOut ? dict.reserva.toqueEntrada : dict.reserva.toqueSaida}
-        </p>
-        <ul className="mt-2 grid grid-cols-7 gap-1 text-center text-[11px] font-bold text-taupe/70">
+        <ul className="mt-3 grid grid-cols-7 gap-1 text-center text-[11px] font-bold text-taupe/70">
           {diasSemana.map((d, i) => (
             <li key={i}>{d}</li>
           ))}
@@ -203,7 +204,7 @@ export function Calendario({ lang, dict, casa, ocupadas, tabela }: Props) {
       </div>
 
       {/* Hóspedes + resumo + envio */}
-      <div className="sticky bottom-0 -mx-4 mt-6 border-t border-areia-escura bg-branco/95 px-4 pt-4 pb-[calc(1rem+env(safe-area-inset-bottom))] backdrop-blur-md">
+      <div className="sticky bottom-0 -mx-4 mt-6 border-t border-areia-escura bg-branco/95 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur-md">
         <div className="flex items-center justify-between">
           <span className="flex items-center gap-1.5 font-semibold text-taupe-escuro">
             {dict.reserva.hospedes}
@@ -218,23 +219,23 @@ export function Calendario({ lang, dict, casa, ocupadas, tabela }: Props) {
               <Info aria-hidden className="size-4" />
             </button>
           </span>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <button
               type="button"
               onClick={() => setHospedes((n) => Math.max(1, n - 1))}
               disabled={hospedes <= 1}
               aria-label="−"
-              className="grid size-11 place-items-center rounded-full border border-areia-escura disabled:opacity-40"
+              className="grid size-9 place-items-center rounded-full border border-areia-escura disabled:opacity-40"
             >
               <Minus className="size-4" />
             </button>
-            <span className="w-6 text-center text-lg font-bold text-taupe-escuro">{hospedes}</span>
+            <span className="w-6 text-center font-bold text-taupe-escuro">{hospedes}</span>
             <button
               type="button"
               onClick={() => setHospedes((n) => Math.min(casa.capacidade.hospedes, n + 1))}
               disabled={hospedes >= casa.capacidade.hospedes}
               aria-label="+"
-              className="grid size-11 place-items-center rounded-full border border-areia-escura disabled:opacity-40"
+              className="grid size-9 place-items-center rounded-full border border-areia-escura disabled:opacity-40"
             >
               <Plus className="size-4" />
             </button>
@@ -307,7 +308,19 @@ export function Calendario({ lang, dict, casa, ocupadas, tabela }: Props) {
               {dict.reserva.enviarWhatsapp}
             </a>
           )}
-          {paraEmail && (
+          {/* Com WhatsApp, o e-mail vira um link discreto: um botão grande a menos. */}
+          {paraEmail && casa.contato.whatsapp && (
+            <a
+              href={pronto ? linkEmail : undefined}
+              aria-disabled={!pronto}
+              className={`py-1 text-center text-sm font-semibold underline underline-offset-4 ${
+                pronto ? "text-taupe-escuro" : "pointer-events-none text-taupe/40"
+              }`}
+            >
+              {dict.reserva.ouEmail}
+            </a>
+          )}
+          {paraEmail && !casa.contato.whatsapp && (
             <a
               href={pronto ? linkEmail : undefined}
               aria-disabled={!pronto}
