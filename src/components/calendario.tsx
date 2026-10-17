@@ -257,19 +257,9 @@ export function Calendario({ lang, dict, casa, ocupadas, tabela }: Props) {
           <dl className="mt-3 space-y-1 text-sm">
             <div className="flex justify-between">
               <dt>{fill(dict.reserva.noites, { n: orcamento.noites })}</dt>
-              <dd>{formatBRL(orcamento.subtotalDiarias, lang)}</dd>
+              {/* Hóspede extra entra no valor das noites, sem linha própria. */}
+              <dd>{formatBRL(orcamento.subtotal, lang)}</dd>
             </div>
-            {orcamento.taxaHospedes > 0 && (
-              <div className="flex justify-between">
-                <dt>
-                  {fill(dict.reserva.hospedesExtras, {
-                    n: orcamento.hospedesExtras,
-                    valor: formatBRL(casa.precos.hospedeExtra, lang),
-                  })}
-                </dt>
-                <dd>{formatBRL(orcamento.taxaHospedes, lang)}</dd>
-              </div>
-            )}
             {orcamento.desconto > 0 && (
               <div className="flex justify-between font-semibold text-folha">
                 <dt>{fill(dict.reserva.desconto, { n: casa.precos.descontoPercentual })}</dt>
