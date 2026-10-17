@@ -252,7 +252,8 @@ export function Calendario({ lang, dict, casa, ocupadas, tabela }: Props) {
           </p>
         )}
 
-        {orcamento && (
+        {/* Resumo só quando dá para reservar; com aviso de bloqueio, só o aviso. */}
+        {pronto && (
           <dl className="mt-3 space-y-1 text-sm">
             <div className="flex justify-between">
               <dt>{fill(dict.reserva.noites, { n: orcamento.noites })}</dt>
