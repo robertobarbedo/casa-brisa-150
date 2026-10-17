@@ -1,25 +1,37 @@
 "use client";
 
-import { KeyRound, LogOut, MessageCircle, Tv, UtensilsCrossed, type LucideIcon } from "lucide-react";
-import { dataLocal } from "@/lib/agora/tempo-local";
+import Link from "next/link";
+import { Globe, KeyRound, LogOut, MessageCircle, Tv, UtensilsCrossed, type LucideIcon } from "lucide-react";
+import { dataLocal, minutoDoDia } from "@/lib/agora/tempo-local";
 import { useAgora } from "@/lib/agora/use-agora";
 import { fill } from "@/lib/format";
+
+/** No dia da saída, o cartão some às 13h (o check-out é às 11h). */
+const VISIVEL_ATE = 13 * 60;
 
 type Textos = {
   titulo: string;
   tituloNome: string;
   hora: string;
   itens: { tv: string; louca: string; chave: string };
-  obrigado: string;
+  contato: string;
 };
 
-type Props = {
-  saidas: { nome: string; data: string }[];
+type Saida = { nome: string; data: string };
+
+type CheckoutProps = {
+  saidas: Saida[];
   sempreVisivel: boolean;
   horario: string;
   whatsapp: string;
   botao: string;
   textos: Textos;
+};
+
+type TopoProps = CheckoutProps & {
+  titulo: string;
+  tituloCheckout: string;
+  idioma: string;
 };
 
 const itens: { id: keyof Textos["itens"]; icone: LucideIcon }[] = [
@@ -28,24 +40,53 @@ const itens: { id: keyof Textos["itens"]; icone: LucideIcon }[] = [
   { id: "chave", icone: KeyRound },
 ];
 
-/** Cartão do dia da saída. Quem decide "que dia é hoje" é o celular do hóspede. */
-export function CartaoCheckout({ saidas, sempreVisivel, horario, whatsapp, botao, textos }: Props) {
+/**
+ * O check-out de hoje, ou null. Quem decide "que dia e que horas são" é o celular do hóspede.
+ * `sempreVisivel` (testes) mostra o cartão a qualquer hora; o nome só aparece se houver saída hoje.
+ */
+function useCheckout(saidas: Saida[], sempreVisivel: boolean) {
   const agora = useAgora();
   if (!agora) return null;
+  const saida = saidas.find((s) => s.data === dataLocal(agora));
+  if (sempreVisivel) return { nome: saida?.nome };
+  if (!saida || minutoDoDia(agora) >= VISIVEL_ATE) return null;
+  return { nome: saida.nome };
+}
 
-  const hoje = dataLocal(agora);
-  const saida = saidas.find((s) => s.data === hoje);
-  if (!saida && !sempreVisivel) return null;
+/** Topo do /bem-vindos: título, globo (volta à escolha de idioma) e, no dia da saída, o cartão de check-out. */
+export function TopoBemVindos({ titulo, tituloCheckout, idioma, ...checkout }: TopoProps) {
+  const hoje = useCheckout(checkout.saidas, checkout.sempreVisivel);
 
   return (
-    <section className="mt-6 rounded-3xl bg-branco p-5 shadow-suave ring-1 ring-areia-escura/60">
+    <>
+      <div className="flex items-start justify-between gap-3">
+        <h1 className="text-xl font-bold tracking-tight text-balance text-taupe-escuro">
+          {hoje ? tituloCheckout : titulo}
+        </h1>
+        <Link
+          href="/bem-vindos?idioma"
+          aria-label={idioma}
+          className="grid size-8 shrink-0 place-items-center rounded-full bg-areia text-taupe-escuro transition active:scale-95"
+        >
+          <Globe aria-hidden className="size-4" />
+        </Link>
+      </div>
+
+      {hoje && <CartaoCheckout nome={hoje.nome} {...checkout} />}
+    </>
+  );
+}
+
+function CartaoCheckout({ nome, horario, whatsapp, botao, textos }: CheckoutProps & { nome?: string }) {
+  return (
+    <section className="mt-5 rounded-3xl bg-branco p-5 shadow-suave ring-1 ring-areia-escura/60">
       <div className="flex items-center gap-3">
         <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-terracota-suave text-taupe-escuro">
           <LogOut aria-hidden className="size-6" />
         </span>
         <div>
-          <h2 className="font-bold text-taupe-escuro">
-            {saida ? fill(textos.tituloNome, { nome: saida.nome }) : textos.titulo}
+          <h2 className="text-lg leading-snug font-bold text-balance text-taupe-escuro">
+            {nome ? fill(textos.tituloNome, { nome }) : textos.titulo}
           </h2>
           <p className="text-sm">{fill(textos.hora, { hora: horario })}</p>
         </div>
@@ -60,7 +101,7 @@ export function CartaoCheckout({ saidas, sempreVisivel, horario, whatsapp, botao
         ))}
       </ul>
 
-      <p className="mt-4 text-sm text-pretty">{textos.obrigado}</p>
+      <p className="mt-4 text-sm text-pretty">{textos.contato}</p>
 
       {whatsapp && (
         <a

@@ -242,15 +242,15 @@
     "copiado": "Copied!",
     "whatsapp": "Message your hosts",
     "checkout": {
-      "titulo": "See you soon!",
-      "tituloNome": "See you soon, {nome}!",
+      "titulo": "Thank you for staying with us!",
+      "tituloNome": "Thank you for staying with us, {nome}!",
       "hora": "Check-out today {hora}",
       "itens": {
         "tv": "Remember to sign out of your accounts on the TV",
         "louca": "We'd appreciate it if you could leave the dishes clean and the rubbish in the bins out back",
         "chave": "Leave the key in the door, on the inside, with the door unlocked"
       },
-      "obrigado": "Thank you for staying with us! If you need anything, message us on WhatsApp."
+      "contato": "If you need anything, message us on WhatsApp."
     },
     "alertas": {
       "pontal": {

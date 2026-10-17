@@ -17,8 +17,9 @@ export function proxy(request: NextRequest) {
   if (pathnameHasLocale) return;
 
   // QR code dos cartazes: primeiro o hóspede escolhe o idioma (app/bem-vindos).
-  // Se já escolheu antes, vai direto.
+  // Se já escolheu antes, vai direto (menos quando veio do globo, ?idioma, para trocar).
   if (pathname === "/bem-vindos") {
+    if (request.nextUrl.searchParams.has("idioma")) return;
     const saved = request.cookies.get("locale")?.value;
     if (!saved || !hasLocale(saved)) return;
   }
