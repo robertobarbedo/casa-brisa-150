@@ -8,6 +8,7 @@ import type { Casa } from "@/lib/casa";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { calcularOrcamento, listarNoites, type TabelaPrecos } from "@/lib/precos";
 import { fill, formatBRL } from "@/lib/format";
+import { evento } from "@/lib/analytics";
 
 const MESES_VISIVEIS = 12;
 
@@ -111,6 +112,19 @@ export function Calendario({ lang, dict, casa, ocupadas, tabela }: Props) {
   const [paraEmail, ...copiaEmail] = casa.contato.emails;
   const linkEmail = `mailto:${paraEmail}?${copiaEmail.length ? `cc=${copiaEmail.join(",")}&` : ""}subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(mensagem)}`;
   const linkWhats = `https://wa.me/${casa.contato.whatsapp}?text=${encodeURIComponent(mensagem)}`;
+
+  /** Conversão do Google Ads: o valor estimado ensina o Ads a buscar estadias maiores. */
+  const registrarPedido = (canal: "whatsapp" | "email") => {
+    if (!pronto) return;
+    evento("pedido_reserva", {
+      canal,
+      value: orcamento.total,
+      currency: "BRL",
+      noites: orcamento.noites,
+      hospedes,
+      idioma: lang,
+    });
+  };
 
   return (
     <div className="pb-8">
@@ -287,6 +301,7 @@ export function Calendario({ lang, dict, casa, ocupadas, tabela }: Props) {
           {casa.contato.whatsapp && (
             <a
               href={pronto ? linkWhats : undefined}
+              onClick={() => registrarPedido("whatsapp")}
               target="_blank"
               rel="noopener noreferrer"
               aria-disabled={!pronto}
@@ -303,6 +318,7 @@ export function Calendario({ lang, dict, casa, ocupadas, tabela }: Props) {
           {paraEmail && casa.contato.whatsapp && (
             <a
               href={pronto ? linkEmail : undefined}
+              onClick={() => registrarPedido("email")}
               aria-disabled={!pronto}
               className={`py-1 text-center text-sm font-semibold underline underline-offset-4 ${
                 pronto ? "text-taupe-escuro" : "pointer-events-none text-taupe/40"
@@ -314,6 +330,7 @@ export function Calendario({ lang, dict, casa, ocupadas, tabela }: Props) {
           {paraEmail && !casa.contato.whatsapp && (
             <a
               href={pronto ? linkEmail : undefined}
+              onClick={() => registrarPedido("email")}
               aria-disabled={!pronto}
               className={`flex min-h-13 items-center justify-center gap-2 rounded-full px-4 py-2 text-center text-sm leading-tight font-bold transition sm:text-base ${
                 pronto

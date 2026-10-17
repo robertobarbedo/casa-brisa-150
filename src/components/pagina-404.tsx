@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { CalendarDays, House, MessageCircle } from "lucide-react";
+import { evento } from "@/lib/analytics";
 import { defaultLocale, hasLocale, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { Header } from "./header";
@@ -56,6 +57,7 @@ export function Pagina404({ textos, whatsapp }: Props) {
             href={`https://wa.me/${whatsapp}?text=${encodeURIComponent(t.mensagemWhatsapp)}`}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => evento("contato_whatsapp", { origem: "pagina_404" })}
             className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-folha-forte underline-offset-4 hover:underline"
           >
             <MessageCircle aria-hidden className="size-4" />

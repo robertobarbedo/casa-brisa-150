@@ -1,4 +1,7 @@
+"use client";
+
 import { MessageCircle } from "lucide-react";
+import { evento } from "@/lib/analytics";
 
 type Props = { numero: string; mensagem: string; aria: string };
 
@@ -13,6 +16,7 @@ export function WhatsAppButton({ numero, mensagem, aria }: Props) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={aria}
+      onClick={() => evento("contato_whatsapp", { origem: "botao_flutuante" })}
       className="fixed right-4 bottom-[calc(6rem+env(safe-area-inset-bottom))] z-40 grid size-14 place-items-center rounded-full bg-[#25D366] text-white shadow-suave transition active:scale-95"
     >
       <MessageCircle className="size-7" strokeWidth={2} />
