@@ -338,7 +338,7 @@
       },
       "mangue": {
         "titulo": "Manglar",
-        "texto": "Al final de la Rua das Hortências, en sentido contrario a la playa. Con marea baja se puede entrar y caminar por él, es seguro. Al atardecer es todavía más lindo."
+        "texto": "Al final de la Rua das Hortências, en sentido contrario a la playa. Vayan al final de la tarde, con marea baja: se puede entrar y caminar por él, es seguro."
       },
       "trilhaForte": {
         "titulo": "Sendero a la Praia do Forte",
@@ -451,7 +451,7 @@
     },
     "mare": {
       "titulo": "Marea de hoy",
-      "dicaBaixa": "Marea baja: playa más ancha. Buen momento para el Pontal, para caminar por el manglar y para encontrar lugar en la arena.",
+      "dicaBaixa": "Marea baja: playa más ancha. Buen momento para caminar hasta el Pontal y para encontrar lugar en la arena.",
       "dicaAlta": "Marea alta: la franja de arena se achica. En los días más llenos puede ser difícil encontrar lugar.",
       "alta": "Marea alta",
       "baixa": "Marea baja",
@@ -496,7 +496,7 @@
       ],
       "mareBaixa": [
         "Marea baja a las {hora}: el Pontal está en su mejor momento.",
-        "Marea baja a las {hora}: buen momento para caminar hasta el Pontal o visitar el manglar.",
+        "Marea baja a las {hora}: buen momento para caminar hasta el Pontal.",
         "Marea baja a las {hora}: playa ancha, fácil encontrar un buen lugar en la arena."
       ],
       "mareAlta": [

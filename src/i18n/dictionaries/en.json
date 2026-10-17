@@ -338,7 +338,7 @@
       },
       "mangue": {
         "titulo": "Mangrove",
-        "texto": "At the end of Rua das Hortências, heading away from the beach. At low tide you can walk right into it — it's safe. Even lovelier at sunset."
+        "texto": "At the end of Rua das Hortências, heading away from the beach. Go in the late afternoon at low tide: you can walk right into it — it's safe."
       },
       "trilhaForte": {
         "titulo": "Trail to Praia do Forte",
@@ -451,7 +451,7 @@
     },
     "mare": {
       "titulo": "Today's tide",
-      "dicaBaixa": "Low tide: a wider beach. A good time for the Pontal, for walking in the mangrove and for finding a spot on the sand.",
+      "dicaBaixa": "Low tide: a wider beach. A good time to walk to the Pontal and to find a spot on the sand.",
       "dicaAlta": "High tide: the strip of sand gets narrow. On busy days it can be hard to find a spot.",
       "alta": "High tide",
       "baixa": "Low tide",
@@ -496,7 +496,7 @@
       ],
       "mareBaixa": [
         "Low tide at {hora}: the Pontal is at its most beautiful.",
-        "Low tide at {hora}: a good time to walk to the Pontal or visit the mangrove.",
+        "Low tide at {hora}: a good time to walk to the Pontal.",
         "Low tide at {hora}: a wide beach, easy to find a good spot on the sand."
       ],
       "mareAlta": [

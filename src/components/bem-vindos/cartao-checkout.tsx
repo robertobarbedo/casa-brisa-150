@@ -85,7 +85,7 @@ function CartaoCheckout({ nome, horario, whatsapp, botao, textos }: CheckoutProp
           <LogOut aria-hidden className="size-6" />
         </span>
         <div>
-          <h2 className="text-lg leading-snug font-bold text-balance text-taupe-escuro">
+          <h2 className="text-xl leading-snug font-bold text-balance text-taupe-escuro">
             {nome ? fill(textos.tituloNome, { nome }) : textos.titulo}
           </h2>
           <p className="text-sm">{fill(textos.hora, { hora: horario })}</p>

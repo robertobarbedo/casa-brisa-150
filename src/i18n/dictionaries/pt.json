@@ -338,7 +338,7 @@
       },
       "mangue": {
         "titulo": "Mangue",
-        "texto": "No fim da Rua das Hortências, no sentido contrário à praia. Na maré baixa dá para entrar e caminhar por ele, é seguro. No pôr do sol fica ainda mais bonito."
+        "texto": "No fim da Rua das Hortências, no sentido contrário à praia. Vá no fim da tarde, com maré baixa: dá para entrar e caminhar por ele, é seguro."
       },
       "trilhaForte": {
         "titulo": "Trilha da Praia do Forte",
@@ -451,7 +451,7 @@
     },
     "mare": {
       "titulo": "Maré de hoje",
-      "dicaBaixa": "Maré baixa: praia mais larga. Boa hora para o Pontal, para caminhar no mangue e para achar lugar na areia.",
+      "dicaBaixa": "Maré baixa: praia mais larga. Boa hora para caminhar até o Pontal e para achar lugar na areia.",
       "dicaAlta": "Maré alta: a faixa de areia fica curta. Nos dias mais cheios, pode ser difícil achar lugar.",
       "alta": "Maré alta",
       "baixa": "Maré baixa",
@@ -496,7 +496,7 @@
       ],
       "mareBaixa": [
         "Maré baixa às {hora}: o Pontal fica no seu melhor.",
-        "Maré baixa às {hora}: boa hora para caminhar até o Pontal ou visitar o mangue.",
+        "Maré baixa às {hora}: boa hora para caminhar até o Pontal.",
         "Maré baixa às {hora}: praia larga, fácil de achar um bom lugar na areia."
       ],
       "mareAlta": [
