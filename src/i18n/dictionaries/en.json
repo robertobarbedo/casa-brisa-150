@@ -40,6 +40,8 @@
     "quartoSolteiros": "Twin bedroom",
     "banheiro": "Guest bathroom",
     "quintal": "Backyard",
+    "churrasqueira": "Barbecue area",
+    "praia": "Beach chairs and umbrellas",
     "carregador": "EV charging outlet"
   },
   "galeria": {
@@ -158,7 +160,8 @@
       "2-night minimum",
       "A family home: parties and events are not allowed",
       "No smoking indoors",
-      "Quiet hours after 10 pm"
+      "Quiet hours after 10 pm",
+      "All outlets are 220 V"
     ]
   },
   "faq": {
@@ -405,6 +408,10 @@
         "titulo": "EV charger",
         "texto": "Jurerê Sports Center · 5-min drive. There's also a free 220 V outlet at the house."
       },
+      "tomadas": {
+        "titulo": "220 V outlets",
+        "texto": "Every outlet in the house is 220 V. Before plugging in a hair dryer, straightener or other device, check that it's dual voltage."
+      },
       "cozinha": {
         "titulo": "Kitchen",
         "texto": "Coffee, salt, oil and spices: help yourself."
@@ -469,6 +476,9 @@
       "chuva": "rain"
     },
     "mensagens": {
+      "chegada": [
+        "Welcome! Every outlet in the house is 220 V. Before plugging in a hair dryer or straightener, check that it's dual voltage."
+      ],
       "bemVindo": [
         "So glad you're here. Everything to help with your stay is right below."
       ],

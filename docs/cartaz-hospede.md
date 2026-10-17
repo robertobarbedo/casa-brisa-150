@@ -67,12 +67,13 @@ Carvão não incluso. Deixe as brasas apagarem sozinhas.
 *Carbón no incluido. Dejen que las brasas se apaguen solas.*
 *Charcoal not included. Let the embers burn out on their own.*
 
-**🔌 Carro elétrico**
-Tomada 220 V / 20 A. Uso gratuito, é só ligar o seu cabo.
-*Toma 220 V / 20 A. Uso gratuito, enchufen su cable.*
-*220 V / 20 A outlet. Free to use — just plug in your cable.*
+**⚡ Tomadas 220 V**
+Todas as tomadas são 220 V. Antes de ligar secador ou chapinha, veja se é bivolt.
+*Todos los enchufes son de 220 V. Antes de enchufar secador o planchita, fíjense si es bivolt.*
+*All outlets are 220 V. Check your hair dryer or straightener is dual voltage first.*
 
-Sem cabo? Carregador público mais perto: Jurerê Sports Center · 5 min 🚗
+Carro elétrico: tomada 20 A, uso gratuito, é só ligar o seu cabo.
+*Auto eléctrico: toma de 20 A, gratis · EV: 20 A outlet, free to use.*
 *¿Sin cable? Cargador público más cercano: Jurerê Sports Center · 5 min 🚗*
 *No cable? Nearest public charger: Jurerê Sports Center · 5 min 🚗*
 

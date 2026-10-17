@@ -13,6 +13,8 @@ import { useAgora } from "@/lib/agora/use-agora";
 type Props = {
   lang: Locale;
   previsao: Previsao;
+  /** Dias de chegada de hóspedes, "AAAA-MM-DD". */
+  chegadas: string[];
   local: { latitude: number; longitude: number };
   whatsapp: string;
   textos: TextosAgora & { rotulo: string; proxima: string };
@@ -38,11 +40,14 @@ const tema: Record<Periodo, { fundo: string; icone: LucideIcon; chip: string }> 
 
 const iconeCeu: Record<Ceu, LucideIcon> = { sol: Sun, nublado: Cloud, chuva: CloudRain };
 
-export function FaixaAgora({ lang, previsao, local, whatsapp, textos, mare }: Props) {
+export function FaixaAgora({ lang, previsao, chegadas, local, whatsapp, textos, mare }: Props) {
   const agora = useAgora();
   const [indice, setIndice] = useState(0);
 
-  const ctx = useMemo(() => (agora ? montarContexto(agora, previsao, local) : null), [agora, previsao, local]);
+  const ctx = useMemo(
+    () => (agora ? montarContexto(agora, previsao, local, chegadas) : null),
+    [agora, previsao, local, chegadas],
+  );
   const mensagens = useMemo(() => (ctx ? escolherMensagens(ctx, lang, textos) : []), [ctx, lang, textos]);
 
   // Antes de saber a hora (página estática), reserva o espaço para não pular.

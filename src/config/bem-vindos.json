@@ -46,6 +46,7 @@
     ],
     "casa": [
       { "id": "anfitrioes", "icone": "whatsapp", "acao": { "tipo": "whatsapp" } },
+      { "id": "tomadas", "icone": "tomada" },
       { "id": "cozinha", "icone": "panela" },
       { "id": "lavar", "icone": "maquina" },
       { "id": "tv", "icone": "tv" },

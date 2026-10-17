@@ -40,6 +40,8 @@
     "quartoSolteiros": "Dormitorio con dos camas",
     "banheiro": "Baño social",
     "quintal": "Patio del fondo",
+    "churrasqueira": "Parrilla",
+    "praia": "Reposeras y sombrillas para la playa",
     "carregador": "Toma para auto eléctrico"
   },
   "galeria": {
@@ -158,7 +160,8 @@
       "Mínimo 2 noches",
       "Ambiente familiar: no se permiten fiestas ni eventos",
       "Prohibido fumar dentro de la casa",
-      "Silencio después de las 22 h"
+      "Silencio después de las 22 h",
+      "Todos los enchufes son de 220 V"
     ]
   },
   "faq": {
@@ -405,6 +408,10 @@
         "titulo": "Cargador para auto eléctrico",
         "texto": "Jurerê Sports Center · 5 min en auto. En la casa hay una toma de 220 V gratis."
       },
+      "tomadas": {
+        "titulo": "Enchufes de 220 V",
+        "texto": "Todos los enchufes de la casa son de 220 V. Antes de enchufar secador, planchita u otro aparato, fijate si es bivolt."
+      },
       "cozinha": {
         "titulo": "Cocina",
         "texto": "Café, sal, aceite y condimentos: a disposición."
@@ -469,6 +476,9 @@
       "chuva": "lluvia"
     },
     "mensagens": {
+      "chegada": [
+        "¡Bienvenidos! Todos los enchufes de la casa son de 220 V. Antes de enchufar secador o planchita, fijate si es bivolt."
+      ],
       "bemVindo": [
         "Qué bueno tenerlos acá. Todo lo que ayuda en la estadía está aquí abajo."
       ],

@@ -44,6 +44,8 @@ export function montarContexto(
   agora: number,
   previsao: Previsao,
   local: { latitude: number; longitude: number },
+  /** Dias de chegada de hóspedes, "AAAA-MM-DD". */
+  chegadas: string[] = [],
 ): Contexto {
   const hoje = inicioDoDia(agora);
   // solDoDia espera a meia-noite UTC da mesma data (a local é 03:00 UTC).
@@ -55,6 +57,7 @@ export function montarContexto(
   const data = new Date(hoje);
   const fimDeSemana = data.getUTCDay() === 0 || data.getUTCDay() === 6;
   const verao = [11, 0, 1].includes(data.getUTCMonth());
+  const diaDeChegada = chegadas.includes(data.toISOString().slice(0, 10));
 
   const mares = previsao.mare ? eventosDeMare(previsao.mare) : [];
 
@@ -85,6 +88,7 @@ export function montarContexto(
     diaDoAno: Math.floor(hoje / (24 * HORA)),
     periodo: periodoDo(minuto, minAtePorDoSol),
     diaDeMovimento: fimDeSemana || verao,
+    diaDeChegada,
     nascer,
     porDoSol,
     minAtePorDoSol,

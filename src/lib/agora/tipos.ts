@@ -43,6 +43,8 @@ export type Contexto = {
   periodo: Periodo;
   /** Fim de semana ou alta temporada (dez–fev): praia mais cheia. Feriados não entram. */
   diaDeMovimento: boolean;
+  /** Hoje é dia de chegada de hóspedes (início de uma reserva no Airbnb). */
+  diaDeChegada: boolean;
   nascer: number;
   porDoSol: number;
   /** Negativo depois que o sol já se pôs. */

@@ -6,6 +6,7 @@ import { hasLocale, type Locale } from "@/i18n/config";
 import { getDictionary, type Dictionary } from "@/i18n/get-dictionary";
 import { casa } from "@/lib/casa";
 import { buscarPrevisao } from "@/lib/agora/previsao";
+import { buscarChegadas } from "@/lib/disponibilidade";
 import { categorias, type CategoriaId } from "@/lib/bem-vindos/categorias";
 import { FaixaAgora } from "@/components/bem-vindos/faixa-agora";
 import { SeletorIdioma } from "@/components/bem-vindos/seletor-idioma";
@@ -42,7 +43,11 @@ function Cartao({ id, lang, t, largo = false }: CartaoProps) {
 export default async function BemVindos({ params }: PageProps<"/[lang]/bem-vindos">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
-  const [dict, previsao] = await Promise.all([getDictionary(lang), buscarPrevisao(casa.mapa)]);
+  const [dict, previsao, chegadas] = await Promise.all([
+    getDictionary(lang),
+    buscarPrevisao(casa.mapa),
+    buscarChegadas(),
+  ]);
   const t = dict.bemVindos;
 
   const [emergencia, ...resto] = categorias;
@@ -60,6 +65,7 @@ export default async function BemVindos({ params }: PageProps<"/[lang]/bem-vindo
           <FaixaAgora
             lang={lang}
             previsao={previsao}
+            chegadas={chegadas}
             local={casa.mapa}
             whatsapp={casa.contato.whatsapp}
             textos={dict.agora}

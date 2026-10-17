@@ -122,6 +122,14 @@
       "ambiente": "quintal"
     },
     {
+      "arquivo": "/fotos/Churrasqueira.png",
+      "ambiente": "churrasqueira"
+    },
+    {
+      "arquivo": "/fotos/itens-praia.jpg",
+      "ambiente": "praia"
+    },
+    {
       "arquivo": "/fotos/tomada-carregador.jpg",
       "ambiente": "carregador"
     }

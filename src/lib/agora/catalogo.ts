@@ -16,12 +16,21 @@ import { HORA, inicioDoDia } from "./tempo-local";
  * Tom: recado de anfitrião, só o que é bom para o hóspede. Nada de regras
  * da casa (lixo, janelas, silêncio, check-out): isso fica nos cartazes.
  *
- * Prioridade: hora marcada (pôr do sol) > tempo > maré > dicas gerais.
+ * Prioridade: chegada > hora marcada (pôr do sol) > tempo > maré > dicas gerais.
  */
 
 const h = (hora: number) => hora * 60; // minuto do dia
 
 export const catalogo: Regra[] = [
+  // ── Chegada ─────────────────────────────────────────────────
+  {
+    // Só no dia do check-in: as tomadas são 220 V (secador e chapinha de 127 V queimam).
+    id: "chegada",
+    prioridade: 200,
+    quando: (c) => c.diaDeChegada,
+    destino: "casa",
+  },
+
   // ── Pôr do sol ──────────────────────────────────────────────
   {
     id: "porDoSolJa",

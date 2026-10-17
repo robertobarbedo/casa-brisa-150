@@ -14,6 +14,8 @@ const ambientes = [
   "quartoSolteiros",
   "banheiro",
   "quintal",
+  "churrasqueira",
+  "praia",
   "carregador",
 ] as const;
 
