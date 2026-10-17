@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Nunito } from "next/font/google";
+import { Analytics } from "@/components/analytics";
 import "../globals.css";
 
 /**
@@ -18,7 +19,10 @@ export const viewport: Viewport = { themeColor: "#fbf9f6", viewportFit: "cover" 
 export default function EscolhaLayout({ children }: LayoutProps<"/bem-vindos">) {
   return (
     <html lang="pt-BR" className={`${nunito.variable} antialiased`}>
-      <body className="min-h-dvh font-sans">{children}</body>
+      <body className="min-h-dvh font-sans">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

@@ -5,6 +5,7 @@ import { hasLocale, intlLocale, locales, type Locale } from "@/i18n/config";
 import { alternativas, siteUrl } from "@/config/site";
 import { casa } from "@/lib/casa";
 import { getDictionary } from "@/i18n/get-dictionary";
+import { Analytics } from "@/components/analytics";
 import "../globals.css";
 
 const nunito = Nunito({
@@ -57,7 +58,10 @@ export default async function RootLayout({
 
   return (
     <html lang={lang === "pt" ? "pt-BR" : lang} className={`${nunito.variable} antialiased`}>
-      <body className="min-h-dvh font-sans">{children}</body>
+      <body className="min-h-dvh font-sans">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
