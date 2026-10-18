@@ -93,6 +93,11 @@
         "texto": "Ilha, forno, cooktop e mesa para seis pessoas."
       },
       {
+        "id": "churrasqueira",
+        "titulo": "Área com churrasqueira",
+        "texto": "Churrasqueira em área coberta nos fundos, com bancada e banquetas."
+      },
+      {
         "id": "banheiro",
         "titulo": "Banheiros",
         "texto": "Dois banheiros completos: o social e o da suíte."

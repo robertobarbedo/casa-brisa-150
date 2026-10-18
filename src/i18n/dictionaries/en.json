@@ -93,6 +93,11 @@
         "texto": "Island, oven, cooktop and a table for six."
       },
       {
+        "id": "churrasqueira",
+        "titulo": "Barbecue area",
+        "texto": "Covered barbecue area out back, with a counter and bar stools."
+      },
+      {
         "id": "banheiro",
         "titulo": "Bathrooms",
         "texto": "Two full bathrooms: the guest one and the en-suite."

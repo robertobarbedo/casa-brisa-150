@@ -93,6 +93,11 @@
         "texto": "Isla, horno, anafe y mesa para seis personas."
       },
       {
+        "id": "churrasqueira",
+        "titulo": "Zona de parrilla",
+        "texto": "Parrilla en un área techada al fondo, con barra y banquetas."
+      },
+      {
         "id": "banheiro",
         "titulo": "Baños",
         "texto": "Dos baños completos: el social y el de la suite."
