@@ -3,8 +3,7 @@ import "server-only";
 import cambio from "@/config/cambio.json";
 
 /**
- * Cotação do dólar (PTAX de venda do Banco Central), para mostrar o preço
- * aproximado em US$. O valor oficial continua sendo em reais.
+ * Cotação do dólar (PTAX de venda do Banco Central), para mostrar os preços em US$.
  *
  * O spread (config/cambio.json) já sai embutido aqui, no servidor: o navegador
  * só recebe a taxa final e o visitante só vê o preço em dólar.

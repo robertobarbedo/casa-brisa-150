@@ -34,12 +34,8 @@ export function useMoeda(lang: Locale, cotacao: Cotacao | null) {
   );
   const moeda: Moeda = cotacao ? escolhida : "BRL";
 
-  /** Em dólar leva "≈", menos nas linhas de um resumo que já avisa que é aproximado. */
-  const preco = (valorBRL: number, { aproximado = true } = {}) => {
-    if (moeda !== "USD" || !cotacao) return formatBRL(valorBRL, lang);
-    const usd = formatUSD(valorBRL, cotacao.valor, lang);
-    return aproximado ? `≈ ${usd}` : usd;
-  };
+  const preco = (valorBRL: number) =>
+    moeda === "USD" && cotacao ? formatUSD(valorBRL, cotacao.valor, lang) : formatBRL(valorBRL, lang);
 
   return { moeda, preco, setMoeda: gravarMoeda };
 }

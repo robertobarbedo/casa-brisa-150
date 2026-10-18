@@ -223,40 +223,44 @@ export function Calendario({ lang, dict, casa, ocupadas, tabela, cotacao }: Prop
 
       {/* Hóspedes + resumo + envio */}
       <div className="sticky bottom-0 -mx-4 mt-6 border-t border-areia-escura bg-branco/95 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur-md">
-        <div className="flex items-center justify-between">
-          <span className="flex items-center gap-1.5 font-semibold text-taupe-escuro">
-            {dict.reserva.hospedes}
-            <button
-              type="button"
-              onClick={() => setInfoHospedes((v) => !v)}
-              aria-expanded={infoHospedes}
-              aria-controls="info-hospedes"
-              aria-label={dict.reserva.hospedesInfoAria}
-              className="grid size-6 place-items-center rounded-full text-taupe/70 active:scale-95"
-            >
-              <Info aria-hidden className="size-4" />
-            </button>
-          </span>
+        {/* Uma linha só: moeda à esquerda, hóspedes à direita. */}
+        <div className="flex items-center justify-between gap-3">
+          {cotacao ? <SeletorMoeda moeda={moeda} setMoeda={setMoeda} aria={dict.reserva.moedaAria} /> : <span />}
           <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={() => setHospedes((n) => Math.max(1, n - 1))}
-              disabled={hospedes <= 1}
-              aria-label="−"
-              className="grid size-9 place-items-center rounded-full border border-areia-escura disabled:opacity-40"
-            >
-              <Minus className="size-4" />
-            </button>
-            <span className="w-6 text-center font-bold text-taupe-escuro">{hospedes}</span>
-            <button
-              type="button"
-              onClick={() => setHospedes((n) => Math.min(casa.capacidade.hospedes, n + 1))}
-              disabled={hospedes >= casa.capacidade.hospedes}
-              aria-label="+"
-              className="grid size-9 place-items-center rounded-full border border-areia-escura disabled:opacity-40"
-            >
-              <Plus className="size-4" />
-            </button>
+            <span className="flex items-center gap-1.5 font-semibold text-taupe-escuro">
+              {dict.reserva.hospedes}
+              <button
+                type="button"
+                onClick={() => setInfoHospedes((v) => !v)}
+                aria-expanded={infoHospedes}
+                aria-controls="info-hospedes"
+                aria-label={dict.reserva.hospedesInfoAria}
+                className="grid size-6 place-items-center rounded-full text-taupe/70 active:scale-95"
+              >
+                <Info aria-hidden className="size-4" />
+              </button>
+            </span>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => setHospedes((n) => Math.max(1, n - 1))}
+                disabled={hospedes <= 1}
+                aria-label="−"
+                className="grid size-9 place-items-center rounded-full border border-areia-escura disabled:opacity-40"
+              >
+                <Minus className="size-4" />
+              </button>
+              <span className="w-6 text-center font-bold text-taupe-escuro">{hospedes}</span>
+              <button
+                type="button"
+                onClick={() => setHospedes((n) => Math.min(casa.capacidade.hospedes, n + 1))}
+                disabled={hospedes >= casa.capacidade.hospedes}
+                aria-label="+"
+                className="grid size-9 place-items-center rounded-full border border-areia-escura disabled:opacity-40"
+              >
+                <Plus className="size-4" />
+              </button>
+            </div>
           </div>
         </div>
 
@@ -271,17 +275,12 @@ export function Calendario({ lang, dict, casa, ocupadas, tabela, cotacao }: Prop
         )}
 
         {/* Resumo só quando dá para reservar; com aviso de bloqueio, só o aviso. */}
-        {pronto && cotacao && (
-          <div className="mt-3 flex justify-end">
-            <SeletorMoeda moeda={moeda} setMoeda={setMoeda} aria={dict.reserva.moedaAria} />
-          </div>
-        )}
         {pronto && (
-          <dl className="mt-2 space-y-1 text-sm">
+          <dl className="mt-3 space-y-1 text-sm">
             <div className="flex justify-between">
               <dt>{fill(dict.reserva.noites, { n: orcamento.noites })}</dt>
               {/* Hóspede extra entra no valor das noites, sem linha própria. */}
-              <dd>{preco(orcamento.subtotal, { aproximado: false })}</dd>
+              <dd>{preco(orcamento.subtotal)}</dd>
             </div>
             {orcamento.desconto > 0 && (
               <div className="flex justify-between font-semibold text-folha">
@@ -293,23 +292,17 @@ export function Calendario({ lang, dict, casa, ocupadas, tabela, cotacao }: Prop
                       })
                     : fill(dict.reserva.desconto, { n: orcamento.descontoPercentual })}
                 </dt>
-                <dd>−{preco(orcamento.desconto, { aproximado: false })}</dd>
+                <dd>−{preco(orcamento.desconto)}</dd>
               </div>
             )}
             <div className="flex justify-between">
               <dt>{dict.reserva.limpeza}</dt>
-              <dd>{preco(orcamento.limpeza, { aproximado: false })}</dd>
+              <dd>{preco(orcamento.limpeza)}</dd>
             </div>
             <div className="flex justify-between border-t border-areia-escura pt-2 text-base font-bold text-taupe-escuro">
               <dt>{dict.reserva.total}</dt>
               <dd>{preco(orcamento.total)}</dd>
             </div>
-            {/* O pedido e a cobrança são em reais: em dólar, avisa o valor oficial. */}
-            {moeda === "USD" && (
-              <p className="pt-1 text-xs text-taupe/80">
-                {fill(dict.reserva.aproximadoDolar, { total: formatBRL(orcamento.total, lang) })}
-              </p>
-            )}
           </dl>
         )}
 

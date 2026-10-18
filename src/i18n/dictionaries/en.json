@@ -249,8 +249,7 @@
     "desconto": "Direct booking discount ({n}%)",
     "descontoPoucosHospedes": "Direct booking discount, up to {hospedes} guests ({n}%)",
     "selo": "{n}% off through this site",
-    "moedaAria": "Currency",
-    "aproximadoDolar": "Approximate prices in US dollars. The booking is charged in Brazilian reais: {total}."
+    "moedaAria": "Currency"
   },
   "whatsapp": {
     "aria": "Chat on WhatsApp",

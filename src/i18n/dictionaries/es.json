@@ -249,8 +249,7 @@
     "desconto": "Descuento por reserva directa ({n}%)",
     "descontoPoucosHospedes": "Descuento por reserva directa hasta {hospedes} personas ({n}%)",
     "selo": "{n}% de descuento por el sitio",
-    "moedaAria": "Moneda",
-    "aproximadoDolar": "Valores aproximados en dólares. La reserva se cobra en reales: {total}."
+    "moedaAria": "Moneda"
   },
   "whatsapp": {
     "aria": "Hablar por WhatsApp",

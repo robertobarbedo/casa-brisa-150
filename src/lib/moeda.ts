@@ -1,6 +1,6 @@
 import { intlLocale, type Locale } from "@/i18n/config";
 
-/** Moeda em que o visitante vê os preços. A reserva é sempre cobrada em reais. */
+/** Moeda em que o visitante vê os preços. */
 export type Moeda = "BRL" | "USD";
 
 /** Cookie da moeda: o proxy grava pelo país na primeira visita, o botão R$/US$ troca. */
