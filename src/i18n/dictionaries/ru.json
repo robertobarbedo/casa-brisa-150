@@ -24,7 +24,7 @@
     }
   },
   "destaques": {
-    "hospedes": "Гостей: {n}",
+    "hospedes": "До {n} гостей",
     "quartos": "Спален: {n}",
     "suite": "Со своей ванной: {n}",
     "banheiros": "Ванных комнат: {n}"

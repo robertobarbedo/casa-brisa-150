@@ -24,7 +24,7 @@
     }
   },
   "destaques": {
-    "hospedes": "{n} huéspedes",
+    "hospedes": "hasta {n} huéspedes",
     "quartos": "{n} dormitorios",
     "suite": "{n} suite",
     "banheiros": "{n} baños"
