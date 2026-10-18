@@ -205,6 +205,10 @@
         "r": "Você paga um sinal de 30% para garantir as datas e o restante até 7 dias antes do check-in."
       },
       {
+        "p": "Posso cancelar?",
+        "r": "Sim. Cancelando até 30 dias antes do check-in, você recebe de volta tudo o que pagou. Entre 30 e 7 dias antes, o reembolso é de 50% do valor da reserva. Com menos de 7 dias para o check-in, não há reembolso."
+      },
+      {
         "p": "Posso levar meu pet?",
         "r": "Sim! A casa é pet friendly e tem jardim nos fundos."
       },
