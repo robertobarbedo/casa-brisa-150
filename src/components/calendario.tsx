@@ -276,7 +276,14 @@ export function Calendario({ lang, dict, casa, ocupadas, tabela }: Props) {
             </div>
             {orcamento.desconto > 0 && (
               <div className="flex justify-between font-semibold text-folha">
-                <dt>{fill(dict.reserva.desconto, { n: casa.precos.descontoPercentual })}</dt>
+                <dt>
+                  {orcamento.descontoPoucosHospedes
+                    ? fill(dict.reserva.descontoPoucosHospedes, {
+                        n: orcamento.descontoPercentual,
+                        hospedes: casa.precos.descontoPoucosHospedes?.ateHospedes ?? 0,
+                      })
+                    : fill(dict.reserva.desconto, { n: orcamento.descontoPercentual })}
+                </dt>
                 <dd>−{formatBRL(orcamento.desconto, lang)}</dd>
               </div>
             )}

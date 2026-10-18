@@ -57,6 +57,13 @@ const casaSchema = z.object({
     hospedeExtra: z.number().nonnegative(),
     minimoNoites: z.number().int().positive(),
     descontoPercentual: z.number().min(0).max(100),
+    // Só no site: reservas com até ateHospedes pessoas levam este desconto no lugar do padrão.
+    descontoPoucosHospedes: z
+      .object({
+        ateHospedes: z.number().int().positive(),
+        percentual: z.number().min(0).max(100),
+      })
+      .optional(),
   }),
   contato: z.object({
     // Somente dígitos com DDI, ex.: 5548999999999 (vazio = botão escondido)

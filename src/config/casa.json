@@ -29,7 +29,11 @@
     "hospedesInclusos": 4,
     "hospedeExtra": 75,
     "minimoNoites": 2,
-    "descontoPercentual": 10
+    "descontoPercentual": 10,
+    "descontoPoucosHospedes": {
+      "ateHospedes": 2,
+      "percentual": 15
+    }
   },
   "contato": {
     "whatsapp": "5548920013055",

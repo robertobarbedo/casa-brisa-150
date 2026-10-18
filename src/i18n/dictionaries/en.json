@@ -247,6 +247,7 @@
     "assuntoEmail": "Casa Brisa booking · {checkIn} to {checkOut}",
     "mensagemPedido": "Hi! I'd like to book Casa Brisa.\n\nCheck-in: {checkIn}\nCheck-out: {checkOut}\nNights: {noites}\nGuests: {hospedes}\nEstimated total: {total}\n\nMy name: \nNotes: ",
     "desconto": "Direct booking discount ({n}%)",
+    "descontoPoucosHospedes": "Direct booking discount, up to {hospedes} guests ({n}%)",
     "selo": "{n}% off through this site"
   },
   "whatsapp": {

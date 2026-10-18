@@ -16,6 +16,10 @@ export type Orcamento = {
   /** Diárias + taxa de hóspede extra, sem desconto */
   subtotal: number;
   desconto: number;
+  /** Percentual de desconto aplicado (o de poucos hóspedes, quando vale) */
+  descontoPercentual: number;
+  /** Se o desconto aplicado é o de poucos hóspedes */
+  descontoPoucosHospedes: boolean;
   /** Diárias e taxa de hóspede extra já com o desconto aplicado */
   diarias: number;
   limpeza: number;
@@ -35,8 +39,17 @@ export function listarNoites(checkIn: string, checkOut: string): string[] {
 }
 
 /** Aplica o desconto de reserva direta e arredonda para real inteiro. */
-export function comDesconto(valor: number, casa: Casa) {
-  return Math.round(valor * (1 - casa.precos.descontoPercentual / 100));
+export function comDesconto(valor: number, casa: Casa, percentual = casa.precos.descontoPercentual) {
+  return Math.round(valor * (1 - percentual / 100));
+}
+
+/** Desconto que vale para o número de hóspedes: o de poucos hóspedes ou o padrão. */
+export function descontoParaHospedes(casa: Casa, hospedes: number) {
+  const poucos = casa.precos.descontoPoucosHospedes;
+  if (poucos && hospedes <= poucos.ateHospedes) {
+    return { percentual: poucos.percentual, poucosHospedes: true };
+  }
+  return { percentual: casa.precos.descontoPercentual, poucosHospedes: false };
 }
 
 export function precoDaNoite(casa: Casa, tabela: TabelaPrecos, noite: string) {
@@ -56,7 +69,8 @@ export function calcularOrcamento(
   const hospedesExtras = Math.max(0, hospedes - casa.precos.hospedesInclusos);
   const taxaHospedes = hospedesExtras * casa.precos.hospedeExtra * noites.length;
   const subtotal = subtotalDiarias + taxaHospedes;
-  const diarias = comDesconto(subtotal, casa);
+  const descontoAplicado = descontoParaHospedes(casa, hospedes);
+  const diarias = comDesconto(subtotal, casa, descontoAplicado.percentual);
   const limpeza = casa.precos.limpeza;
 
   // O mínimo de noites vale para a data de entrada, como no PriceLabs.
@@ -69,6 +83,8 @@ export function calcularOrcamento(
     taxaHospedes,
     subtotal,
     desconto: subtotal - diarias,
+    descontoPercentual: descontoAplicado.percentual,
+    descontoPoucosHospedes: descontoAplicado.poucosHospedes,
     diarias,
     limpeza,
     total: diarias + limpeza,

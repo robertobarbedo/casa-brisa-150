@@ -247,6 +247,7 @@
     "assuntoEmail": "Бронирование Casa Brisa · {checkIn} – {checkOut}",
     "mensagemPedido": "Здравствуйте! Я хотел(а) бы забронировать Casa Brisa.\n\nЗаезд: {checkIn}\nВыезд: {checkOut}\nНочей: {noites}\nГостей: {hospedes}\nОриентировочная сумма: {total}\n\nМоё имя: \nКомментарий: ",
     "desconto": "Скидка за прямое бронирование ({n}%)",
+    "descontoPoucosHospedes": "Скидка за прямое бронирование до {hospedes} гостей ({n}%)",
     "selo": "Скидка {n}% при бронировании на сайте"
   },
   "whatsapp": {
