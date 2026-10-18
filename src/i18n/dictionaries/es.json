@@ -44,6 +44,15 @@
     "praia": "Reposeras y sombrillas para la playa",
     "carregador": "Toma para auto eléctrico"
   },
+  "capa": {
+    "regiao": "Fotos de la casa",
+    "verTodas": "Ver todas las fotos",
+    "maisFotos": "+{n} fotos",
+    "ampliar": "Ampliar foto: {foto}",
+    "fechar": "Cerrar fotos",
+    "anterior": "Foto anterior",
+    "proxima": "Foto siguiente"
+  },
   "galeria": {
     "titulo": "Conocé la casa",
     "dica": "Deslizá para ver más"

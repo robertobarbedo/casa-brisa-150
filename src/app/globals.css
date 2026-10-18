@@ -32,6 +32,11 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Visualizador de fotos aberto: a página atrás não rola */
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
 body {
   background: var(--color-branco);
   color: var(--color-taupe);

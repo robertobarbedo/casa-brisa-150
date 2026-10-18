@@ -44,6 +44,15 @@
     "praia": "Cadeiras e guarda-sóis para a praia",
     "carregador": "Tomada para carro elétrico"
   },
+  "capa": {
+    "regiao": "Fotos da casa",
+    "verTodas": "Ver todas as fotos",
+    "maisFotos": "+{n} fotos",
+    "ampliar": "Ampliar foto: {foto}",
+    "fechar": "Fechar fotos",
+    "anterior": "Foto anterior",
+    "proxima": "Próxima foto"
+  },
   "galeria": {
     "titulo": "Conheça a casa",
     "dica": "Deslize para ver mais"

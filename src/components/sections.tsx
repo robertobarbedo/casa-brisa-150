@@ -22,6 +22,7 @@ import type { Dictionary } from "@/i18n/get-dictionary";
 import type { Ambiente, Casa } from "@/lib/casa";
 import { comodidadesAtivas, type ComodidadeKey } from "@/lib/comodidades";
 import { fill } from "@/lib/format";
+import { CapaFotos } from "./capa-fotos";
 import { Foto } from "./foto";
 
 type Base = { dict: Dictionary; casa: Casa };
@@ -47,9 +48,14 @@ function Selo({ icon: Icon, children, tom }: { icon: LucideIcon; children: React
   );
 }
 
+/** Fotos da capa depois da primeira: os destaques da casa, um de cada ambiente. */
+const ambientesCapa: Ambiente[] = ["sala", "cozinha", "suite", "quintal"];
+
 export function Hero({ dict, casa }: Base) {
   const { capacidade: c } = casa;
-  const capa = casa.fotos[0];
+  const destaquesCapa = [0, ...ambientesCapa.map((a) => casa.fotos.findIndex((f) => f.ambiente === a))].filter(
+    (i, posicao, lista) => i >= 0 && lista.indexOf(i) === posicao,
+  );
   const destaques: { icon: LucideIcon; texto: string }[] = [
     { icon: Users, texto: fill(dict.destaques.hospedes, { n: c.hospedes }) },
     { icon: BedDouble, texto: fill(dict.destaques.quartos, { n: c.quartos }) },
@@ -58,41 +64,41 @@ export function Hero({ dict, casa }: Base) {
   ];
 
   return (
-    <section className="mx-auto max-w-5xl md:grid md:grid-cols-2 md:items-center md:gap-10 md:px-4 md:pt-8">
-      <Foto
-        label={dict.fotos[capa.ambiente]}
-        arquivo={capa.arquivo}
-        priority
-        sizes="(min-width: 768px) 50vw, 100vw"
-        className="aspect-[5/4] w-full rounded-b-[var(--radius-brisa)] md:aspect-square md:canto-brisa md:rounded-br-[4rem]"
+    <section className="mx-auto max-w-5xl">
+      <CapaFotos
+        fotos={casa.fotos.map((f) => ({ arquivo: f.arquivo, label: dict.fotos[f.ambiente] }))}
+        destaques={destaquesCapa}
+        textos={dict.capa}
       />
 
-      <div className="px-4 pt-6 md:px-0 md:pt-0">
-        <p className="flex items-center gap-1.5 text-sm font-semibold text-terracota-forte">
-          <MapPin aria-hidden className="size-4" />
-          {dict.hero.local}
-        </p>
-        <h1 className="mt-2 text-3xl leading-tight font-extrabold tracking-tight text-taupe-escuro md:text-4xl">
-          {dict.hero.titulo}
-        </h1>
-        <p className="mt-3 text-base leading-relaxed">{dict.hero.subtitulo}</p>
+      <div className="px-4 pt-6 md:grid md:grid-cols-[1fr_22rem] md:items-center md:gap-10 md:pt-8">
+        <div>
+          <p className="flex items-center gap-1.5 text-sm font-semibold text-terracota-forte">
+            <MapPin aria-hidden className="size-4" />
+            {dict.hero.local}
+          </p>
+          <h1 className="mt-2 text-3xl leading-tight font-extrabold tracking-tight text-taupe-escuro md:text-4xl">
+            {dict.hero.titulo}
+          </h1>
+          <p className="mt-3 text-base leading-relaxed">{dict.hero.subtitulo}</p>
 
-        <div className="mt-4 flex flex-wrap gap-2">
-          <Selo icon={Waves} tom="bg-azul-suave text-taupe-escuro">{dict.hero.selos.praia}</Selo>
-          {casa.carregadorEletrico && (
-            <Selo icon={Zap} tom="bg-terracota-suave text-terracota-forte">{dict.hero.selos.eletrico}</Selo>
-          )}
-          {casa.petFriendly && (
-            <Selo icon={PawPrint} tom="bg-areia text-taupe-escuro">{dict.hero.selos.pet}</Selo>
-          )}
-          {casa.precos.descontoPercentual > 0 && (
-            <Selo icon={Tag} tom="bg-folha/15 text-folha-forte">
-              {fill(dict.reserva.selo, { n: casa.precos.descontoPercentual })}
-            </Selo>
-          )}
+          <div className="mt-4 flex flex-wrap gap-2">
+            <Selo icon={Waves} tom="bg-azul-suave text-taupe-escuro">{dict.hero.selos.praia}</Selo>
+            {casa.carregadorEletrico && (
+              <Selo icon={Zap} tom="bg-terracota-suave text-terracota-forte">{dict.hero.selos.eletrico}</Selo>
+            )}
+            {casa.petFriendly && (
+              <Selo icon={PawPrint} tom="bg-areia text-taupe-escuro">{dict.hero.selos.pet}</Selo>
+            )}
+            {casa.precos.descontoPercentual > 0 && (
+              <Selo icon={Tag} tom="bg-folha/15 text-folha-forte">
+                {fill(dict.reserva.selo, { n: casa.precos.descontoPercentual })}
+              </Selo>
+            )}
+          </div>
         </div>
 
-        <ul className="mt-6 grid grid-cols-4 gap-2 border-y border-areia-escura py-4 text-center">
+        <ul className="mt-6 grid grid-cols-4 gap-2 border-y border-areia-escura py-4 text-center md:mt-0">
           {destaques.map(({ icon: Icon, texto }) => (
             <li key={texto} className="flex flex-col items-center gap-1.5 text-xs font-semibold">
               <Icon aria-hidden className="size-6 text-terracota" strokeWidth={1.5} />

@@ -44,6 +44,15 @@
     "praia": "Beach chairs and umbrellas",
     "carregador": "EV charging outlet"
   },
+  "capa": {
+    "regiao": "House photos",
+    "verTodas": "See all photos",
+    "maisFotos": "+{n} photos",
+    "ampliar": "Enlarge photo: {foto}",
+    "fechar": "Close photos",
+    "anterior": "Previous photo",
+    "proxima": "Next photo"
+  },
   "galeria": {
     "titulo": "Take a look inside",
     "dica": "Swipe to see more"
