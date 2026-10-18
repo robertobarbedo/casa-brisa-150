@@ -220,6 +220,7 @@ export function Comodidades({ dict, casa }: Base) {
       <VerMais
         mais={fill(dict.comodidades.verTodas, { n: ativas.length })}
         menos={dict.comodidades.verMenos}
+        eventoAoAbrir="comodidades_expandidas"
       >
         <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-4 md:grid-cols-4">
           {ativas.map(({ key }, i) => {
