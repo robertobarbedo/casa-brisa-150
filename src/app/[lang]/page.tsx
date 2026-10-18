@@ -3,6 +3,7 @@ import { hasLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { casa } from "@/lib/casa";
 import { carregarTabelaPrecos } from "@/lib/tabela-precos";
+import { buscarCotacaoDolar } from "@/lib/cotacao";
 import { faixaDiarias, menorDiaria } from "@/lib/precos";
 import { grafoHome } from "@/lib/schema";
 import { Header } from "@/components/header";
@@ -14,7 +15,11 @@ import { Comodidades, Faq, Galeria, Hero, Regiao, Regras, Rodape, Sobre } from "
 export default async function Home({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
-  const [dict, tabela] = await Promise.all([getDictionary(lang), carregarTabelaPrecos()]);
+  const [dict, tabela, cotacao] = await Promise.all([
+    getDictionary(lang),
+    carregarTabelaPrecos(),
+    buscarCotacaoDolar(),
+  ]);
 
   const diaria = menorDiaria(casa, tabela);
 
@@ -33,7 +38,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       </main>
       <Rodape dict={dict} casa={casa} />
       <WhatsAppButton numero={casa.contato.whatsapp} mensagem={dict.whatsapp.mensagem} aria={dict.whatsapp.aria} />
-      <BookingBar lang={lang} dict={dict} diaria={diaria} minimoNoites={casa.precos.minimoNoites} />
+      <BookingBar lang={lang} dict={dict} diaria={diaria} minimoNoites={casa.precos.minimoNoites} cotacao={cotacao} />
     </>
   );
 }

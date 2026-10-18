@@ -248,7 +248,9 @@
     "mensagemPedido": "¡Hola! Me gustaría reservar Casa Brisa.\n\nEntrada: {checkIn}\nSalida: {checkOut}\nNoches: {noites}\nHuéspedes: {hospedes}\nTotal estimado: {total}\n\nMi nombre: \nComentarios: ",
     "desconto": "Descuento por reserva directa ({n}%)",
     "descontoPoucosHospedes": "Descuento por reserva directa hasta {hospedes} personas ({n}%)",
-    "selo": "{n}% de descuento por el sitio"
+    "selo": "{n}% de descuento por el sitio",
+    "moedaAria": "Moneda",
+    "aproximadoDolar": "Valores aproximados en dólares. La reserva se cobra en reales: {total}."
   },
   "whatsapp": {
     "aria": "Hablar por WhatsApp",

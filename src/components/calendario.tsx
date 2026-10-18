@@ -9,6 +9,8 @@ import type { Dictionary } from "@/i18n/get-dictionary";
 import { calcularOrcamento, listarNoites, type TabelaPrecos } from "@/lib/precos";
 import { fill, formatBRL } from "@/lib/format";
 import { evento } from "@/lib/analytics";
+import type { Cotacao } from "@/lib/cotacao";
+import { SeletorMoeda, useMoeda } from "@/components/moeda";
 
 const MESES_VISIVEIS = 12;
 
@@ -21,13 +23,15 @@ type Props = {
   casa: Casa;
   ocupadas: string[];
   tabela: TabelaPrecos;
+  cotacao: Cotacao | null;
 };
 
-export function Calendario({ lang, dict, casa, ocupadas, tabela }: Props) {
+export function Calendario({ lang, dict, casa, ocupadas, tabela, cotacao }: Props) {
   const [checkIn, setCheckIn] = useState<string | null>(null);
   const [checkOut, setCheckOut] = useState<string | null>(null);
   const [hospedes, setHospedes] = useState(2);
   const [infoHospedes, setInfoHospedes] = useState(false);
+  const { moeda, preco, setMoeda } = useMoeda(lang, cotacao);
 
   const ocupadasSet = useMemo(() => new Set(ocupadas), [ocupadas]);
   const hoje = iso(new Date());
@@ -261,18 +265,23 @@ export function Calendario({ lang, dict, casa, ocupadas, tabela }: Props) {
             {fill(dict.reserva.hospedesInfo, {
               n: casa.capacidade.hospedes,
               inclusos: casa.precos.hospedesInclusos,
-              valor: formatBRL(casa.precos.hospedeExtra, lang),
+              valor: preco(casa.precos.hospedeExtra),
             })}
           </p>
         )}
 
         {/* Resumo só quando dá para reservar; com aviso de bloqueio, só o aviso. */}
+        {pronto && cotacao && (
+          <div className="mt-3 flex justify-end">
+            <SeletorMoeda moeda={moeda} setMoeda={setMoeda} aria={dict.reserva.moedaAria} />
+          </div>
+        )}
         {pronto && (
-          <dl className="mt-3 space-y-1 text-sm">
+          <dl className="mt-2 space-y-1 text-sm">
             <div className="flex justify-between">
               <dt>{fill(dict.reserva.noites, { n: orcamento.noites })}</dt>
               {/* Hóspede extra entra no valor das noites, sem linha própria. */}
-              <dd>{formatBRL(orcamento.subtotal, lang)}</dd>
+              <dd>{preco(orcamento.subtotal, { aproximado: false })}</dd>
             </div>
             {orcamento.desconto > 0 && (
               <div className="flex justify-between font-semibold text-folha">
@@ -284,17 +293,23 @@ export function Calendario({ lang, dict, casa, ocupadas, tabela }: Props) {
                       })
                     : fill(dict.reserva.desconto, { n: orcamento.descontoPercentual })}
                 </dt>
-                <dd>−{formatBRL(orcamento.desconto, lang)}</dd>
+                <dd>−{preco(orcamento.desconto, { aproximado: false })}</dd>
               </div>
             )}
             <div className="flex justify-between">
               <dt>{dict.reserva.limpeza}</dt>
-              <dd>{formatBRL(orcamento.limpeza, lang)}</dd>
+              <dd>{preco(orcamento.limpeza, { aproximado: false })}</dd>
             </div>
             <div className="flex justify-between border-t border-areia-escura pt-2 text-base font-bold text-taupe-escuro">
               <dt>{dict.reserva.total}</dt>
-              <dd>{formatBRL(orcamento.total, lang)}</dd>
+              <dd>{preco(orcamento.total)}</dd>
             </div>
+            {/* O pedido e a cobrança são em reais: em dólar, avisa o valor oficial. */}
+            {moeda === "USD" && (
+              <p className="pt-1 text-xs text-taupe/80">
+                {fill(dict.reserva.aproximadoDolar, { total: formatBRL(orcamento.total, lang) })}
+              </p>
+            )}
           </dl>
         )}
 

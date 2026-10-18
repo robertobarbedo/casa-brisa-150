@@ -5,6 +5,7 @@ import { alternativas } from "@/config/site";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { casa } from "@/lib/casa";
 import { buscarNoitesOcupadas } from "@/lib/disponibilidade";
+import { buscarCotacaoDolar } from "@/lib/cotacao";
 import { carregarTabelaPrecos, recortarFuturo } from "@/lib/tabela-precos";
 import { Header } from "@/components/header";
 import { Calendario } from "@/components/calendario";
@@ -27,10 +28,11 @@ export default async function Reservar({ params }: PageProps<"/[lang]/reservar">
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
 
-  const [dict, ocupadas, tabela] = await Promise.all([
+  const [dict, ocupadas, tabela, cotacao] = await Promise.all([
     getDictionary(lang),
     buscarNoitesOcupadas(),
     carregarTabelaPrecos(),
+    buscarCotacaoDolar(),
   ]);
 
   return (
@@ -44,6 +46,7 @@ export default async function Reservar({ params }: PageProps<"/[lang]/reservar">
           casa={casa}
           ocupadas={ocupadas}
           tabela={recortarFuturo(tabela)}
+          cotacao={cotacao}
         />
       </main>
     </>
