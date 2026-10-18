@@ -1,29 +1,46 @@
 import {
+  AirVent,
+  AlarmSmoke,
+  Armchair,
   Bath,
   BedDouble,
   Car,
   ChevronDown,
   Clock,
+  Coffee,
   CookingPot,
   DoorOpen,
+  EggFried,
   ExternalLink,
   Flame,
+  Laptop,
+  LeafyGreen,
   MapPin,
+  Microwave,
   PawPrint,
+  Pizza,
+  Refrigerator,
+  Shirt,
+  Snowflake,
   Tag,
   Trees,
+  Tv,
+  Umbrella,
   Users,
+  WashingMachine,
   Waves,
   Wifi,
+  Wind,
   Zap,
   type LucideIcon,
 } from "lucide-react";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import type { Ambiente, Casa } from "@/lib/casa";
-import { comodidadesAtivas, type ComodidadeKey } from "@/lib/comodidades";
+import { COMODIDADES_VISIVEIS, comodidadesAtivas, type ComodidadeKey } from "@/lib/comodidades";
 import { fill } from "@/lib/format";
 import { CapaFotos } from "./capa-fotos";
 import { Foto } from "./foto";
+import { VerMais } from "./ver-mais";
 
 type Base = { dict: Dictionary; casa: Casa };
 
@@ -169,30 +186,57 @@ export function Sobre({ dict, casa }: Base) {
 /** A ordem e o que está ativo vivem em lib/comodidades.ts; aqui só o ícone. */
 const iconeComodidade: Record<ComodidadeKey, LucideIcon> = {
   praia: Waves,
-  eletrico: Zap,
-  pet: PawPrint,
+  arCondicionado: AirVent,
   wifi: Wifi,
+  roupaCama: BedDouble,
   cozinha: CookingPot,
   churrasqueira: Flame,
-  jardim: Trees,
+  pet: PawPrint,
   estacionamento: Car,
+  eletrico: Zap,
+  cadeirasPraia: Umbrella,
+  jardim: Trees,
+  rede: Armchair,
+  tv: Tv,
+  trabalho: Laptop,
+  cafeteira: Coffee,
+  fogaoInducao: EggFried,
+  forno: Pizza,
+  microondas: Microwave,
+  geladeira: Refrigerator,
+  freezer: Snowflake,
+  temperos: LeafyGreen,
+  lavaRoupa: WashingMachine,
+  secador: Wind,
+  ferro: Shirt,
+  detectores: AlarmSmoke,
 };
 
 export function Comodidades({ dict, casa }: Base) {
+  const ativas = comodidadesAtivas(casa);
   return (
     <section aria-labelledby="comodidades" className="mx-auto max-w-5xl px-4 pt-10">
       <Titulo id="comodidades">{dict.comodidades.titulo}</Titulo>
-      <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-4 md:grid-cols-4">
-        {comodidadesAtivas(casa).map(({ key }) => {
-          const Icon = iconeComodidade[key];
-          return (
-            <li key={key} className="flex items-center gap-3 text-sm font-semibold">
-              <Icon aria-hidden className="size-5 shrink-0 text-terracota" strokeWidth={1.75} />
-              {dict.comodidades.itens[key]}
-            </li>
-          );
-        })}
-      </ul>
+      <VerMais
+        mais={fill(dict.comodidades.verTodas, { n: ativas.length })}
+        menos={dict.comodidades.verMenos}
+      >
+        <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-4 md:grid-cols-4">
+          {ativas.map(({ key }, i) => {
+            const Icon = iconeComodidade[key];
+            const extra = i >= COMODIDADES_VISIVEIS;
+            return (
+              <li
+                key={key}
+                className={`items-center gap-3 text-sm font-semibold ${extra ? "hidden group-data-[aberto=true]:flex" : "flex"}`}
+              >
+                <Icon aria-hidden className="size-5 shrink-0 text-terracota" strokeWidth={1.75} />
+                {dict.comodidades.itens[key]}
+              </li>
+            );
+          })}
+        </ul>
+      </VerMais>
 
       {casa.carregadorEletrico && (
         <div className="canto-brisa mt-8 flex gap-4 bg-azul-suave p-5">

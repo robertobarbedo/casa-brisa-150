@@ -80,7 +80,7 @@
       {
         "id": "quartoSolteiros",
         "titulo": "Twin bedroom",
-        "texto": "Two single beds and a window onto the backyard."
+        "texto": "Two single beds, air conditioning and a window onto the backyard."
       },
       {
         "id": "sala",
@@ -116,15 +116,34 @@
   },
   "comodidades": {
     "titulo": "What this place offers",
+    "verTodas": "See all {n} amenities",
+    "verMenos": "Show less",
     "itens": {
-      "wifi": "Wi-Fi",
+      "praia": "150 m to the beach",
+      "arCondicionado": "Air conditioning in all 3 bedrooms",
+      "wifi": "Fast Wi-Fi",
+      "roupaCama": "Bed linen and towels",
       "cozinha": "Equipped kitchen",
       "churrasqueira": "Barbecue",
-      "jardim": "Garden with trees",
       "pet": "Pets allowed",
-      "eletrico": "EV charger",
       "estacionamento": "Parking",
-      "praia": "150 m to the beach"
+      "eletrico": "EV charger",
+      "cadeirasPraia": "Beach chairs and umbrella",
+      "jardim": "Garden with trees",
+      "rede": "Hammock on the porch",
+      "tv": "TV with streaming",
+      "trabalho": "Dedicated workspace",
+      "cafeteira": "Capsule coffee machine",
+      "fogaoInducao": "Induction stove",
+      "forno": "Electric oven",
+      "microondas": "Microwave",
+      "geladeira": "Refrigerator",
+      "freezer": "Freezer",
+      "temperos": "Coffee, salt, olive oil and spices",
+      "lavaRoupa": "Washing machine",
+      "secador": "Hair dryer",
+      "ferro": "Iron",
+      "detectores": "Smoke and CO detectors"
     }
   },
   "eletrico": {

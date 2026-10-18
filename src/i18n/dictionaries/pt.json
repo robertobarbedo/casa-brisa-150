@@ -80,7 +80,7 @@
       {
         "id": "quartoSolteiros",
         "titulo": "Quarto de solteiros",
-        "texto": "Duas camas de solteiro e janela para o quintal."
+        "texto": "Duas camas de solteiro, ar-condicionado e janela para o quintal."
       },
       {
         "id": "sala",
@@ -116,15 +116,34 @@
   },
   "comodidades": {
     "titulo": "O que a casa oferece",
+    "verTodas": "Ver todas as {n} comodidades",
+    "verMenos": "Ver menos",
     "itens": {
-      "wifi": "Wi-Fi",
+      "praia": "150 m da praia",
+      "arCondicionado": "Ar-condicionado nos 3 quartos",
+      "wifi": "Wi-Fi rápido",
+      "roupaCama": "Roupa de cama e toalhas",
       "cozinha": "Cozinha equipada",
       "churrasqueira": "Churrasqueira",
-      "jardim": "Jardim com árvores",
       "pet": "Aceita pets",
-      "eletrico": "Carregador para carro elétrico",
       "estacionamento": "Estacionamento",
-      "praia": "150 m da praia"
+      "eletrico": "Carregador para carro elétrico",
+      "cadeirasPraia": "Cadeiras e guarda-sol de praia",
+      "jardim": "Jardim com árvores",
+      "rede": "Rede na varanda",
+      "tv": "TV com streaming",
+      "trabalho": "Espaço para trabalhar",
+      "cafeteira": "Cafeteira de cápsula",
+      "fogaoInducao": "Fogão por indução",
+      "forno": "Forno elétrico",
+      "microondas": "Micro-ondas",
+      "geladeira": "Geladeira",
+      "freezer": "Freezer",
+      "temperos": "Café, sal, azeite e temperos",
+      "lavaRoupa": "Máquina de lavar roupa",
+      "secador": "Secador de cabelo",
+      "ferro": "Ferro de passar",
+      "detectores": "Detector de fumaça e CO"
     }
   },
   "eletrico": {

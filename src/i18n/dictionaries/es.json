@@ -80,7 +80,7 @@
       {
         "id": "quartoSolteiros",
         "titulo": "Dormitorio con dos camas",
-        "texto": "Dos camas individuales y ventana al patio."
+        "texto": "Dos camas individuales, aire acondicionado y ventana al patio."
       },
       {
         "id": "sala",
@@ -116,15 +116,34 @@
   },
   "comodidades": {
     "titulo": "Lo que ofrece la casa",
+    "verTodas": "Ver las {n} comodidades",
+    "verMenos": "Ver menos",
     "itens": {
-      "wifi": "Wi-Fi",
+      "praia": "150 m de la playa",
+      "arCondicionado": "Aire acondicionado en los 3 dormitorios",
+      "wifi": "Wi-Fi rápido",
+      "roupaCama": "Ropa de cama y toallas",
       "cozinha": "Cocina equipada",
       "churrasqueira": "Parrilla",
-      "jardim": "Jardín con árboles",
       "pet": "Se aceptan mascotas",
-      "eletrico": "Cargador para auto eléctrico",
       "estacionamento": "Estacionamiento",
-      "praia": "150 m de la playa"
+      "eletrico": "Cargador para auto eléctrico",
+      "cadeirasPraia": "Reposeras y sombrilla para la playa",
+      "jardim": "Jardín con árboles",
+      "rede": "Hamaca en la galería",
+      "tv": "TV con streaming",
+      "trabalho": "Espacio para trabajar",
+      "cafeteira": "Cafetera de cápsulas",
+      "fogaoInducao": "Anafe de inducción",
+      "forno": "Horno eléctrico",
+      "microondas": "Microondas",
+      "geladeira": "Heladera",
+      "freezer": "Freezer",
+      "temperos": "Café, sal, aceite de oliva y condimentos",
+      "lavaRoupa": "Lavarropas",
+      "secador": "Secador de pelo",
+      "ferro": "Plancha",
+      "detectores": "Detector de humo y CO"
     }
   },
   "eletrico": {
