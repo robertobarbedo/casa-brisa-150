@@ -229,7 +229,7 @@ export function Comodidades({ dict, casa }: Base) {
             return (
               <li
                 key={key}
-                className={`items-center gap-3 text-sm font-semibold ${extra ? "hidden group-data-[aberto=true]:flex" : "flex"}`}
+                className={`items-center gap-3 text-sm font-semibold ${extra ? "hidden group-data-[aberto=true]:flex md:flex" : "flex"}`}
               >
                 <Icon aria-hidden className="size-5 shrink-0 text-terracota" strokeWidth={1.75} />
                 {dict.comodidades.itens[key]}
