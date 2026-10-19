@@ -247,7 +247,7 @@
     "assuntoEmail": "Reserva Casa Brisa · {checkIn} a {checkOut}",
     "mensagemPedido": "Olá! Gostaria de reservar a Casa Brisa.\n\nEntrada: {checkIn}\nSaída: {checkOut}\nNoites: {noites}\nHóspedes: {hospedes}\nTotal estimado: {total}\n\nMeu nome: \nObservações: ",
     "desconto": "Desconto reserva direta ({n}%)",
-    "descontoPoucosHospedes": "Desconto reserva direta até {hospedes} pessoas ({n}%)",
+    "descontoPoucosHospedes": "Desconto reserva até {hospedes} pessoas ({n}%)",
     "selo": "{n}% de desconto pelo site",
     "moedaAria": "Moeda"
   },
