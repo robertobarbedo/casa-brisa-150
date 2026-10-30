@@ -1,7 +1,7 @@
 /**
  * Eventos do GA4 (a tag vem de components/analytics.tsx, só em produção).
  * São estes que o Google Ads importa como conversão:
- * - pedido_reserva: clique em mandar o pedido (WhatsApp ou e-mail) em /reservar.
+ * - pedido_reserva: clique em mandar o pedido pelo WhatsApp em /reservar.
  * - contato_whatsapp: clique no WhatsApp fora do pedido (botão flutuante, 404).
  * Os demais medem engajamento com as fotos e as comodidades (não são conversão):
  * - fotos_abertas: abriu o visualizador (origem: capa_foto, capa_ver_mais ou mosaico_ver_todas).
