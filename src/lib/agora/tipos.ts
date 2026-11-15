@@ -45,6 +45,8 @@ export type Contexto = {
   diaDeMovimento: boolean;
   /** Hoje é sábado (dia da feira livre na Rua dos Gerânios). */
   sabado: boolean;
+  /** Hoje é domingo (a padaria Doce Pão não abre). */
+  domingo: boolean;
   /** Hoje é dia de chegada de hóspedes (início de uma reserva no Airbnb). */
   diaDeChegada: boolean;
   nascer: number;

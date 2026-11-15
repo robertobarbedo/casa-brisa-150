@@ -89,6 +89,7 @@ export function montarContexto(
     periodo: periodoDo(minuto, minAtePorDoSol),
     diaDeMovimento: fimDeSemana || verao,
     sabado: data.getUTCDay() === 6,
+    domingo: data.getUTCDay() === 0,
     diaDeChegada,
     nascer,
     porDoSol,
