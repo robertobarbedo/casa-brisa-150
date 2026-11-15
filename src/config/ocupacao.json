@@ -1,7 +1,6 @@
 {
   "checkoutSempreVisivel": false,
   "reservas": [
-    { "nome": "Andressa", "entrada": "2026-11-08", "saida": "2026-11-15" },
     { "nome": "Valentin", "entrada": "2026-12-13", "saida": "2026-12-20" },
     { "nome": "Rafael", "entrada": "2027-01-09", "saida": "2027-01-16" }
   ]
