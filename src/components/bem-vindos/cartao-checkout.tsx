@@ -17,7 +17,7 @@ type Textos = {
   contato: string;
 };
 
-type Saida = { nome: string; data: string };
+type Saida = { nome?: string; data: string };
 
 type CheckoutProps = {
   saidas: Saida[];
