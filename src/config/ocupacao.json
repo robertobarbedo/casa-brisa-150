@@ -1,7 +1,11 @@
 {
   "checkoutSempreVisivel": false,
   "reservas": [
+    { "nome": "Andrine", "entrada": "2026-11-27", "saida": "2026-12-01" },
     { "nome": "Valentin", "entrada": "2026-12-13", "saida": "2026-12-20" },
-    { "nome": "Rafael", "entrada": "2027-01-09", "saida": "2027-01-16" }
+    { "nome": "Samanta", "entrada": "2027-01-05", "saida": "2027-01-13" },
+    { "nome": "Fernando", "entrada": "2027-01-18", "saida": "2027-01-23" },
+    { "nome": "Icaro", "entrada": "2027-01-24", "saida": "2027-01-31" },
+    { "nome": "Giulio", "entrada": "2027-02-15", "saida": "2027-02-22" }
   ]
 }
