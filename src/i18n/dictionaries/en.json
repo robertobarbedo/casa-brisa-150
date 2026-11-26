@@ -240,11 +240,8 @@
     "noites": "{n} nights",
     "total": "Total",
     "minimoAviso": "For these dates the minimum stay is {n} nights.",
-    "enviarEmail": "Send booking request by email",
-    "ouEmail": "or send by email",
     "enviarWhatsapp": "Send booking request on WhatsApp",
     "semContato": "Contact details not set yet.",
-    "assuntoEmail": "Casa Brisa booking · {checkIn} to {checkOut}",
     "mensagemPedido": "Hi! I'd like to book Casa Brisa.\n\nCheck-in: {checkIn}\nCheck-out: {checkOut}\nNights: {noites}\nGuests: {hospedes}\nEstimated total: {total}\n\nMy name: \nNotes: ",
     "desconto": "Direct booking discount ({n}%)",
     "descontoPoucosHospedes": "Direct booking discount, up to {hospedes} guests ({n}%)",
@@ -275,7 +272,7 @@
     "vejaTambem": "See also",
     "grupos": {
       "daniela": "In Daniela",
-      "ilha": "Our favourites on the island"
+      "ilha": "Our favourites in the north of the island"
     },
     "abrirMapa": "Open in maps",
     "ligar": "Call",
@@ -532,11 +529,17 @@
       "chegada": [
         "Welcome! Every outlet in the house is 220 V. Before plugging in a hair dryer or straightener, check that it's dual voltage."
       ],
+      "feira": [
+        "It's market day! Fresh fruit and vegetables on Rua dos Gerânios, the next street over, about 100 m away."
+      ],
       "bemVindo": [
         "So glad you're here. Everything to help with your stay is right below."
       ],
       "bomDia": [
         "Good morning! Fresh bread at Doce Pão, a 10-minute walk.",
+        "Good morning! The market is just around the corner if you need anything for breakfast."
+      ],
+      "bomDiaDomingo": [
         "Good morning! The market is just around the corner if you need anything for breakfast."
       ],
       "tarde": [

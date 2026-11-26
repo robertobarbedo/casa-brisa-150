@@ -240,11 +240,8 @@
     "noites": "{n} noches",
     "total": "Total",
     "minimoAviso": "En esas fechas la estadía mínima es de {n} noches.",
-    "enviarEmail": "Enviar pedido de reserva por e-mail",
-    "ouEmail": "o enviar por e-mail",
     "enviarWhatsapp": "Enviar pedido de reserva por WhatsApp",
     "semContato": "Contacto aún no configurado.",
-    "assuntoEmail": "Reserva Casa Brisa · {checkIn} a {checkOut}",
     "mensagemPedido": "¡Hola! Me gustaría reservar Casa Brisa.\n\nEntrada: {checkIn}\nSalida: {checkOut}\nNoches: {noites}\nHuéspedes: {hospedes}\nTotal estimado: {total}\n\nMi nombre: \nComentarios: ",
     "desconto": "Descuento por reserva directa ({n}%)",
     "descontoPoucosHospedes": "Descuento por reserva directa hasta {hospedes} personas ({n}%)",
@@ -275,7 +272,7 @@
     "vejaTambem": "Vean también",
     "grupos": {
       "daniela": "En Daniela",
-      "ilha": "Nuestros favoritos en la isla"
+      "ilha": "Nuestros favoritos en el norte de la isla"
     },
     "abrirMapa": "Abrir en el mapa",
     "ligar": "Llamar",
@@ -532,11 +529,17 @@
       "chegada": [
         "¡Bienvenidos! Todos los enchufes de la casa son de 220 V. Antes de enchufar secador o planchita, fijate si es bivolt."
       ],
+      "feira": [
+        "¡Hoy hay feria! Frutas y verduras frescas en la Rua dos Gerânios, la calle de al lado, a unos 100 m."
+      ],
       "bemVindo": [
         "Qué bueno tenerlos acá. Todo lo que ayuda en la estadía está aquí abajo."
       ],
       "bomDia": [
         "¡Buen día! Pan calentito en Doce Pão, a 10 min caminando.",
+        "¡Buen día! El súper está a la vuelta, por si falta algo para el desayuno."
+      ],
+      "bomDiaDomingo": [
         "¡Buen día! El súper está a la vuelta, por si falta algo para el desayuno."
       ],
       "tarde": [

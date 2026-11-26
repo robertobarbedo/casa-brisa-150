@@ -7,6 +7,7 @@ import { dataLocal } from "@/lib/agora/tempo-local";
  * Reservas da casa, preenchidas à mão em src/config/ocupacao.json:
  * só o primeiro nome do hóspede e as datas (AAAA-MM-DD).
  * No dia da `saida`, o /bem-vindos mostra o cartão de check-out.
+ * `nome` e `entrada` são opcionais: sem nome, o cartão usa o título genérico.
  *
  * `checkoutSempreVisivel`: liga o cartão todos os dias, para testar.
  */
@@ -17,8 +18,8 @@ const ocupacaoSchema = z.object({
   checkoutSempreVisivel: z.boolean(),
   reservas: z.array(
     z
-      .object({ nome: z.string().trim().min(1), entrada: data, saida: data })
-      .refine((r) => r.saida > r.entrada, { message: "saida precisa ser depois da entrada" }),
+      .object({ nome: z.string().trim().min(1).optional(), entrada: data.optional(), saida: data })
+      .refine((r) => !r.entrada || r.saida > r.entrada, { message: "saida precisa ser depois da entrada" }),
   ),
 });
 
@@ -26,7 +27,7 @@ const ocupacao = ocupacaoSchema.parse(raw);
 
 export const checkoutSempreVisivel = ocupacao.checkoutSempreVisivel;
 
-export type Saida = { nome: string; data: string };
+export type Saida = { nome?: string; data: string };
 
 const UM_DIA = 86_400_000;
 

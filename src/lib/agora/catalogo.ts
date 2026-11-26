@@ -78,6 +78,14 @@ export const catalogo: Regra[] = [
     destino: "tempo",
   },
 
+  // ── Feira ───────────────────────────────────────────────────
+  {
+    // Feira livre de frutas e verduras na Rua dos Gerânios: sábado de manhã, até 12h30.
+    id: "feira",
+    prioridade: 72,
+    quando: (c) => c.sabado && c.minutoDoDia >= h(5) && c.minutoDoDia < h(12.5),
+  },
+
   // ── Maré ────────────────────────────────────────────────────
   {
     id: "mareBaixa",
@@ -166,7 +174,14 @@ export const catalogo: Regra[] = [
   {
     id: "bomDia",
     prioridade: 30,
-    quando: (c) => c.minutoDoDia >= h(5) && c.minutoDoDia < h(11),
+    quando: (c) => !c.domingo && c.minutoDoDia >= h(5) && c.minutoDoDia < h(11),
+    destino: "perto",
+  },
+  {
+    // Domingo: sem a dica do pão quentinho (a Doce Pão não abre).
+    id: "bomDiaDomingo",
+    prioridade: 30,
+    quando: (c) => c.domingo && c.minutoDoDia >= h(5) && c.minutoDoDia < h(11),
     destino: "perto",
   },
   {

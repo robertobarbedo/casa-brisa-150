@@ -240,14 +240,11 @@
     "noites": "{n} noites",
     "total": "Total",
     "minimoAviso": "Nessas datas a estadia mínima é de {n} noites.",
-    "enviarEmail": "Enviar pedido de reserva por e-mail",
-    "ouEmail": "ou enviar por e-mail",
     "enviarWhatsapp": "Enviar pedido de reserva pelo WhatsApp",
     "semContato": "Contato ainda não configurado.",
-    "assuntoEmail": "Reserva Casa Brisa · {checkIn} a {checkOut}",
     "mensagemPedido": "Olá! Gostaria de reservar a Casa Brisa.\n\nEntrada: {checkIn}\nSaída: {checkOut}\nNoites: {noites}\nHóspedes: {hospedes}\nTotal estimado: {total}\n\nMeu nome: \nObservações: ",
     "desconto": "Desconto reserva direta ({n}%)",
-    "descontoPoucosHospedes": "Desconto reserva direta até {hospedes} pessoas ({n}%)",
+    "descontoPoucosHospedes": "Desconto reserva até {hospedes} pessoas ({n}%)",
     "selo": "{n}% de desconto pelo site",
     "moedaAria": "Moeda"
   },
@@ -275,7 +272,7 @@
     "vejaTambem": "Veja também",
     "grupos": {
       "daniela": "Na Daniela",
-      "ilha": "Nossos favoritos na ilha"
+      "ilha": "Nossos favoritos no norte da ilha"
     },
     "abrirMapa": "Abrir no mapa",
     "ligar": "Ligar",
@@ -532,11 +529,17 @@
       "chegada": [
         "Boas-vindas! Todas as tomadas da casa são 220 V. Antes de ligar secador ou chapinha, veja se é bivolt."
       ],
+      "feira": [
+        "Hoje tem feira livre! Frutas e verduras fresquinhas na Rua dos Gerânios, a próxima rua, a uns 100 m daqui."
+      ],
       "bemVindo": [
         "Que bom ter vocês aqui. Tudo o que ajuda na estadia está logo abaixo."
       ],
       "bomDia": [
         "Bom dia! Pão quentinho na Doce Pão, a 10 min a pé.",
+        "Bom dia! O mercado fica logo ali, caso falte algo para o café."
+      ],
+      "bomDiaDomingo": [
         "Bom dia! O mercado fica logo ali, caso falte algo para o café."
       ],
       "tarde": [

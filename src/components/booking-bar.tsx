@@ -18,12 +18,12 @@ export function BookingBar({ lang, dict, diaria, minimoNoites, cotacao }: Props)
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 border-t border-areia-escura bg-branco/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-md md:bottom-4 md:mx-auto md:max-w-xl md:rounded-full md:border md:shadow-suave">
       <div className="flex items-center justify-between gap-4 px-4 py-3 md:px-6">
-        <div className="leading-tight">
-          <p className="text-xs text-taupe/80">{dict.reserva.aPartirDe}</p>
+        <div className="min-w-0 leading-tight">
           <PrecoNoite
             lang={lang}
             cotacao={cotacao}
             diaria={diaria}
+            aPartirDe={dict.reserva.aPartirDe}
             porNoite={dict.reserva.porNoite}
             moedaAria={dict.reserva.moedaAria}
           />
@@ -31,7 +31,7 @@ export function BookingBar({ lang, dict, diaria, minimoNoites, cotacao }: Props)
         </div>
         <Link
           href={`/${lang}/reservar`}
-          className="grid h-12 place-items-center rounded-full bg-terracota-forte px-6 text-base font-bold text-branco shadow-suave transition active:scale-95"
+          className="grid h-12 shrink-0 place-items-center whitespace-nowrap rounded-full bg-terracota-forte px-6 text-base font-bold text-branco shadow-suave transition active:scale-95"
         >
           {dict.reserva.escolherDatas}
         </Link>
