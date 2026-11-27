@@ -428,7 +428,7 @@
       },
       "miniMercado": {
         "titulo": "Minimercado",
-        "texto": "VT · saliendo de la casa a la derecha, en la próxima cuadra"
+        "texto": "Dó Ré Mi · Praia da Daniela"
       },
       "mercadoGrande": {
         "titulo": "Supermercado",
@@ -527,7 +527,7 @@
     },
     "mensagens": {
       "chegada": [
-        "¡Bienvenidos! Todos los enchufes de la casa son de 220 V. Antes de enchufar secador o planchita, fijate si es bivolt."
+        "¡Bienvenidos! Todos los enchufes de la casa son de 220 V. Antes de enchufar cualquier aparato, fijate su tensión."
       ],
       "feira": [
         "¡Hoy hay feria! Frutas y verduras frescas en la Rua dos Gerânios, la calle de al lado, a unos 100 m."

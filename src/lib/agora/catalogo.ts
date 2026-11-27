@@ -24,7 +24,7 @@ const h = (hora: number) => hora * 60; // minuto do dia
 export const catalogo: Regra[] = [
   // ── Chegada ─────────────────────────────────────────────────
   {
-    // Só no dia do check-in: as tomadas são 220 V (secador e chapinha de 127 V queimam).
+    // Só no dia do check-in: as tomadas são 220 V (aparelhos de 127 V queimam).
     id: "chegada",
     prioridade: 200,
     quando: (c) => c.diaDeChegada,

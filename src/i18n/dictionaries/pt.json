@@ -428,7 +428,7 @@
       },
       "miniMercado": {
         "titulo": "Mini mercado",
-        "texto": "VT · saindo da casa à direita, na próxima quadra"
+        "texto": "Dó Ré Mi · Praia da Daniela"
       },
       "mercadoGrande": {
         "titulo": "Mercado grande",
@@ -527,7 +527,7 @@
     },
     "mensagens": {
       "chegada": [
-        "Boas-vindas! Todas as tomadas da casa são 220 V. Antes de ligar secador ou chapinha, veja se é bivolt."
+        "Boas-vindas! Todas as tomadas da casa são 220 V. Antes de ligar qualquer aparelho, confira a tensão dele."
       ],
       "feira": [
         "Hoje tem feira livre! Frutas e verduras fresquinhas na Rua dos Gerânios, a próxima rua, a uns 100 m daqui."

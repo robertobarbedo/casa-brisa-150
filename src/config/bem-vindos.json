@@ -36,7 +36,7 @@
       { "id": "baba", "icone": "prato", "grupo": "ilha", "custo": 2, "acao": { "tipo": "mapa", "busca": "https://maps.app.goo.gl/R7gzohEo3FRwsF6Z7" } }
     ],
     "perto": [
-      { "id": "miniMercado", "icone": "carrinho", "acao": { "tipo": "mapa", "busca": "Mercado VT, Praia da Daniela, Florianópolis" } },
+      { "id": "miniMercado", "icone": "carrinho", "acao": { "tipo": "mapa", "busca": "Mercado Dó Ré Mi, Praia da Daniela, Florianópolis" } },
       { "id": "mercadoGrande", "icone": "carrinho", "acao": { "tipo": "mapa", "busca": "Supermercado Imperatriz, Jurerê, Florianópolis" } },
       { "id": "padaria", "icone": "pao", "acao": { "tipo": "mapa", "busca": "Panificadora Doce Pão, Florianópolis" } },
       { "id": "farmacia", "icone": "farmacia", "acao": { "tipo": "mapa", "busca": "Farmácia Vida, Av. das Raias 261, Jurerê, Florianópolis" } },

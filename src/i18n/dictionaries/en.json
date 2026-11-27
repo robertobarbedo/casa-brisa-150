@@ -428,7 +428,7 @@
       },
       "miniMercado": {
         "titulo": "Corner shop",
-        "texto": "VT · turn right when you leave, on the next block"
+        "texto": "Dó Ré Mi · Praia da Daniela"
       },
       "mercadoGrande": {
         "titulo": "Full supermarket",
@@ -527,7 +527,7 @@
     },
     "mensagens": {
       "chegada": [
-        "Welcome! Every outlet in the house is 220 V. Before plugging in a hair dryer or straightener, check that it's dual voltage."
+        "Welcome! Every outlet in the house is 220 V. Before plugging in any device, check its voltage."
       ],
       "feira": [
         "It's market day! Fresh fruit and vegetables on Rua dos Gerânios, the next street over, about 100 m away."
